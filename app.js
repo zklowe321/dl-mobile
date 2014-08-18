@@ -27,10 +27,10 @@ Ext.application({
     currentOpptyId: '-1',
     industry_id: '-1',
     currentRevenue: '-1',
-    isDouble: false,
     accountName: ' ',
     userName: ' ',
     email: ' ',
+    pagesFromHome: '0',
     models: [
         'Search',
         'Detail',
@@ -171,14 +171,6 @@ Ext.application({
         this.currentRevenue = revenue;
     },
 
-    setDouble: function(isDouble) {
-        this.isDouble = isDouble;
-    },
-
-    getDouble: function() {
-        return this.isDouble;
-    },
-
     getUserName: function() {
         return this.userName;
     },
@@ -201,6 +193,22 @@ Ext.application({
 
     setEmail: function(email) {
         this.email = email;
+    },
+
+    getPagesFromHome: function() {
+        return this.pagesFromHome;
+    },
+
+    setPagesFromHome: function(pagesFromHome) {
+        this.pagesFromHome = pagesFromHome;
+    },
+
+    incrementPagesFromHome: function() {
+        this.pagesFromHome++;
+    },
+
+    decrementPagesFromHome: function() {
+        this.pagesFromHome--;
     },
 
     launch: function() {

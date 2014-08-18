@@ -243,6 +243,8 @@ Ext.define('MyApp.controller.Navigation', {
         if (rightButton) {
             rightButton.destroy();
         }
+
+        MyApp.app.setPagesFromHome(0);
     },
 
     onSavedListItemTap: function(dataview, index, target, record, e, eOpts) {
@@ -262,6 +264,8 @@ Ext.define('MyApp.controller.Navigation', {
 
             var navBar = this.getNavBar();
             navBar.leftBox.query('button')[1].hide();
+
+            MyApp.app.incrementPagesFromHome();
         }
     },
 
@@ -358,6 +362,8 @@ Ext.define('MyApp.controller.Navigation', {
 
             var navBar = this.getNavBar();
             navBar.leftBox.query('button')[1].hide();
+
+            MyApp.app.incrementPagesFromHome();
         }
     },
 
@@ -424,18 +430,21 @@ Ext.define('MyApp.controller.Navigation', {
 
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
+
+        MyApp.app.incrementPagesFromHome();
     },
 
     onMainViewBack: function(navigationview, eOpts) {
         var navBar = this.getNavBar(),
-            isDouble = MyApp.app.getDouble();
+            pagesFromHome = MyApp.app.getPagesFromHome();
 
-        if (!isDouble) {
+        if (pagesFromHome == 1) {
             navBar.leftBox.query('button')[0].hide();
             navBar.leftBox.query('button')[1].show();
-        } else {
-            MyApp.app.setDouble(false);
         }
+
+        MyApp.app.decrementPagesFromHome();
+
     },
 
     onCompanyInfoCheck: function(checkboxfield, e, eOpts) {
@@ -457,12 +466,12 @@ Ext.define('MyApp.controller.Navigation', {
 
         details = Ext.create('MyApp.view.DetailPanel', {});
 
-        MyApp.app.setDouble(true);
-
         me.getMainView().push(details);
 
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
+
+        MyApp.app.incrementPagesFromHome();
     },
 
     onValuePropCheck: function(checkboxfield, e, eOpts) {
@@ -487,12 +496,12 @@ Ext.define('MyApp.controller.Navigation', {
             title: 'Value Propositions'
         });
 
-        MyApp.app.setDouble(true);
-
         me.getMainView().push(details);
 
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
+
+        MyApp.app.incrementPagesFromHome();
     },
 
     onOpportunityTap: function(dataview, index, target, record, e, eOpts) {
@@ -517,7 +526,9 @@ Ext.define('MyApp.controller.Navigation', {
             this.getMainView().push(details);
 
             var navBar = this.getNavBar();
-            navBar.leftBox.query('button')[0].hide();
+            navBar.leftBox.query('button')[1].hide();
+
+            MyApp.app.incrementPagesFromHome();
         }
     },
 
@@ -610,6 +621,7 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
+        MyApp.app.incrementPagesFromHome();
     },
 
     onVFListItemTap: function(dataview, index, target, record, e, eOpts) {
@@ -657,6 +669,7 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
+        MyApp.app.incrementPagesFromHome();
     },
 
     onCostListItemTap: function(dataview, index, target, record, e, eOpts) {
@@ -684,6 +697,8 @@ Ext.define('MyApp.controller.Navigation', {
 
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
+
+        MyApp.app.incrementPagesFromHome();
     },
 
     onAssetItemTap: function(dataview, index, target, record, e, eOpts) {
@@ -711,6 +726,8 @@ Ext.define('MyApp.controller.Navigation', {
 
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
+
+        MyApp.app.incrementPagesFromHome();
     },
 
     onCompanyScenariosListItemTap: function(dataview, index, target, record, e, eOpts) {
@@ -752,7 +769,6 @@ Ext.define('MyApp.controller.Navigation', {
         details.child('#imageContainer').child('#benefitLightImage').setSrc(benefit_light_image);
 
         MyApp.app.setCurrentOpptyId(record.get('id'));
-        MyApp.app.setDouble(true);
 
         Ext.Viewport.setMasked(false);
 
@@ -760,6 +776,8 @@ Ext.define('MyApp.controller.Navigation', {
 
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
+
+        MyApp.app.incrementPagesFromHome();
     },
 
     onDNBCarouselActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
@@ -807,12 +825,12 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked(false);
 
-        MyApp.app.setDouble(true);
-
         this.getMainView().push(carousel);
 
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
+
+        MyApp.app.incrementPagesFromHome();
     },
 
     onDivisionsListItemTap: function(dataview, index, target, record, e, eOpts) {
@@ -831,6 +849,7 @@ Ext.define('MyApp.controller.Navigation', {
             var navBar = this.getNavBar();
             navBar.leftBox.query('button')[0].hide();
             navBar.leftBox.query('button')[1].show();
+
         }
     },
 
@@ -869,12 +888,12 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked(false);
 
-        MyApp.app.setDouble(true);
-
         this.getMainView().push(panel);
 
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
+
+        MyApp.app.incrementPagesFromHome();
     },
 
     onKpisListItemTap: function(dataview, index, target, record, e, eOpts) {
@@ -900,12 +919,12 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked(false);
 
-        MyApp.app.setDouble(true);
-
         this.getMainView().push(panel);
 
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
+
+        MyApp.app.incrementPagesFromHome();
     },
 
     onCompetitiveCarouselActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
@@ -979,12 +998,12 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked(false);
 
-        MyApp.app.setDouble(true);
-
         this.getMainView().push(panel);
 
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
+
+        MyApp.app.incrementPagesFromHome();
     },
 
     onSaveSQQButtonTap: function(button, e, eOpts) {
@@ -1082,6 +1101,8 @@ Ext.define('MyApp.controller.Navigation', {
 
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
+
+        MyApp.app.incrementPagesFromHome();
     },
 
     onSaveSecondarySQQButtonTap: function(button, e, eOpts) {
@@ -1129,6 +1150,8 @@ Ext.define('MyApp.controller.Navigation', {
 
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
+
+        MyApp.app.incrementPagesFromHome();
     },
 
     onDeleteCostButtonTap: function(button, e, eOpts) {
