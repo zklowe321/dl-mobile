@@ -97,7 +97,9 @@
                     "rightButton = navBar.rightBox.query('button')[0];",
                     "if (rightButton) {",
                     "    rightButton.destroy();",
-                    "}"
+                    "}",
+                    "",
+                    "MyApp.app.setPagesFromHome(0);"
                 ],
                 "name": "tap"
             },
@@ -149,7 +151,7 @@
                     "    MyApp.app.setCurrentCompanyId(record.get('id'));",
                     "    MyApp.app.setCurrentIndustryId(record.get('industry_id'));",
                     "    MyApp.app.setCurrentRevenue(record.get('revenue'));",
-                    "",
+                    "    ",
                     "    details = Ext.create('MyApp.view.CompanyViewPanel', {",
                     "        title: record.get('name')",
                     "    });",
@@ -158,6 +160,8 @@
                     "",
                     "    var navBar = this.getNavBar();",
                     "    navBar.leftBox.query('button')[1].hide();",
+                    "    ",
+                    "    MyApp.app.incrementPagesFromHome();",
                     "}"
                 ],
                 "name": "itemtap"
@@ -1153,6 +1157,8 @@
                     "",
                     "    var navBar = this.getNavBar();",
                     "    navBar.leftBox.query('button')[1].hide();",
+                    "    ",
+                    "    MyApp.app.incrementPagesFromHome();",
                     "}"
                 ],
                 "name": "itemtap"
@@ -1271,7 +1277,9 @@
                     "this.getMainView().push(carousel);",
                     "",
                     "var navBar = this.getNavBar();",
-                    "navBar.leftBox.query('button')[1].hide();"
+                    "navBar.leftBox.query('button')[1].hide();",
+                    "",
+                    "MyApp.app.incrementPagesFromHome();"
                 ],
                 "name": "itemtap"
             },
@@ -1317,14 +1325,15 @@
                 "fn": "onMainViewBack",
                 "implHandler": [
                     "var navBar = this.getNavBar(),",
-                    "    isDouble = MyApp.app.getDouble();",
+                    "    pagesFromHome = MyApp.app.getPagesFromHome();",
                     "",
-                    "if (!isDouble) {",
+                    "if (pagesFromHome == 1) {",
                     "    navBar.leftBox.query('button')[0].hide();",
                     "    navBar.leftBox.query('button')[1].show();",
-                    "} else {",
-                    "    MyApp.app.setDouble(false);",
-                    "}"
+                    "} ",
+                    "    ",
+                    "MyApp.app.decrementPagesFromHome();",
+                    ""
                 ],
                 "name": "back"
             },
@@ -1360,12 +1369,12 @@
                     "",
                     "details = Ext.create('MyApp.view.DetailPanel', {});",
                     "",
-                    "MyApp.app.setDouble(true);",
-                    "",
                     "me.getMainView().push(details);",
                     "",
                     "var navBar = this.getNavBar();",
-                    "navBar.leftBox.query('button')[1].hide();"
+                    "navBar.leftBox.query('button')[1].hide();",
+                    "",
+                    "MyApp.app.incrementPagesFromHome();"
                 ],
                 "name": "check"
             },
@@ -1404,12 +1413,12 @@
                     "    title: 'Value Propositions'",
                     "});",
                     "",
-                    "MyApp.app.setDouble(true);",
-                    "",
                     "me.getMainView().push(details);",
                     "",
                     "var navBar = this.getNavBar();",
-                    "navBar.leftBox.query('button')[1].hide();"
+                    "navBar.leftBox.query('button')[1].hide();",
+                    "",
+                    "MyApp.app.incrementPagesFromHome();"
                 ],
                 "name": "check"
             },
@@ -1475,7 +1484,9 @@
                     "    this.getMainView().push(details);",
                     "",
                     "    var navBar = this.getNavBar();",
-                    "    navBar.leftBox.query('button')[0].hide();",
+                    "    navBar.leftBox.query('button')[1].hide();",
+                    "    ",
+                    "    MyApp.app.incrementPagesFromHome();",
                     "}"
                 ],
                 "name": "itemtap"
@@ -1620,7 +1631,8 @@
                     "",
                     "var navBar = this.getNavBar();",
                     "navBar.leftBox.query('button')[1].hide();",
-                    ""
+                    "",
+                    "MyApp.app.incrementPagesFromHome();"
                 ],
                 "name": "itemtap"
             },
@@ -1706,7 +1718,8 @@
                     "",
                     "var navBar = this.getNavBar();",
                     "navBar.leftBox.query('button')[1].hide();",
-                    ""
+                    "",
+                    "MyApp.app.incrementPagesFromHome();"
                 ],
                 "name": "itemtap"
             },
@@ -1774,7 +1787,9 @@
                     "this.getMainView().push(details);",
                     "",
                     "var navBar = this.getNavBar();",
-                    "navBar.leftBox.query('button')[1].hide();"
+                    "navBar.leftBox.query('button')[1].hide();",
+                    "",
+                    "MyApp.app.incrementPagesFromHome();"
                 ],
                 "name": "itemtap"
             },
@@ -1842,7 +1857,9 @@
                     "this.getMainView().push(details);",
                     "",
                     "var navBar = this.getNavBar();",
-                    "navBar.leftBox.query('button')[1].hide();"
+                    "navBar.leftBox.query('button')[1].hide();",
+                    "",
+                    "MyApp.app.incrementPagesFromHome();"
                 ],
                 "name": "itemtap"
             },
@@ -1898,14 +1915,15 @@
                     "details.child('#imageContainer').child('#benefitLightImage').setSrc(benefit_light_image);",
                     "",
                     "MyApp.app.setCurrentOpptyId(record.get('id'));",
-                    "MyApp.app.setDouble(true);",
                     "",
                     "Ext.Viewport.setMasked(false);",
                     "",
                     "this.getMainView().push(carousel);",
                     "",
                     "var navBar = this.getNavBar();",
-                    "navBar.leftBox.query('button')[1].hide();"
+                    "navBar.leftBox.query('button')[1].hide();",
+                    "",
+                    "MyApp.app.incrementPagesFromHome();"
                 ],
                 "name": "itemtap"
             },
@@ -2006,12 +2024,12 @@
                     "",
                     "Ext.Viewport.setMasked(false);",
                     "",
-                    "MyApp.app.setDouble(true);",
-                    "",
                     "this.getMainView().push(carousel);",
                     "",
                     "var navBar = this.getNavBar();",
-                    "navBar.leftBox.query('button')[1].hide();"
+                    "navBar.leftBox.query('button')[1].hide();",
+                    "",
+                    "MyApp.app.incrementPagesFromHome();"
                 ],
                 "name": "check"
             },
@@ -2071,6 +2089,7 @@
                     "    var navBar = this.getNavBar();",
                     "    navBar.leftBox.query('button')[0].hide();",
                     "    navBar.leftBox.query('button')[1].show();",
+                    "    ",
                     "}"
                 ],
                 "name": "itemtap"
@@ -2218,12 +2237,12 @@
                     "",
                     "Ext.Viewport.setMasked(false);",
                     "",
-                    "MyApp.app.setDouble(true);",
-                    "",
                     "this.getMainView().push(panel);",
                     "",
                     "var navBar = this.getNavBar();",
-                    "navBar.leftBox.query('button')[1].hide();"
+                    "navBar.leftBox.query('button')[1].hide();",
+                    "",
+                    "MyApp.app.incrementPagesFromHome();"
                 ],
                 "name": "check"
             },
@@ -2292,12 +2311,12 @@
                     "",
                     "Ext.Viewport.setMasked(false);",
                     "",
-                    "MyApp.app.setDouble(true);",
-                    "",
                     "this.getMainView().push(panel);",
                     "",
                     "var navBar = this.getNavBar();",
-                    "navBar.leftBox.query('button')[1].hide();"
+                    "navBar.leftBox.query('button')[1].hide();",
+                    "",
+                    "MyApp.app.incrementPagesFromHome();"
                 ],
                 "name": "itemtap"
             },
@@ -2471,12 +2490,12 @@
                     "",
                     "Ext.Viewport.setMasked(false);",
                     "",
-                    "MyApp.app.setDouble(true);",
-                    "",
                     "this.getMainView().push(panel);",
                     "",
                     "var navBar = this.getNavBar();",
-                    "navBar.leftBox.query('button')[1].hide();"
+                    "navBar.leftBox.query('button')[1].hide();",
+                    "",
+                    "MyApp.app.incrementPagesFromHome();"
                 ],
                 "name": "itemtap"
             },
@@ -2755,7 +2774,9 @@
                     "this.getMainView().push(details);",
                     "",
                     "var navBar = this.getNavBar();",
-                    "navBar.leftBox.query('button')[1].hide();"
+                    "navBar.leftBox.query('button')[1].hide();",
+                    "",
+                    "MyApp.app.incrementPagesFromHome();"
                 ],
                 "name": "itemtap"
             },
@@ -2894,7 +2915,9 @@
                     "this.getMainView().push(details);",
                     "",
                     "var navBar = this.getNavBar();",
-                    "navBar.leftBox.query('button')[1].hide();"
+                    "navBar.leftBox.query('button')[1].hide();",
+                    "",
+                    "MyApp.app.incrementPagesFromHome();"
                 ],
                 "name": "tap"
             },

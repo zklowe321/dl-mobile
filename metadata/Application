@@ -18,7 +18,6 @@
         "email": " ",
         "id": "-1",
         "industry_id": "-1",
-        "isDouble": false,
         "models": [
             "Search",
             "Detail",
@@ -48,6 +47,7 @@
             "ScenarioBaselines"
         ],
         "name": "MyApp",
+        "pagesFromHome": "0",
         "stores": [
             "SearchStore",
             "DetailStore",
@@ -146,11 +146,6 @@
         },
         {
             "group": "(Custom Properties)",
-            "name": "isDouble",
-            "type": "string"
-        },
-        {
-            "group": "(Custom Properties)",
             "name": "accountName",
             "type": "string"
         },
@@ -162,6 +157,11 @@
         {
             "group": "(Custom Properties)",
             "name": "email",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "pagesFromHome",
             "type": "string"
         }
     ],
@@ -405,39 +405,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|params": [
-                    "isDouble"
-                ],
-                "fn": "setDouble",
-                "implHandler": [
-                    "this.isDouble = isDouble;"
-                ]
-            },
-            "designerId": "de881a96-192a-45a8-9dcb-daa258b1f882"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "getDouble",
-                "implHandler": [
-                    "return this.isDouble;"
-                ]
-            },
-            "designerId": "008c38c1-075b-435a-80b6-e12d41a8049c"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "fn": "getUserName",
                 "implHandler": [
                     "return this.userName;"
@@ -528,6 +495,69 @@
                 ]
             },
             "designerId": "aa8fe966-e302-4046-b694-fddc9fda0da7"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getPagesFromHome",
+                "implHandler": [
+                    "return this.pagesFromHome;"
+                ]
+            },
+            "designerId": "caa3f627-bfb6-4476-b6d5-960cfc3c7dd3"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "pagesFromHome"
+                ],
+                "fn": "setPagesFromHome",
+                "implHandler": [
+                    "this.pagesFromHome = pagesFromHome;"
+                ]
+            },
+            "designerId": "a036b1f3-baba-4871-a970-d50d65054f93"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "incrementPagesFromHome",
+                "implHandler": [
+                    "this.pagesFromHome++;"
+                ]
+            },
+            "designerId": "09abe187-7742-438b-be7a-76a173b05ece"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "decrementPagesFromHome",
+                "implHandler": [
+                    "this.pagesFromHome--;"
+                ]
+            },
+            "designerId": "1d7ec0df-e8a9-444a-a91b-7fe3cd5aa6a8"
         }
     ]
 }
