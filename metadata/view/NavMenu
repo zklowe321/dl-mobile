@@ -1,5 +1,5 @@
 {
-    "type": "Ext.Sheet",
+    "type": "Ext.Panel",
     "reference": {
         "name": "items",
         "type": "array"
@@ -8,15 +8,16 @@
     "userConfig": {
         "designer|userAlias": "navmenu",
         "designer|userClassName": "NavMenu",
-        "enter": "left",
-        "exit": "left",
         "fullscreen": false,
         "hidden": true,
         "hideOnMaskTap": true,
         "itemId": "navMenu",
         "layout": "vbox",
+        "left": 0,
+        "margin": null,
         "mixins": null,
-        "stretchY": true
+        "modal": true,
+        "padding": 10
     },
     "designerId": "8ae7c193-80e3-4bbe-8ded-2399a0b1a276",
     "cn": [
@@ -29,6 +30,7 @@
             "codeClass": null,
             "userConfig": {
                 "iconCls": "home",
+                "margin": 5,
                 "navView": "homepanel",
                 "text": "Home"
             },
@@ -50,8 +52,10 @@
             "codeClass": null,
             "userConfig": {
                 "iconCls": "search",
+                "margin": 5,
                 "navView": "searchpanel",
-                "text": "Search"
+                "padding": null,
+                "text": "Accounts"
             },
             "designerId": "41d7fe24-3283-4095-aa3e-aee894380e5a",
             "customConfigs": [

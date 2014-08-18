@@ -28,7 +28,6 @@ Ext.define('MyApp.view.SearchPanel', {
 
     config: {
         navView: 'searchpanel',
-        activeItem: 1,
         tabBar: {
             docked: 'top',
             layout: {

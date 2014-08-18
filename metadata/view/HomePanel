@@ -44,12 +44,15 @@
                     "codeClass": null,
                     "userConfig": {
                         "baseCls": null,
-                        "height": "22%",
+                        "centered": false,
+                        "height": 10,
                         "imageCls": null,
                         "layout|flex": 1,
                         "margin": null,
+                        "padding": null,
                         "src": "http://test.decisionlink.com/images/Logo_Actual_Size_VSA.png",
-                        "width": "100%"
+                        "width": null,
+                        "zIndex": null
                     },
                     "designerId": "64614e8b-276e-434b-8636-804ad6dee90b"
                 },
@@ -61,6 +64,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "hidden": true,
                         "itemId": "accountContainer",
                         "layout|flex": null
                     },
@@ -171,6 +175,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "hidden": false,
                         "itemId": "VPListContainer",
                         "layout": "fit",
                         "layout|flex": 2

@@ -74457,12 +74457,13 @@ Ext.define('MyApp.view.HomePanel', {
                     {
                         xtype: 'image',
                         flex: 1,
-                        height: '22%',
-                        width: '100%',
+                        centered: false,
+                        height: 10,
                         src: 'http://test.decisionlink.com/images/Logo_Actual_Size_VSA.png'
                     },
                     {
                         xtype: 'container',
+                        hidden: true,
                         itemId: 'accountContainer',
                         items: [
                             {
@@ -74509,6 +74510,7 @@ Ext.define('MyApp.view.HomePanel', {
                     {
                         xtype: 'container',
                         flex: 2,
+                        hidden: false,
                         itemId: 'VPListContainer',
                         layout: 'fit',
                         items: [
@@ -74624,7 +74626,7 @@ Ext.define('MyApp.view.MainView', {
  */
 
 Ext.define('MyApp.view.NavMenu', {
-    extend:  Ext.Sheet ,
+    extend:  Ext.Panel ,
     alias: 'widget.navmenu',
 
                
@@ -74635,29 +74637,25 @@ Ext.define('MyApp.view.NavMenu', {
         fullscreen: false,
         hidden: true,
         itemId: 'navMenu',
+        left: 0,
+        padding: 10,
         hideOnMaskTap: true,
         layout: 'vbox',
-        enter: 'left',
-        exit: 'left',
-        stretchY: true,
+        modal: true,
         items: [
             {
                 xtype: 'button',
                 navView: 'homepanel',
+                margin: 5,
                 iconCls: 'home',
                 text: 'Home'
             },
             {
                 xtype: 'button',
                 navView: 'searchpanel',
+                margin: 5,
                 iconCls: 'search',
-                text: 'Search'
-            },
-            {
-                xtype: 'button',
-                navView: 'supportpanel',
-                iconCls: 'team',
-                text: 'Support'
+                text: 'Accounts'
             }
         ]
     }
@@ -75909,6 +75907,7 @@ Ext.define('MyApp.controller.Navigation', {
             }
 
             var container = homePanel.child('#homeContainer').child('#accountContainer');
+            container.setHidden(false);
 
             container.child('#accountNameField').setValue(account_name);
             container.child('#userNameField').setValue(user_name);
@@ -75932,17 +75931,19 @@ Ext.define('MyApp.controller.Navigation', {
             homePanel = this.getHomePanel(),
             me = this;
 
+
         if (validated) {
             rightButton = navBar.rightBox.query('button')[0];
             if (rightButton) {
                 rightButton.destroy();
             }
 
-            var container = homePanel.child('#homeContainer').child('#accountContainer');
+            var accountContainer = newActiveItem.child('#homeContainer').child('#accountContainer');
+            accountContainer.setHidden(false);
 
-            container.child('#accountNameField').setValue(account_name);
-            container.child('#userNameField').setValue(user_name);
-            container.child('#emailField').setValue(email);
+            accountContainer.child('#accountNameField').setValue(account_name);
+            accountContainer.child('#userNameField').setValue(user_name);
+            accountContainer.child('#emailField').setValue(email);
 
         }
     },
@@ -76729,11 +76730,11 @@ Ext.define('MyApp.view.SearchPanel', {
 
                
                       
+                            
+                        
                            
                             
-                           
-                            
-                       
+                          
       
 
     config: {
@@ -76746,6 +76747,22 @@ Ext.define('MyApp.view.SearchPanel', {
             }
         },
         items: [
+            {
+                xtype: 'container',
+                title: 'Saved',
+                itemId: 'savedPanel',
+                layout: 'fit',
+                items: [
+                    {
+                        xtype: 'list',
+                        itemId: 'savedList',
+                        itemTpl: [
+                            '<div class=“info” width=“40” height=“40”/>Name: {name}<br/><small>Revenue: ${revenue} M</small>'
+                        ],
+                        store: 'SavedStore'
+                    }
+                ]
+            },
             {
                 xtype: 'container',
                 title: 'Search',
@@ -76799,22 +76816,6 @@ Ext.define('MyApp.view.SearchPanel', {
                                 store: 'SearchStore'
                             }
                         ]
-                    }
-                ]
-            },
-            {
-                xtype: 'container',
-                title: 'Saved',
-                itemId: 'savedPanel',
-                layout: 'fit',
-                items: [
-                    {
-                        xtype: 'list',
-                        itemId: 'savedList',
-                        itemTpl: [
-                            '<div class=“info” width=“40” height=“40”/>Name: {name}<br/><small>Revenue: ${revenue} M</small>'
-                        ],
-                        store: 'SavedStore'
                     }
                 ]
             }

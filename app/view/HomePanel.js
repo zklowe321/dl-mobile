@@ -37,12 +37,13 @@ Ext.define('MyApp.view.HomePanel', {
                     {
                         xtype: 'image',
                         flex: 1,
-                        height: '22%',
-                        width: '100%',
+                        centered: false,
+                        height: 10,
                         src: 'http://test.decisionlink.com/images/Logo_Actual_Size_VSA.png'
                     },
                     {
                         xtype: 'container',
+                        hidden: true,
                         itemId: 'accountContainer',
                         items: [
                             {
@@ -89,6 +90,7 @@ Ext.define('MyApp.view.HomePanel', {
                     {
                         xtype: 'container',
                         flex: 2,
+                        hidden: false,
                         itemId: 'VPListContainer',
                         layout: 'fit',
                         items: [

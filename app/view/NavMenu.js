@@ -14,7 +14,7 @@
  */
 
 Ext.define('MyApp.view.NavMenu', {
-    extend: 'Ext.Sheet',
+    extend: 'Ext.Panel',
     alias: 'widget.navmenu',
 
     requires: [
@@ -25,23 +25,25 @@ Ext.define('MyApp.view.NavMenu', {
         fullscreen: false,
         hidden: true,
         itemId: 'navMenu',
+        left: 0,
+        padding: 10,
         hideOnMaskTap: true,
         layout: 'vbox',
-        enter: 'left',
-        exit: 'left',
-        stretchY: true,
+        modal: true,
         items: [
             {
                 xtype: 'button',
                 navView: 'homepanel',
+                margin: 5,
                 iconCls: 'home',
                 text: 'Home'
             },
             {
                 xtype: 'button',
                 navView: 'searchpanel',
+                margin: 5,
                 iconCls: 'search',
-                text: 'Search'
+                text: 'Accounts'
             }
         ]
     }

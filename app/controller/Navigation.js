@@ -1243,6 +1243,7 @@ Ext.define('MyApp.controller.Navigation', {
             }
 
             var container = homePanel.child('#homeContainer').child('#accountContainer');
+            container.setHidden(false);
 
             container.child('#accountNameField').setValue(account_name);
             container.child('#userNameField').setValue(user_name);
@@ -1266,17 +1267,19 @@ Ext.define('MyApp.controller.Navigation', {
             homePanel = this.getHomePanel(),
             me = this;
 
+
         if (validated) {
             rightButton = navBar.rightBox.query('button')[0];
             if (rightButton) {
                 rightButton.destroy();
             }
 
-            var container = homePanel.child('#homeContainer').child('#accountContainer');
+            var accountContainer = newActiveItem.child('#homeContainer').child('#accountContainer');
+            accountContainer.setHidden(false);
 
-            container.child('#accountNameField').setValue(account_name);
-            container.child('#userNameField').setValue(user_name);
-            container.child('#emailField').setValue(email);
+            accountContainer.child('#accountNameField').setValue(account_name);
+            accountContainer.child('#userNameField').setValue(user_name);
+            accountContainer.child('#emailField').setValue(email);
 
         }
     },
