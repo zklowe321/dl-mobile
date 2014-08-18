@@ -10,13 +10,6 @@
         "designer|userClassName": "AssetDetailPanel"
     },
     "designerId": "9e0ba280-2e0d-4da9-9e27-fbe45d83ef3a",
-    "customConfigs": [
-        {
-            "group": "(Custom Properties)",
-            "name": "downloadUrl",
-            "type": "string"
-        }
-    ],
     "cn": [
         {
             "type": "Ext.field.Text",
@@ -75,7 +68,38 @@
                 "src": "http://test.decisionlink.com/images/logo.png",
                 "width": 40
             },
-            "designerId": "e9d9dfad-ef1c-41f8-b9a7-af60c477bf2b"
+            "designerId": "e9d9dfad-ef1c-41f8-b9a7-af60c477bf2b",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "downloadUrl",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "designerId": "29086aaf-5ffc-441f-9882-4557231293bd"
+        },
+        {
+            "type": "Ext.Label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "Click icon to download:"
+            },
+            "designerId": "ce9b3949-0336-4aac-926f-afa1535982f0"
         }
     ]
 }

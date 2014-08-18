@@ -192,6 +192,9 @@ Ext.define('MyApp.controller.Navigation', {
             },
             "homepanel": {
                 activate: 'onHomePanelActivate'
+            },
+            "assetdetailpanel #downloadImage": {
+                tap: 'onDownloadImageTap'
             }
         }
     },
@@ -719,6 +722,7 @@ Ext.define('MyApp.controller.Navigation', {
         details.child('#assetNameField').setValue(name);
         details.child('#assetDescriptionField').setValue(description);
         details.child('#downloadImage').setSrc(icon);
+        details.child('#downloadImage').downloadUrl = url;
 
         Ext.Viewport.setMasked(false);
 
@@ -1305,6 +1309,14 @@ Ext.define('MyApp.controller.Navigation', {
             accountContainer.child('#emailField').setValue(email);
 
         }
+    },
+
+    onDownloadImageTap: function(image, e, eOpts) {
+        var url = image.downloadUrl;
+
+        console.log('button tapped');
+
+        window.open(url);
     },
 
     getSavedAccounts: function(id, callback) {

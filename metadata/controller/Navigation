@@ -789,6 +789,32 @@
             "designerId": "eee64b3d-2ca2-4cce-a850-3218932f0cc3"
         },
         {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "vpList",
+                "selector": "homepanel #homeContainer #VPListContainer #VPList"
+            },
+            "designerId": "e5397cc1-2b63-477d-acef-a04c973ef61f"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "homePanel",
+                "selector": "homepanel"
+            },
+            "designerId": "16377119-3883-47aa-afad-9bd4af458d2a"
+        },
+        {
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -1851,6 +1877,7 @@
                     "details.child('#assetNameField').setValue(name);",
                     "details.child('#assetDescriptionField').setValue(description);",
                     "details.child('#downloadImage').setSrc(icon);",
+                    "details.child('#downloadImage').downloadUrl = url;",
                     "",
                     "Ext.Viewport.setMasked(false);",
                     "",
@@ -3279,32 +3306,6 @@
             "designerId": "c919a0a2-f230-4b79-8c4f-481834e9f2a3"
         },
         {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "ref": "vpList",
-                "selector": "homepanel #homeContainer #VPListContainer #VPList"
-            },
-            "designerId": "e5397cc1-2b63-477d-acef-a04c973ef61f"
-        },
-        {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "ref": "homePanel",
-                "selector": "homepanel"
-            },
-            "designerId": "16377119-3883-47aa-afad-9bd4af458d2a"
-        },
-        {
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -3390,6 +3391,28 @@
                 "name": "activate"
             },
             "designerId": "c3da6122-6105-4dbf-bdd6-1c0488f396ab"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "assetdetailpanel #downloadImage",
+                "designer|targetType": "Ext.Img",
+                "fn": "onDownloadImageTap",
+                "implHandler": [
+                    "var url = image.downloadUrl;",
+                    "",
+                    "console.log('button tapped');",
+                    "",
+                    "window.open(url);"
+                ],
+                "name": "tap"
+            },
+            "designerId": "3961ff52-bbc2-458d-a06b-b7d8b17e5b1e"
         }
     ]
 }

@@ -20,7 +20,8 @@ Ext.define('MyApp.view.AssetDetailPanel', {
     requires: [
         'Ext.Spacer',
         'Ext.field.TextArea',
-        'Ext.Img'
+        'Ext.Img',
+        'Ext.Label'
     ],
 
     config: {
@@ -51,6 +52,14 @@ Ext.define('MyApp.view.AssetDetailPanel', {
                 margin: 10,
                 width: 40,
                 src: 'http://test.decisionlink.com/images/logo.png'
+            },
+            {
+                xtype: 'spacer',
+                height: 10
+            },
+            {
+                xtype: 'label',
+                html: 'Click icon to download:'
             }
         ]
     }
