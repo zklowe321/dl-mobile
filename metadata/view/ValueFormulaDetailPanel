@@ -1,0 +1,258 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "alt_metric_id": "0",
+        "designer|userAlias": "valueformuladetailpanel",
+        "designer|userClassName": "ValueFormulaDetailPanel",
+        "scrollable": "vertical"
+    },
+    "designerId": "b0fa8f8f-45e2-4c4d-b598-924e731078ba",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "alt_metric_id",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "metricField",
+                "label": "Metric",
+                "labelWidth": "40%",
+                "labelWrap": true,
+                "readOnly": true
+            },
+            "designerId": "236c50ed-aa40-4c15-aaad-746f7a1b6268"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "designerId": "71173165-6411-4422-9112-5009e4bb2e2d"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "driverFactorField",
+                "label": "Driver Factor",
+                "labelWidth": "40%",
+                "labelWrap": true,
+                "readOnly": true
+            },
+            "designerId": "a089c64f-cd5b-4d68-bb27-ddb8f8bab8a1"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "driverFactorValueField",
+                "label": "Value",
+                "labelWidth": "40%",
+                "labelWrap": true,
+                "margin": 10,
+                "padding": null
+            },
+            "designerId": "f26d3d99-c283-4ed4-9ed2-39e4d3b7a0a5"
+        },
+        {
+            "type": "Ext.field.Spinner",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "improveFactorSpinner",
+                "label": "Improve Factor",
+                "labelWidth": "40%",
+                "labelWrap": true
+            },
+            "designerId": "3ebee1a1-3f8f-4e9a-89ce-1b5320a4f85c"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "improveFactorUnitField",
+                "label": "Unit",
+                "labelWidth": "40%",
+                "labelWrap": true,
+                "margin": 10,
+                "readOnly": true
+            },
+            "designerId": "bac9573a-4818-4827-a135-6ecbc5807806"
+        },
+        {
+            "type": "Ext.field.Select",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "sourceSelectField",
+                "label": "Source",
+                "labelWidth": "40%",
+                "options": [
+                    "[{",
+                    "    text: 'Choose Source',",
+                    "    value: 0",
+                    "}, {",
+                    "    text: 'Customer',",
+                    "    value: 1",
+                    "}, {",
+                    "    text: 'Estimate',",
+                    "    value: 2",
+                    "}, {",
+                    "    text: 'Research',",
+                    "    value: 3",
+                    "}]"
+                ]
+            },
+            "designerId": "b7186331-243e-42ff-a12d-6f437e004a82"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "designerId": "115895f5-5dd2-4c38-b8af-da56e7ac826e"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "financialFactorField",
+                "label": "Financial Factor",
+                "labelWidth": "40%",
+                "labelWrap": true,
+                "readOnly": true
+            },
+            "designerId": "0955d4ae-62b1-459b-8423-3d99f925bcfd"
+        },
+        {
+            "type": "Ext.field.Spinner",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "financialFactorValueSpinner",
+                "label": "Value",
+                "labelWidth": "40%",
+                "labelWrap": true,
+                "left": null,
+                "margin": 10,
+                "stepValue": 1
+            },
+            "designerId": "af4a369f-20f4-42b9-8fe9-5bff2d1117c3"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "designerId": "a3163793-7e9d-4786-bced-3591ee1971d6"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "valueFormulaTotalField",
+                "label": "Total",
+                "labelWidth": "40%",
+                "readOnly": true
+            },
+            "designerId": "5cd57324-2126-48c6-817c-bbcc5e37b3d1"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "saveValueFormulaButton",
+                "margin": 10,
+                "padding": null,
+                "text": "Save Value Formula"
+            },
+            "designerId": "5e839730-80c7-404d-8929-e006624d8be8"
+        },
+        {
+            "type": "Ext.field.Hidden",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "metricIdField"
+            },
+            "designerId": "6b650355-438c-44d4-b281-8d39edc2c190"
+        },
+        {
+            "type": "Ext.field.Hidden",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "unitTypeIdField"
+            },
+            "designerId": "c1e85829-5f84-49fb-823d-333264eba7f2"
+        }
+    ]
+}

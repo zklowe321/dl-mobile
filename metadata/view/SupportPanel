@@ -1,0 +1,223 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "supportpanel",
+        "designer|userClassName": "SupportPanel",
+        "navView": "supportpanel",
+        "scrollable": "vertical"
+    },
+    "designerId": "4c87d346-eddf-468c-a499-b8f727f860ec",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "navView",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.field.Select",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "prioritySelectField",
+                "label": "Priority",
+                "labelWidth": "40%",
+                "options": [
+                    "[{",
+                    "    text: '-None-',",
+                    "    value: 0",
+                    "}, {",
+                    "    text: 'High',",
+                    "    value: 1",
+                    "}, {",
+                    "    text: 'Medium',",
+                    "    value: 2",
+                    "}, {",
+                    "    text: 'Low',",
+                    "    value: 3",
+                    "}]"
+                ]
+            },
+            "designerId": "abe4accb-948f-4f18-af6e-c7969513d05b"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "designerId": "081ea1c0-29ca-4d99-aea4-62673c28490b"
+        },
+        {
+            "type": "Ext.field.Select",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "typeSelectField",
+                "label": "Type",
+                "labelWidth": "40%",
+                "options": [
+                    "[{",
+                    "    text: '-None-',",
+                    "    value: 0",
+                    "}, {",
+                    "    text: 'Problem',",
+                    "    value: 1",
+                    "}, {",
+                    "    text: 'Feature Request',",
+                    "    value: 2",
+                    "}, {",
+                    "    text: 'Question',",
+                    "    value: 3",
+                    "}]"
+                ]
+            },
+            "designerId": "faf3c5b7-e9a7-4426-93c2-f5ad16e24cef"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "designerId": "ab564a31-343d-4766-ba13-384dd86490ef"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "subjectField",
+                "label": "Subject",
+                "labelWidth": "40%"
+            },
+            "designerId": "a572c2be-c357-45c4-a4c6-ac5f379b6a43"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "designerId": "ce4963aa-2e06-408f-a5f2-19fe6a766c3a"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "reportedByField",
+                "label": "Reported  By",
+                "labelAlign": "top"
+            },
+            "designerId": "427a7485-145b-4cef-a695-fc67c5e28977"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "designerId": "8660afa8-115a-469c-b76c-8c030e0e7f2d"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "emailField",
+                "label": "Email",
+                "labelWidth": "40%"
+            },
+            "designerId": "d913d683-c443-4b6a-a552-c0c0331e4e46"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "designerId": "196993a8-fbf8-422e-b928-7c4c4c17c10c"
+        },
+        {
+            "type": "Ext.field.TextArea",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "label": "Description",
+                "labelAlign": "top"
+            },
+            "designerId": "407692d1-a438-4514-8644-ad5b00bf0f72"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "designerId": "6bb74ec3-1282-4921-8121-6e28f5c257e3"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "submitButton",
+                "margin": 10,
+                "text": "Submit"
+            },
+            "designerId": "490ab9b0-bc90-49f2-8413-4d5138c4ed03"
+        }
+    ]
+}

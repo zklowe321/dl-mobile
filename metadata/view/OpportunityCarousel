@@ -1,0 +1,818 @@
+{
+    "type": "Ext.carousel.Carousel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "opportunitycarousel",
+        "designer|userClassName": "OpportunityCarousel"
+    },
+    "designerId": "bfe55c23-0199-4c99-8e01-5482cd4eee27",
+    "cn": [
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "opportunityOverviewPanel",
+                "layout": null,
+                "scrollable": "vertical"
+            },
+            "designerId": "f36b679c-1f92-4f8b-ac0d-4130715a7ee4",
+            "cn": [
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "yr1CostsField",
+                        "label": "Year 1 Costs",
+                        "labelWidth": "40%",
+                        "labelWrap": true,
+                        "readOnly": true
+                    },
+                    "designerId": "78f67e89-2f4e-4704-853a-2a180ceeb891"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "ongoingCostsField",
+                        "label": "Ongoing Costs",
+                        "labelWidth": "40%",
+                        "labelWrap": true,
+                        "readOnly": true
+                    },
+                    "designerId": "002ccf77-8435-4f8d-8614-2e202c1178f4"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "yr1BenefitsField",
+                        "label": "Year 1 Benefits",
+                        "labelWidth": "40%",
+                        "labelWrap": true,
+                        "readOnly": true
+                    },
+                    "designerId": "8032cb20-4fd0-42e1-9bb1-f23bf99c367f"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "yr2BenefitsField",
+                        "label": "Year 2 Benefits",
+                        "labelWidth": "40%",
+                        "labelWrap": true,
+                        "readOnly": true
+                    },
+                    "designerId": "8f825bf1-d782-483a-96c9-95b0d4b911b3"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "yr3BenefitsField",
+                        "label": "Year 3 Benefits",
+                        "labelWidth": "40%",
+                        "labelWrap": true,
+                        "readOnly": true
+                    },
+                    "designerId": "cdcc7ed1-2ecd-4f47-975e-45866fb2d27e"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "waccField",
+                        "label": "Customer Cost of Capital (%)",
+                        "labelWidth": "40%",
+                        "labelWrap": true,
+                        "readOnly": true
+                    },
+                    "designerId": "678b88b7-e52b-4528-94da-e529b898dbe9"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "termField",
+                        "label": "Term (Years)",
+                        "labelWidth": "40%",
+                        "labelWrap": true,
+                        "readOnly": true
+                    },
+                    "designerId": "a13b2abc-b682-4517-9336-6943efe8baaf"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "burField",
+                        "label": "Business Unit Revenue (M)",
+                        "labelWidth": "40%",
+                        "labelWrap": true,
+                        "readOnly": true
+                    },
+                    "designerId": "2beec6ed-e425-4cfc-86f3-d80db7f056dc"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "imageContainer"
+                    },
+                    "designerId": "c3e69a56-3331-4e6d-a434-7a89405cfafb",
+                    "cn": [
+                        {
+                            "type": "Ext.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "Cost Status"
+                            },
+                            "designerId": "eae54198-667a-42c2-89aa-3731c3409132"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 60,
+                                "itemId": "costLightImage",
+                                "margin": 10,
+                                "src": "http://beta.decisionlink.com/images/logo.png",
+                                "width": 60
+                            },
+                            "designerId": "63305871-7982-46e8-98cb-6fb65e080e45"
+                        },
+                        {
+                            "type": "Ext.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "Benefit Status"
+                            },
+                            "designerId": "1ef32a90-7b6d-40e9-ab40-450a936f19d4"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 60,
+                                "itemId": "benefitLightImage",
+                                "margin": 10,
+                                "src": "http://beta.decisionlink.com/images/logo.png",
+                                "width": 60
+                            },
+                            "designerId": "138fd2ef-e3e1-4e8f-a77e-7b0e1c80271b"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "opportunitySituationPanel",
+                "layout": null,
+                "scrollable": "vertical"
+            },
+            "designerId": "44dacd45-0242-4daa-991a-ff04c83f7f6e",
+            "cn": [
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "customerTypeField",
+                        "label": "Customer Type",
+                        "labelWidth": "40%",
+                        "labelWrap": true,
+                        "options": [
+                            "[{",
+                            "    text: 'Net New Customer',",
+                            "    value: 1",
+                            "}, {",
+                            "    text: 'Install Base',",
+                            "    value: 2",
+                            "}, {",
+                            "    text: 'Competitive Install',",
+                            "    value: 3",
+                            "}, {",
+                            "    text: 'Upgrade or Renew',",
+                            "    value: 4",
+                            "}]"
+                        ]
+                    },
+                    "designerId": "55b5e817-9340-4a72-934d-a78e3c605ebe"
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 10
+                    },
+                    "designerId": "724b135b-d98e-4f12-a512-dbe3496714b7"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Competing Against",
+                        "labelWidth": "100%",
+                        "readOnly": true
+                    },
+                    "designerId": "7ee6bc74-2e2b-4353-a41f-1728e22d610d"
+                },
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 100,
+                        "itemId": "competitorsList",
+                        "store": "ScenarioCompetitorsStore"
+                    },
+                    "designerId": "a82dcef9-3173-4d40-9dfe-3250def048c7",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=“info” width=“40” height=“40”/>{name}<br/>"
+                                ]
+                            },
+                            "designerId": "8b3d6103-e1e7-4b8a-a83c-630e5feeb01d"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 10
+                    },
+                    "designerId": "56cecd97-5479-4a07-8bad-ebcaaa5b7cf5"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Industries",
+                        "labelWidth": "100%",
+                        "readOnly": true
+                    },
+                    "designerId": "d98070f0-121f-4e4e-9727-dcca8f11ee70"
+                },
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 100,
+                        "itemId": "industriesList",
+                        "store": "ScenarioIndustriesStore"
+                    },
+                    "designerId": "5ff11622-be32-4bab-9df3-e3c86544ee99",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=“info” width=“40” height=“40”/>{name}<br/>"
+                                ]
+                            },
+                            "designerId": "a466b019-8ede-4b4d-a145-a1aa738320eb"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 10
+                    },
+                    "designerId": "13f76389-f891-4f05-93a6-63a5b2b43884"
+                },
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "name",
+                        "itemId": "sellingIntoField",
+                        "label": "Selling Into",
+                        "labelWidth": "40%",
+                        "labelWrap": true,
+                        "store": "ScenarioAreasStore",
+                        "valueField": "id"
+                    },
+                    "designerId": "042eb3fd-5fb0-48d1-9663-b9cee1667ff6"
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 10
+                    },
+                    "designerId": "a4666192-6364-4b88-b888-9970cea6bd7f"
+                },
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "name",
+                        "itemId": "baselinesField",
+                        "label": "Baselines",
+                        "labelWidth": "40%",
+                        "options": null,
+                        "store": "ScenarioBaselinesStore",
+                        "valueField": "id"
+                    },
+                    "designerId": "05af5183-277c-48f6-a606-e3d44404f10c"
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 10
+                    },
+                    "designerId": "56abb5e9-6531-4c4f-97f2-d8f2fd9a93f8"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "costOfCapitalField",
+                        "label": "Cost of Capital %",
+                        "labelWidth": "40%",
+                        "labelWrap": true
+                    },
+                    "designerId": "bde9ae51-db39-48ae-a67a-19944cd132fc"
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 10
+                    },
+                    "designerId": "ed34725c-94c3-47a6-84d8-4468cfb33209"
+                },
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "termField",
+                        "label": "Term",
+                        "labelWidth": "40%",
+                        "options": [
+                            "[{",
+                            "    text: '1 Year',",
+                            "    value: 1",
+                            "}, {",
+                            "    text: '3 Years',",
+                            "    value: 3",
+                            "}, {",
+                            "    text: '5 Years',",
+                            "    value: 5",
+                            "}]"
+                        ]
+                    },
+                    "designerId": "dbf9b595-828b-4230-a5a9-f0892f42ec0f"
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 10
+                    },
+                    "designerId": "b71ab7b1-111e-4bdc-be10-b11349fd909c"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "centered": false,
+                        "itemId": "saveSituationButton",
+                        "left": null,
+                        "margin": 10,
+                        "text": "Save Situation"
+                    },
+                    "designerId": "42d5deb4-df9c-4461-8b5f-73d85c5ed5ee"
+                },
+                {
+                    "type": "Ext.dataview.DataView",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "scenarioField",
+                        "store": "ScenarioStore"
+                    },
+                    "designerId": "c7b03ff0-c837-415a-8cf0-70e4770db430",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div>Data View Item {string}</div>"
+                                ]
+                            },
+                            "designerId": "6227c175-3a5d-4690-b450-a5f689e48dc8"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "opportunitySalesQPanel",
+                "layout": "vbox"
+            },
+            "designerId": "da73016b-7044-43d2-aa38-bdfaf3a05647",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": "50%",
+                        "itemId": "sqqContainer",
+                        "layout": "fit",
+                        "layout|flex": 3
+                    },
+                    "designerId": "a292b2f2-92bc-4b8a-972d-656fbd3b73a2",
+                    "cn": [
+                        {
+                            "type": "Ext.dataview.List",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "salesQuestionsList",
+                                "store": "SalesQuestionsStore"
+                            },
+                            "designerId": "199317e1-f528-4032-a26b-91ee4f13cacc",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "<div class=“info” width=“40” height=“40”/>{name}<br/>"
+                                        ]
+                                    },
+                                    "designerId": "269b3f88-e1e5-47cb-bc07-3c13b3c1431a"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": "50%",
+                        "html": null,
+                        "itemId": "secondarySQQContainer",
+                        "layout": "fit",
+                        "layout|flex": 3
+                    },
+                    "designerId": "796fe4ef-65d8-4a98-a225-8a5165fe669f",
+                    "cn": [
+                        {
+                            "type": "Ext.dataview.List",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "secondarySQQList",
+                                "store": "SecondarySQQStore"
+                            },
+                            "designerId": "863a269f-c6de-402b-8125-daf5ca7f06cd",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "<div class=“info” width=“40” height=“40”/>{name}<br/>"
+                                        ]
+                                    },
+                                    "designerId": "2f6cef69-0bda-46f2-990b-4ee7abd6f0c2"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "opportunityFormulaPanel",
+                "layout": "fit"
+            },
+            "designerId": "8097c059-84c4-4496-9909-2c1ca88e5351",
+            "cn": [
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "valueFormulasList",
+                        "store": "ValueFormulasStore"
+                    },
+                    "designerId": "da1b7861-71da-4359-b282-0f8f24dd5472",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=“info” width=“40” height=“40”/>{metric}<br/>"
+                                ]
+                            },
+                            "designerId": "6bc7031b-69a2-40d7-9ad9-132ff0dcf521"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "opportunityQuotePanel",
+                "layout": "fit"
+            },
+            "designerId": "42a49672-e287-4b41-af7b-768a951da211",
+            "cn": [
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "opportunityCostsList",
+                        "store": "OpportunityCostsStore"
+                    },
+                    "designerId": "284ce52b-0e64-4636-b2db-9f3600ff2039",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=“info” width=“40” height=“40”/>{name}<br/><small>Cost: ${cost}</small>"
+                                ]
+                            },
+                            "designerId": "36db11f3-11e5-404e-8f25-5f029752ec45"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "opportunityAssetsPanel",
+                "layout": "fit"
+            },
+            "designerId": "c6f45014-4034-49b6-9441-96425794762e",
+            "cn": [
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "opportunityAssetsList",
+                        "store": "AssetsStore"
+                    },
+                    "designerId": "0a37db59-bada-42ab-98d5-f3ae23eecee2",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=“info” width=“40” height=“40”/>{name}<img src={icon} align=\"right\"/>"
+                                ]
+                            },
+                            "designerId": "774694f6-26a0-482e-80cf-ba31c5f768f8"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

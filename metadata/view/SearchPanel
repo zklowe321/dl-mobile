@@ -1,0 +1,210 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "activeItem": 1,
+        "designer|userAlias": "searchpanel",
+        "designer|userClassName": "SearchPanel",
+        "id": null,
+        "navView": "searchpanel"
+    },
+    "designerId": "6e3dddb5-c215-444e-a31a-f792f1c5e990",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "navView",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.tab.Bar",
+            "reference": {
+                "name": "tabBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|pack": "center",
+                "docked": "top"
+            },
+            "designerId": "0c42aacc-f44e-4245-b8a3-758fb6e2492e"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": null,
+                "itemId": "savedPanel",
+                "layout": "fit",
+                "title": "Saved"
+            },
+            "designerId": "19417599-5ed5-481c-b9c2-d61491a1b403",
+            "cn": [
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|createAlias": null,
+                        "height": null,
+                        "id": null,
+                        "itemId": "savedList",
+                        "store": "SavedStore"
+                    },
+                    "designerId": "4dd2e1ea-c895-41d5-93f2-90fbffe367c2",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=“info” width=“40” height=“40”/>Name: {name}<br/><small>Revenue: ${revenue} M</small>"
+                                ]
+                            },
+                            "designerId": "179840e7-f878-44b7-bc7d-2587ddfd9a6a"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": null,
+                "itemId": "searchPanel",
+                "layout": "vbox",
+                "title": "Search"
+            },
+            "designerId": "89f9fe46-a4ff-4c07-88c5-c27717f67561",
+            "cn": [
+                {
+                    "type": "Ext.field.Search",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": null,
+                        "itemId": "searchField",
+                        "label": "Search",
+                        "placeHolder": "Enter Company"
+                    },
+                    "designerId": "6f060eee-e762-4714-a9c6-a85e82865a0e"
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": null,
+                        "itemId": "myFieldSet",
+                        "layout": "vbox",
+                        "title": ""
+                    },
+                    "designerId": "21955ce4-478f-45f6-8841-5d40f51450b9",
+                    "cn": [
+                        {
+                            "type": "Ext.field.Select",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "itemId": "selectField",
+                                "label": "By:",
+                                "options": [
+                                    "[{",
+                                    "    text: 'Company',",
+                                    "    value: 1",
+                                    "}, {",
+                                    "    text: 'DUNS',",
+                                    "    value: 2",
+                                    "}, {",
+                                    "    text: 'Ticker',",
+                                    "    value: 3",
+                                    "}]"
+                                ]
+                            },
+                            "designerId": "ba799de1-4c00-4a40-98a7-8185cc4fcfce"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "fit",
+                        "layout|flex": 1
+                    },
+                    "designerId": "e254c6d4-df63-45ab-9e13-e499c269fb6d",
+                    "cn": [
+                        {
+                            "type": "Ext.dataview.List",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "id": null,
+                                "itemId": "searchList",
+                                "store": "SearchStore"
+                            },
+                            "designerId": "04134d0e-fa7a-422c-8f1d-eeec3c351eaf",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "<div>{name}</div>"
+                                        ]
+                                    },
+                                    "designerId": "fbba91bb-73fa-48b5-8628-7e60e6b3a38d"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

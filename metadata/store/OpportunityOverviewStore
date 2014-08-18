@@ -1,0 +1,39 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "OpportunityOverviewStore",
+        "model": "OpportunityOverview",
+        "storeId": "OpportunityOverviewStore"
+    },
+    "designerId": "bdafae1b-f640-4e78-b71d-5bd682fdb51b",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "designerId": "0ae66d4e-124f-4956-924a-a1ed2de21966",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "opportunity"
+                    },
+                    "designerId": "ef0fa3e1-637c-474d-8765-db8c41394838"
+                }
+            ]
+        }
+    ]
+}

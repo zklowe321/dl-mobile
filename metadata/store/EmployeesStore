@@ -1,0 +1,40 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "EmployeesStore",
+        "model": "Employees",
+        "storeId": "EmployeesStore"
+    },
+    "designerId": "3039de2e-adaa-4f45-ab51-6b8a3e1d3a69",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "designerId": "e9d3d668-bc98-44d2-9d6a-63dd06548e08",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "executives",
+                        "totalProperty": "totalRecs"
+                    },
+                    "designerId": "d228fe06-3892-4dca-82d9-e6555fcd4f7e"
+                }
+            ]
+        }
+    ]
+}

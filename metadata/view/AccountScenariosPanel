@@ -1,0 +1,54 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "accountscenariospanel",
+        "designer|userClassName": "AccountScenariosPanel",
+        "layout": "fit",
+        "navView": "accountscenariospanel"
+    },
+    "designerId": "f886b761-ae86-4937-a300-d400dd10a905",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "navView",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.dataview.List",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "accountScenariosList",
+                "store": "AccountScenariosStore"
+            },
+            "designerId": "7c0d7ef7-668c-4b71-bfdf-bd75d41541db",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div class=“info” width=“40” height=“40”/>{name}<br/><small>Revenue: ${oppty_revenue}</small>"
+                        ]
+                    },
+                    "designerId": "c86f644a-ec85-49d3-add0-ee52c9ff4dd4"
+                }
+            ]
+        }
+    ]
+}

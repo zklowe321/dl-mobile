@@ -1,0 +1,39 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CompRatiosStore",
+        "model": "CompRatios",
+        "storeId": "CompRatiosStore"
+    },
+    "designerId": "a8001748-3d8e-4f07-bbdf-bf5b2adee8a2",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "designerId": "adfea3da-73c2-4ed3-ad10-b6af3cd6b9a9",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "ratios"
+                    },
+                    "designerId": "7a01c21e-c0e7-4cd0-8a03-939f9ad01b69"
+                }
+            ]
+        }
+    ]
+}

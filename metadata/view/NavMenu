@@ -1,0 +1,66 @@
+{
+    "type": "Ext.Sheet",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "navmenu",
+        "designer|userClassName": "NavMenu",
+        "enter": "left",
+        "exit": "left",
+        "fullscreen": false,
+        "hidden": true,
+        "hideOnMaskTap": true,
+        "itemId": "navMenu",
+        "layout": "vbox",
+        "mixins": null,
+        "stretchY": true
+    },
+    "designerId": "8ae7c193-80e3-4bbe-8ded-2399a0b1a276",
+    "cn": [
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "home",
+                "navView": "homepanel",
+                "text": "Home"
+            },
+            "designerId": "93074142-33b3-4eaa-8067-cf065629f53c",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "navView",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "search",
+                "navView": "searchpanel",
+                "text": "Search"
+            },
+            "designerId": "41d7fe24-3283-4095-aa3e-aee894380e5a",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "navView",
+                    "type": "string"
+                }
+            ]
+        }
+    ]
+}

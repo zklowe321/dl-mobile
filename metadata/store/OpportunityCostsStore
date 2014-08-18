@@ -1,0 +1,40 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "OpportunityCostsStore",
+        "model": "OpportunityCosts",
+        "storeId": "OpportunityCostsStore"
+    },
+    "designerId": "65de5dcd-eae0-4655-bfbb-2a71ca7b93ce",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "designerId": "de26231d-31ae-4ba5-a3c7-c0685cdf70e3",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "costs",
+                        "totalProperty": "totalRecs"
+                    },
+                    "designerId": "d8676c58-39ec-436c-9cae-2c0044dac886"
+                }
+            ]
+        }
+    ]
+}

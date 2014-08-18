@@ -1,0 +1,40 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "SalesQuestionsStore",
+        "model": "SalesQuestions",
+        "storeId": "SalesQuestionsStore"
+    },
+    "designerId": "bbd7922f-4eb1-4616-b8c0-3eb16b1d3165",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "designerId": "3317129d-1a37-4df7-bdfd-abdced40e67c",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "sqqs",
+                        "totalProperty": "totalRecs"
+                    },
+                    "designerId": "ff477e80-67ac-4bfc-bc2f-c1766ce59d17"
+                }
+            ]
+        }
+    ]
+}

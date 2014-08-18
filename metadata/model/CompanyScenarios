@@ -1,0 +1,230 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CompanyScenarios"
+    },
+    "designerId": "210dd61e-d84e-44b6-9552-124c64d4d87e",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "designerId": "9ad54894-c40f-4b39-8028-8ef19eec676b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "designerId": "bcd70d43-599b-4edb-b0f9-4e8baa5e708c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "company_id"
+            },
+            "designerId": "ad36e595-168a-4379-b0f4-a1887986eabd"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "user_id"
+            },
+            "designerId": "89ee0272-209b-4892-a911-ac8d9e034647"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "yr1_benefit_sum"
+            },
+            "designerId": "b15ad9ed-0e21-4059-ae48-38821996b8cb"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "modified"
+            },
+            "designerId": "faceef9b-f627-44f0-a364-43910aac7342"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "company"
+            },
+            "designerId": "ff806fcb-1df2-4072-b1e9-69a88d333da0"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "oppty_revenue"
+            },
+            "designerId": "c0503d5a-60e3-4dbd-a90d-47c4f90d73df"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "wacc"
+            },
+            "designerId": "a0f10385-faaf-42f1-8817-8b953755cff3"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "term"
+            },
+            "designerId": "0371684e-7c11-4d23-aa82-55d4b3374b0a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "yr2_benefit_sum"
+            },
+            "designerId": "13c56c93-8761-468b-a5bb-815eebe089d7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "yr3_benefit_sum"
+            },
+            "designerId": "963c59fa-f947-4346-bcb8-938fc9bc6f18"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "yr4_benefit_sum"
+            },
+            "designerId": "5892ace0-765a-4fb0-bf79-bb2d31dcda75"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "yr5_benefit_sum"
+            },
+            "designerId": "d7bbe1c9-f2f5-4964-870d-812cb49dec51"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "yrx_cost_sum"
+            },
+            "designerId": "c04547ff-be5b-4c59-ab53-6ab00f50240b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "yr1_cost_sum"
+            },
+            "designerId": "57b43374-22c0-45a5-8fd2-09483e5c54c5"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cost_light_image"
+            },
+            "designerId": "85863c91-20b4-4221-8b26-57033546946f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "benefit_light_image"
+            },
+            "designerId": "8c0ae517-3b3f-4d09-aac8-7ff0197dbdeb"
+        }
+    ]
+}

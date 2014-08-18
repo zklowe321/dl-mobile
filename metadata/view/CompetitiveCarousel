@@ -1,0 +1,155 @@
+{
+    "type": "Ext.carousel.Carousel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "competitivecarousel",
+        "designer|userClassName": "CompetitiveCarousel"
+    },
+    "designerId": "41712df5-7ab9-4182-893c-00590de2ad59",
+    "cn": [
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "kpiListPanel",
+                "layout": "fit"
+            },
+            "designerId": "cb4fc7a2-94b3-483d-8994-48a6be977c22",
+            "cn": [
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "kpisList",
+                        "store": "KpisStore"
+                    },
+                    "designerId": "ec5efa39-aeb7-42ea-b72d-5dcd35962960",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=“info” width=“40” height=“40”/>{name}<br/><small>KPI Total: ${sqq_value}</small>"
+                                ]
+                            },
+                            "designerId": "4511ae73-a692-4092-a715-e514ad3f1bd5"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "peerPerformancePanel",
+                "layout": "fit"
+            },
+            "designerId": "0171ce51-3b83-43f8-b180-39afacf24b48",
+            "cn": [
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": null,
+                        "itemId": "peerPerformanceList",
+                        "store": "CompRatiosStore"
+                    },
+                    "designerId": "e01f2961-4a36-40cb-9237-3e169c975903",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<tpl if=\"opportunity &gt; 0\">",
+                                    "    <div class=“info” width=“40” height=“40” style=\"color:green\"/>{name}",
+                                    "<tpl else>",
+                                    "    <div class=“info” width=“40” height=“40”/>{name}",
+                                    "</tpl>"
+                                ]
+                            },
+                            "designerId": "79da5542-0e6d-4f3a-8684-9305026f7aad"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "closestPeersPanel",
+                "layout": "fit"
+            },
+            "designerId": "93a89697-01fd-4e85-85a7-df2efad2d65f",
+            "cn": [
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "closestPeersList",
+                        "store": "ClosestPeersStore"
+                    },
+                    "designerId": "d6afb9f6-4858-4897-a02f-47b38280099d",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=“info” width=“40” height=“40”/>{name}<br/><small>${revenue}</small>"
+                                ]
+                            },
+                            "designerId": "3ffb0ccb-6d69-4469-9480-837a47542b38"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

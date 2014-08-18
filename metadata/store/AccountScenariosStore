@@ -1,0 +1,40 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "AccountScenariosStore",
+        "model": "AccountScenarios",
+        "storeId": "AccountScenariosStore"
+    },
+    "designerId": "6f543e4c-1689-4500-a90e-f96d9e4e9e22",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "designerId": "236fe6b9-f5d2-4863-916c-5fe20d6ceeb3",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "bjs",
+                        "totalProperty": null
+                    },
+                    "designerId": "3cbcb625-38a3-40ac-83a5-3580116683ea"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "detailpanel",
+        "designer|userClassName": "DetailPanel",
+        "id": null,
+        "itemId": null,
+        "layout": "fit"
+    },
+    "designerId": "00bb40b5-c4f8-4a4d-b82b-35b8b0042992",
+    "cn": [
+        {
+            "type": "Ext.dataview.List",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": false,
+                "id": null,
+                "itemId": "detailList",
+                "store": "DetailStore"
+            },
+            "designerId": "9987e297-0ce6-4138-b9d5-f6669b3d6f65",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<ul>",
+                            "    <li>Name: {name}</li>",
+                            "    <li>Ticker: {ticker}</li>",
+                            "    <li>Revenue: ${revenue} M</li>",
+                            "    <li>Website: {url}</li>",
+                            "</ul>"
+                        ]
+                    },
+                    "designerId": "f3995efa-b2d5-4cd0-9368-4d96f7663670"
+                }
+            ]
+        }
+    ]
+}

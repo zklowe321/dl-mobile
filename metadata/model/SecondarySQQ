@@ -1,0 +1,62 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "SecondarySQQ"
+    },
+    "designerId": "e77a90a4-d2c2-4788-9dd0-63de13032e03",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "sqq2_id"
+            },
+            "designerId": "8c588290-3783-40ee-a9a1-d2480031d6f1"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "designerId": "80625044-78db-4c6e-afa7-32b0563f80d5"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "sqq2_value"
+            },
+            "designerId": "bd9dc9e0-9bb8-4867-bfd1-b8657cd71465"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "impact_per_unit_source_type_id"
+            },
+            "designerId": "a082db0b-df06-420c-a6a7-5e0c0471b2af"
+        }
+    ]
+}

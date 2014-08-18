@@ -1,0 +1,39 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ScenarioAreasStore",
+        "model": "ScenarioAreas",
+        "storeId": "ScenarioAreasStore"
+    },
+    "designerId": "c99583df-e71a-4629-b1ac-3e8d030b3733",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "designerId": "34855c95-2a47-4d72-bcb9-40feddd69b0d",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "areas"
+                    },
+                    "designerId": "d04f83a1-3626-40fd-8018-708afbd8518b"
+                }
+            ]
+        }
+    ]
+}

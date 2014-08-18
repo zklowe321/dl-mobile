@@ -1,0 +1,39 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ScenarioBaselinesStore",
+        "model": "ScenarioBaselines",
+        "storeId": "ScenarioBaselinesStore"
+    },
+    "designerId": "a6787c68-3fd2-4388-8efe-3cc7a506f7f3",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "designerId": "cafbc848-b5c2-4495-9c81-cd294590d597",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "baselines"
+                    },
+                    "designerId": "6ccc48fd-4ebd-49e3-a6f1-01d948702bbc"
+                }
+            ]
+        }
+    ]
+}

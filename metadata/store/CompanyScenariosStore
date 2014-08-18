@@ -1,0 +1,39 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CompanyScenariosStore",
+        "model": "CompanyScenarios",
+        "storeId": "CompanyScenariosStore"
+    },
+    "designerId": "ff430263-bd4e-4388-aadf-08593780c3a8",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "designerId": "e7e2ba9e-0d06-43bd-bfe6-1bf67bcddb60",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "opptys"
+                    },
+                    "designerId": "05719fd9-c90c-457e-a35a-3297b416cf9c"
+                }
+            ]
+        }
+    ]
+}

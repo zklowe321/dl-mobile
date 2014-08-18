@@ -1,0 +1,278 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "homepanel",
+        "designer|userClassName": "HomePanel",
+        "itemId": "homePanel",
+        "layout": "fit",
+        "scrollable": null
+    },
+    "designerId": "12fcc33d-36a7-475b-8792-6b6c96745316",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "config",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": null,
+                "itemId": "homeContainer",
+                "layout": "vbox"
+            },
+            "designerId": "a7a7628a-ec07-4f6c-b85b-d5ddddfaa50e",
+            "cn": [
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": null,
+                        "height": "22%",
+                        "imageCls": null,
+                        "layout|flex": 1,
+                        "margin": null,
+                        "src": "http://test.decisionlink.com/images/Logo_Actual_Size_VSA.png",
+                        "width": "100%"
+                    },
+                    "designerId": "64614e8b-276e-434b-8636-804ad6dee90b"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "accountContainer",
+                        "layout|flex": null
+                    },
+                    "designerId": "64063a88-5a86-477f-b1aa-f58b6e8a53c7",
+                    "cn": [
+                        {
+                            "type": "Ext.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 10
+                            },
+                            "designerId": "d96acfa6-f66b-44b1-809e-e127cc25aa4a"
+                        },
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "accountNameField",
+                                "label": "Account",
+                                "labelWidth": "40%",
+                                "readOnly": true
+                            },
+                            "designerId": "c67e0441-02c0-45ec-a559-a65a3e26581b"
+                        },
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "userNameField",
+                                "label": "Name",
+                                "labelWidth": "40%",
+                                "readOnly": true
+                            },
+                            "designerId": "d5a94936-0a5f-4ccc-b0a3-7a1d4fd83e30"
+                        },
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "emailField",
+                                "label": "Email",
+                                "labelWidth": "40%",
+                                "readOnly": true
+                            },
+                            "designerId": "0612329e-1e70-4dbb-a525-c4955e7712c8"
+                        },
+                        {
+                            "type": "Ext.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 10
+                            },
+                            "designerId": "ef934925-02fd-4ee7-9bc8-2a6146b1b081"
+                        },
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "label": "Value Propositions",
+                                "labelWidth": "100%",
+                                "readOnly": true
+                            },
+                            "designerId": "8aa0006f-fa40-4617-b076-39bc2597b219"
+                        },
+                        {
+                            "type": "Ext.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 10
+                            },
+                            "designerId": "aac83a91-8883-43d8-89b3-0b1676efa46a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "VPListContainer",
+                        "layout": "fit",
+                        "layout|flex": 2
+                    },
+                    "designerId": "6697a24b-ab56-4620-8a3c-2a07aec6242f",
+                    "cn": [
+                        {
+                            "type": "Ext.dataview.List",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "VPList",
+                                "store": "AccountScenariosStore"
+                            },
+                            "designerId": "6495d01d-16e9-4a1c-9d3d-dc4749e29ed5",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "<div class=“info” width=“40” height=“40”/>{name}<br/><small>Revenue: ${oppty_revenue}</small>"
+                                        ]
+                                    },
+                                    "designerId": "8aee079d-f39b-4d0d-bc1e-b2bd65519bdd"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.dataview.List",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "id": null,
+                "itemId": "validateList",
+                "store": "ValidateStore"
+            },
+            "designerId": "dcf9ff15-cba3-4e62-b1ed-2af07220fb17",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div>List Item {string}</div>"
+                        ]
+                    },
+                    "designerId": "a8e7a753-dd88-4adf-8bae-2bcc821a4069"
+                }
+            ]
+        },
+        {
+            "type": "Ext.dataview.List",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "itemId": "hiddenList",
+                "store": "SuccessStore"
+            },
+            "designerId": "7d2e9059-51ed-461a-88ab-ee3c92679f36",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div>List Item {string}</div>"
+                        ]
+                    },
+                    "designerId": "0900faf2-3688-4c45-8185-e65221464d82"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,60 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "SuccessStore",
+        "model": "Success",
+        "storeId": "SuccessStore"
+    },
+    "designerId": "2fec6d0f-f9f9-4b7b-80c9-b8865bf42000",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "designerId": "a02276db-46a0-40d1-a611-bc788b5f4bfb",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "5333f5e2-60db-490b-a66c-b18bb4a7a0d5"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonpstoreLoad",
+                "implHandler": [
+                    "var success;",
+                    "",
+                    "success = store.data.items[0].data.success;",
+                    "",
+                    "if (success) {",
+                    "    console.log(\"Successful\");",
+                    "} else {",
+                    "    console.log(\"Unsuccessful\");",
+                    "}"
+                ],
+                "name": "load"
+            },
+            "designerId": "7cf66f80-2bf4-4e46-9894-d704491881c4"
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ClosestPeersStore",
+        "model": "ClosestPeers",
+        "storeId": "ClosestPeersStore"
+    },
+    "designerId": "82f59c43-515f-4237-aee5-17aba7968364",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "designerId": "b1aaf2a7-de63-4215-9aca-c994092ced24",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "companies"
+                    },
+                    "designerId": "b8f62d6c-4def-41fe-b6e2-444430dd0994"
+                }
+            ]
+        }
+    ]
+}
