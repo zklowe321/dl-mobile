@@ -31,6 +31,7 @@
                 "itemId": "accountScenariosList",
                 "store": "AccountScenariosStore"
             },
+            "name": "MyList6",
             "designerId": "7c0d7ef7-668c-4b71-bfdf-bd75d41541db",
             "cn": [
                 {
@@ -46,6 +47,7 @@
                             "<div class=“info” width=“40” height=“40”/>{name}<br/><small>Revenue: ${oppty_revenue}</small>"
                         ]
                     },
+                    "name": "tpl6",
                     "designerId": "c86f644a-ec85-49d3-add0-ee52c9ff4dd4"
                 }
             ]

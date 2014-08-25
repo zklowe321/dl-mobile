@@ -19,6 +19,7 @@
                 "type": "object"
             },
             "codeClass": null,
+            "name": "MyJsonPProxy7",
             "designerId": "000bfd3b-9381-4d22-85f2-0368e094aed5",
             "cn": [
                 {
@@ -31,6 +32,7 @@
                     "userConfig": {
                         "rootProperty": "competitors"
                     },
+                    "name": "MyJsonReader7",
                     "designerId": "f2fd34f6-6031-4fab-b9cb-b76ad9d4f48c"
                 }
             ]

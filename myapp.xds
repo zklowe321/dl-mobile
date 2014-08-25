@@ -3,7 +3,7 @@
     "settings": {
         "cmd": {
             "license": "commercial",
-            "cmdVersion": "4.0.4.84",
+            "cmdVersion": "5.0.2.250",
             "frameworkVersion": "2.3.1.410"
         },
         "canvasControls": {
@@ -15,7 +15,7 @@
             },
             "viewportOrientation": "portrait"
         },
-        "urlPrefix": "",
+        "urlPrefix": "http://localhost:1841",
         "exportPath": "",
         "spacesToIndent": 4,
         "sdkPath": "",
@@ -27,12 +27,13 @@
         "lastBuildSelection": {
             "value": "webBuild",
             "display": "Build web app"
-        }
+        },
+        "projectHasEnabledWebServer": true
     },
-    "xdsVersion": "3.0.4",
-    "xdsBuild": 1386,
+    "xdsVersion": "3.1.0",
+    "xdsBuild": 1851,
     "schemaVersion": 1,
-    "upgradeVersion": 300000000004,
+    "upgradeVersion": 300000000007,
     "framework": "touch23",
     "viewOrderMap": {
         "view": [

@@ -20,6 +20,7 @@
             "userConfig": {
                 "name": "sqq2_id"
             },
+            "name": "field110",
             "designerId": "8c588290-3783-40ee-a9a1-d2480031d6f1"
         },
         {
@@ -32,6 +33,7 @@
             "userConfig": {
                 "name": "name"
             },
+            "name": "field111",
             "designerId": "80625044-78db-4c6e-afa7-32b0563f80d5"
         },
         {
@@ -44,6 +46,7 @@
             "userConfig": {
                 "name": "sqq2_value"
             },
+            "name": "field112",
             "designerId": "bd9dc9e0-9bb8-4867-bfd1-b8657cd71465"
         },
         {
@@ -56,6 +59,7 @@
             "userConfig": {
                 "name": "impact_per_unit_source_type_id"
             },
+            "name": "field113",
             "designerId": "a082db0b-df06-420c-a6a7-5e0c0471b2af"
         }
     ]

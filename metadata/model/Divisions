@@ -20,6 +20,7 @@
             "userConfig": {
                 "name": "name"
             },
+            "name": "field117",
             "designerId": "3ad28e9e-4f9b-4e42-bcbc-f00ab8da20cc"
         },
         {
@@ -32,6 +33,7 @@
             "userConfig": {
                 "name": "id"
             },
+            "name": "field118",
             "designerId": "c8d21dce-ef34-45d1-8f2f-12308746988f"
         },
         {
@@ -44,6 +46,7 @@
             "userConfig": {
                 "name": "city"
             },
+            "name": "field119",
             "designerId": "50801638-def3-46ae-bdbc-8355f03deb3c"
         },
         {
@@ -56,6 +59,7 @@
             "userConfig": {
                 "name": "state"
             },
+            "name": "field120",
             "designerId": "fa327447-2055-4d64-98e0-ef91330d1b9e"
         },
         {
@@ -68,6 +72,7 @@
             "userConfig": {
                 "name": "country"
             },
+            "name": "field121",
             "designerId": "f778578e-768f-4998-a6b0-2c282d8ee505"
         }
     ]

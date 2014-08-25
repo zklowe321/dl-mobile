@@ -34,6 +34,7 @@
                 "navView": "homepanel",
                 "text": "Home"
             },
+            "name": "MyButton2",
             "designerId": "93074142-33b3-4eaa-8067-cf065629f53c",
             "customConfigs": [
                 {
@@ -57,6 +58,7 @@
                 "padding": null,
                 "text": "Accounts"
             },
+            "name": "MyButton3",
             "designerId": "41d7fe24-3283-4095-aa3e-aee894380e5a",
             "customConfigs": [
                 {

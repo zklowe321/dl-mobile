@@ -33,6 +33,7 @@
                 "itemId": "homeContainer",
                 "layout": "vbox"
             },
+            "name": "MyContainer",
             "designerId": "a7a7628a-ec07-4f6c-b85b-d5ddddfaa50e",
             "cn": [
                 {
@@ -54,6 +55,7 @@
                         "width": null,
                         "zIndex": null
                     },
+                    "name": "MyImg",
                     "designerId": "64614e8b-276e-434b-8636-804ad6dee90b"
                 },
                 {
@@ -68,6 +70,7 @@
                         "itemId": "accountContainer",
                         "layout|flex": null
                     },
+                    "name": "MyContainer1",
                     "designerId": "64063a88-5a86-477f-b1aa-f58b6e8a53c7",
                     "cn": [
                         {
@@ -80,6 +83,7 @@
                             "userConfig": {
                                 "height": 10
                             },
+                            "name": "MySpacer",
                             "designerId": "d96acfa6-f66b-44b1-809e-e127cc25aa4a"
                         },
                         {
@@ -95,6 +99,7 @@
                                 "labelWidth": "40%",
                                 "readOnly": true
                             },
+                            "name": "MyTextField",
                             "designerId": "c67e0441-02c0-45ec-a559-a65a3e26581b"
                         },
                         {
@@ -110,6 +115,7 @@
                                 "labelWidth": "40%",
                                 "readOnly": true
                             },
+                            "name": "MyTextField1",
                             "designerId": "d5a94936-0a5f-4ccc-b0a3-7a1d4fd83e30"
                         },
                         {
@@ -125,6 +131,7 @@
                                 "labelWidth": "40%",
                                 "readOnly": true
                             },
+                            "name": "MyTextField2",
                             "designerId": "0612329e-1e70-4dbb-a525-c4955e7712c8"
                         },
                         {
@@ -137,6 +144,7 @@
                             "userConfig": {
                                 "height": 10
                             },
+                            "name": "MySpacer1",
                             "designerId": "ef934925-02fd-4ee7-9bc8-2a6146b1b081"
                         },
                         {
@@ -151,6 +159,7 @@
                                 "labelWidth": "100%",
                                 "readOnly": true
                             },
+                            "name": "MyTextField3",
                             "designerId": "8aa0006f-fa40-4617-b076-39bc2597b219"
                         },
                         {
@@ -163,6 +172,7 @@
                             "userConfig": {
                                 "height": 10
                             },
+                            "name": "MySpacer2",
                             "designerId": "aac83a91-8883-43d8-89b3-0b1676efa46a"
                         }
                     ]
@@ -180,6 +190,7 @@
                         "layout": "fit",
                         "layout|flex": 2
                     },
+                    "name": "MyContainer2",
                     "designerId": "6697a24b-ab56-4620-8a3c-2a07aec6242f",
                     "cn": [
                         {
@@ -193,6 +204,7 @@
                                 "itemId": "VPList",
                                 "store": "AccountScenariosStore"
                             },
+                            "name": "MyList",
                             "designerId": "6495d01d-16e9-4a1c-9d3d-dc4749e29ed5",
                             "cn": [
                                 {
@@ -208,6 +220,7 @@
                                             "<div class=“info” width=“40” height=“40”/>{name}<br/><small>Revenue: ${oppty_revenue}</small>"
                                         ]
                                     },
+                                    "name": "tpl",
                                     "designerId": "8aee079d-f39b-4d0d-bc1e-b2bd65519bdd"
                                 }
                             ]
@@ -229,6 +242,7 @@
                 "itemId": "validateList",
                 "store": "ValidateStore"
             },
+            "name": "MyList1",
             "designerId": "dcf9ff15-cba3-4e62-b1ed-2af07220fb17",
             "cn": [
                 {
@@ -244,6 +258,7 @@
                             "<div>List Item {string}</div>"
                         ]
                     },
+                    "name": "tpl1",
                     "designerId": "a8e7a753-dd88-4adf-8bae-2bcc821a4069"
                 }
             ]
@@ -260,6 +275,7 @@
                 "itemId": "hiddenList",
                 "store": "SuccessStore"
             },
+            "name": "MyList2",
             "designerId": "7d2e9059-51ed-461a-88ab-ee3c92679f36",
             "cn": [
                 {
@@ -275,6 +291,7 @@
                             "<div>List Item {string}</div>"
                         ]
                     },
+                    "name": "tpl2",
                     "designerId": "0900faf2-3688-4c45-8185-e65221464d82"
                 }
             ]

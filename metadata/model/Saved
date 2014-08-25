@@ -20,6 +20,7 @@
             "userConfig": {
                 "name": "name"
             },
+            "name": "field26",
             "designerId": "589edd3b-e702-4c3f-9b79-8ad00f8a414f"
         },
         {
@@ -32,6 +33,7 @@
             "userConfig": {
                 "name": "ticker"
             },
+            "name": "field27",
             "designerId": "ffdd96db-904a-4042-badb-17c07f3ac72d"
         },
         {
@@ -44,6 +46,7 @@
             "userConfig": {
                 "name": "revenue"
             },
+            "name": "field28",
             "designerId": "c7024583-dfa8-4f40-a8ff-e23e6f5b2f4c"
         },
         {
@@ -56,6 +59,7 @@
             "userConfig": {
                 "name": "id"
             },
+            "name": "field29",
             "designerId": "a9c36034-40b2-48a5-890c-1858acd55c9d"
         },
         {
@@ -68,6 +72,7 @@
             "userConfig": {
                 "name": "opportunity"
             },
+            "name": "field30",
             "designerId": "20f73788-6227-4041-b69b-5f778fdd5240"
         },
         {
@@ -80,6 +85,7 @@
             "userConfig": {
                 "name": "percent_complete"
             },
+            "name": "field31",
             "designerId": "fa5de20f-0141-4c20-850f-92ed51320fd9"
         },
         {
@@ -92,6 +98,7 @@
             "userConfig": {
                 "name": "industry_id"
             },
+            "name": "field32",
             "designerId": "0056a2b6-9e5f-4b33-a435-797ec6dc0645"
         }
     ]

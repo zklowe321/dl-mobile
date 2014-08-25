@@ -24,6 +24,7 @@
             "userConfig": {
                 "title": "DecisionLink"
             },
+            "name": "homepanel",
             "designerId": "498cac42-a8ff-45b0-8824-6cd6462aa473",
             "masterInstanceId": "12fcc33d-36a7-475b-8792-6b6c96745316"
         },
@@ -40,6 +41,7 @@
                 "docked": "top",
                 "itemId": "navBar"
             },
+            "name": "MyNavigationBar",
             "designerId": "0f1bbba6-fd7c-4481-b01a-5619bf8837f8",
             "cn": [
                 {
@@ -54,6 +56,7 @@
                         "itemId": "menuButton",
                         "text": ""
                     },
+                    "name": "MyButton",
                     "designerId": "4e669aad-cf0b-4bd8-bc1b-a90720ca5001"
                 },
                 {
@@ -69,6 +72,7 @@
                         "itemId": "login",
                         "text": "Login"
                     },
+                    "name": "MyButton1",
                     "designerId": "fba8e49f-7643-4a71-a42e-bf5bd39eec05"
                 }
             ]

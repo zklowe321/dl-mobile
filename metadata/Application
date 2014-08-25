@@ -101,6 +101,7 @@
             "SupportPanel"
         ]
     },
+    "name": "Application",
     "configAlternates": {
         "validated": "boolean",
         "user_id": "number",
@@ -179,6 +180,7 @@
                     "return this.id;"
                 ]
             },
+            "name": "getUserId",
             "designerId": "476b15a7-3cf1-43c0-98af-80f94aacb0e7"
         },
         {
@@ -197,6 +199,7 @@
                     "this.id = id;"
                 ]
             },
+            "name": "setUserId",
             "designerId": "6bd5afc6-ba7e-4fb6-9fff-5ce2315e6321"
         },
         {
@@ -212,6 +215,7 @@
                     "return this.success;"
                 ]
             },
+            "name": "isValidated",
             "designerId": "375dc14d-14eb-41dc-a77a-519b5dc19699"
         },
         {
@@ -230,6 +234,7 @@
                     "this.success = success;"
                 ]
             },
+            "name": "setValidated",
             "designerId": "91350c92-add1-4c70-95f8-f63ee27e16b7"
         },
         {
@@ -245,6 +250,7 @@
                     "return this.account_id;"
                 ]
             },
+            "name": "getAccountId",
             "designerId": "e23e01b0-f8a8-419d-828b-db6aa14485bf"
         },
         {
@@ -263,6 +269,7 @@
                     "this.account_id = account_id;"
                 ]
             },
+            "name": "setAccountId",
             "designerId": "007a2113-a7f0-4f8f-adee-0e82e2b37a14"
         },
         {
@@ -278,6 +285,7 @@
                     "return this.currentCompanyId;"
                 ]
             },
+            "name": "getCurrentCompanyId",
             "designerId": "4275882e-2ee3-4b3c-9e5c-800a30bbd246"
         },
         {
@@ -296,6 +304,7 @@
                     "this.currentCompanyId = id;"
                 ]
             },
+            "name": "setCurrentCompanyId",
             "designerId": "9efe09cf-995a-4b26-89c4-ec37707be5a4"
         },
         {
@@ -311,6 +320,7 @@
                     "return this.currentOpptyId;"
                 ]
             },
+            "name": "getCurrentOpptyId",
             "designerId": "f5c283c6-ba49-4b89-8171-dc76d8f758a3"
         },
         {
@@ -329,6 +339,7 @@
                     "this.currentOpptyId = oppty_id;"
                 ]
             },
+            "name": "setCurrentOpptyId",
             "designerId": "d6ac010e-384b-4699-87ba-66fa30db5d05"
         },
         {
@@ -344,6 +355,7 @@
                     "return this.currentIndustryId;"
                 ]
             },
+            "name": "getCurrentIndustryId",
             "designerId": "099dbb0a-8e8f-4543-956c-edf9ffcbec2a"
         },
         {
@@ -362,6 +374,7 @@
                     "this.currentIndustryId = industry_id;"
                 ]
             },
+            "name": "setCurrentIndustryId",
             "designerId": "74a8ba2c-3529-48e3-90bf-bb4f0d7ab089"
         },
         {
@@ -377,6 +390,7 @@
                     "return this.currentRevenue;"
                 ]
             },
+            "name": "getCurrentRevenue",
             "designerId": "c4cd62e8-1e43-4287-8318-2da6bfba48c3"
         },
         {
@@ -395,6 +409,7 @@
                     "this.currentRevenue = revenue;"
                 ]
             },
+            "name": "setCurrentRevenue",
             "designerId": "17767637-c5f0-4684-8412-36032700351b"
         },
         {
@@ -410,6 +425,7 @@
                     "return this.userName;"
                 ]
             },
+            "name": "getUserName",
             "designerId": "c6902743-b610-423d-9427-b46b24d05c23"
         },
         {
@@ -428,6 +444,7 @@
                     "this.userName = userName;"
                 ]
             },
+            "name": "setUserName",
             "designerId": "7ae2796b-366e-446c-8450-b9a654f61607"
         },
         {
@@ -443,6 +460,7 @@
                     "return this.accountName;"
                 ]
             },
+            "name": "getAccountName",
             "designerId": "b6f0174f-fff6-4ba7-a2ea-5889a792f262"
         },
         {
@@ -461,6 +479,7 @@
                     "this.accountName = accountName;"
                 ]
             },
+            "name": "setAccountName",
             "designerId": "1a1bca7e-bc34-4ecf-9436-a81f0edf06e3"
         },
         {
@@ -476,6 +495,7 @@
                     "return this.email;"
                 ]
             },
+            "name": "getEmail",
             "designerId": "caddc32e-5c08-4c20-9524-22cfc16e5bb8"
         },
         {
@@ -494,6 +514,7 @@
                     "this.email = email;"
                 ]
             },
+            "name": "setEmail",
             "designerId": "aa8fe966-e302-4046-b694-fddc9fda0da7"
         },
         {
@@ -509,6 +530,7 @@
                     "return this.pagesFromHome;"
                 ]
             },
+            "name": "getPagesFromHome",
             "designerId": "caa3f627-bfb6-4476-b6d5-960cfc3c7dd3"
         },
         {
@@ -527,6 +549,7 @@
                     "this.pagesFromHome = pagesFromHome;"
                 ]
             },
+            "name": "setPagesFromHome",
             "designerId": "a036b1f3-baba-4871-a970-d50d65054f93"
         },
         {
@@ -542,6 +565,7 @@
                     "this.pagesFromHome++;"
                 ]
             },
+            "name": "incrementPagesFromHome",
             "designerId": "09abe187-7742-438b-be7a-76a173b05ece"
         },
         {
@@ -557,6 +581,7 @@
                     "this.pagesFromHome--;"
                 ]
             },
+            "name": "decrementPagesFromHome",
             "designerId": "1d7ec0df-e8a9-444a-a91b-7fe3cd5aa6a8"
         }
     ]

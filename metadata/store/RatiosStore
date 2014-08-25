@@ -19,6 +19,7 @@
                 "type": "object"
             },
             "codeClass": null,
+            "name": "MyJsonPProxy25",
             "designerId": "1830dda2-9268-45d0-9a1b-491a149894f1",
             "cn": [
                 {
@@ -28,6 +29,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "name": "MyJsonReader25",
                     "designerId": "7ad85c14-ada1-45ec-8add-25a61343123c"
                 }
             ]

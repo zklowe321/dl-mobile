@@ -19,6 +19,7 @@
                 "type": "object"
             },
             "codeClass": null,
+            "name": "MyJsonPProxy22",
             "designerId": "adfea3da-73c2-4ed3-ad10-b6af3cd6b9a9",
             "cn": [
                 {
@@ -31,6 +32,7 @@
                     "userConfig": {
                         "rootProperty": "ratios"
                     },
+                    "name": "MyJsonReader22",
                     "designerId": "7a01c21e-c0e7-4cd0-8a03-939f9ad01b69"
                 }
             ]

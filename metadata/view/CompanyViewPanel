@@ -35,6 +35,7 @@
                 "labelWidth": "100%",
                 "padding": null
             },
+            "name": "MyCheckbox",
             "designerId": "92468092-b629-4ac8-a684-f28357111bc3"
         },
         {
@@ -49,6 +50,7 @@
                 "label": "Value Propositions",
                 "labelWidth": "100%"
             },
+            "name": "MyCheckbox1",
             "designerId": "5475d559-dc7a-4bec-909f-f209f21a22a1"
         },
         {
@@ -64,6 +66,7 @@
                 "labelWidth": "100%",
                 "labelWrap": true
             },
+            "name": "MyCheckbox2",
             "designerId": "31cf9aa9-4193-44cd-8f0e-62e29a49afc2"
         },
         {
@@ -79,6 +82,7 @@
                 "labelWidth": "100%",
                 "labelWrap": true
             },
+            "name": "MyCheckbox3",
             "designerId": "18731785-0b9b-4be2-8c8b-8b354a3efcf4"
         }
     ]

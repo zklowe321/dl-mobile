@@ -24,6 +24,7 @@
                 "labelWidth": "40%",
                 "readOnly": true
             },
+            "name": "MyTextField26",
             "designerId": "b154441e-1d6b-44f8-bb8a-87a8d9976c76"
         },
         {
@@ -36,6 +37,7 @@
             "userConfig": {
                 "height": 10
             },
+            "name": "MySpacer20",
             "designerId": "ba0ce769-b6be-49bc-a50b-d2b96ed7ccec"
         },
         {
@@ -51,31 +53,8 @@
                 "labelWidth": "40%",
                 "readOnly": true
             },
+            "name": "MyTextArea",
             "designerId": "77701d3d-f9e3-4eae-8c83-2cf8672bfab2"
-        },
-        {
-            "type": "Ext.Img",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "centered": true,
-                "height": 40,
-                "itemId": "downloadImage",
-                "margin": 10,
-                "src": "http://test.decisionlink.com/images/logo.png",
-                "width": 40
-            },
-            "designerId": "e9d9dfad-ef1c-41f8-b9a7-af60c477bf2b",
-            "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "downloadUrl",
-                    "type": "string"
-                }
-            ]
         },
         {
             "type": "Ext.Spacer",
@@ -87,6 +66,7 @@
             "userConfig": {
                 "height": 10
             },
+            "name": "MySpacer21",
             "designerId": "29086aaf-5ffc-441f-9882-4557231293bd"
         },
         {
@@ -99,7 +79,33 @@
             "userConfig": {
                 "html": "Click icon to download:"
             },
+            "name": "MyLabel2",
             "designerId": "ce9b3949-0336-4aac-926f-afa1535982f0"
+        },
+        {
+            "type": "Ext.Img",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": false,
+                "height": 40,
+                "itemId": "downloadImage",
+                "margin": 10,
+                "src": "http://test.decisionlink.com/images/logo.png",
+                "width": 40
+            },
+            "name": "MyImg3",
+            "designerId": "e9d9dfad-ef1c-41f8-b9a7-af60c477bf2b",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "downloadUrl",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }

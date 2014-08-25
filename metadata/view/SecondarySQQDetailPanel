@@ -25,6 +25,7 @@
                 "labelAlign": "top",
                 "readOnly": true
             },
+            "name": "MyTextField35",
             "designerId": "4d2aca92-56f2-48a4-8590-2f4f2ac2dd5e"
         },
         {
@@ -37,6 +38,7 @@
             "userConfig": {
                 "height": 10
             },
+            "name": "MySpacer27",
             "designerId": "be8e8b45-6fd7-4199-aeec-8a69f9048519"
         },
         {
@@ -51,6 +53,7 @@
                 "label": "Answer",
                 "labelWidth": "40%"
             },
+            "name": "MyTextField36",
             "designerId": "addb520b-c076-4dc2-ad03-cf2c18eaf6dd"
         },
         {
@@ -63,6 +66,7 @@
             "userConfig": {
                 "height": 10
             },
+            "name": "MySpacer28",
             "designerId": "39f4c843-ae6c-47ee-90d5-c20a91692e06"
         },
         {
@@ -92,6 +96,7 @@
                     "}]"
                 ]
             },
+            "name": "MySelectField9",
             "designerId": "d0336798-647e-4ca3-872b-06c84f27363b"
         },
         {
@@ -104,6 +109,7 @@
             "userConfig": {
                 "height": 10
             },
+            "name": "MySpacer29",
             "designerId": "d569b16b-f53e-477c-9e69-e5b3d5b1c3c5"
         },
         {
@@ -118,6 +124,7 @@
                 "margin": 10,
                 "text": "Save Sales Question"
             },
+            "name": "MyButton12",
             "designerId": "6b8f43b2-14d0-4c33-890f-82ccd844e189"
         },
         {
@@ -130,6 +137,7 @@
             "userConfig": {
                 "itemId": "sqq2IdField"
             },
+            "name": "MyHiddenField5",
             "designerId": "87699aa2-6534-4f39-a23f-cd7b1879844a"
         }
     ]

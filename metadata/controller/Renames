@@ -27,6 +27,7 @@
                 ],
                 "name": "activate"
             },
+            "name": "onEmployeesPanelActivate",
             "designerId": "6cc35b5c-6c30-4d23-b46d-bcb9ed1f3673"
         },
         {
@@ -46,6 +47,7 @@
                 ],
                 "name": "activate"
             },
+            "name": "onSituationPanelActivate",
             "designerId": "b94f2e57-7fd9-4598-b78c-35e6701f190f"
         },
         {
@@ -65,6 +67,7 @@
                 ],
                 "name": "activate"
             },
+            "name": "onCompetitorsPanelActivate",
             "designerId": "365dcb5d-3006-4880-92a4-335d00e2548c"
         },
         {
@@ -84,6 +87,7 @@
                 ],
                 "name": "activate"
             },
+            "name": "onDivisionsPanelActivate",
             "designerId": "a4eb4f5e-760d-4922-94e7-c6f3be662360"
         },
         {
@@ -103,6 +107,7 @@
                 ],
                 "name": "activate"
             },
+            "name": "onAssetsPanelActivate",
             "designerId": "17a736e7-14bb-4d05-8f1c-85f8bd36dbe4"
         },
         {
@@ -131,6 +136,7 @@
                 ],
                 "name": "activate"
             },
+            "name": "onQuotePanelActivate",
             "designerId": "352b3680-22cd-4f07-bc96-e069bb67913d"
         },
         {
@@ -144,6 +150,7 @@
                 "ref": "navBar",
                 "selector": "#navBar"
             },
+            "name": "navBar",
             "designerId": "0b16721c-d242-4118-b468-5a8ad92b04e0"
         },
         {
@@ -163,6 +170,7 @@
                 ],
                 "name": "activate"
             },
+            "name": "onFormulaPanelActivate",
             "designerId": "b8c25c95-1a3b-43b6-ab4f-eb866d07c587"
         },
         {
@@ -182,6 +190,7 @@
                 ],
                 "name": "activate"
             },
+            "name": "onSalesQPanelActivate",
             "designerId": "5beab0d6-eeac-4302-8279-7efd936f718b"
         },
         {
@@ -201,6 +210,7 @@
                 ],
                 "name": "activate"
             },
+            "name": "onOverviewPanelActivate",
             "designerId": "80fb1c15-f94b-46a6-b159-0ab9c612efd9"
         },
         {
@@ -220,6 +230,7 @@
                 ],
                 "name": "activate"
             },
+            "name": "onDNBPanelActivate",
             "designerId": "d3d3baca-d4f8-421e-90dc-7ffcbf7ffcaa"
         },
         {
@@ -239,6 +250,7 @@
                 ],
                 "name": "activate"
             },
+            "name": "onOpptyPanelActivate",
             "designerId": "c8ee7614-a43a-4672-9e53-f30caea98c91"
         },
         {
@@ -258,6 +270,7 @@
                 ],
                 "name": "activate"
             },
+            "name": "onKPIPanelActivate",
             "designerId": "496b2631-fda3-4949-be6d-a11847d29896"
         },
         {
@@ -277,6 +290,7 @@
                 ],
                 "name": "activate"
             },
+            "name": "onPeerPerformancePanelActivate",
             "designerId": "483f0616-5ee7-4bc5-9e02-5d2e5dd988d9"
         },
         {
@@ -296,6 +310,7 @@
                 ],
                 "name": "activate"
             },
+            "name": "onClosestPeersPanelActivate",
             "designerId": "7c4ea637-a3eb-4eea-b21f-26bf09cbd574"
         },
         {
@@ -323,6 +338,7 @@
                 ],
                 "name": "activate"
             },
+            "name": "onOpptyCostPanelActivate",
             "designerId": "6b57cd48-d713-4ca2-b03c-61d1d8f04dc4"
         },
         {
@@ -342,6 +358,7 @@
                 ],
                 "name": "deactivate"
             },
+            "name": "onQuotePanelDeactivate",
             "designerId": "1eec8fb5-e0a9-4c96-b951-30c803e24ff7"
         },
         {
@@ -367,6 +384,7 @@
                 ],
                 "name": "deactivate"
             },
+            "name": "onOpptyCostPanelDeactivate",
             "designerId": "5b643bed-db5a-40ac-80fd-2da64a8d0f8d"
         }
     ]

@@ -34,6 +34,7 @@
                 "labelWrap": true,
                 "readOnly": true
             },
+            "name": "MyTextField19",
             "designerId": "236c50ed-aa40-4c15-aaad-746f7a1b6268"
         },
         {
@@ -46,6 +47,7 @@
             "userConfig": {
                 "height": 10
             },
+            "name": "MySpacer15",
             "designerId": "71173165-6411-4422-9112-5009e4bb2e2d"
         },
         {
@@ -62,6 +64,7 @@
                 "labelWrap": true,
                 "readOnly": true
             },
+            "name": "MyTextField20",
             "designerId": "a089c64f-cd5b-4d68-bb27-ddb8f8bab8a1"
         },
         {
@@ -79,6 +82,7 @@
                 "margin": 10,
                 "padding": null
             },
+            "name": "MyTextField21",
             "designerId": "f26d3d99-c283-4ed4-9ed2-39e4d3b7a0a5"
         },
         {
@@ -94,6 +98,7 @@
                 "labelWidth": "40%",
                 "labelWrap": true
             },
+            "name": "MySpinnerField",
             "designerId": "3ebee1a1-3f8f-4e9a-89ce-1b5320a4f85c"
         },
         {
@@ -111,6 +116,7 @@
                 "margin": 10,
                 "readOnly": true
             },
+            "name": "MyTextField22",
             "designerId": "bac9573a-4818-4827-a135-6ecbc5807806"
         },
         {
@@ -140,6 +146,7 @@
                     "}]"
                 ]
             },
+            "name": "MySelectField6",
             "designerId": "b7186331-243e-42ff-a12d-6f437e004a82"
         },
         {
@@ -152,6 +159,7 @@
             "userConfig": {
                 "height": 10
             },
+            "name": "MySpacer16",
             "designerId": "115895f5-5dd2-4c38-b8af-da56e7ac826e"
         },
         {
@@ -168,6 +176,7 @@
                 "labelWrap": true,
                 "readOnly": true
             },
+            "name": "MyTextField23",
             "designerId": "0955d4ae-62b1-459b-8423-3d99f925bcfd"
         },
         {
@@ -186,6 +195,7 @@
                 "margin": 10,
                 "stepValue": 1
             },
+            "name": "MySpinnerField1",
             "designerId": "af4a369f-20f4-42b9-8fe9-5bff2d1117c3"
         },
         {
@@ -198,6 +208,7 @@
             "userConfig": {
                 "height": 10
             },
+            "name": "MySpacer17",
             "designerId": "a3163793-7e9d-4786-bced-3591ee1971d6"
         },
         {
@@ -213,6 +224,7 @@
                 "labelWidth": "40%",
                 "readOnly": true
             },
+            "name": "MyTextField24",
             "designerId": "5cd57324-2126-48c6-817c-bbcc5e37b3d1"
         },
         {
@@ -228,6 +240,7 @@
                 "padding": null,
                 "text": "Save Value Formula"
             },
+            "name": "MyButton8",
             "designerId": "5e839730-80c7-404d-8929-e006624d8be8"
         },
         {
@@ -240,6 +253,7 @@
             "userConfig": {
                 "itemId": "metricIdField"
             },
+            "name": "MyHiddenField1",
             "designerId": "6b650355-438c-44d4-b281-8d39edc2c190"
         },
         {
@@ -252,6 +266,7 @@
             "userConfig": {
                 "itemId": "unitTypeIdField"
             },
+            "name": "MyHiddenField2",
             "designerId": "c1e85829-5f84-49fb-823d-333264eba7f2"
         }
     ]

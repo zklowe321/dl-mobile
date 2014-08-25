@@ -22,6 +22,7 @@
                 "ref": "mainView",
                 "selector": "#mainView"
             },
+            "name": "mainView",
             "designerId": "890fc24b-394b-4158-9a36-29f49a8466ed"
         },
         {
@@ -53,6 +54,7 @@
                 ],
                 "name": "tap"
             },
+            "name": "showMenu",
             "designerId": "beb8e73c-976d-4842-a233-effc11685cea"
         },
         {
@@ -103,6 +105,7 @@
                 ],
                 "name": "tap"
             },
+            "name": "navigate",
             "designerId": "7d2ec394-96f9-46bd-afc0-b4bea517cc08"
         },
         {
@@ -117,6 +120,7 @@
                 "selector": "#navMenu",
                 "xtype": "navmenu"
             },
+            "name": "navMenu",
             "designerId": "ee9ba556-0a0b-41bb-981d-cd5cda8538c8"
         },
         {
@@ -130,6 +134,7 @@
                 "ref": "savedList",
                 "selector": "searchpanel #savedList"
             },
+            "name": "savedList",
             "designerId": "bbd1778d-284f-4274-a380-007f6216ba49"
         },
         {
@@ -166,6 +171,7 @@
                 ],
                 "name": "itemtap"
             },
+            "name": "onSavedListItemTap",
             "designerId": "f639bf16-0cb5-4a83-b758-e6e5e5d136cc"
         },
         {
@@ -179,6 +185,7 @@
                 "ref": "detailPanel",
                 "selector": "detailpanel"
             },
+            "name": "detailPanel",
             "designerId": "b46a8bfe-505a-464b-a460-694ad19f5cc8"
         },
         {
@@ -208,6 +215,7 @@
                 ],
                 "name": "action"
             },
+            "name": "onSearchfieldAction",
             "designerId": "48f05dfb-bcf1-4b10-a425-137725721f65"
         },
         {
@@ -221,6 +229,7 @@
                 "ref": "searchPanel",
                 "selector": "#searchPanel"
             },
+            "name": "searchPanel",
             "designerId": "a3989afd-22e3-4168-8f6c-62e5011fa08f"
         },
         {
@@ -234,6 +243,7 @@
                 "ref": "overviewList",
                 "selector": "#overviewList"
             },
+            "name": "overviewList",
             "designerId": "f23494a2-178f-4b90-8b58-45c77f89f2ce"
         },
         {
@@ -261,6 +271,7 @@
                 ],
                 "name": "activate"
             },
+            "name": "onSavedListActivate",
             "designerId": "0a15a38a-959d-404c-bd70-520493a5723f"
         },
         {
@@ -274,6 +285,7 @@
                 "ref": "loginPanel",
                 "selector": "#loginPanel"
             },
+            "name": "loginPanel",
             "designerId": "cd9efe73-0d45-416c-8029-ebd8511a3e6b"
         },
         {
@@ -303,6 +315,7 @@
                 ],
                 "name": "tap"
             },
+            "name": "onShowLogin",
             "designerId": "1d3e5780-5f16-4501-b0ae-f3f2e6b8f0ac"
         },
         {
@@ -344,6 +357,7 @@
                 ],
                 "name": "tap"
             },
+            "name": "onLoginButtonTap",
             "designerId": "addd6f93-9b0d-4715-8dbf-0d33b0042900"
         },
         {
@@ -357,6 +371,7 @@
                 "ref": "validateList",
                 "selector": "#validateList"
             },
+            "name": "validateList",
             "designerId": "f7330ee1-b496-4d35-93da-7ac2483ecdc9"
         },
         {
@@ -370,6 +385,7 @@
                 "ref": "navBar",
                 "selector": "#navBar"
             },
+            "name": "navBar",
             "designerId": "480223e1-2677-4933-94c6-ca4244867cb1"
         },
         {
@@ -383,6 +399,7 @@
                 "ref": "searchList",
                 "selector": "searchpanel #searchList"
             },
+            "name": "searchList",
             "designerId": "549d43c9-5e6d-4508-a72f-9dddf80dda2d"
         },
         {
@@ -396,6 +413,7 @@
                 "ref": "detailList",
                 "selector": "detailpanel #detailList"
             },
+            "name": "detailList",
             "designerId": "bcd02cf3-5005-454a-add6-b05847b3e0d8"
         },
         {
@@ -409,6 +427,7 @@
                 "ref": "accountScenariosList",
                 "selector": "homepanel #homeContainer #VPListContainer #VPList"
             },
+            "name": "accountScenariosList",
             "designerId": "1c05de41-45ee-4764-b6ad-752b2ad5f875"
         },
         {
@@ -422,6 +441,7 @@
                 "ref": "companyScenariosList",
                 "selector": "companyscenariospanel #companyScenariosList"
             },
+            "name": "companyScenariosList",
             "designerId": "48123103-aa17-425e-8c19-458dee90259e"
         },
         {
@@ -435,6 +455,7 @@
                 "ref": "companyViewPanel",
                 "selector": "companyviewpanel"
             },
+            "name": "companyViewPanel",
             "designerId": "0005d553-b2a7-44e3-bce2-b0f1fe757aee"
         },
         {
@@ -448,6 +469,7 @@
                 "ref": "oppOverviewList",
                 "selector": "opportunitycarousel #oppOverviewList"
             },
+            "name": "oppOverviewList",
             "designerId": "6a09f0b3-2ee6-499d-94fb-ae903a765235"
         },
         {
@@ -461,6 +483,7 @@
                 "ref": "salesQuestionsList",
                 "selector": "opportunitycarousel #opportunitySalesQPanel #salesQuestionsList"
             },
+            "name": "salesQuestionsList",
             "designerId": "e588283d-7913-4890-850d-fb04f8d25eb1"
         },
         {
@@ -474,6 +497,7 @@
                 "ref": "salesQuestionDetailPanel",
                 "selector": "salesquestiondetailpanel"
             },
+            "name": "salesQuestionDetailPanel",
             "designerId": "4b997410-3376-452a-a00a-13182a57cc9f"
         },
         {
@@ -487,6 +511,7 @@
                 "ref": "valueFormulasList",
                 "selector": "opportunitycarousel #valueFormulasList"
             },
+            "name": "valueFormulasList",
             "designerId": "930b09ca-4738-4ebe-b92c-c6f07c962286"
         },
         {
@@ -500,6 +525,7 @@
                 "ref": "valueFormulaDetailPanel",
                 "selector": "valueformuladetailpanel"
             },
+            "name": "valueFormulaDetailPanel",
             "designerId": "6c6ad6d2-6d5c-4685-b45a-d9bf35ac5759"
         },
         {
@@ -513,6 +539,7 @@
                 "ref": "opportunityCostsList",
                 "selector": "opportunitycarousel #opportunityCostsList"
             },
+            "name": "opportunityCostsList",
             "designerId": "4ee725f3-ecd6-4f8b-acd4-6d7db980720b"
         },
         {
@@ -526,6 +553,7 @@
                 "ref": "opportunityCostDetailPanel",
                 "selector": "opportunitycostdetailpanel"
             },
+            "name": "opportunityCostDetailPanel",
             "designerId": "7d099cd5-49f3-41b0-a435-956517bbf8ad"
         },
         {
@@ -539,6 +567,7 @@
                 "ref": "opportunityAssetsList",
                 "selector": "opportunitycarousel #opportunityAssetsList"
             },
+            "name": "opportunityAssetsList",
             "designerId": "9be5f95a-0fd4-43cc-9706-25c344623178"
         },
         {
@@ -552,6 +581,7 @@
                 "ref": "assetDetailPanel",
                 "selector": "assetdetailpanel"
             },
+            "name": "assetDetailPanel",
             "designerId": "97560346-288b-4d12-a568-78fdadb21548"
         },
         {
@@ -565,6 +595,7 @@
                 "ref": "dnbOverviewList",
                 "selector": "dnbcarousel #dnbOverviewList"
             },
+            "name": "dnbOverviewList",
             "designerId": "413b0962-6c1d-474e-b008-f0471da5e550"
         },
         {
@@ -578,6 +609,7 @@
                 "ref": "divisionsList",
                 "selector": "dnbcarousel #divisionsList"
             },
+            "name": "divisionsList",
             "designerId": "d25c9cf8-06cb-45e4-81b2-324b703f5f73"
         },
         {
@@ -591,6 +623,7 @@
                 "ref": "competitorsList",
                 "selector": "dnbcarousel #competitorsList"
             },
+            "name": "competitorsList",
             "designerId": "f42667ed-ab37-4180-bd3d-6f83e2c90ec1"
         },
         {
@@ -604,6 +637,7 @@
                 "ref": "employeesList",
                 "selector": "dnbcarousel #employeesList"
             },
+            "name": "employeesList",
             "designerId": "5eb6c699-3dcb-4754-83ee-142a210f94cd"
         },
         {
@@ -617,6 +651,7 @@
                 "ref": "kpisList",
                 "selector": "competitivecarousel #kpisList"
             },
+            "name": "kpisList",
             "designerId": "2e5717fe-a384-41c1-97e5-e6fd61135510"
         },
         {
@@ -630,6 +665,7 @@
                 "ref": "kpiDetailList",
                 "selector": "kpidetailpanel #kpiDetailListContainer #kpiDetailList"
             },
+            "name": "kpiDetailList",
             "designerId": "ad5d2e80-b055-4cad-9714-9d9e08c082a3"
         },
         {
@@ -643,6 +679,7 @@
                 "ref": "closestPeersList",
                 "selector": "competitivecarousel #closestPeersList"
             },
+            "name": "closestPeersList",
             "designerId": "81cc5241-518f-4fda-a62e-97752b3bb18d"
         },
         {
@@ -656,6 +693,7 @@
                 "ref": "peerPerformanceList",
                 "selector": "competitivecarousel #peerPerformanceList"
             },
+            "name": "peerPerformanceList",
             "designerId": "b5b6d85e-c400-418b-aaa0-16508d571e18"
         },
         {
@@ -669,6 +707,7 @@
                 "ref": "hiddenList",
                 "selector": "homepanel #hiddenList"
             },
+            "name": "hiddenList",
             "designerId": "b9d74a4d-9d0a-4df0-8a82-3c34caf4686a"
         },
         {
@@ -682,6 +721,7 @@
                 "ref": "industriesList",
                 "selector": "opportunitycarousel #industriesList"
             },
+            "name": "industriesList",
             "designerId": "e6be7f6e-1ceb-4ada-889f-ad21170fb4d0"
         },
         {
@@ -695,6 +735,7 @@
                 "ref": "secondarySQQDetailPanel",
                 "selector": "secondarysqqdetailpanel"
             },
+            "name": "secondarySQQDetailPanel",
             "designerId": "5e27bd2a-e540-4506-a150-2217d9310068"
         },
         {
@@ -708,6 +749,7 @@
                 "ref": "secondarySQQList",
                 "selector": "opportunitycarousel #secondarySQQList"
             },
+            "name": "secondarySQQList",
             "designerId": "7d8a442c-aa1e-443d-99b7-0d4d4902c320"
         },
         {
@@ -721,6 +763,7 @@
                 "ref": "baselinesField",
                 "selector": "opportunitycarousel #baselinesField"
             },
+            "name": "baselinesField",
             "designerId": "c0af42ab-b123-4289-9bd5-a18d28da3c8e"
         },
         {
@@ -734,6 +777,7 @@
                 "ref": "deleteCostActionSheet",
                 "selector": "opportunitycostdetailpanel #deleteCostActionSheet"
             },
+            "name": "deleteCostActionSheet",
             "designerId": "3caf3d92-9536-4e01-b0a1-85140cdaaba8"
         },
         {
@@ -747,6 +791,7 @@
                 "ref": "scenarioField",
                 "selector": "opportunitycarousel #scenarioField"
             },
+            "name": "scenarioField",
             "designerId": "8cdeba28-b8ad-4ad1-a50d-3af1f90feafb"
         },
         {
@@ -760,6 +805,7 @@
                 "ref": "scenarioCompetitorsList",
                 "selector": "opportunitycarousel #competitorsList"
             },
+            "name": "scenarioCompetitorsList",
             "designerId": "1b155d55-532d-4629-91d6-6f11ee637bd2"
         },
         {
@@ -773,6 +819,7 @@
                 "ref": "sellingIntoField",
                 "selector": "opportunitycarousel #sellingIntoField"
             },
+            "name": "sellingIntoField",
             "designerId": "19f6a85c-7ba5-4bb6-89c6-b3e35a5966d8"
         },
         {
@@ -786,6 +833,7 @@
                 "ref": "opportunitySituationPanel",
                 "selector": "opportunitycarousel #opportunitySituationPanel"
             },
+            "name": "opportunitySituationPanel",
             "designerId": "eee64b3d-2ca2-4cce-a850-3218932f0cc3"
         },
         {
@@ -799,6 +847,7 @@
                 "ref": "vpList",
                 "selector": "homepanel #homeContainer #VPListContainer #VPList"
             },
+            "name": "vpList",
             "designerId": "e5397cc1-2b63-477d-acef-a04c973ef61f"
         },
         {
@@ -812,6 +861,7 @@
                 "ref": "homePanel",
                 "selector": "homepanel"
             },
+            "name": "homePanel",
             "designerId": "16377119-3883-47aa-afad-9bd4af458d2a"
         },
         {
@@ -837,6 +887,7 @@
                     "});"
                 ]
             },
+            "name": "getSavedAccounts",
             "designerId": "e7a8cd6d-2085-454b-a807-8279787cfba8"
         },
         {
@@ -864,6 +915,7 @@
                     "});"
                 ]
             },
+            "name": "searchCompanies",
             "designerId": "e028a0dc-9060-421b-aaf1-f00c8e52c036"
         },
         {
@@ -891,6 +943,7 @@
                     "});"
                 ]
             },
+            "name": "getValidation",
             "designerId": "628d3733-ca0a-4b6f-8c20-c41cb1d32fbf"
         },
         {
@@ -916,6 +969,7 @@
                     "});"
                 ]
             },
+            "name": "getCompanyOverview",
             "designerId": "35b53eb9-c2f0-47d7-8b08-6afe5bd8932a"
         },
         {
@@ -1133,6 +1187,7 @@
                     "    return temp.toLowerCase();"
                 ]
             },
+            "name": "toMD5",
             "designerId": "697846ee-739d-4b8e-8162-7927fed001ef"
         },
         {
@@ -1153,6 +1208,7 @@
                 ],
                 "name": "tap"
             },
+            "name": "onCancelButtonTap",
             "designerId": "23940efb-a7ee-493d-a251-39e0683bb419"
         },
         {
@@ -1189,6 +1245,7 @@
                 ],
                 "name": "itemtap"
             },
+            "name": "onSearchListItemTap",
             "designerId": "34fb9f6b-793d-4a5a-96c3-fbeeb92aa825"
         },
         {
@@ -1214,6 +1271,7 @@
                     "});"
                 ]
             },
+            "name": "getAccountScenarios",
             "designerId": "d65e2763-3069-409c-a90d-9f86a68c4ab2"
         },
         {
@@ -1241,6 +1299,7 @@
                 ],
                 "name": "activate"
             },
+            "name": "onAccountScenariosListActivate",
             "designerId": "d6ccca34-ce0e-4294-b671-dca202685d98"
         },
         {
@@ -1309,6 +1368,7 @@
                 ],
                 "name": "itemtap"
             },
+            "name": "onAccountScenariosListItemTap",
             "designerId": "393be3a1-c672-46c3-8379-7c22be78854e"
         },
         {
@@ -1336,6 +1396,7 @@
                     "});"
                 ]
             },
+            "name": "getCompanyScenarios",
             "designerId": "8f775834-e3e3-4c08-b1ed-609d37148c92"
         },
         {
@@ -1363,6 +1424,7 @@
                 ],
                 "name": "back"
             },
+            "name": "onMainViewBack",
             "designerId": "937ae02f-a6ee-4fc7-9604-207c890a7419"
         },
         {
@@ -1404,6 +1466,7 @@
                 ],
                 "name": "check"
             },
+            "name": "onCompanyInfoCheck",
             "designerId": "c17ac6fa-a555-4ff3-8d6f-126d40be29a7"
         },
         {
@@ -1448,6 +1511,7 @@
                 ],
                 "name": "check"
             },
+            "name": "onValuePropCheck",
             "designerId": "c6ce60e9-41d4-4155-a6fb-ab1fda8da15b"
         },
         {
@@ -1475,6 +1539,7 @@
                     "});"
                 ]
             },
+            "name": "getOpportunityOverview",
             "designerId": "7b43ad05-416f-46c5-a885-23c3b19a4fd7"
         },
         {
@@ -1517,6 +1582,7 @@
                 ],
                 "name": "itemtap"
             },
+            "name": "onOpportunityTap",
             "designerId": "e8c8eb95-63d2-4365-b3e9-f15171dd13fd"
         },
         {
@@ -1542,6 +1608,7 @@
                     "});"
                 ]
             },
+            "name": "getSalesQuestions",
             "designerId": "30dfd55d-81ca-4894-8d9c-7aa4610c279a"
         },
         {
@@ -1616,6 +1683,7 @@
                 ],
                 "name": "activate"
             },
+            "name": "onOpptyCarouselActivate",
             "designerId": "5d1d8665-84e6-4de1-b6e6-0fc2fd40bd5c"
         },
         {
@@ -1662,6 +1730,7 @@
                 ],
                 "name": "itemtap"
             },
+            "name": "onSQQListItemTap",
             "designerId": "5e903f5a-6f6e-4430-93dd-ec64ff9ae54b"
         },
         {
@@ -1687,6 +1756,7 @@
                     "});"
                 ]
             },
+            "name": "getValueFormulas",
             "designerId": "b61ef18b-474e-4177-8441-e7a1e931185d"
         },
         {
@@ -1749,6 +1819,7 @@
                 ],
                 "name": "itemtap"
             },
+            "name": "onVFListItemTap",
             "designerId": "a5835633-29cf-4cc5-b632-e46957954090"
         },
         {
@@ -1776,6 +1847,7 @@
                     "});"
                 ]
             },
+            "name": "getOpportunityCosts",
             "designerId": "7ba76de4-339b-4b19-926b-d7c302092ef7"
         },
         {
@@ -1819,6 +1891,7 @@
                 ],
                 "name": "itemtap"
             },
+            "name": "onCostListItemTap",
             "designerId": "476e33e2-9822-4711-acef-77e54803afa8"
         },
         {
@@ -1846,6 +1919,7 @@
                     "});"
                 ]
             },
+            "name": "getOpportunityAssets",
             "designerId": "69f15470-6d00-4852-b1b9-ea3b5eebe5e4"
         },
         {
@@ -1890,6 +1964,7 @@
                 ],
                 "name": "itemtap"
             },
+            "name": "onAssetItemTap",
             "designerId": "fd3122cb-06d3-4d7b-9347-3df51b0be36a"
         },
         {
@@ -1954,6 +2029,7 @@
                 ],
                 "name": "itemtap"
             },
+            "name": "onCompanyScenariosListItemTap",
             "designerId": "dd6c918a-13f0-461a-9d63-3bfadcd3059a"
         },
         {
@@ -1979,6 +2055,7 @@
                     "});"
                 ]
             },
+            "name": "getDNBOverview",
             "designerId": "3f0389ac-567b-405e-b056-dbd954ca1846"
         },
         {
@@ -2024,6 +2101,7 @@
                 ],
                 "name": "activate"
             },
+            "name": "onDNBCarouselActivate",
             "designerId": "cf7f2fa1-5c56-4b36-9177-ce80a61ef726"
         },
         {
@@ -2060,6 +2138,7 @@
                 ],
                 "name": "check"
             },
+            "name": "onDNBInfoCheck",
             "designerId": "2a5e3885-108d-46fb-9470-2ff53abf5850"
         },
         {
@@ -2087,6 +2166,7 @@
                     "});"
                 ]
             },
+            "name": "getDivisions",
             "designerId": "f4a5d120-c57c-47bd-b023-d39ab72eb8d5"
         },
         {
@@ -2121,6 +2201,7 @@
                 ],
                 "name": "itemtap"
             },
+            "name": "onDivisionsListItemTap",
             "designerId": "5905e547-ffd0-48c4-a9fc-a74ef1a0d285"
         },
         {
@@ -2148,6 +2229,7 @@
                     "});"
                 ]
             },
+            "name": "getCompetitors",
             "designerId": "162d8915-f069-47ed-9300-37251a1d0f5a"
         },
         {
@@ -2183,6 +2265,7 @@
                 ],
                 "name": "itemtap"
             },
+            "name": "onCompetitorsListItemTap",
             "designerId": "a621faed-fe51-4eb8-834e-64bbe0c2b1d5"
         },
         {
@@ -2208,6 +2291,7 @@
                     "});"
                 ]
             },
+            "name": "getEmployees",
             "designerId": "682047fe-ad2c-4e03-93ff-080eb53e4e2f"
         },
         {
@@ -2237,6 +2321,7 @@
                     "});"
                 ]
             },
+            "name": "getKpis",
             "designerId": "fe42ba8b-71aa-48ba-9391-d690525c5573"
         },
         {
@@ -2273,6 +2358,7 @@
                 ],
                 "name": "check"
             },
+            "name": "onCompetitiveCheck",
             "designerId": "b38b9cee-4d07-4b45-87c1-91cc7dd150ae"
         },
         {
@@ -2302,6 +2388,7 @@
                     "});"
                 ]
             },
+            "name": "getRatios",
             "designerId": "a87c6548-0228-4e96-9746-aeeaa5a0177e"
         },
         {
@@ -2347,6 +2434,7 @@
                 ],
                 "name": "itemtap"
             },
+            "name": "onKpisListItemTap",
             "designerId": "417accb2-80be-4f29-999c-1c88c580cc78"
         },
         {
@@ -2378,6 +2466,7 @@
                     "});"
                 ]
             },
+            "name": "getClosestPeers",
             "designerId": "4fd43ebc-a17f-4dcc-961d-e8852e0eee85"
         },
         {
@@ -2419,6 +2508,7 @@
                 ],
                 "name": "activate"
             },
+            "name": "onCompetitiveCarouselActivate",
             "designerId": "b8229de6-b147-4e7c-a5ac-c653bc227fed"
         },
         {
@@ -2446,6 +2536,7 @@
                     "});"
                 ]
             },
+            "name": "getCompRatios",
             "designerId": "deac11d6-16b6-45f5-ae58-0f44e2d956e8"
         },
         {
@@ -2480,6 +2571,7 @@
                 ],
                 "name": "itemtap"
             },
+            "name": "onClosestPeersListItemTap",
             "designerId": "dcfb7ff5-3830-496c-8a76-99b134a3982d"
         },
         {
@@ -2526,6 +2618,7 @@
                 ],
                 "name": "itemtap"
             },
+            "name": "onPerformanceListItemTap",
             "designerId": "18aa9942-9a59-454b-9afc-bb44501bae50"
         },
         {
@@ -2557,6 +2650,7 @@
                     "});"
                 ]
             },
+            "name": "updateOpportunitySQQ",
             "designerId": "097644fd-4003-4de3-bcf3-35bbdff6fe9a"
         },
         {
@@ -2589,6 +2683,7 @@
                 ],
                 "name": "tap"
             },
+            "name": "onSaveSQQButtonTap",
             "designerId": "4c86f4e2-8922-4353-9031-5504f571e640"
         },
         {
@@ -2622,6 +2717,7 @@
                     "});"
                 ]
             },
+            "name": "updateOpportunityCosts",
             "designerId": "263ef7da-ed44-4bb0-b353-6a0f340ed06e"
         },
         {
@@ -2664,6 +2760,7 @@
                 ],
                 "name": "tap"
             },
+            "name": "onSaveCostButtonTap",
             "designerId": "f76d701d-10c2-4f88-b270-eff0259f60d1"
         },
         {
@@ -2701,6 +2798,7 @@
                     "});"
                 ]
             },
+            "name": "saveValueFormulaMetrics",
             "designerId": "23340a3c-d8c9-4c9e-a312-c2d6c8f51ff7"
         },
         {
@@ -2739,6 +2837,7 @@
                 ],
                 "name": "tap"
             },
+            "name": "onSaveVFButtonTap",
             "designerId": "2ca30730-3399-4d63-ae79-dada0a324875"
         },
         {
@@ -2764,6 +2863,7 @@
                     "});"
                 ]
             },
+            "name": "getSecondarySQQs",
             "designerId": "0423cdad-1a1c-459e-81d1-e38f0c9e70a8"
         },
         {
@@ -2807,6 +2907,7 @@
                 ],
                 "name": "itemtap"
             },
+            "name": "onSecondarySQQListItemTap",
             "designerId": "b91f4e9a-8354-4045-8650-aa6057bc4a13"
         },
         {
@@ -2840,6 +2941,7 @@
                     "});"
                 ]
             },
+            "name": "updateSecondarySQQ",
             "designerId": "2c301fa8-c9d1-402e-9819-f9451ab63782"
         },
         {
@@ -2874,6 +2976,7 @@
                 ],
                 "name": "tap"
             },
+            "name": "onSaveSecondarySQQButtonTap",
             "designerId": "ba27bded-c640-4221-a217-d0215590b7ac"
         },
         {
@@ -2905,6 +3008,7 @@
                     "});"
                 ]
             },
+            "name": "saveOpportunityCost",
             "designerId": "5642122a-3b12-41c4-89a9-b8ee5b2d0efa"
         },
         {
@@ -2948,6 +3052,7 @@
                 ],
                 "name": "tap"
             },
+            "name": "onNewCostButtonTap",
             "designerId": "cbaf4892-40c7-470b-adda-2cf33a1c19e4"
         },
         {
@@ -2975,6 +3080,7 @@
                     "});"
                 ]
             },
+            "name": "deleteOpportunityCost",
             "designerId": "d8b7218e-52f2-418c-bd2d-664d28b5f21b"
         },
         {
@@ -3005,6 +3111,7 @@
                 ],
                 "name": "tap"
             },
+            "name": "onDeleteCostButtonTap",
             "designerId": "56db4963-5b6f-4e1f-a6dc-aed63c0880db"
         },
         {
@@ -3039,6 +3146,7 @@
                 ],
                 "name": "tap"
             },
+            "name": "onDeleteCostActionButtonTap",
             "designerId": "7ddf1180-fc0c-40c5-a3bd-bf85ef70a327"
         },
         {
@@ -3064,6 +3172,7 @@
                 ],
                 "name": "tap"
             },
+            "name": "onCancelCostActionButtonTap",
             "designerId": "fc91a5e0-3899-4269-a067-435fde26ca1d"
         },
         {
@@ -3091,6 +3200,7 @@
                     "});"
                 ]
             },
+            "name": "getSellingScenario",
             "designerId": "b0745857-acee-4952-9b3c-45f530953900"
         },
         {
@@ -3118,6 +3228,7 @@
                     "});"
                 ]
             },
+            "name": "getScenarioIndustries",
             "designerId": "f66bd0a0-6464-475d-bb75-d197fc045c96"
         },
         {
@@ -3145,6 +3256,7 @@
                     "});"
                 ]
             },
+            "name": "getScenarioAreas",
             "designerId": "bc66d01d-1424-44c9-9f88-96b3bcb351d9"
         },
         {
@@ -3172,6 +3284,7 @@
                     "});"
                 ]
             },
+            "name": "getScenarioBaselines",
             "designerId": "c335065f-587d-4d53-8d16-d8c724b5b20e"
         },
         {
@@ -3199,6 +3312,7 @@
                     "});"
                 ]
             },
+            "name": "getScenarioCompetitors",
             "designerId": "49884b60-c2a3-40d2-8925-fdf41fb2cca9"
         },
         {
@@ -3242,6 +3356,7 @@
                     "});"
                 ]
             },
+            "name": "saveSellingScenario",
             "designerId": "116c91c6-22f6-4078-b7d0-42fc49c1187c"
         },
         {
@@ -3303,6 +3418,7 @@
                 ],
                 "name": "tap"
             },
+            "name": "onSaveSituationButtonTap",
             "designerId": "c919a0a2-f230-4b79-8c4f-481834e9f2a3"
         },
         {
@@ -3348,6 +3464,7 @@
                 ],
                 "name": "hide"
             },
+            "name": "onLoginPanelHide",
             "designerId": "08ca6e76-9090-4591-b221-f6c368ca4462"
         },
         {
@@ -3390,6 +3507,7 @@
                 ],
                 "name": "activate"
             },
+            "name": "onHomePanelActivate",
             "designerId": "c3da6122-6105-4dbf-bdd6-1c0488f396ab"
         },
         {
@@ -3412,6 +3530,7 @@
                 ],
                 "name": "tap"
             },
+            "name": "onDownloadImageTap",
             "designerId": "3961ff52-bbc2-458d-a06b-b7d8b17e5b1e"
         }
     ]

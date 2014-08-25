@@ -22,6 +22,7 @@
                 "itemId": "kpiListPanel",
                 "layout": "fit"
             },
+            "name": "MyPanel10",
             "designerId": "cb4fc7a2-94b3-483d-8994-48a6be977c22",
             "cn": [
                 {
@@ -35,6 +36,7 @@
                         "itemId": "kpisList",
                         "store": "KpisStore"
                     },
+                    "name": "MyList19",
                     "designerId": "ec5efa39-aeb7-42ea-b72d-5dcd35962960",
                     "cn": [
                         {
@@ -50,6 +52,7 @@
                                     "<div class=“info” width=“40” height=“40”/>{name}<br/><small>KPI Total: ${sqq_value}</small>"
                                 ]
                             },
+                            "name": "tpl20",
                             "designerId": "4511ae73-a692-4092-a715-e514ad3f1bd5"
                         }
                     ]
@@ -67,6 +70,7 @@
                 "itemId": "peerPerformancePanel",
                 "layout": "fit"
             },
+            "name": "MyPanel11",
             "designerId": "0171ce51-3b83-43f8-b180-39afacf24b48",
             "cn": [
                 {
@@ -81,6 +85,7 @@
                         "itemId": "peerPerformanceList",
                         "store": "CompRatiosStore"
                     },
+                    "name": "MyList20",
                     "designerId": "e01f2961-4a36-40cb-9237-3e169c975903",
                     "cn": [
                         {
@@ -100,6 +105,7 @@
                                     "</tpl>"
                                 ]
                             },
+                            "name": "tpl21",
                             "designerId": "79da5542-0e6d-4f3a-8684-9305026f7aad"
                         }
                     ]
@@ -117,6 +123,7 @@
                 "itemId": "closestPeersPanel",
                 "layout": "fit"
             },
+            "name": "MyPanel12",
             "designerId": "93a89697-01fd-4e85-85a7-df2efad2d65f",
             "cn": [
                 {
@@ -130,6 +137,7 @@
                         "itemId": "closestPeersList",
                         "store": "ClosestPeersStore"
                     },
+                    "name": "MyList21",
                     "designerId": "d6afb9f6-4858-4897-a02f-47b38280099d",
                     "cn": [
                         {
@@ -145,6 +153,7 @@
                                     "<div class=“info” width=“40” height=“40”/>{name}<br/><small>${revenue}</small>"
                                 ]
                             },
+                            "name": "tpl22",
                             "designerId": "3ffb0ccb-6d69-4469-9480-837a47542b38"
                         }
                     ]

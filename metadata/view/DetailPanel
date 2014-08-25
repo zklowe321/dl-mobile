@@ -27,6 +27,7 @@
                 "itemId": "detailList",
                 "store": "DetailStore"
             },
+            "name": "MyList5",
             "designerId": "9987e297-0ce6-4138-b9d5-f6669b3d6f65",
             "cn": [
                 {
@@ -47,6 +48,7 @@
                             "</ul>"
                         ]
                     },
+                    "name": "tpl5",
                     "designerId": "f3995efa-b2d5-4cd0-9368-4d96f7663670"
                 }
             ]

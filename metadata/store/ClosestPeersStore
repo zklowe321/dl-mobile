@@ -19,6 +19,7 @@
                 "type": "object"
             },
             "codeClass": null,
+            "name": "MyJsonPProxy23",
             "designerId": "b1aaf2a7-de63-4215-9aca-c994092ced24",
             "cn": [
                 {
@@ -31,6 +32,7 @@
                     "userConfig": {
                         "rootProperty": "companies"
                     },
+                    "name": "MyJsonReader23",
                     "designerId": "b8f62d6c-4def-41fe-b6e2-444430dd0994"
                 }
             ]

@@ -19,6 +19,7 @@
                 "type": "object"
             },
             "codeClass": null,
+            "name": "MyJsonPProxy6",
             "designerId": "e7e2ba9e-0d06-43bd-bfe6-1bf67bcddb60",
             "cn": [
                 {
@@ -31,6 +32,7 @@
                     "userConfig": {
                         "rootProperty": "opptys"
                     },
+                    "name": "MyJsonReader6",
                     "designerId": "05719fd9-c90c-457e-a35a-3297b416cf9c"
                 }
             ]

@@ -1,4 +1,15 @@
 {
+   "builds": {
+      "web": {
+         "default": true
+      },
+      "native": {
+         "packager": "cordova",
+         "cordova": {
+            "config": {}
+         }
+      }
+   },
    "name": "MyApp",
    "indexHtmlPath": "index.html",
    "url": null,
@@ -10,6 +21,10 @@
       {
          "path": "bootstrap.js",
          "x-bootstrap": true
+      },
+      {
+         "path": "cordova.js",
+         "remote": true
       },
       {
          "path": "app.js",
@@ -26,8 +41,7 @@
             "desktop"
          ],
          "theme": "Default",
-         "path": "resources/css/sencha-touch.css",
-         "_architect_active_theme": true
+         "path": "resources/css/sencha-touch.css"
       }
    ],
    "appCache": {

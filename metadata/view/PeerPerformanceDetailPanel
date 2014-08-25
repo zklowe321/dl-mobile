@@ -25,6 +25,7 @@
                 "labelWidth": "40%",
                 "readOnly": true
             },
+            "name": "MyTextField29",
             "designerId": "3a9a284f-8193-4e58-897b-524783e18f83"
         },
         {
@@ -37,6 +38,7 @@
             "userConfig": {
                 "height": 10
             },
+            "name": "MySpacer22",
             "designerId": "1c8b838c-b78f-48e6-a541-0cd8e391d565"
         },
         {
@@ -53,6 +55,7 @@
                 "labelWidth": "40%",
                 "readOnly": true
             },
+            "name": "MyTextField30",
             "designerId": "9a42bcb7-31da-4588-bea8-e55a6c5ad436"
         },
         {
@@ -65,6 +68,7 @@
             "userConfig": {
                 "height": 10
             },
+            "name": "MySpacer23",
             "designerId": "8434e6d3-2de5-4a47-aae2-bf46cbed6b66"
         },
         {
@@ -81,6 +85,7 @@
                 "labelWidth": "40%",
                 "readOnly": true
             },
+            "name": "MyTextField31",
             "designerId": "ba06257b-a204-4326-9571-5627ae699f25"
         },
         {
@@ -93,6 +98,7 @@
             "userConfig": {
                 "height": 10
             },
+            "name": "MySpacer24",
             "designerId": "69f09683-49ac-44a2-9020-ea7d00f8c7bf"
         },
         {
@@ -108,6 +114,7 @@
                 "labelWidth": "40%",
                 "readOnly": true
             },
+            "name": "MyTextField32",
             "designerId": "90fad007-2a38-4744-b57a-37996a2abde2"
         },
         {
@@ -120,6 +127,7 @@
             "userConfig": {
                 "height": 10
             },
+            "name": "MySpacer25",
             "designerId": "db7a9116-a299-41df-bd54-b4a96d814c7d"
         },
         {
@@ -136,6 +144,7 @@
                 "labelWrap": true,
                 "readOnly": true
             },
+            "name": "MyTextField33",
             "designerId": "e44b6c9a-1415-4d7d-942e-266d9fd36ce2"
         },
         {
@@ -148,6 +157,7 @@
             "userConfig": {
                 "height": 10
             },
+            "name": "MySpacer26",
             "designerId": "a667a98d-cf04-4ab3-8fc6-438aba241114"
         },
         {
@@ -164,6 +174,7 @@
                 "labelWrap": true,
                 "readOnly": true
             },
+            "name": "MyTextField34",
             "designerId": "9b1eb6c9-5e64-4ac0-86cc-809754a31f19"
         }
     ]

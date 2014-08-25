@@ -47,6 +47,7 @@
                     "}]"
                 ]
             },
+            "name": "MySelectField10",
             "designerId": "abe4accb-948f-4f18-af6e-c7969513d05b"
         },
         {
@@ -59,6 +60,7 @@
             "userConfig": {
                 "height": 10
             },
+            "name": "MySpacer30",
             "designerId": "081ea1c0-29ca-4d99-aea4-62673c28490b"
         },
         {
@@ -88,6 +90,7 @@
                     "}]"
                 ]
             },
+            "name": "MySelectField11",
             "designerId": "faf3c5b7-e9a7-4426-93c2-f5ad16e24cef"
         },
         {
@@ -100,6 +103,7 @@
             "userConfig": {
                 "height": 10
             },
+            "name": "MySpacer31",
             "designerId": "ab564a31-343d-4766-ba13-384dd86490ef"
         },
         {
@@ -114,6 +118,7 @@
                 "label": "Subject",
                 "labelWidth": "40%"
             },
+            "name": "MyTextField37",
             "designerId": "a572c2be-c357-45c4-a4c6-ac5f379b6a43"
         },
         {
@@ -126,6 +131,7 @@
             "userConfig": {
                 "height": 10
             },
+            "name": "MySpacer32",
             "designerId": "ce4963aa-2e06-408f-a5f2-19fe6a766c3a"
         },
         {
@@ -140,6 +146,7 @@
                 "label": "Reported  By",
                 "labelAlign": "top"
             },
+            "name": "MyTextField38",
             "designerId": "427a7485-145b-4cef-a695-fc67c5e28977"
         },
         {
@@ -152,6 +159,7 @@
             "userConfig": {
                 "height": 10
             },
+            "name": "MySpacer33",
             "designerId": "8660afa8-115a-469c-b76c-8c030e0e7f2d"
         },
         {
@@ -166,6 +174,7 @@
                 "label": "Email",
                 "labelWidth": "40%"
             },
+            "name": "MyTextField39",
             "designerId": "d913d683-c443-4b6a-a552-c0c0331e4e46"
         },
         {
@@ -178,6 +187,7 @@
             "userConfig": {
                 "height": 10
             },
+            "name": "MySpacer34",
             "designerId": "196993a8-fbf8-422e-b928-7c4c4c17c10c"
         },
         {
@@ -191,6 +201,7 @@
                 "label": "Description",
                 "labelAlign": "top"
             },
+            "name": "MyTextArea1",
             "designerId": "407692d1-a438-4514-8644-ad5b00bf0f72"
         },
         {
@@ -203,6 +214,7 @@
             "userConfig": {
                 "height": 10
             },
+            "name": "MySpacer35",
             "designerId": "6bb74ec3-1282-4921-8121-6e28f5c257e3"
         },
         {
@@ -217,6 +229,7 @@
                 "margin": 10,
                 "text": "Submit"
             },
+            "name": "MyButton13",
             "designerId": "490ab9b0-bc90-49f2-8413-4d5138c4ed03"
         }
     ]

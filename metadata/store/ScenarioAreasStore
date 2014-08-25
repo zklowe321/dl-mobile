@@ -19,6 +19,7 @@
                 "type": "object"
             },
             "codeClass": null,
+            "name": "MyJsonPProxy9",
             "designerId": "34855c95-2a47-4d72-bcb9-40feddd69b0d",
             "cn": [
                 {
@@ -31,6 +32,7 @@
                     "userConfig": {
                         "rootProperty": "areas"
                     },
+                    "name": "MyJsonReader9",
                     "designerId": "d04f83a1-3626-40fd-8018-708afbd8518b"
                 }
             ]

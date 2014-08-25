@@ -20,6 +20,7 @@
             "userConfig": {
                 "name": "id"
             },
+            "name": "field44",
             "designerId": "9ad54894-c40f-4b39-8028-8ef19eec676b"
         },
         {
@@ -32,6 +33,7 @@
             "userConfig": {
                 "name": "name"
             },
+            "name": "field45",
             "designerId": "bcd70d43-599b-4edb-b0f9-4e8baa5e708c"
         },
         {
@@ -44,6 +46,7 @@
             "userConfig": {
                 "name": "company_id"
             },
+            "name": "field46",
             "designerId": "ad36e595-168a-4379-b0f4-a1887986eabd"
         },
         {
@@ -56,6 +59,7 @@
             "userConfig": {
                 "name": "user_id"
             },
+            "name": "field47",
             "designerId": "89ee0272-209b-4892-a911-ac8d9e034647"
         },
         {
@@ -68,6 +72,7 @@
             "userConfig": {
                 "name": "yr1_benefit_sum"
             },
+            "name": "field48",
             "designerId": "b15ad9ed-0e21-4059-ae48-38821996b8cb"
         },
         {
@@ -80,6 +85,7 @@
             "userConfig": {
                 "name": "modified"
             },
+            "name": "field49",
             "designerId": "faceef9b-f627-44f0-a364-43910aac7342"
         },
         {
@@ -92,6 +98,7 @@
             "userConfig": {
                 "name": "company"
             },
+            "name": "field50",
             "designerId": "ff806fcb-1df2-4072-b1e9-69a88d333da0"
         },
         {
@@ -104,6 +111,7 @@
             "userConfig": {
                 "name": "oppty_revenue"
             },
+            "name": "field51",
             "designerId": "c0503d5a-60e3-4dbd-a90d-47c4f90d73df"
         },
         {
@@ -116,6 +124,7 @@
             "userConfig": {
                 "name": "wacc"
             },
+            "name": "field52",
             "designerId": "a0f10385-faaf-42f1-8817-8b953755cff3"
         },
         {
@@ -128,6 +137,7 @@
             "userConfig": {
                 "name": "term"
             },
+            "name": "field53",
             "designerId": "0371684e-7c11-4d23-aa82-55d4b3374b0a"
         },
         {
@@ -140,6 +150,7 @@
             "userConfig": {
                 "name": "yr2_benefit_sum"
             },
+            "name": "field54",
             "designerId": "13c56c93-8761-468b-a5bb-815eebe089d7"
         },
         {
@@ -152,6 +163,7 @@
             "userConfig": {
                 "name": "yr3_benefit_sum"
             },
+            "name": "field55",
             "designerId": "963c59fa-f947-4346-bcb8-938fc9bc6f18"
         },
         {
@@ -164,6 +176,7 @@
             "userConfig": {
                 "name": "yr4_benefit_sum"
             },
+            "name": "field56",
             "designerId": "5892ace0-765a-4fb0-bf79-bb2d31dcda75"
         },
         {
@@ -176,6 +189,7 @@
             "userConfig": {
                 "name": "yr5_benefit_sum"
             },
+            "name": "field57",
             "designerId": "d7bbe1c9-f2f5-4964-870d-812cb49dec51"
         },
         {
@@ -188,6 +202,7 @@
             "userConfig": {
                 "name": "yrx_cost_sum"
             },
+            "name": "field58",
             "designerId": "c04547ff-be5b-4c59-ab53-6ab00f50240b"
         },
         {
@@ -200,6 +215,7 @@
             "userConfig": {
                 "name": "yr1_cost_sum"
             },
+            "name": "field59",
             "designerId": "57b43374-22c0-45a5-8fd2-09483e5c54c5"
         },
         {
@@ -212,6 +228,7 @@
             "userConfig": {
                 "name": "cost_light_image"
             },
+            "name": "field60",
             "designerId": "85863c91-20b4-4221-8b26-57033546946f"
         },
         {
@@ -224,6 +241,7 @@
             "userConfig": {
                 "name": "benefit_light_image"
             },
+            "name": "field61",
             "designerId": "8c0ae517-3b3f-4d09-aac8-7ff0197dbdeb"
         }
     ]

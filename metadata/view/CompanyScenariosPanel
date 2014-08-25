@@ -23,6 +23,7 @@
                 "itemId": "companyScenariosList",
                 "store": "CompanyScenariosStore"
             },
+            "name": "MyList7",
             "designerId": "a8dac054-f345-44b2-8aa0-69860ef738fc",
             "cn": [
                 {
@@ -38,6 +39,7 @@
                             "<div class=“info” width=“40” height=“40”/>Name: {name}<br/><small>First Year Benefits: ${yr1_benefit_sum} M</small>"
                         ]
                     },
+                    "name": "tpl7",
                     "designerId": "d998326c-2d08-4860-9e87-15301e795962"
                 }
             ]

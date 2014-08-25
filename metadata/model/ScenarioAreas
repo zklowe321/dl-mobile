@@ -20,6 +20,7 @@
             "userConfig": {
                 "name": "id"
             },
+            "name": "field66",
             "designerId": "01e55b8b-07ba-4c2c-a774-b2caba7f3a0c"
         },
         {
@@ -32,6 +33,7 @@
             "userConfig": {
                 "name": "name"
             },
+            "name": "field67",
             "designerId": "47c75cfd-c275-480e-8de9-a5eaf29e20b7"
         }
     ]

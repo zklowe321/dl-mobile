@@ -19,6 +19,7 @@
                 "type": "object"
             },
             "codeClass": null,
+            "name": "MyJsonPProxy12",
             "designerId": "eb9d0991-7a45-405c-b9ea-839bf4103bef",
             "cn": [
                 {
@@ -32,6 +33,7 @@
                         "rootProperty": "metrics",
                         "totalProperty": "totalRecs"
                     },
+                    "name": "MyJsonReader12",
                     "designerId": "f6a2bc10-3298-46ca-9aa4-cf7875690cf3"
                 }
             ]

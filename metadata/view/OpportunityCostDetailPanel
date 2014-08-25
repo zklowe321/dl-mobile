@@ -47,6 +47,7 @@
                     "}]"
                 ]
             },
+            "name": "MySelectField7",
             "designerId": "66283f0c-d84b-439d-8cc3-789fdadb2a9c"
         },
         {
@@ -59,6 +60,7 @@
             "userConfig": {
                 "height": 10
             },
+            "name": "MySpacer18",
             "designerId": "34c7d297-1108-4257-b1e0-bcf5e73a24d9"
         },
         {
@@ -73,6 +75,7 @@
                 "label": "Cost",
                 "labelWidth": "40%"
             },
+            "name": "MyTextField25",
             "designerId": "2fd613f5-9f2b-46e2-b072-989e0553e4ed"
         },
         {
@@ -85,6 +88,7 @@
             "userConfig": {
                 "height": 10
             },
+            "name": "MySpacer19",
             "designerId": "c92397b1-118c-40e9-a124-bd6d4e565b0f"
         },
         {
@@ -111,6 +115,7 @@
                     "}]"
                 ]
             },
+            "name": "MySelectField8",
             "designerId": "97e27e41-18a0-4665-bd92-90e5ceae9d63"
         },
         {
@@ -125,6 +130,7 @@
                 "margin": 10,
                 "text": "Save Cost"
             },
+            "name": "MyButton9",
             "designerId": "c9980a05-2655-44c8-94c0-31c33a30ace2"
         },
         {
@@ -138,6 +144,7 @@
                 "itemId": "costIdField",
                 "readOnly": false
             },
+            "name": "MyHiddenField3",
             "designerId": "fd304b98-8560-4de0-a49c-a51d53b41bfc"
         },
         {
@@ -152,6 +159,7 @@
                 "hidden": true,
                 "itemId": "deleteCostActionSheet"
             },
+            "name": "MyActionSheet",
             "designerId": "d2787ca6-32ae-4815-b3ab-e073b0e7a3aa",
             "cn": [
                 {
@@ -167,6 +175,7 @@
                         "text": "Delete Cost",
                         "ui": "decline"
                     },
+                    "name": "MyButton10",
                     "designerId": "75c7a105-4c1a-46c3-9e60-148e33cfb291"
                 },
                 {
@@ -180,6 +189,7 @@
                         "itemId": "cancelDeleteButton",
                         "text": "Cancel"
                     },
+                    "name": "MyButton11",
                     "designerId": "760f0963-add1-4287-ba5a-2df13b69d814"
                 },
                 {
@@ -192,6 +202,7 @@
                     "userConfig": {
                         "itemId": "costIdField"
                     },
+                    "name": "MyHiddenField4",
                     "designerId": "00940cd1-a691-4b2f-8473-0ea47f44f887"
                 }
             ]
