@@ -18,7 +18,7 @@ Ext.define('MyApp.view.ChangePasswordPanel', {
     alias: 'widget.changepasswordpanel',
 
     requires: [
-        'Ext.field.Text',
+        'Ext.field.Password',
         'Ext.Spacer',
         'Ext.Button'
     ],
@@ -26,7 +26,7 @@ Ext.define('MyApp.view.ChangePasswordPanel', {
     config: {
         items: [
             {
-                xtype: 'textfield',
+                xtype: 'passwordfield',
                 itemId: 'currentPasswordField',
                 label: 'Current Password',
                 labelWidth: '40%',
@@ -37,7 +37,7 @@ Ext.define('MyApp.view.ChangePasswordPanel', {
                 height: 15
             },
             {
-                xtype: 'textfield',
+                xtype: 'passwordfield',
                 itemId: 'newPasswordField',
                 label: 'New Password',
                 labelWidth: '40%',
@@ -48,7 +48,7 @@ Ext.define('MyApp.view.ChangePasswordPanel', {
                 height: 15
             },
             {
-                xtype: 'textfield',
+                xtype: 'passwordfield',
                 itemId: 'confirmPasswordField',
                 label: 'Confirm Password',
                 labelWidth: '40%',

@@ -36,7 +36,7 @@ Ext.define('MyApp.view.NavMenu', {
                 navView: 'homepanel',
                 margin: 5,
                 iconCls: 'home',
-                text: 'Dashboard'
+                text: 'Search'
             },
             {
                 xtype: 'button',

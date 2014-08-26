@@ -32,7 +32,7 @@
                 "iconCls": "home",
                 "margin": 5,
                 "navView": "homepanel",
-                "text": "Dashboard"
+                "text": "Search"
             },
             "name": "MyButton2",
             "designerId": "93074142-33b3-4eaa-8067-cf065629f53c",

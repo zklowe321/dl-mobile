@@ -1284,14 +1284,20 @@ Ext.define('MyApp.controller.Navigation', {
 
     onLoginPanelHide: function(component, eOpts) {
         var validated = MyApp.app.isValidated(),
-            navBar = this.getNavBar();
+            navBar = this.getNavBar(),
+            homePanel = this.getHomePanel();
 
         if (validated) {
             rightButton = navBar.rightBox.query('button')[0];
             if (rightButton) {
                 rightButton.destroy();
             }
+            homePanel.child('#homeContainer').child('#searchField').show();
+            homePanel.child('#homeContainer').child('#selectField').show();
 
+        } else {
+            homePanel.child('#homeContainer').child('#searchField').hide();
+            homePanel.child('#homeContainer').child('#selectField').hide();
         }
     },
 
@@ -1304,13 +1310,17 @@ Ext.define('MyApp.controller.Navigation', {
             if (rightButton) {
                 rightButton.destroy();
             }
+            newActiveItem.child('#homeContainer').child('#searchField').show();
+            newActiveItem.child('#homeContainer').child('#selectField').show();
+
+        } else {
+            newActiveItem.child('#homeContainer').child('#searchField').hide();
+            newActiveItem.child('#homeContainer').child('#selectField').hide();
         }
     },
 
     onDownloadImageTap: function(image, e, eOpts) {
         var url = image.downloadUrl;
-
-        console.log('button tapped');
 
         window.open(url);
     },
@@ -1373,7 +1383,7 @@ Ext.define('MyApp.controller.Navigation', {
 
     onShowChangePasswordButtonTap: function(button, e, eOpts) {
         var panel = Ext.create('MyApp.view.ChangePasswordPanel', {
-            title: 'DecisionLink'
+            title: 'Change Password'
         });
 
         this.getMainView().push(panel);

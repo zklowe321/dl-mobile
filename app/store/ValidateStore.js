@@ -62,9 +62,7 @@ Ext.define('MyApp.store.ValidateStore', {
         MyApp.app.setAccountName(account_name);
         MyApp.app.setEmail(email);
 
-        if (success) {
-            alert("Login successful");
-        } else {
+        if (!success) {
             alert("Login unsuccessful");
         }
     }
