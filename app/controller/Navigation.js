@@ -1401,9 +1401,9 @@ Ext.define('MyApp.controller.Navigation', {
             confirmPassword = panel.child('#confirmPasswordField').getValue(),
             user_id = MyApp.app.getUserId();
 
-        if (newPassword.equals(confirmPassword)) {
-            new_p = toMD5(newPassword);
-            old_p = toMD5(currentPassword);
+        if (newPassword === confirmPassword) {
+            new_p = me.toMD5(newPassword);
+            old_p = me.toMD5(currentPassword);
             me.updatePassword(user_id, old_p, new_p, function(store){
                 me.getHiddenList().setStore(store);
             });
@@ -1820,15 +1820,11 @@ Ext.define('MyApp.controller.Navigation', {
     },
 
     updatePassword: function(user_id, oldPassword, newPassword, callback) {
-        var u_id = toMD5(user_id),
-            old_p = toMD5(oldPassword),
-            new_p = toMD5(newPassword);
-
         var store = Ext.data.StoreManager.lookup('SuccessStore'),
             url = 'http://test.decisionlink.com/services' +
-            '/ChangePassword1.php?user_id=' + u_id +
-            '&oldPassword=' + old_p +
-            '&newPassword=' + new_p;
+            '/ChangePassword1.php?user_id=' + user_id +
+            '&oldPassword=' + oldPassword +
+            '&newPassword=' + newPassword;
         store.getProxy().setUrl(url);
         store.load(function() {
             callback(store);
