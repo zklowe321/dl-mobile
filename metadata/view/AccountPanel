@@ -137,7 +137,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "itemId": "changeCurrPrefButton",
+                "itemId": "changeCurrencyButton",
                 "margin": 10,
                 "padding": null,
                 "text": "Change Currency Preference"

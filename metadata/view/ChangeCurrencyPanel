@@ -1,0 +1,63 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "changeCurrencyPanel",
+        "designer|userClassName": "ChangeCurrencyPanel"
+    },
+    "name": "MyPanel13",
+    "designerId": "f5c62a84-6256-440b-9fd4-3c513ccaac2c",
+    "cn": [
+        {
+            "type": "Ext.field.Select",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "displayField": "currency_name",
+                "itemId": "currencySelectField",
+                "label": "Currency",
+                "labelAlign": "top",
+                "store": "CurrenciesStore",
+                "valueField": "id"
+            },
+            "name": "MySelectField",
+            "designerId": "c9ff2894-4819-49bc-b18c-584ee8a6a5df"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 15
+            },
+            "name": "MySpacer41",
+            "designerId": "377d5918-31be-4eaf-95b5-2b1966970cb0"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": null,
+                "itemId": "changeCurrencyButton",
+                "margin": 5,
+                "text": "Change Currency Preference"
+            },
+            "name": "MyButton20",
+            "designerId": "82eca987-e635-44bb-bef1-a8d4c6f31904"
+        }
+    ]
+}

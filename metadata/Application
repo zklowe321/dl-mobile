@@ -44,7 +44,8 @@
             "ScenarioCompetitors",
             "ScenarioAreas",
             "ScenarioIndustries",
-            "ScenarioBaselines"
+            "ScenarioBaselines",
+            "Currencies"
         ],
         "name": "MyApp",
         "pagesFromHome": "0",
@@ -74,7 +75,8 @@
             "ScenarioCompetitorsStore",
             "ScenarioAreasStore",
             "ScenarioIndustriesStore",
-            "ScenarioBaselinesStore"
+            "ScenarioBaselinesStore",
+            "CurrenciesStore"
         ],
         "success": false,
         "userName": " ",
@@ -99,7 +101,9 @@
             "PeerPerformanceDetailPanel",
             "SecondarySQQDetailPanel",
             "SupportPanel",
-            "AccountPanel"
+            "AccountPanel",
+            "ChangePasswordPanel",
+            "ChangeCurrencyPanel"
         ]
     },
     "name": "Application",

@@ -57,7 +57,8 @@ Ext.application({
         'ScenarioCompetitors',
         'ScenarioAreas',
         'ScenarioIndustries',
-        'ScenarioBaselines'
+        'ScenarioBaselines',
+        'Currencies'
     ],
     stores: [
         'SearchStore',
@@ -85,7 +86,8 @@ Ext.application({
         'ScenarioCompetitorsStore',
         'ScenarioAreasStore',
         'ScenarioIndustriesStore',
-        'ScenarioBaselinesStore'
+        'ScenarioBaselinesStore',
+        'CurrenciesStore'
     ],
     views: [
         'MainView',
@@ -108,7 +110,9 @@ Ext.application({
         'PeerPerformanceDetailPanel',
         'SecondarySQQDetailPanel',
         'SupportPanel',
-        'AccountPanel'
+        'AccountPanel',
+        'ChangePasswordPanel',
+        'ChangeCurrencyPanel'
     ],
     controllers: [
         'Navigation',

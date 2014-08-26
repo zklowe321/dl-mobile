@@ -673,6 +673,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "MyApp.model.CompRatios": [],
   "MyApp.model.CompanyScenarios": [],
   "MyApp.model.Competitors": [],
+  "MyApp.model.Currencies": [],
   "MyApp.model.DNBOverview": [],
   "MyApp.model.Detail": [],
   "MyApp.model.Divisions": [],
@@ -699,6 +700,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "MyApp.store.CompRatiosStore": [],
   "MyApp.store.CompanyScenariosStore": [],
   "MyApp.store.CompetitorsStore": [],
+  "MyApp.store.CurrenciesStore": [],
   "MyApp.store.DNBOverviewStore": [],
   "MyApp.store.DetailStore": [],
   "MyApp.store.DivisionsStore": [],
@@ -722,6 +724,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "MyApp.view.AccountPanel": [],
   "MyApp.view.AccountScenariosPanel": [],
   "MyApp.view.AssetDetailPanel": [],
+  "MyApp.view.ChangeCurrencyPanel": [],
+  "MyApp.view.ChangePasswordPanel": [],
   "MyApp.view.CompanyScenariosPanel": [],
   "MyApp.view.CompanyViewPanel": [],
   "MyApp.view.CompetitiveCarousel": [],
@@ -1479,6 +1483,7 @@ Ext.ClassManager.addNameAliasMappings({
   "MyApp.model.CompRatios": [],
   "MyApp.model.CompanyScenarios": [],
   "MyApp.model.Competitors": [],
+  "MyApp.model.Currencies": [],
   "MyApp.model.DNBOverview": [],
   "MyApp.model.Detail": [],
   "MyApp.model.Divisions": [],
@@ -1505,6 +1510,7 @@ Ext.ClassManager.addNameAliasMappings({
   "MyApp.store.CompRatiosStore": [],
   "MyApp.store.CompanyScenariosStore": [],
   "MyApp.store.CompetitorsStore": [],
+  "MyApp.store.CurrenciesStore": [],
   "MyApp.store.DNBOverviewStore": [],
   "MyApp.store.DetailStore": [],
   "MyApp.store.DivisionsStore": [],
@@ -1533,6 +1539,12 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "MyApp.view.AssetDetailPanel": [
     "widget.assetdetailpanel"
+  ],
+  "MyApp.view.ChangeCurrencyPanel": [
+    "widget.changeCurrencyPanel"
+  ],
+  "MyApp.view.ChangePasswordPanel": [
+    "widget.changepasswordpanel"
   ],
   "MyApp.view.CompanyScenariosPanel": [
     "widget.companyscenariospanel"

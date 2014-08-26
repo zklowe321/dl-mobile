@@ -59,11 +59,13 @@ Ext.define('MyApp.controller.Navigation', {
             deleteCostActionSheet: 'opportunitycostdetailpanel #deleteCostActionSheet',
             scenarioField: 'opportunitycarousel #scenarioField',
             scenarioCompetitorsList: 'opportunitycarousel #competitorsList',
+            changePasswordPanel: 'changepasswordpanel',
             sellingIntoField: 'opportunitycarousel #sellingIntoField',
             accountPanel: 'accountpanel',
             opportunitySituationPanel: 'opportunitycarousel #opportunitySituationPanel',
             vpList: 'homepanel #homeContainer #VPListContainer #VPList',
-            homePanel: 'homepanel'
+            homePanel: 'homepanel',
+            currencySelectField: 'changeCurrencyPanel #currencySelectField'
         },
 
         control: {
@@ -199,6 +201,18 @@ Ext.define('MyApp.controller.Navigation', {
             },
             "accountpanel": {
                 activate: 'onAccountPanelActivate'
+            },
+            "accountpanel #changePasswordButton": {
+                tap: 'onShowChangePasswordButtonTap'
+            },
+            "changepasswordpanel #changePasswordButton": {
+                tap: 'onChangePasswordButtonTap'
+            },
+            "accountpanel #changeCurrencyButton": {
+                tap: 'onShowCurrencyButtonTap'
+            },
+            "changecurrencypanel #changeCurrencyButton": {
+                tap: 'onSaveCurrencyButtonTap'
             }
         }
     },
@@ -1357,6 +1371,72 @@ Ext.define('MyApp.controller.Navigation', {
 
     },
 
+    onShowChangePasswordButtonTap: function(button, e, eOpts) {
+        var panel = Ext.create('MyApp.view.ChangePasswordPanel', {
+            title: 'DecisionLink'
+        });
+
+        this.getMainView().push(panel);
+
+        this.getNavBar().leftBox.query('button')[1].hide();
+
+        MyApp.app.incrementPagesFromHome();
+    },
+
+    onChangePasswordButtonTap: function(button, e, eOpts) {
+        var me = this,
+            panel = me.getChangePasswordPanel(),
+            currentPassword = panel.child('#currentPasswordField').getValue(),
+            newPassword = panel.child('#newPasswordField').getValue(),
+            confirmPassword = panel.child('#confirmPasswordField').getValue(),
+            user_id = MyApp.app.getUserId();
+
+        if (newPassword.equals(confirmPassword)) {
+            new_p = toMD5(newPassword);
+            old_p = toMD5(currentPassword);
+            me.updatePassword(user_id, old_p, new_p, function(store){
+                me.getHiddenList().setStore(store);
+            });
+        } else {
+            window.alert("Passwords do not match.");
+        }
+
+    },
+
+    onShowCurrencyButtonTap: function(button, e, eOpts) {
+        var me = this;
+
+        Ext.Viewport.setMasked({message: 'Loading...'});
+
+        me.getCurrencies(function(store){
+            me.getCurrencySelectField().setStore(store);
+        });
+
+        var panel = Ext.create('MyApp.view.ChangeCurrencyPanel', {
+            title: 'Currency Preference'
+        });
+
+        this.getMainView().push(panel);
+
+        this.getNavBar().leftBox.query('button')[1].hide();
+
+        MyApp.app.incrementPagesFromHome();
+
+        Ext.Viewport.setMasked(false);
+    },
+
+    onSaveCurrencyButtonTap: function(button, e, eOpts) {
+        var me = this,
+            user_id = MyApp.app.getUserId(),
+            currencyPanel = me.getChangeCurrencyPanel(),
+            currency_pref = currencyPanel.child('#currencySelectField').getValue(),
+            currency_pref_name = currencyPanel.child('#currencySelectField').getName();
+
+        me.updateCurrencyPreference(user_id, currency_pref, currency_pref_name, function(store) {
+            me.getHiddenList().setStore(store);
+        });
+    },
+
     deleteOpportunityCost: function(oppty_id, id, callback) {
         var store = Ext.data.StoreManager.lookup('SuccessStore'),
             url = 'http://test.decisionlink.com/services/DeleteOpportunityCost1.php' +
@@ -1751,6 +1831,15 @@ Ext.define('MyApp.controller.Navigation', {
             '/ChangeCurrencyPreference1.php?user_id=' + user_id +
             '&currency_pref=' + currency_pref +
             '&currency_pref_name=' + currency_pref_name;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getCurrencies: function(callback) {
+        var store = Ext.data.StoreManager.lookup('CurrenciesStore'),
+            url = 'http://test.decisionlink.com/services/GetCurrencies1.php';
         store.getProxy().setUrl(url);
         store.load(function() {
             callback(store);

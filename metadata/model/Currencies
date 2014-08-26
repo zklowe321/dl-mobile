@@ -1,0 +1,54 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Currencies"
+    },
+    "name": "MyModel",
+    "designerId": "aea7af3b-811f-441f-9470-a65e201c4fd7",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "field161",
+            "designerId": "95039a1b-634a-40c8-8ce7-df06aa90bc4d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "currency_name"
+            },
+            "name": "field162",
+            "designerId": "9694a2c1-0ee5-4856-b8a0-78d3d2a007f1"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "currency_code"
+            },
+            "name": "field163",
+            "designerId": "3123d45c-6952-47ac-ae6b-be7dd013cc07"
+        }
+    ]
+}

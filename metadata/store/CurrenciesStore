@@ -1,0 +1,39 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CurrenciesStore",
+        "model": "Currencies",
+        "storeId": "CurrenciesStore"
+    },
+    "name": "MyJsonPStore",
+    "designerId": "b04bf8d6-c965-4a22-a1f9-2a48248d76ba",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyJsonPProxy26",
+            "designerId": "f60806c8-20b9-43fd-815e-ea60123b958d",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader26",
+                    "designerId": "a8c31638-f57d-47c3-aa9d-4c30d69d4a6b"
+                }
+            ]
+        }
+    ]
+}

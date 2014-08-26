@@ -1,4 +1,4 @@
-function _2cabd89358dd5f6c261ad207fbce742fae463e17(){};//@tag foundation,core
+function _89459e303faefdb8fd3f5e2ff984b610e43f13a4(){};//@tag foundation,core
 //@define Ext
 
 /**
@@ -74118,9 +74118,6 @@ Ext.define('MyApp.controller.Navigation', {
             },
             "accountpanel #changeCurrencyButton": {
                 tap: 'onShowCurrencyButtonTap'
-            },
-            "changecurrencypanel #changeCurrencyButton": {
-                tap: 'onSaveCurrencyButtonTap'
             }
         }
     },
@@ -75312,12 +75309,10 @@ Ext.define('MyApp.controller.Navigation', {
     },
 
     onShowCurrencyButtonTap: function(button, e, eOpts) {
-        var me = this;
-
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        me.getCurrencies(function(store){
-            me.getCurrencySelectField().setStore(store);
+        this.getCurrencies(function(store){
+            this.getCurrencySelectField().setStore(store);
         });
 
         var panel = Ext.create('MyApp.view.ChangeCurrencyPanel', {
@@ -75331,18 +75326,6 @@ Ext.define('MyApp.controller.Navigation', {
         MyApp.app.incrementPagesFromHome();
 
         Ext.Viewport.setMasked(false);
-    },
-
-    onSaveCurrencyButtonTap: function(button, e, eOpts) {
-        var me = this,
-            user_id = MyApp.app.getUserId(),
-            currencyPanel = me.getChangeCurrencyPanel(),
-            currency_pref = currencyPanel.child('#currencySelectField').getValue(),
-            currency_pref_name = currencyPanel.child('#currencySelectField').getName();
-
-        me.updateCurrencyPreference(user_id, currency_pref, currency_pref_name, function(store) {
-            me.getHiddenList().setStore(store);
-        });
     },
 
     deleteOpportunityCost: function(oppty_id, id, callback) {

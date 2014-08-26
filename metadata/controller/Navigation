@@ -552,6 +552,20 @@
             },
             "codeClass": null,
             "userConfig": {
+                "ref": "changePasswordPanel",
+                "selector": "changepasswordpanel"
+            },
+            "name": "changePasswordPanel",
+            "designerId": "92f97b77-e9ff-4899-8092-ff581fb43cc7"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "ref": "sellingIntoField",
                 "selector": "opportunitycarousel #sellingIntoField"
             },
@@ -2446,6 +2460,68 @@
             "designerId": "600754d3-40d4-4794-881d-379cad73a896"
         },
         {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "accountpanel #changePasswordButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onShowChangePasswordButtonTap",
+                "implHandler": [
+                    "var panel = Ext.create('MyApp.view.ChangePasswordPanel', {",
+                    "    title: 'DecisionLink'",
+                    "});",
+                    "",
+                    "this.getMainView().push(panel);",
+                    "",
+                    "this.getNavBar().leftBox.query('button')[1].hide();",
+                    "",
+                    "MyApp.app.incrementPagesFromHome();"
+                ],
+                "name": "tap"
+            },
+            "name": "onShowChangePasswordButtonTap",
+            "designerId": "16f42312-4a6f-468b-a2c9-9413d99f351c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "changepasswordpanel #changePasswordButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onChangePasswordButtonTap",
+                "implHandler": [
+                    "var me = this,",
+                    "    panel = me.getChangePasswordPanel(),",
+                    "    currentPassword = panel.child('#currentPasswordField').getValue(),",
+                    "    newPassword = panel.child('#newPasswordField').getValue(),",
+                    "    confirmPassword = panel.child('#confirmPasswordField').getValue(),",
+                    "    user_id = MyApp.app.getUserId();",
+                    "",
+                    "if (newPassword.equals(confirmPassword)) {",
+                    "    new_p = toMD5(newPassword);",
+                    "    old_p = toMD5(currentPassword);",
+                    "    me.updatePassword(user_id, old_p, new_p, function(store){",
+                    "        me.getHiddenList().setStore(store);",
+                    "    });",
+                    "} else {",
+                    "    window.alert(\"Passwords do not match.\");",
+                    "}",
+                    ""
+                ],
+                "name": "tap"
+            },
+            "name": "onChangePasswordButtonTap",
+            "designerId": "b810884a-dc9f-45be-8af7-61f85e62877e"
+        },
+        {
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -3452,6 +3528,30 @@
             "codeClass": null,
             "userConfig": {
                 "designer|params": [
+                    "callback"
+                ],
+                "fn": "getCurrencies",
+                "implHandler": [
+                    "var store = Ext.data.StoreManager.lookup('CurrenciesStore'),",
+                    "    url = 'http://test.decisionlink.com/services/GetCurrencies1.php';",
+                    "store.getProxy().setUrl(url);",
+                    "store.load(function() {",
+                    "    callback(store);",
+                    "});"
+                ]
+            },
+            "name": "getCurrencies",
+            "designerId": "45931da6-2b74-4de1-958f-b3078c948cbf"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
                     "str"
                 ],
                 "fn": "toMD5",
@@ -3660,6 +3760,84 @@
             },
             "name": "toMD5",
             "designerId": "697846ee-739d-4b8e-8162-7927fed001ef"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "currencySelectField",
+                "selector": "changeCurrencyPanel #currencySelectField"
+            },
+            "name": "currencySelectField",
+            "designerId": "ab200468-306e-4eb1-a5b5-ca500d21220c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "accountpanel #changeCurrencyButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onShowCurrencyButtonTap",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "Ext.Viewport.setMasked({message: 'Loading...'});",
+                    "",
+                    "me.getCurrencies(function(store){",
+                    "    me.getCurrencySelectField().setStore(store);",
+                    "});",
+                    "",
+                    "var panel = Ext.create('MyApp.view.ChangeCurrencyPanel', {",
+                    "    title: 'Currency Preference'",
+                    "});",
+                    "",
+                    "this.getMainView().push(panel);",
+                    "",
+                    "this.getNavBar().leftBox.query('button')[1].hide();",
+                    "",
+                    "MyApp.app.incrementPagesFromHome();",
+                    "",
+                    "Ext.Viewport.setMasked(false);"
+                ],
+                "name": "tap"
+            },
+            "name": "onShowCurrencyButtonTap",
+            "designerId": "11dfa794-4d8e-4133-8d68-0d7436b9b915"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "changecurrencypanel #changeCurrencyButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onSaveCurrencyButtonTap",
+                "implHandler": [
+                    "var me = this,",
+                    "    user_id = MyApp.app.getUserId(),",
+                    "    currencyPanel = me.getChangeCurrencyPanel(),",
+                    "    currency_pref = currencyPanel.child('#currencySelectField').getValue(),",
+                    "    currency_pref_name = currencyPanel.child('#currencySelectField').getName();",
+                    "",
+                    "me.updateCurrencyPreference(user_id, currency_pref, currency_pref_name, function(store) {",
+                    "    me.getHiddenList().setStore(store);",
+                    "});"
+                ],
+                "name": "tap"
+            },
+            "name": "onSaveCurrencyButtonTap",
+            "designerId": "1d5135cb-e5f8-432e-9241-4fc32a712a19"
         }
     ]
 }
