@@ -107,7 +107,8 @@ Ext.application({
         'KpiDetailPanel',
         'PeerPerformanceDetailPanel',
         'SecondarySQQDetailPanel',
-        'SupportPanel'
+        'SupportPanel',
+        'AccountPanel'
     ],
     controllers: [
         'Navigation',

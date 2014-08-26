@@ -98,7 +98,8 @@
             "KpiDetailPanel",
             "PeerPerformanceDetailPanel",
             "SecondarySQQDetailPanel",
-            "SupportPanel"
+            "SupportPanel",
+            "AccountPanel"
         ]
     },
     "name": "Application",

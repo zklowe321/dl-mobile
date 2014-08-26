@@ -719,6 +719,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "MyApp.store.SuccessStore": [],
   "MyApp.store.ValidateStore": [],
   "MyApp.store.ValueFormulasStore": [],
+  "MyApp.view.AccountPanel": [],
   "MyApp.view.AccountScenariosPanel": [],
   "MyApp.view.AssetDetailPanel": [],
   "MyApp.view.CompanyScenariosPanel": [],
@@ -1524,6 +1525,9 @@ Ext.ClassManager.addNameAliasMappings({
   "MyApp.store.SuccessStore": [],
   "MyApp.store.ValidateStore": [],
   "MyApp.store.ValueFormulasStore": [],
+  "MyApp.view.AccountPanel": [
+    "widget.accountpanel"
+  ],
   "MyApp.view.AccountScenariosPanel": [
     "widget.accountscenariospanel"
   ],

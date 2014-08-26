@@ -1,4 +1,4 @@
-function _8f2db34a554fbc7a8afb4c0e936ea91deed3e56b(){};//@tag foundation,core
+function _139e4093f0d9f20634d420c1bea00ccdb95eb152(){};//@tag foundation,core
 //@define Ext
 
 /**
@@ -73841,14 +73841,14 @@ Ext.define('MyApp.view.NavMenu', {
                 navView: 'homepanel',
                 margin: 5,
                 iconCls: 'home',
-                text: 'Dashboard'
+                text: 'Home'
             },
             {
                 xtype: 'button',
                 navView: 'searchpanel',
                 margin: 5,
                 iconCls: 'favorites',
-                text: 'Saved Accounts'
+                text: 'My Accounts'
             },
             {
                 xtype: 'button',

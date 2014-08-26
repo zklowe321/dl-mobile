@@ -1,4 +1,4 @@
-function _8f2db34a554fbc7a8afb4c0e936ea91deed3e56b(){};//@tag foundation,core
+function _7ea80202e4069edb557207356ee0477788e2bc11(){};//@tag foundation,core
 //@define Ext
 
 /**
@@ -73848,7 +73848,7 @@ Ext.define('MyApp.view.NavMenu', {
                 navView: 'searchpanel',
                 margin: 5,
                 iconCls: 'favorites',
-                text: 'Saved Accounts'
+                text: 'My Accounts'
             },
             {
                 xtype: 'button',
