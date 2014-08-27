@@ -13,17 +13,17 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.store.CurrenciesStore', {
+Ext.define('DecisionLink.store.CurrenciesStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'MyApp.model.Currencies',
+        'DecisionLink.model.Currencies',
         'Ext.data.proxy.JsonP',
         'Ext.data.reader.Json'
     ],
 
     config: {
-        model: 'MyApp.model.Currencies',
+        model: 'DecisionLink.model.Currencies',
         storeId: 'CurrenciesStore',
         proxy: {
             type: 'jsonp',

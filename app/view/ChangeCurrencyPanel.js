@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.ChangeCurrencyPanel', {
+Ext.define('DecisionLink.view.ChangeCurrencyPanel', {
     extend: 'Ext.Panel',
     alias: 'widget.changeCurrencyPanel',
 

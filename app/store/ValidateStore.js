@@ -13,17 +13,17 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.store.ValidateStore', {
+Ext.define('DecisionLink.store.ValidateStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'MyApp.model.Validate',
+        'DecisionLink.model.Validate',
         'Ext.data.proxy.JsonP',
         'Ext.data.reader.Json'
     ],
 
     config: {
-        model: 'MyApp.model.Validate',
+        model: 'DecisionLink.model.Validate',
         storeId: 'ValidateStore',
         proxy: {
             type: 'jsonp',
@@ -55,12 +55,12 @@ Ext.define('MyApp.store.ValidateStore', {
         email = store.data.items[0].data.email;
 
 
-        MyApp.app.setUserId(id);
-        MyApp.app.setValidated(success);
-        MyApp.app.setAccountId(account_id);
-        MyApp.app.setUserName(user_name);
-        MyApp.app.setAccountName(account_name);
-        MyApp.app.setEmail(email);
+        DecisionLink.app.setUserId(id);
+        DecisionLink.app.setValidated(success);
+        DecisionLink.app.setAccountId(account_id);
+        DecisionLink.app.setUserName(user_name);
+        DecisionLink.app.setAccountName(account_name);
+        DecisionLink.app.setEmail(email);
 
         if (!success) {
             alert("Login unsuccessful");

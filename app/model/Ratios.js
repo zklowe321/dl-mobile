@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.model.Ratios', {
+Ext.define('DecisionLink.model.Ratios', {
     extend: 'Ext.data.Model',
 
     requires: [

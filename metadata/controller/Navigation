@@ -580,6 +580,20 @@
             },
             "codeClass": null,
             "userConfig": {
+                "ref": "currencySelectField",
+                "selector": "changeCurrencyPanel #currencySelectField"
+            },
+            "name": "currencySelectField",
+            "designerId": "ab200468-306e-4eb1-a5b5-ca500d21220c"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "ref": "accountPanel",
                 "selector": "accountpanel"
             },
@@ -672,7 +686,7 @@
                     "    rightButton.destroy();",
                     "}",
                     "",
-                    "MyApp.app.setPagesFromHome(0);"
+                    "DecisionLink.app.setPagesFromHome(0);"
                 ],
                 "name": "tap"
             },
@@ -696,7 +710,7 @@
                     "",
                     "// Get or create navigation menu",
                     "var menu = this.getNavMenu(),",
-                    "    validated = MyApp.app.isValidated();",
+                    "    validated = DecisionLink.app.isValidated();",
                     "if (!menu) {",
                     "    menu = Ext.create('widget.navmenu');",
                     "}",
@@ -753,11 +767,11 @@
                     "    me = this;",
                     "",
                     "if (record) {",
-                    "    MyApp.app.setCurrentCompanyId(record.get('id'));",
-                    "    MyApp.app.setCurrentIndustryId(record.get('industry_id'));",
-                    "    MyApp.app.setCurrentRevenue(record.get('revenue'));",
+                    "    DecisionLink.app.setCurrentCompanyId(record.get('id'));",
+                    "    DecisionLink.app.setCurrentIndustryId(record.get('industry_id'));",
+                    "    DecisionLink.app.setCurrentRevenue(record.get('revenue'));",
                     "",
-                    "    details = Ext.create('MyApp.view.CompanyViewPanel', {",
+                    "    details = Ext.create('DecisionLink.view.CompanyViewPanel', {",
                     "        title: record.get('name')",
                     "    });",
                     "",
@@ -765,8 +779,8 @@
                     "",
                     "    var navBar = this.getNavBar();",
                     "    navBar.leftBox.query('button')[1].hide();",
-                    "    ",
-                    "    MyApp.app.incrementPagesFromHome();",
+                    "",
+                    "    DecisionLink.app.incrementPagesFromHome();",
                     "}"
                 ],
                 "name": "itemtap"
@@ -787,7 +801,7 @@
                 "fn": "onAccountScenariosListActivate",
                 "implHandler": [
                     "var me = this,",
-                    "    account_id = MyApp.app.getAccountId();",
+                    "    account_id = DecisionLink.app.getAccountId();",
                     "",
                     "me.getNavBar().setTitle(\"My Accounts\");",
                     "",
@@ -833,7 +847,7 @@
                     "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
-                    "carousel = Ext.create('MyApp.view.OpportunityCarousel', {",
+                    "carousel = Ext.create('DecisionLink.view.OpportunityCarousel', {",
                     "    title: record.get('name')",
                     "});",
                     "",
@@ -853,7 +867,7 @@
                     "details.child('#imageContainer').child('#costLightImage').setSrc(cost_light_image);",
                     "details.child('#imageContainer').child('#benefitLightImage').setSrc(benefit_light_image);",
                     "",
-                    "MyApp.app.setCurrentOpptyId(record.get('id'));",
+                    "DecisionLink.app.setCurrentOpptyId(record.get('id'));",
                     "",
                     "situation = carousel.child('#opportunitySituationPanel');",
                     "situation.child('#costOfCapitalField').setValue(wacc);",
@@ -866,7 +880,7 @@
                     "var navBar = this.getNavBar();",
                     "navBar.leftBox.query('button')[1].hide();",
                     "",
-                    "MyApp.app.incrementPagesFromHome();"
+                    "DecisionLink.app.incrementPagesFromHome();"
                 ],
                 "name": "itemtap"
             },
@@ -889,11 +903,11 @@
                     "    me = this;",
                     "",
                     "if (record) {",
-                    "    MyApp.app.setCurrentCompanyId(record.get('id'));",
-                    "    MyApp.app.setCurrentIndustryId(record.get('industry_id'));",
-                    "    MyApp.app.setCurrentRevenue(record.get('revenue'));",
-                    "    ",
-                    "    details = Ext.create('MyApp.view.CompanyViewPanel', {",
+                    "    DecisionLink.app.setCurrentCompanyId(record.get('id'));",
+                    "    DecisionLink.app.setCurrentIndustryId(record.get('industry_id'));",
+                    "    DecisionLink.app.setCurrentRevenue(record.get('revenue'));",
+                    "",
+                    "    details = Ext.create('DecisionLink.view.CompanyViewPanel', {",
                     "        title: record.get('name')",
                     "    });",
                     "",
@@ -901,8 +915,8 @@
                     "",
                     "    var navBar = this.getNavBar();",
                     "    navBar.leftBox.query('button')[1].hide();",
-                    "    ",
-                    "    MyApp.app.incrementPagesFromHome();",
+                    "",
+                    "    DecisionLink.app.incrementPagesFromHome();",
                     "}"
                 ],
                 "name": "itemtap"
@@ -923,7 +937,7 @@
                 "fn": "onSavedListActivate",
                 "implHandler": [
                     "var me = this,",
-                    "    id = MyApp.app.getUserId();",
+                    "    id = DecisionLink.app.getUserId();",
                     "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
@@ -953,7 +967,7 @@
                     "var overview,",
                     "    searchPanel,",
                     "    option,",
-                    "    validated = MyApp.app.isValidated(),",
+                    "    validated = DecisionLink.app.isValidated(),",
                     "    me = this;",
                     "",
                     "homePanel = me.getHomePanel();",
@@ -1028,14 +1042,14 @@
                 "fn": "onMainViewBack",
                 "implHandler": [
                     "var navBar = this.getNavBar(),",
-                    "    pagesFromHome = MyApp.app.getPagesFromHome();",
+                    "    pagesFromHome = DecisionLink.app.getPagesFromHome();",
                     "",
                     "if (pagesFromHome == 1) {",
                     "    navBar.leftBox.query('button')[0].hide();",
                     "    navBar.leftBox.query('button')[1].show();",
-                    "} ",
-                    "    ",
-                    "MyApp.app.decrementPagesFromHome();",
+                    "}",
+                    "",
+                    "DecisionLink.app.decrementPagesFromHome();",
                     ""
                 ],
                 "name": "back"
@@ -1063,7 +1077,7 @@
                     "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
-                    "id = MyApp.app.getCurrentCompanyId();",
+                    "id = DecisionLink.app.getCurrentCompanyId();",
                     "",
                     "me.getCompanyOverview(id, function(store) {",
                     "    me.getDetailList().setStore(store);",
@@ -1078,7 +1092,7 @@
                     "var navBar = this.getNavBar();",
                     "navBar.leftBox.query('button')[1].hide();",
                     "",
-                    "MyApp.app.incrementPagesFromHome();"
+                    "DecisionLink.app.incrementPagesFromHome();"
                 ],
                 "name": "check"
             },
@@ -1104,7 +1118,7 @@
                     "",
                     "menu.child('#passwordField').reset();",
                     "",
-                    "if (!MyApp.app.isValidated()) {",
+                    "if (!DecisionLink.app.isValidated()) {",
                     "    menu.showBy(button);",
                     "} else {",
                     "    alert(\"You are already logged in.\");",
@@ -1135,8 +1149,8 @@
                     "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
-                    "user_id = MyApp.app.getUserId();",
-                    "company_id = MyApp.app.getCurrentCompanyId();",
+                    "user_id = DecisionLink.app.getUserId();",
+                    "company_id = DecisionLink.app.getCurrentCompanyId();",
                     "",
                     "me.getCompanyScenarios(user_id, company_id, function(store) {",
                     "    me.getCompanyScenariosList().setStore(store);",
@@ -1144,7 +1158,7 @@
                     "    Ext.Viewport.setMasked(false);",
                     "});",
                     "",
-                    "details = Ext.create('MyApp.view.CompanyScenariosPanel', {",
+                    "details = Ext.create('DecisionLink.view.CompanyScenariosPanel', {",
                     "    title: 'Value Propositions'",
                     "});",
                     "",
@@ -1153,7 +1167,7 @@
                     "var navBar = this.getNavBar();",
                     "navBar.leftBox.query('button')[1].hide();",
                     "",
-                    "MyApp.app.incrementPagesFromHome();"
+                    "DecisionLink.app.incrementPagesFromHome();"
                 ],
                 "name": "check"
             },
@@ -1184,18 +1198,18 @@
                     "        Ext.Viewport.setMasked(false);",
                     "    });",
                     "",
-                    "    details = Ext.create('MyApp.view.OpportunityCarousel', {",
+                    "    details = Ext.create('DecisionLink.view.OpportunityCarousel', {",
                     "        title: record.get('name')",
                     "    });",
                     "",
-                    "    MyApp.app.setCurrentOppty(record.get('id'));",
+                    "    DecisionLink.app.setCurrentOppty(record.get('id'));",
                     "",
                     "    this.getMainView().push(details);",
                     "",
                     "    var navBar = this.getNavBar();",
                     "    navBar.leftBox.query('button')[1].hide();",
-                    "    ",
-                    "    MyApp.app.incrementPagesFromHome();",
+                    "",
+                    "    DecisionLink.app.incrementPagesFromHome();",
                     "}"
                 ],
                 "name": "itemtap"
@@ -1216,8 +1230,8 @@
                 "fn": "onOpptyCarouselActivate",
                 "implHandler": [
                     "var me = this,",
-                    "    id = MyApp.app.getCurrentOpptyId(),",
-                    "    user_id = MyApp.app.getUserId();",
+                    "    id = DecisionLink.app.getCurrentOpptyId(),",
+                    "    user_id = DecisionLink.app.getUserId();",
                     "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
@@ -1301,7 +1315,7 @@
                     "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
-                    "details = Ext.create('MyApp.view.SalesQuestionDetailPanel', {",
+                    "details = Ext.create('DecisionLink.view.SalesQuestionDetailPanel', {",
                     "    title: 'Sales Question Details'",
                     "});",
                     "",
@@ -1318,7 +1332,7 @@
                     "var navBar = this.getNavBar();",
                     "navBar.leftBox.query('button')[1].hide();",
                     "",
-                    "MyApp.app.incrementPagesFromHome();"
+                    "DecisionLink.app.incrementPagesFromHome();"
                 ],
                 "name": "itemtap"
             },
@@ -1354,7 +1368,7 @@
                     "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
-                    "details = Ext.create('MyApp.view.ValueFormulaDetailPanel', {",
+                    "details = Ext.create('DecisionLink.view.ValueFormulaDetailPanel', {",
                     "    title: 'Value Formula Details',",
                     "    alt_metric_id: alt_metric_id",
                     "});",
@@ -1381,7 +1395,7 @@
                     "var navBar = this.getNavBar();",
                     "navBar.leftBox.query('button')[1].hide();",
                     "",
-                    "MyApp.app.incrementPagesFromHome();"
+                    "DecisionLink.app.incrementPagesFromHome();"
                 ],
                 "name": "itemtap"
             },
@@ -1409,7 +1423,7 @@
                     "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
-                    "details = Ext.create('MyApp.view.OpportunityCostDetailPanel', {",
+                    "details = Ext.create('DecisionLink.view.OpportunityCostDetailPanel', {",
                     "    title: 'Cost Details'",
                     "});",
                     "",
@@ -1425,7 +1439,7 @@
                     "var navBar = this.getNavBar();",
                     "navBar.leftBox.query('button')[1].hide();",
                     "",
-                    "MyApp.app.incrementPagesFromHome();"
+                    "DecisionLink.app.incrementPagesFromHome();"
                 ],
                 "name": "itemtap"
             },
@@ -1453,7 +1467,7 @@
                     "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
-                    "details = Ext.create('MyApp.view.AssetDetailPanel', {",
+                    "details = Ext.create('DecisionLink.view.AssetDetailPanel', {",
                     "    title: 'Asset Details',",
                     "    downloadUrl: url",
                     "});",
@@ -1470,7 +1484,7 @@
                     "var navBar = this.getNavBar();",
                     "navBar.leftBox.query('button')[1].hide();",
                     "",
-                    "MyApp.app.incrementPagesFromHome();"
+                    "DecisionLink.app.incrementPagesFromHome();"
                 ],
                 "name": "itemtap"
             },
@@ -1506,7 +1520,7 @@
                     "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
-                    "carousel = Ext.create('MyApp.view.OpportunityCarousel', {",
+                    "carousel = Ext.create('DecisionLink.view.OpportunityCarousel', {",
                     "    title: record.get('name')",
                     "});",
                     "",
@@ -1526,7 +1540,7 @@
                     "details.child('#imageContainer').child('#costLightImage').setSrc(cost_light_image);",
                     "details.child('#imageContainer').child('#benefitLightImage').setSrc(benefit_light_image);",
                     "",
-                    "MyApp.app.setCurrentOpptyId(record.get('id'));",
+                    "DecisionLink.app.setCurrentOpptyId(record.get('id'));",
                     "",
                     "Ext.Viewport.setMasked(false);",
                     "",
@@ -1535,7 +1549,7 @@
                     "var navBar = this.getNavBar();",
                     "navBar.leftBox.query('button')[1].hide();",
                     "",
-                    "MyApp.app.incrementPagesFromHome();"
+                    "DecisionLink.app.incrementPagesFromHome();"
                 ],
                 "name": "itemtap"
             },
@@ -1555,8 +1569,8 @@
                 "fn": "onDNBCarouselActivate",
                 "implHandler": [
                     "var me = this,",
-                    "    company_id = MyApp.app.getCurrentCompanyId(),",
-                    "    user_id = MyApp.app.getUserId();",
+                    "    company_id = DecisionLink.app.getCurrentCompanyId(),",
+                    "    user_id = DecisionLink.app.getUserId();",
                     "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
@@ -1607,7 +1621,7 @@
                     "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
-                    "carousel = Ext.create('MyApp.view.DNBCarousel', {",
+                    "carousel = Ext.create('DecisionLink.view.DNBCarousel', {",
                     "    title: 'Additional DnB Info'",
                     "});",
                     "",
@@ -1618,7 +1632,7 @@
                     "var navBar = this.getNavBar();",
                     "navBar.leftBox.query('button')[1].hide();",
                     "",
-                    "MyApp.app.incrementPagesFromHome();"
+                    "DecisionLink.app.incrementPagesFromHome();"
                 ],
                 "name": "check"
             },
@@ -1641,9 +1655,9 @@
                     "    me = this;",
                     "",
                     "if (record) {",
-                    "    MyApp.app.setCurrentCompanyId(record.get('id'));",
+                    "    DecisionLink.app.setCurrentCompanyId(record.get('id'));",
                     "",
-                    "    details = Ext.create('MyApp.view.CompanyViewPanel', {",
+                    "    details = Ext.create('DecisionLink.view.CompanyViewPanel', {",
                     "        title: record.get('name')",
                     "    });",
                     "",
@@ -1652,7 +1666,7 @@
                     "    var navBar = this.getNavBar();",
                     "    navBar.leftBox.query('button')[0].hide();",
                     "    navBar.leftBox.query('button')[1].show();",
-                    "    ",
+                    "",
                     "}"
                 ],
                 "name": "itemtap"
@@ -1676,11 +1690,11 @@
                     "    me = this;",
                     "",
                     "if (record) {",
-                    "    MyApp.app.setCurrentCompanyId(record.get('id'));",
-                    "    MyApp.app.setCurrentIndustryId(record.get('industry_id'));",
-                    "    MyApp.app.setCurrentRevenue(record.get('revenue'));",
+                    "    DecisionLink.app.setCurrentCompanyId(record.get('id'));",
+                    "    DecisionLink.app.setCurrentIndustryId(record.get('industry_id'));",
+                    "    DecisionLink.app.setCurrentRevenue(record.get('revenue'));",
                     "",
-                    "    details = Ext.create('MyApp.view.CompanyViewPanel', {",
+                    "    details = Ext.create('DecisionLink.view.CompanyViewPanel', {",
                     "        title: record.get('name')",
                     "    });",
                     "",
@@ -1715,7 +1729,7 @@
                     "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
-                    "panel = Ext.create('MyApp.view.CompetitiveCarousel', {",
+                    "panel = Ext.create('DecisionLink.view.CompetitiveCarousel', {",
                     "    title: 'Competitive Performance'",
                     "});",
                     "",
@@ -1726,7 +1740,7 @@
                     "var navBar = this.getNavBar();",
                     "navBar.leftBox.query('button')[1].hide();",
                     "",
-                    "MyApp.app.incrementPagesFromHome();"
+                    "DecisionLink.app.incrementPagesFromHome();"
                 ],
                 "name": "check"
             },
@@ -1748,13 +1762,13 @@
                     "var kpi_id = record.get('kpi_id'),",
                     "    sqq_value = record.get('sqq_value'),",
                     "    name = record.get('name'),",
-                    "    user_id = MyApp.app.getUserId(),",
-                    "    company_id = MyApp.app.getCurrentCompanyId(),",
+                    "    user_id = DecisionLink.app.getUserId(),",
+                    "    company_id = DecisionLink.app.getCurrentCompanyId(),",
                     "    me = this;",
                     "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
-                    "panel = Ext.create('MyApp.view.KpiDetailPanel', {",
+                    "panel = Ext.create('DecisionLink.view.KpiDetailPanel', {",
                     "    title: 'KPI Details'",
                     "});",
                     "",
@@ -1772,7 +1786,7 @@
                     "var navBar = this.getNavBar();",
                     "navBar.leftBox.query('button')[1].hide();",
                     "",
-                    "MyApp.app.incrementPagesFromHome();"
+                    "DecisionLink.app.incrementPagesFromHome();"
                 ],
                 "name": "itemtap"
             },
@@ -1792,10 +1806,10 @@
                 "fn": "onCompetitiveCarouselActivate",
                 "implHandler": [
                     "var me = this,",
-                    "    company_id = MyApp.app.getCurrentCompanyId(),",
-                    "    user_id = MyApp.app.getUserId(),",
-                    "    industry_id = MyApp.app.getCurrentIndustryId(),",
-                    "    revenue = MyApp.app.getCurrentRevenue();",
+                    "    company_id = DecisionLink.app.getCurrentCompanyId(),",
+                    "    user_id = DecisionLink.app.getUserId(),",
+                    "    industry_id = DecisionLink.app.getCurrentIndustryId(),",
+                    "    revenue = DecisionLink.app.getCurrentRevenue();",
                     "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
@@ -1837,10 +1851,10 @@
                     "    me = this;",
                     "",
                     "if (record) {",
-                    "    MyApp.app.setCurrentCompanyId(record.get('id'));",
-                    "    MyApp.app.setCurrentRevenue(record.get('revenue'));",
+                    "    DecisionLink.app.setCurrentCompanyId(record.get('id'));",
+                    "    DecisionLink.app.setCurrentRevenue(record.get('revenue'));",
                     "",
-                    "    details = Ext.create('MyApp.view.CompanyViewPanel', {",
+                    "    details = Ext.create('DecisionLink.view.CompanyViewPanel', {",
                     "        title: record.get('name')",
                     "    });",
                     "",
@@ -1878,7 +1892,7 @@
                     "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
-                    "panel = Ext.create('MyApp.view.PeerPerformanceDetailPanel', {",
+                    "panel = Ext.create('DecisionLink.view.PeerPerformanceDetailPanel', {",
                     "    title: 'Peer Performance Details'",
                     "});",
                     "",
@@ -1896,7 +1910,7 @@
                     "var navBar = this.getNavBar();",
                     "navBar.leftBox.query('button')[1].hide();",
                     "",
-                    "MyApp.app.incrementPagesFromHome();"
+                    "DecisionLink.app.incrementPagesFromHome();"
                 ],
                 "name": "itemtap"
             },
@@ -1916,7 +1930,7 @@
                 "fn": "onSaveSQQButtonTap",
                 "implHandler": [
                     "var sqqPanel,",
-                    "    oppty_id = MyApp.app.getCurrentOpptyId(),",
+                    "    oppty_id = DecisionLink.app.getCurrentOpptyId(),",
                     "    sqq_id,",
                     "    sqq_override,",
                     "    source_type_id,",
@@ -1949,7 +1963,7 @@
                 "fn": "onSaveCostButtonTap",
                 "implHandler": [
                     "var costPanel,",
-                    "    oppty_id = MyApp.app.getCurrentOpptyId(),",
+                    "    oppty_id = DecisionLink.app.getCurrentOpptyId(),",
                     "    id,",
                     "    cost_type_id,",
                     "    accrual_type_id,",
@@ -1992,7 +2006,7 @@
                 "fn": "onSaveVFButtonTap",
                 "implHandler": [
                     "var VFPanel,",
-                    "    oppty_id = MyApp.app.getCurrentOpptyId(),",
+                    "    oppty_id = DecisionLink.app.getCurrentOpptyId(),",
                     "    metric_id,",
                     "    sqq_value,",
                     "    sqq2_value,",
@@ -2039,7 +2053,7 @@
                     "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
-                    "details = Ext.create('MyApp.view.SecondarySQQDetailPanel', {",
+                    "details = Ext.create('DecisionLink.view.SecondarySQQDetailPanel', {",
                     "    title: 'Sales Question Details'",
                     "});",
                     "",
@@ -2055,7 +2069,7 @@
                     "var navBar = this.getNavBar();",
                     "navBar.leftBox.query('button')[1].hide();",
                     "",
-                    "MyApp.app.incrementPagesFromHome();"
+                    "DecisionLink.app.incrementPagesFromHome();"
                 ],
                 "name": "itemtap"
             },
@@ -2075,15 +2089,15 @@
                 "fn": "onSaveSecondarySQQButtonTap",
                 "implHandler": [
                     "var detailPanel,",
-                    "    oppty_id = MyApp.app.getCurrentOpptyId(),",
-                    "    user_id = MyApp.app.getUserId(),",
+                    "    oppty_id = DecisionLink.app.getCurrentOpptyId(),",
+                    "    user_id = DecisionLink.app.getUserId(),",
                     "    sqq2_id,",
                     "    sqq2_value,",
                     "    impact_per_unit_source_type_id,",
                     "    me = this;",
                     "",
                     "detailPanel = me.getSecondarySQQDetailPanel();",
-                    "oppty_id = MyApp.app.getCurrentOpptyId();",
+                    "oppty_id = DecisionLink.app.getCurrentOpptyId();",
                     "sqq2_id = detailPanel.child('#sqq2IdField').getValue();",
                     "sqq2_value = detailPanel.child('#sqqAnswerField').getValue();",
                     "impact_per_unit_source_type_id = detailPanel.child('#sourceSelectField').getValue();",
@@ -2118,7 +2132,7 @@
                     "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
-                    "details = Ext.create('MyApp.view.OpportunityCostDetailPanel', {",
+                    "details = Ext.create('DecisionLink.view.OpportunityCostDetailPanel', {",
                     "    title: 'Cost Details'",
                     "});",
                     "",
@@ -2134,7 +2148,7 @@
                     "var navBar = this.getNavBar();",
                     "navBar.leftBox.query('button')[1].hide();",
                     "",
-                    "MyApp.app.incrementPagesFromHome();"
+                    "DecisionLink.app.incrementPagesFromHome();"
                 ],
                 "name": "tap"
             },
@@ -2154,7 +2168,7 @@
                 "fn": "onDeleteCostButtonTap",
                 "implHandler": [
                     "var costPanel,",
-                    "    oppty_id = MyApp.app.getCurrentOpptyId(),",
+                    "    oppty_id = DecisionLink.app.getCurrentOpptyId(),",
                     "    id,",
                     "    actionsheet,",
                     "    me = this;",
@@ -2186,7 +2200,7 @@
                 "implHandler": [
                     "var costPanel,",
                     "    actionsheet,",
-                    "    oppty_id = MyApp.app.getCurrentOpptyId(),",
+                    "    oppty_id = DecisionLink.app.getCurrentOpptyId(),",
                     "    id,",
                     "    actionsheet,",
                     "    me = this;",
@@ -2246,8 +2260,8 @@
                 "fn": "onSaveSituationButtonTap",
                 "implHandler": [
                     "var SituationPanel,",
-                    "    user_id = MyApp.app.getUserId(),",
-                    "    id = MyApp.app.getCurrentOpptyId(),",
+                    "    user_id = DecisionLink.app.getUserId(),",
+                    "    id = DecisionLink.app.getCurrentOpptyId(),",
                     "    scenario,",
                     "    competitors = '',",
                     "    areas,",
@@ -2307,7 +2321,7 @@
                 "designer|targetType": "Ext.Panel",
                 "fn": "onLoginPanelHide",
                 "implHandler": [
-                    "var validated = MyApp.app.isValidated(),",
+                    "var validated = DecisionLink.app.isValidated(),",
                     "    navBar = this.getNavBar(),",
                     "    homePanel = this.getHomePanel();",
                     "",
@@ -2337,11 +2351,48 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "accountpanel #changeCurrencyButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onShowCurrencyButtonTap",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "Ext.Viewport.setMasked({message: 'Loading...'});",
+                    "",
+                    "me.getCurrencies(function(store){",
+                    "    me.getCurrencySelectField().setStore(store);",
+                    "});",
+                    "",
+                    "var panel = Ext.create('DecisionLink.view.ChangeCurrencyPanel', {",
+                    "    title: 'Currency Preference'",
+                    "});",
+                    "",
+                    "this.getMainView().push(panel);",
+                    "",
+                    "this.getNavBar().leftBox.query('button')[1].hide();",
+                    "",
+                    "DecisionLink.app.incrementPagesFromHome();",
+                    "",
+                    "Ext.Viewport.setMasked(false);"
+                ],
+                "name": "tap"
+            },
+            "name": "onShowCurrencyButtonTap",
+            "designerId": "11dfa794-4d8e-4133-8d68-0d7436b9b915"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "designer|controlQuery": "homepanel",
                 "designer|targetType": "Ext.Panel",
                 "fn": "onHomePanelActivate",
                 "implHandler": [
-                    "var validated = MyApp.app.isValidated(),",
+                    "var validated = DecisionLink.app.isValidated(),",
                     "    navBar = this.getNavBar();",
                     "",
                     "if (validated) {",
@@ -2399,18 +2450,18 @@
                     "",
                     "var accountPanel = this.getAccountPanel();",
                     "",
-                    "MyApp.app.setValidated(false);",
-                    "MyApp.app.setUserId(-1);",
-                    "MyApp.app.setAccountId(-1);",
+                    "DecisionLink.app.setValidated(false);",
+                    "DecisionLink.app.setUserId(-1);",
+                    "DecisionLink.app.setAccountId(-1);",
                     "",
-                    "MyApp.app.setCurrentCompanyId(-1);",
-                    "MyApp.app.setCurrentOpptyId(-1);",
-                    "MyApp.app.setCurrentIndustryId(-1);",
+                    "DecisionLink.app.setCurrentCompanyId(-1);",
+                    "DecisionLink.app.setCurrentOpptyId(-1);",
+                    "DecisionLink.app.setCurrentIndustryId(-1);",
                     "",
-                    "MyApp.app.setCurrentRevenue(-1);",
-                    "MyApp.app.setUserName(' ');",
-                    "MyApp.app.setEmail(' ');",
-                    "MyApp.app.setAccountName(' ');",
+                    "DecisionLink.app.setCurrentRevenue(-1);",
+                    "DecisionLink.app.setUserName(' ');",
+                    "DecisionLink.app.setEmail(' ');",
+                    "DecisionLink.app.setAccountName(' ');",
                     "",
                     "var navBar = this.getNavBar();",
                     "button = navBar.rightBox.query('button')[0];",
@@ -2424,7 +2475,7 @@
                     "}",
                     "navBar.leftBox.query('button')[0].destroy();",
                     "",
-                    "panel = Ext.create('MyApp.view.HomePanel', {",
+                    "panel = Ext.create('DecisionLink.view.HomePanel', {",
                     "    title: 'DecisionLink',",
                     "    userAlias: 'homepanel'",
                     "});",
@@ -2453,9 +2504,9 @@
                 "designer|targetType": "Ext.Panel",
                 "fn": "onAccountPanelActivate",
                 "implHandler": [
-                    "var account_name = MyApp.app.getAccountName(),",
-                    "    username = MyApp.app.getUserName(),",
-                    "    email = MyApp.app.getEmail(),",
+                    "var account_name = DecisionLink.app.getAccountName(),",
+                    "    username = DecisionLink.app.getUserName(),",
+                    "    email = DecisionLink.app.getEmail(),",
                     "    me = this,",
                     "    accountPanel = me.getAccountPanel();",
                     "",
@@ -2477,11 +2528,38 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "changecurrencypanel #changeCurrencyButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onSaveCurrencyButtonTap",
+                "implHandler": [
+                    "var me = this,",
+                    "    user_id = DecisionLink.app.getUserId(),",
+                    "    currencyPanel = me.getChangeCurrencyPanel(),",
+                    "    currency_pref = currencyPanel.child('#currencySelectField').getValue(),",
+                    "    currency_pref_name = currencyPanel.child('#currencySelectField').getName();",
+                    "",
+                    "me.updateCurrencyPreference(user_id, currency_pref, currency_pref_name, function(store) {",
+                    "    me.getHiddenList().setStore(store);",
+                    "});"
+                ],
+                "name": "tap"
+            },
+            "name": "onSaveCurrencyButtonTap",
+            "designerId": "1d5135cb-e5f8-432e-9241-4fc32a712a19"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "designer|controlQuery": "accountpanel #changePasswordButton",
                 "designer|targetType": "Ext.Button",
                 "fn": "onShowChangePasswordButtonTap",
                 "implHandler": [
-                    "var panel = Ext.create('MyApp.view.ChangePasswordPanel', {",
+                    "var panel = Ext.create('DecisionLink.view.ChangePasswordPanel', {",
                     "    title: 'Change Password'",
                     "});",
                     "",
@@ -2489,7 +2567,7 @@
                     "",
                     "this.getNavBar().leftBox.query('button')[1].hide();",
                     "",
-                    "MyApp.app.incrementPagesFromHome();"
+                    "DecisionLink.app.incrementPagesFromHome();"
                 ],
                 "name": "tap"
             },
@@ -2513,7 +2591,7 @@
                     "    currentPassword = panel.child('#currentPasswordField').getValue(),",
                     "    newPassword = panel.child('#newPasswordField').getValue(),",
                     "    confirmPassword = panel.child('#confirmPasswordField').getValue(),",
-                    "    user_id = MyApp.app.getUserId();",
+                    "    user_id = DecisionLink.app.getUserId();",
                     "",
                     "if (newPassword === confirmPassword) {",
                     "    new_p = me.toMD5(newPassword);",
@@ -3766,84 +3844,6 @@
             },
             "name": "toMD5",
             "designerId": "697846ee-739d-4b8e-8162-7927fed001ef"
-        },
-        {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "ref": "currencySelectField",
-                "selector": "changeCurrencyPanel #currencySelectField"
-            },
-            "name": "currencySelectField",
-            "designerId": "ab200468-306e-4eb1-a5b5-ca500d21220c"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|controlQuery": "accountpanel #changeCurrencyButton",
-                "designer|targetType": "Ext.Button",
-                "fn": "onShowCurrencyButtonTap",
-                "implHandler": [
-                    "var me = this;",
-                    "",
-                    "Ext.Viewport.setMasked({message: 'Loading...'});",
-                    "",
-                    "me.getCurrencies(function(store){",
-                    "    me.getCurrencySelectField().setStore(store);",
-                    "});",
-                    "",
-                    "var panel = Ext.create('MyApp.view.ChangeCurrencyPanel', {",
-                    "    title: 'Currency Preference'",
-                    "});",
-                    "",
-                    "this.getMainView().push(panel);",
-                    "",
-                    "this.getNavBar().leftBox.query('button')[1].hide();",
-                    "",
-                    "MyApp.app.incrementPagesFromHome();",
-                    "",
-                    "Ext.Viewport.setMasked(false);"
-                ],
-                "name": "tap"
-            },
-            "name": "onShowCurrencyButtonTap",
-            "designerId": "11dfa794-4d8e-4133-8d68-0d7436b9b915"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|controlQuery": "changecurrencypanel #changeCurrencyButton",
-                "designer|targetType": "Ext.Button",
-                "fn": "onSaveCurrencyButtonTap",
-                "implHandler": [
-                    "var me = this,",
-                    "    user_id = MyApp.app.getUserId(),",
-                    "    currencyPanel = me.getChangeCurrencyPanel(),",
-                    "    currency_pref = currencyPanel.child('#currencySelectField').getValue(),",
-                    "    currency_pref_name = currencyPanel.child('#currencySelectField').getName();",
-                    "",
-                    "me.updateCurrencyPreference(user_id, currency_pref, currency_pref_name, function(store) {",
-                    "    me.getHiddenList().setStore(store);",
-                    "});"
-                ],
-                "name": "tap"
-            },
-            "name": "onSaveCurrencyButtonTap",
-            "designerId": "1d5135cb-e5f8-432e-9241-4fc32a712a19"
         }
     ]
 }

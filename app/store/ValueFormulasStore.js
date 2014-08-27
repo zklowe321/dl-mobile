@@ -13,17 +13,17 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.store.ValueFormulasStore', {
+Ext.define('DecisionLink.store.ValueFormulasStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'MyApp.model.ValueFormulas',
+        'DecisionLink.model.ValueFormulas',
         'Ext.data.proxy.JsonP',
         'Ext.data.reader.Json'
     ],
 
     config: {
-        model: 'MyApp.model.ValueFormulas',
+        model: 'DecisionLink.model.ValueFormulas',
         storeId: 'ValueFormulasStore',
         proxy: {
             type: 'jsonp',

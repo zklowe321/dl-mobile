@@ -13,17 +13,17 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.store.SavedStore', {
+Ext.define('DecisionLink.store.SavedStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'MyApp.model.Saved',
+        'DecisionLink.model.Saved',
         'Ext.data.proxy.JsonP',
         'Ext.data.reader.Json'
     ],
 
     config: {
-        model: 'MyApp.model.Saved',
+        model: 'DecisionLink.model.Saved',
         storeId: 'SavedStore',
         proxy: {
             type: 'jsonp',

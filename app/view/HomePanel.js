@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.HomePanel', {
+Ext.define('DecisionLink.view.HomePanel', {
     extend: 'Ext.Panel',
     alias: 'widget.homepanel',
 

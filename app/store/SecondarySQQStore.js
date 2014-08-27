@@ -13,17 +13,17 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.store.SecondarySQQStore', {
+Ext.define('DecisionLink.store.SecondarySQQStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'MyApp.model.SecondarySQQ',
+        'DecisionLink.model.SecondarySQQ',
         'Ext.data.proxy.JsonP',
         'Ext.data.reader.Json'
     ],
 
     config: {
-        model: 'MyApp.model.SecondarySQQ',
+        model: 'DecisionLink.model.SecondarySQQ',
         storeId: 'SecondarySQQStore',
         proxy: {
             type: 'jsonp',

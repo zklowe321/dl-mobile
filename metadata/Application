@@ -47,7 +47,7 @@
             "ScenarioBaselines",
             "Currencies"
         ],
-        "name": "MyApp",
+        "name": "DecisionLink",
         "pagesFromHome": "0",
         "stores": [
             "SearchStore",

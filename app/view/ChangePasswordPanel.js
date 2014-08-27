@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.ChangePasswordPanel', {
+Ext.define('DecisionLink.view.ChangePasswordPanel', {
     extend: 'Ext.Panel',
     alias: 'widget.changepasswordpanel',
 

@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.controller.Navigation', {
+Ext.define('DecisionLink.controller.Navigation', {
     extend: 'Ext.app.Controller',
 
     config: {
@@ -61,11 +61,11 @@ Ext.define('MyApp.controller.Navigation', {
             scenarioCompetitorsList: 'opportunitycarousel #competitorsList',
             changePasswordPanel: 'changepasswordpanel',
             sellingIntoField: 'opportunitycarousel #sellingIntoField',
+            currencySelectField: 'changeCurrencyPanel #currencySelectField',
             accountPanel: 'accountpanel',
             opportunitySituationPanel: 'opportunitycarousel #opportunitySituationPanel',
             vpList: 'homepanel #homeContainer #VPListContainer #VPList',
-            homePanel: 'homepanel',
-            currencySelectField: 'changeCurrencyPanel #currencySelectField'
+            homePanel: 'homepanel'
         },
 
         control: {
@@ -190,6 +190,9 @@ Ext.define('MyApp.controller.Navigation', {
             "loginPanel": {
                 hide: 'onLoginPanelHide'
             },
+            "accountpanel #changeCurrencyButton": {
+                tap: 'onShowCurrencyButtonTap'
+            },
             "homepanel": {
                 activate: 'onHomePanelActivate'
             },
@@ -202,17 +205,14 @@ Ext.define('MyApp.controller.Navigation', {
             "accountpanel": {
                 activate: 'onAccountPanelActivate'
             },
+            "changecurrencypanel #changeCurrencyButton": {
+                tap: 'onSaveCurrencyButtonTap'
+            },
             "accountpanel #changePasswordButton": {
                 tap: 'onShowChangePasswordButtonTap'
             },
             "changepasswordpanel #changePasswordButton": {
                 tap: 'onChangePasswordButtonTap'
-            },
-            "accountpanel #changeCurrencyButton": {
-                tap: 'onShowCurrencyButtonTap'
-            },
-            "changecurrencypanel #changeCurrencyButton": {
-                tap: 'onSaveCurrencyButtonTap'
             }
         }
     },
@@ -250,14 +250,14 @@ Ext.define('MyApp.controller.Navigation', {
             rightButton.destroy();
         }
 
-        MyApp.app.setPagesFromHome(0);
+        DecisionLink.app.setPagesFromHome(0);
     },
 
     showMenu: function(target) {
 
         // Get or create navigation menu
         var menu = this.getNavMenu(),
-            validated = MyApp.app.isValidated();
+            validated = DecisionLink.app.isValidated();
         if (!menu) {
             menu = Ext.create('widget.navmenu');
         }
@@ -284,11 +284,11 @@ Ext.define('MyApp.controller.Navigation', {
             me = this;
 
         if (record) {
-            MyApp.app.setCurrentCompanyId(record.get('id'));
-            MyApp.app.setCurrentIndustryId(record.get('industry_id'));
-            MyApp.app.setCurrentRevenue(record.get('revenue'));
+            DecisionLink.app.setCurrentCompanyId(record.get('id'));
+            DecisionLink.app.setCurrentIndustryId(record.get('industry_id'));
+            DecisionLink.app.setCurrentRevenue(record.get('revenue'));
 
-            details = Ext.create('MyApp.view.CompanyViewPanel', {
+            details = Ext.create('DecisionLink.view.CompanyViewPanel', {
                 title: record.get('name')
             });
 
@@ -297,13 +297,13 @@ Ext.define('MyApp.controller.Navigation', {
             var navBar = this.getNavBar();
             navBar.leftBox.query('button')[1].hide();
 
-            MyApp.app.incrementPagesFromHome();
+            DecisionLink.app.incrementPagesFromHome();
         }
     },
 
     onAccountScenariosListActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
         var me = this,
-            account_id = MyApp.app.getAccountId();
+            account_id = DecisionLink.app.getAccountId();
 
         me.getNavBar().setTitle("My Accounts");
 
@@ -334,7 +334,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        carousel = Ext.create('MyApp.view.OpportunityCarousel', {
+        carousel = Ext.create('DecisionLink.view.OpportunityCarousel', {
             title: record.get('name')
         });
 
@@ -354,7 +354,7 @@ Ext.define('MyApp.controller.Navigation', {
         details.child('#imageContainer').child('#costLightImage').setSrc(cost_light_image);
         details.child('#imageContainer').child('#benefitLightImage').setSrc(benefit_light_image);
 
-        MyApp.app.setCurrentOpptyId(record.get('id'));
+        DecisionLink.app.setCurrentOpptyId(record.get('id'));
 
         situation = carousel.child('#opportunitySituationPanel');
         situation.child('#costOfCapitalField').setValue(wacc);
@@ -367,7 +367,7 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onSavedListItemTap: function(dataview, index, target, record, e, eOpts) {
@@ -375,11 +375,11 @@ Ext.define('MyApp.controller.Navigation', {
             me = this;
 
         if (record) {
-            MyApp.app.setCurrentCompanyId(record.get('id'));
-            MyApp.app.setCurrentIndustryId(record.get('industry_id'));
-            MyApp.app.setCurrentRevenue(record.get('revenue'));
+            DecisionLink.app.setCurrentCompanyId(record.get('id'));
+            DecisionLink.app.setCurrentIndustryId(record.get('industry_id'));
+            DecisionLink.app.setCurrentRevenue(record.get('revenue'));
 
-            details = Ext.create('MyApp.view.CompanyViewPanel', {
+            details = Ext.create('DecisionLink.view.CompanyViewPanel', {
                 title: record.get('name')
             });
 
@@ -388,13 +388,13 @@ Ext.define('MyApp.controller.Navigation', {
             var navBar = this.getNavBar();
             navBar.leftBox.query('button')[1].hide();
 
-            MyApp.app.incrementPagesFromHome();
+            DecisionLink.app.incrementPagesFromHome();
         }
     },
 
     onSavedListActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
         var me = this,
-            id = MyApp.app.getUserId();
+            id = DecisionLink.app.getUserId();
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
@@ -409,7 +409,7 @@ Ext.define('MyApp.controller.Navigation', {
         var overview,
             searchPanel,
             option,
-            validated = MyApp.app.isValidated(),
+            validated = DecisionLink.app.isValidated(),
             me = this;
 
         homePanel = me.getHomePanel();
@@ -454,14 +454,14 @@ Ext.define('MyApp.controller.Navigation', {
 
     onMainViewBack: function(navigationview, eOpts) {
         var navBar = this.getNavBar(),
-            pagesFromHome = MyApp.app.getPagesFromHome();
+            pagesFromHome = DecisionLink.app.getPagesFromHome();
 
         if (pagesFromHome == 1) {
             navBar.leftBox.query('button')[0].hide();
             navBar.leftBox.query('button')[1].show();
         }
 
-        MyApp.app.decrementPagesFromHome();
+        DecisionLink.app.decrementPagesFromHome();
 
     },
 
@@ -474,7 +474,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        id = MyApp.app.getCurrentCompanyId();
+        id = DecisionLink.app.getCurrentCompanyId();
 
         me.getCompanyOverview(id, function(store) {
             me.getDetailList().setStore(store);
@@ -489,7 +489,7 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onShowLogin: function(button, e, eOpts) {
@@ -500,7 +500,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         menu.child('#passwordField').reset();
 
-        if (!MyApp.app.isValidated()) {
+        if (!DecisionLink.app.isValidated()) {
             menu.showBy(button);
         } else {
             alert("You are already logged in.");
@@ -516,8 +516,8 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        user_id = MyApp.app.getUserId();
-        company_id = MyApp.app.getCurrentCompanyId();
+        user_id = DecisionLink.app.getUserId();
+        company_id = DecisionLink.app.getCurrentCompanyId();
 
         me.getCompanyScenarios(user_id, company_id, function(store) {
             me.getCompanyScenariosList().setStore(store);
@@ -525,7 +525,7 @@ Ext.define('MyApp.controller.Navigation', {
             Ext.Viewport.setMasked(false);
         });
 
-        details = Ext.create('MyApp.view.CompanyScenariosPanel', {
+        details = Ext.create('DecisionLink.view.CompanyScenariosPanel', {
             title: 'Value Propositions'
         });
 
@@ -534,7 +534,7 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onOpportunityTap: function(dataview, index, target, record, e, eOpts) {
@@ -550,25 +550,25 @@ Ext.define('MyApp.controller.Navigation', {
                 Ext.Viewport.setMasked(false);
             });
 
-            details = Ext.create('MyApp.view.OpportunityCarousel', {
+            details = Ext.create('DecisionLink.view.OpportunityCarousel', {
                 title: record.get('name')
             });
 
-            MyApp.app.setCurrentOppty(record.get('id'));
+            DecisionLink.app.setCurrentOppty(record.get('id'));
 
             this.getMainView().push(details);
 
             var navBar = this.getNavBar();
             navBar.leftBox.query('button')[1].hide();
 
-            MyApp.app.incrementPagesFromHome();
+            DecisionLink.app.incrementPagesFromHome();
         }
     },
 
     onOpptyCarouselActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
         var me = this,
-            id = MyApp.app.getCurrentOpptyId(),
-            user_id = MyApp.app.getUserId();
+            id = DecisionLink.app.getCurrentOpptyId(),
+            user_id = DecisionLink.app.getUserId();
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
@@ -637,7 +637,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        details = Ext.create('MyApp.view.SalesQuestionDetailPanel', {
+        details = Ext.create('DecisionLink.view.SalesQuestionDetailPanel', {
             title: 'Sales Question Details'
         });
 
@@ -654,7 +654,7 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onVFListItemTap: function(dataview, index, target, record, e, eOpts) {
@@ -675,7 +675,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        details = Ext.create('MyApp.view.ValueFormulaDetailPanel', {
+        details = Ext.create('DecisionLink.view.ValueFormulaDetailPanel', {
             title: 'Value Formula Details',
             alt_metric_id: alt_metric_id
         });
@@ -702,7 +702,7 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onCostListItemTap: function(dataview, index, target, record, e, eOpts) {
@@ -715,7 +715,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        details = Ext.create('MyApp.view.OpportunityCostDetailPanel', {
+        details = Ext.create('DecisionLink.view.OpportunityCostDetailPanel', {
             title: 'Cost Details'
         });
 
@@ -731,7 +731,7 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onAssetItemTap: function(dataview, index, target, record, e, eOpts) {
@@ -744,7 +744,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        details = Ext.create('MyApp.view.AssetDetailPanel', {
+        details = Ext.create('DecisionLink.view.AssetDetailPanel', {
             title: 'Asset Details',
             downloadUrl: url
         });
@@ -761,7 +761,7 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onCompanyScenariosListItemTap: function(dataview, index, target, record, e, eOpts) {
@@ -782,7 +782,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        carousel = Ext.create('MyApp.view.OpportunityCarousel', {
+        carousel = Ext.create('DecisionLink.view.OpportunityCarousel', {
             title: record.get('name')
         });
 
@@ -802,7 +802,7 @@ Ext.define('MyApp.controller.Navigation', {
         details.child('#imageContainer').child('#costLightImage').setSrc(cost_light_image);
         details.child('#imageContainer').child('#benefitLightImage').setSrc(benefit_light_image);
 
-        MyApp.app.setCurrentOpptyId(record.get('id'));
+        DecisionLink.app.setCurrentOpptyId(record.get('id'));
 
         Ext.Viewport.setMasked(false);
 
@@ -811,13 +811,13 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onDNBCarouselActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
         var me = this,
-            company_id = MyApp.app.getCurrentCompanyId(),
-            user_id = MyApp.app.getUserId();
+            company_id = DecisionLink.app.getCurrentCompanyId(),
+            user_id = DecisionLink.app.getUserId();
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
@@ -853,7 +853,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        carousel = Ext.create('MyApp.view.DNBCarousel', {
+        carousel = Ext.create('DecisionLink.view.DNBCarousel', {
             title: 'Additional DnB Info'
         });
 
@@ -864,7 +864,7 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onDivisionsListItemTap: function(dataview, index, target, record, e, eOpts) {
@@ -872,9 +872,9 @@ Ext.define('MyApp.controller.Navigation', {
             me = this;
 
         if (record) {
-            MyApp.app.setCurrentCompanyId(record.get('id'));
+            DecisionLink.app.setCurrentCompanyId(record.get('id'));
 
-            details = Ext.create('MyApp.view.CompanyViewPanel', {
+            details = Ext.create('DecisionLink.view.CompanyViewPanel', {
                 title: record.get('name')
             });
 
@@ -892,11 +892,11 @@ Ext.define('MyApp.controller.Navigation', {
             me = this;
 
         if (record) {
-            MyApp.app.setCurrentCompanyId(record.get('id'));
-            MyApp.app.setCurrentIndustryId(record.get('industry_id'));
-            MyApp.app.setCurrentRevenue(record.get('revenue'));
+            DecisionLink.app.setCurrentCompanyId(record.get('id'));
+            DecisionLink.app.setCurrentIndustryId(record.get('industry_id'));
+            DecisionLink.app.setCurrentRevenue(record.get('revenue'));
 
-            details = Ext.create('MyApp.view.CompanyViewPanel', {
+            details = Ext.create('DecisionLink.view.CompanyViewPanel', {
                 title: record.get('name')
             });
 
@@ -916,7 +916,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        panel = Ext.create('MyApp.view.CompetitiveCarousel', {
+        panel = Ext.create('DecisionLink.view.CompetitiveCarousel', {
             title: 'Competitive Performance'
         });
 
@@ -927,20 +927,20 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onKpisListItemTap: function(dataview, index, target, record, e, eOpts) {
         var kpi_id = record.get('kpi_id'),
             sqq_value = record.get('sqq_value'),
             name = record.get('name'),
-            user_id = MyApp.app.getUserId(),
-            company_id = MyApp.app.getCurrentCompanyId(),
+            user_id = DecisionLink.app.getUserId(),
+            company_id = DecisionLink.app.getCurrentCompanyId(),
             me = this;
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        panel = Ext.create('MyApp.view.KpiDetailPanel', {
+        panel = Ext.create('DecisionLink.view.KpiDetailPanel', {
             title: 'KPI Details'
         });
 
@@ -958,15 +958,15 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onCompetitiveCarouselActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
         var me = this,
-            company_id = MyApp.app.getCurrentCompanyId(),
-            user_id = MyApp.app.getUserId(),
-            industry_id = MyApp.app.getCurrentIndustryId(),
-            revenue = MyApp.app.getCurrentRevenue();
+            company_id = DecisionLink.app.getCurrentCompanyId(),
+            user_id = DecisionLink.app.getUserId(),
+            industry_id = DecisionLink.app.getCurrentIndustryId(),
+            revenue = DecisionLink.app.getCurrentRevenue();
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
@@ -993,10 +993,10 @@ Ext.define('MyApp.controller.Navigation', {
             me = this;
 
         if (record) {
-            MyApp.app.setCurrentCompanyId(record.get('id'));
-            MyApp.app.setCurrentRevenue(record.get('revenue'));
+            DecisionLink.app.setCurrentCompanyId(record.get('id'));
+            DecisionLink.app.setCurrentRevenue(record.get('revenue'));
 
-            details = Ext.create('MyApp.view.CompanyViewPanel', {
+            details = Ext.create('DecisionLink.view.CompanyViewPanel', {
                 title: record.get('name')
             });
 
@@ -1019,7 +1019,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        panel = Ext.create('MyApp.view.PeerPerformanceDetailPanel', {
+        panel = Ext.create('DecisionLink.view.PeerPerformanceDetailPanel', {
             title: 'Peer Performance Details'
         });
 
@@ -1037,12 +1037,12 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onSaveSQQButtonTap: function(button, e, eOpts) {
         var sqqPanel,
-            oppty_id = MyApp.app.getCurrentOpptyId(),
+            oppty_id = DecisionLink.app.getCurrentOpptyId(),
             sqq_id,
             sqq_override,
             source_type_id,
@@ -1060,7 +1060,7 @@ Ext.define('MyApp.controller.Navigation', {
 
     onSaveCostButtonTap: function(button, e, eOpts) {
         var costPanel,
-            oppty_id = MyApp.app.getCurrentOpptyId(),
+            oppty_id = DecisionLink.app.getCurrentOpptyId(),
             id,
             cost_type_id,
             accrual_type_id,
@@ -1088,7 +1088,7 @@ Ext.define('MyApp.controller.Navigation', {
 
     onSaveVFButtonTap: function(button, e, eOpts) {
         var VFPanel,
-            oppty_id = MyApp.app.getCurrentOpptyId(),
+            oppty_id = DecisionLink.app.getCurrentOpptyId(),
             metric_id,
             sqq_value,
             sqq2_value,
@@ -1120,7 +1120,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        details = Ext.create('MyApp.view.SecondarySQQDetailPanel', {
+        details = Ext.create('DecisionLink.view.SecondarySQQDetailPanel', {
             title: 'Sales Question Details'
         });
 
@@ -1136,20 +1136,20 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onSaveSecondarySQQButtonTap: function(button, e, eOpts) {
         var detailPanel,
-            oppty_id = MyApp.app.getCurrentOpptyId(),
-            user_id = MyApp.app.getUserId(),
+            oppty_id = DecisionLink.app.getCurrentOpptyId(),
+            user_id = DecisionLink.app.getUserId(),
             sqq2_id,
             sqq2_value,
             impact_per_unit_source_type_id,
             me = this;
 
         detailPanel = me.getSecondarySQQDetailPanel();
-        oppty_id = MyApp.app.getCurrentOpptyId();
+        oppty_id = DecisionLink.app.getCurrentOpptyId();
         sqq2_id = detailPanel.child('#sqq2IdField').getValue();
         sqq2_value = detailPanel.child('#sqqAnswerField').getValue();
         impact_per_unit_source_type_id = detailPanel.child('#sourceSelectField').getValue();
@@ -1169,7 +1169,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        details = Ext.create('MyApp.view.OpportunityCostDetailPanel', {
+        details = Ext.create('DecisionLink.view.OpportunityCostDetailPanel', {
             title: 'Cost Details'
         });
 
@@ -1185,12 +1185,12 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onDeleteCostButtonTap: function(button, e, eOpts) {
         var costPanel,
-            oppty_id = MyApp.app.getCurrentOpptyId(),
+            oppty_id = DecisionLink.app.getCurrentOpptyId(),
             id,
             actionsheet,
             me = this;
@@ -1207,7 +1207,7 @@ Ext.define('MyApp.controller.Navigation', {
     onDeleteCostActionButtonTap: function(button, e, eOpts) {
         var costPanel,
             actionsheet,
-            oppty_id = MyApp.app.getCurrentOpptyId(),
+            oppty_id = DecisionLink.app.getCurrentOpptyId(),
             id,
             actionsheet,
             me = this;
@@ -1237,8 +1237,8 @@ Ext.define('MyApp.controller.Navigation', {
 
     onSaveSituationButtonTap: function(button, e, eOpts) {
         var SituationPanel,
-            user_id = MyApp.app.getUserId(),
-            id = MyApp.app.getCurrentOpptyId(),
+            user_id = DecisionLink.app.getUserId(),
+            id = DecisionLink.app.getCurrentOpptyId(),
             scenario,
             competitors = '',
             areas,
@@ -1283,7 +1283,7 @@ Ext.define('MyApp.controller.Navigation', {
     },
 
     onLoginPanelHide: function(component, eOpts) {
-        var validated = MyApp.app.isValidated(),
+        var validated = DecisionLink.app.isValidated(),
             navBar = this.getNavBar(),
             homePanel = this.getHomePanel();
 
@@ -1301,8 +1301,30 @@ Ext.define('MyApp.controller.Navigation', {
         }
     },
 
+    onShowCurrencyButtonTap: function(button, e, eOpts) {
+        var me = this;
+
+        Ext.Viewport.setMasked({message: 'Loading...'});
+
+        me.getCurrencies(function(store){
+            me.getCurrencySelectField().setStore(store);
+        });
+
+        var panel = Ext.create('DecisionLink.view.ChangeCurrencyPanel', {
+            title: 'Currency Preference'
+        });
+
+        this.getMainView().push(panel);
+
+        this.getNavBar().leftBox.query('button')[1].hide();
+
+        DecisionLink.app.incrementPagesFromHome();
+
+        Ext.Viewport.setMasked(false);
+    },
+
     onHomePanelActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
-        var validated = MyApp.app.isValidated(),
+        var validated = DecisionLink.app.isValidated(),
             navBar = this.getNavBar();
 
         if (validated) {
@@ -1330,18 +1352,18 @@ Ext.define('MyApp.controller.Navigation', {
 
         var accountPanel = this.getAccountPanel();
 
-        MyApp.app.setValidated(false);
-        MyApp.app.setUserId(-1);
-        MyApp.app.setAccountId(-1);
+        DecisionLink.app.setValidated(false);
+        DecisionLink.app.setUserId(-1);
+        DecisionLink.app.setAccountId(-1);
 
-        MyApp.app.setCurrentCompanyId(-1);
-        MyApp.app.setCurrentOpptyId(-1);
-        MyApp.app.setCurrentIndustryId(-1);
+        DecisionLink.app.setCurrentCompanyId(-1);
+        DecisionLink.app.setCurrentOpptyId(-1);
+        DecisionLink.app.setCurrentIndustryId(-1);
 
-        MyApp.app.setCurrentRevenue(-1);
-        MyApp.app.setUserName(' ');
-        MyApp.app.setEmail(' ');
-        MyApp.app.setAccountName(' ');
+        DecisionLink.app.setCurrentRevenue(-1);
+        DecisionLink.app.setUserName(' ');
+        DecisionLink.app.setEmail(' ');
+        DecisionLink.app.setAccountName(' ');
 
         var navBar = this.getNavBar();
         button = navBar.rightBox.query('button')[0];
@@ -1355,7 +1377,7 @@ Ext.define('MyApp.controller.Navigation', {
         }
         navBar.leftBox.query('button')[0].destroy();
 
-        panel = Ext.create('MyApp.view.HomePanel', {
+        panel = Ext.create('DecisionLink.view.HomePanel', {
             title: 'DecisionLink',
             userAlias: 'homepanel'
         });
@@ -1369,9 +1391,9 @@ Ext.define('MyApp.controller.Navigation', {
     },
 
     onAccountPanelActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
-        var account_name = MyApp.app.getAccountName(),
-            username = MyApp.app.getUserName(),
-            email = MyApp.app.getEmail(),
+        var account_name = DecisionLink.app.getAccountName(),
+            username = DecisionLink.app.getUserName(),
+            email = DecisionLink.app.getEmail(),
             me = this,
             accountPanel = me.getAccountPanel();
 
@@ -1381,8 +1403,20 @@ Ext.define('MyApp.controller.Navigation', {
 
     },
 
+    onSaveCurrencyButtonTap: function(button, e, eOpts) {
+        var me = this,
+            user_id = DecisionLink.app.getUserId(),
+            currencyPanel = me.getChangeCurrencyPanel(),
+            currency_pref = currencyPanel.child('#currencySelectField').getValue(),
+            currency_pref_name = currencyPanel.child('#currencySelectField').getName();
+
+        me.updateCurrencyPreference(user_id, currency_pref, currency_pref_name, function(store) {
+            me.getHiddenList().setStore(store);
+        });
+    },
+
     onShowChangePasswordButtonTap: function(button, e, eOpts) {
-        var panel = Ext.create('MyApp.view.ChangePasswordPanel', {
+        var panel = Ext.create('DecisionLink.view.ChangePasswordPanel', {
             title: 'Change Password'
         });
 
@@ -1390,7 +1424,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         this.getNavBar().leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onChangePasswordButtonTap: function(button, e, eOpts) {
@@ -1399,7 +1433,7 @@ Ext.define('MyApp.controller.Navigation', {
             currentPassword = panel.child('#currentPasswordField').getValue(),
             newPassword = panel.child('#newPasswordField').getValue(),
             confirmPassword = panel.child('#confirmPasswordField').getValue(),
-            user_id = MyApp.app.getUserId();
+            user_id = DecisionLink.app.getUserId();
 
         if (newPassword === confirmPassword) {
             new_p = me.toMD5(newPassword);
@@ -1411,40 +1445,6 @@ Ext.define('MyApp.controller.Navigation', {
             window.alert("Passwords do not match.");
         }
 
-    },
-
-    onShowCurrencyButtonTap: function(button, e, eOpts) {
-        var me = this;
-
-        Ext.Viewport.setMasked({message: 'Loading...'});
-
-        me.getCurrencies(function(store){
-            me.getCurrencySelectField().setStore(store);
-        });
-
-        var panel = Ext.create('MyApp.view.ChangeCurrencyPanel', {
-            title: 'Currency Preference'
-        });
-
-        this.getMainView().push(panel);
-
-        this.getNavBar().leftBox.query('button')[1].hide();
-
-        MyApp.app.incrementPagesFromHome();
-
-        Ext.Viewport.setMasked(false);
-    },
-
-    onSaveCurrencyButtonTap: function(button, e, eOpts) {
-        var me = this,
-            user_id = MyApp.app.getUserId(),
-            currencyPanel = me.getChangeCurrencyPanel(),
-            currency_pref = currencyPanel.child('#currencySelectField').getValue(),
-            currency_pref_name = currencyPanel.child('#currencySelectField').getName();
-
-        me.updateCurrencyPreference(user_id, currency_pref, currency_pref_name, function(store) {
-            me.getHiddenList().setStore(store);
-        });
     },
 
     deleteOpportunityCost: function(oppty_id, id, callback) {

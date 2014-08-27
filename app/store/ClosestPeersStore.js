@@ -13,17 +13,17 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.store.ClosestPeersStore', {
+Ext.define('DecisionLink.store.ClosestPeersStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'MyApp.model.ClosestPeers',
+        'DecisionLink.model.ClosestPeers',
         'Ext.data.proxy.JsonP',
         'Ext.data.reader.Json'
     ],
 
     config: {
-        model: 'MyApp.model.ClosestPeers',
+        model: 'DecisionLink.model.ClosestPeers',
         storeId: 'ClosestPeersStore',
         proxy: {
             type: 'jsonp',

@@ -13,12 +13,12 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.MainView', {
+Ext.define('DecisionLink.view.MainView', {
     extend: 'Ext.navigation.View',
     alias: 'widget.mainview',
 
     requires: [
-        'MyApp.view.HomePanel',
+        'DecisionLink.view.HomePanel',
         'Ext.Panel',
         'Ext.navigation.Bar',
         'Ext.Button'

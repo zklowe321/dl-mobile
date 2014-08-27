@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.model.Assets', {
+Ext.define('DecisionLink.model.Assets', {
     extend: 'Ext.data.Model',
 
     requires: [

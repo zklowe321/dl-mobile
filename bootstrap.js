@@ -9,6 +9,7 @@
  * metadata-driven class system features
  */
 Ext.Loader.addClassPathMappings({
+  "DecisionLink": "app",
   "Ext": "touch/src",
   "Ext-more": "touch/src/core/Ext-more.js",
   "Ext.DomHelper": "touch/src/dom/Helper.js",
@@ -35,6 +36,73 @@ Ext.Loader.addClassPathMappings({
 });
 
 Ext.ClassManager.addNameAlternateMappings({
+  "DecisionLink.controller.Navigation": [],
+  "DecisionLink.controller.Renames": [],
+  "DecisionLink.model.AccountScenarios": [],
+  "DecisionLink.model.Assets": [],
+  "DecisionLink.model.ClosestPeers": [],
+  "DecisionLink.model.CompRatios": [],
+  "DecisionLink.model.CompanyScenarios": [],
+  "DecisionLink.model.Competitors": [],
+  "DecisionLink.model.Currencies": [],
+  "DecisionLink.model.DNBOverview": [],
+  "DecisionLink.model.Detail": [],
+  "DecisionLink.model.Divisions": [],
+  "DecisionLink.model.Employees": [],
+  "DecisionLink.model.Kpis": [],
+  "DecisionLink.model.OpportunityCosts": [],
+  "DecisionLink.model.OpportunityOverview": [],
+  "DecisionLink.model.Ratios": [],
+  "DecisionLink.model.SalesQuestions": [],
+  "DecisionLink.model.Saved": [],
+  "DecisionLink.model.Scenario": [],
+  "DecisionLink.model.ScenarioAreas": [],
+  "DecisionLink.model.ScenarioBaselines": [],
+  "DecisionLink.model.ScenarioCompetitors": [],
+  "DecisionLink.model.ScenarioIndustries": [],
+  "DecisionLink.model.Search": [],
+  "DecisionLink.model.SecondarySQQ": [],
+  "DecisionLink.model.Success": [],
+  "DecisionLink.model.Validate": [],
+  "DecisionLink.model.ValueFormulas": [],
+  "DecisionLink.store.AccountScenariosStore": [],
+  "DecisionLink.store.AssetsStore": [],
+  "DecisionLink.store.ClosestPeersStore": [],
+  "DecisionLink.store.CompRatiosStore": [],
+  "DecisionLink.store.CompanyScenariosStore": [],
+  "DecisionLink.store.CompetitorsStore": [],
+  "DecisionLink.store.CurrenciesStore": [],
+  "DecisionLink.store.DNBOverviewStore": [],
+  "DecisionLink.store.DetailStore": [],
+  "DecisionLink.store.DivisionsStore": [],
+  "DecisionLink.store.EmployeesStore": [],
+  "DecisionLink.store.KpisStore": [],
+  "DecisionLink.store.OpportunityCostsStore": [],
+  "DecisionLink.store.OpportunityOverviewStore": [],
+  "DecisionLink.store.RatiosStore": [],
+  "DecisionLink.store.SalesQuestionsStore": [],
+  "DecisionLink.store.SavedStore": [],
+  "DecisionLink.store.ScenarioAreasStore": [],
+  "DecisionLink.store.ScenarioBaselinesStore": [],
+  "DecisionLink.store.ScenarioCompetitorsStore": [],
+  "DecisionLink.store.ScenarioIndustriesStore": [],
+  "DecisionLink.store.ScenarioStore": [],
+  "DecisionLink.store.SearchStore": [],
+  "DecisionLink.store.SecondarySQQStore": [],
+  "DecisionLink.store.SuccessStore": [],
+  "DecisionLink.store.ValidateStore": [],
+  "DecisionLink.store.ValueFormulasStore": [],
+  "DecisionLink.view.AccountPanel": [],
+  "DecisionLink.view.AccountScenariosPanel": [],
+  "DecisionLink.view.ChangeCurrencyPanel": [],
+  "DecisionLink.view.ChangePasswordPanel": [],
+  "DecisionLink.view.DNBCarousel": [],
+  "DecisionLink.view.HomePanel": [],
+  "DecisionLink.view.MainView": [],
+  "DecisionLink.view.NavMenu": [],
+  "DecisionLink.view.OpportunityCarousel": [],
+  "DecisionLink.view.OpportunityCostDetailPanel": [],
+  "DecisionLink.view.SearchPanel": [],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],
   "Ext.AbstractPlugin": [],
@@ -665,89 +733,111 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.viewport.WindowsPhone": [
     "Ext.viewport.WP"
   ],
-  "MyApp.controller.Navigation": [],
-  "MyApp.controller.Renames": [],
-  "MyApp.model.AccountScenarios": [],
-  "MyApp.model.Assets": [],
-  "MyApp.model.ClosestPeers": [],
-  "MyApp.model.CompRatios": [],
-  "MyApp.model.CompanyScenarios": [],
-  "MyApp.model.Competitors": [],
-  "MyApp.model.Currencies": [],
-  "MyApp.model.DNBOverview": [],
-  "MyApp.model.Detail": [],
-  "MyApp.model.Divisions": [],
-  "MyApp.model.Employees": [],
-  "MyApp.model.Kpis": [],
-  "MyApp.model.OpportunityCosts": [],
-  "MyApp.model.OpportunityOverview": [],
-  "MyApp.model.Ratios": [],
-  "MyApp.model.SalesQuestions": [],
-  "MyApp.model.Saved": [],
-  "MyApp.model.Scenario": [],
-  "MyApp.model.ScenarioAreas": [],
-  "MyApp.model.ScenarioBaselines": [],
-  "MyApp.model.ScenarioCompetitors": [],
-  "MyApp.model.ScenarioIndustries": [],
-  "MyApp.model.Search": [],
-  "MyApp.model.SecondarySQQ": [],
-  "MyApp.model.Success": [],
-  "MyApp.model.Validate": [],
-  "MyApp.model.ValueFormulas": [],
-  "MyApp.store.AccountScenariosStore": [],
-  "MyApp.store.AssetsStore": [],
-  "MyApp.store.ClosestPeersStore": [],
-  "MyApp.store.CompRatiosStore": [],
-  "MyApp.store.CompanyScenariosStore": [],
-  "MyApp.store.CompetitorsStore": [],
-  "MyApp.store.CurrenciesStore": [],
-  "MyApp.store.DNBOverviewStore": [],
-  "MyApp.store.DetailStore": [],
-  "MyApp.store.DivisionsStore": [],
-  "MyApp.store.EmployeesStore": [],
-  "MyApp.store.KpisStore": [],
-  "MyApp.store.OpportunityCostsStore": [],
-  "MyApp.store.OpportunityOverviewStore": [],
-  "MyApp.store.RatiosStore": [],
-  "MyApp.store.SalesQuestionsStore": [],
-  "MyApp.store.SavedStore": [],
-  "MyApp.store.ScenarioAreasStore": [],
-  "MyApp.store.ScenarioBaselinesStore": [],
-  "MyApp.store.ScenarioCompetitorsStore": [],
-  "MyApp.store.ScenarioIndustriesStore": [],
-  "MyApp.store.ScenarioStore": [],
-  "MyApp.store.SearchStore": [],
-  "MyApp.store.SecondarySQQStore": [],
-  "MyApp.store.SuccessStore": [],
-  "MyApp.store.ValidateStore": [],
-  "MyApp.store.ValueFormulasStore": [],
-  "MyApp.view.AccountPanel": [],
-  "MyApp.view.AccountScenariosPanel": [],
   "MyApp.view.AssetDetailPanel": [],
-  "MyApp.view.ChangeCurrencyPanel": [],
-  "MyApp.view.ChangePasswordPanel": [],
   "MyApp.view.CompanyScenariosPanel": [],
   "MyApp.view.CompanyViewPanel": [],
   "MyApp.view.CompetitiveCarousel": [],
-  "MyApp.view.DNBCarousel": [],
   "MyApp.view.DetailPanel": [],
-  "MyApp.view.HomePanel": [],
   "MyApp.view.KpiDetailPanel": [],
   "MyApp.view.LoginPanel": [],
   "MyApp.view.Main": [],
-  "MyApp.view.MainView": [],
-  "MyApp.view.NavMenu": [],
-  "MyApp.view.OpportunityCarousel": [],
-  "MyApp.view.OpportunityCostDetailPanel": [],
   "MyApp.view.PeerPerformanceDetailPanel": [],
   "MyApp.view.SalesQuestionDetailPanel": [],
-  "MyApp.view.SearchPanel": [],
   "MyApp.view.SecondarySQQDetailPanel": [],
   "MyApp.view.SupportPanel": [],
   "MyApp.view.ValueFormulaDetailPanel": []
 });
 
 Ext.ClassManager.addNameAliasMappings({
+  "DecisionLink.controller.Navigation": [],
+  "DecisionLink.controller.Renames": [],
+  "DecisionLink.model.AccountScenarios": [],
+  "DecisionLink.model.Assets": [],
+  "DecisionLink.model.ClosestPeers": [],
+  "DecisionLink.model.CompRatios": [],
+  "DecisionLink.model.CompanyScenarios": [],
+  "DecisionLink.model.Competitors": [],
+  "DecisionLink.model.Currencies": [],
+  "DecisionLink.model.DNBOverview": [],
+  "DecisionLink.model.Detail": [],
+  "DecisionLink.model.Divisions": [],
+  "DecisionLink.model.Employees": [],
+  "DecisionLink.model.Kpis": [],
+  "DecisionLink.model.OpportunityCosts": [],
+  "DecisionLink.model.OpportunityOverview": [],
+  "DecisionLink.model.Ratios": [],
+  "DecisionLink.model.SalesQuestions": [],
+  "DecisionLink.model.Saved": [],
+  "DecisionLink.model.Scenario": [],
+  "DecisionLink.model.ScenarioAreas": [],
+  "DecisionLink.model.ScenarioBaselines": [],
+  "DecisionLink.model.ScenarioCompetitors": [],
+  "DecisionLink.model.ScenarioIndustries": [],
+  "DecisionLink.model.Search": [],
+  "DecisionLink.model.SecondarySQQ": [],
+  "DecisionLink.model.Success": [],
+  "DecisionLink.model.Validate": [],
+  "DecisionLink.model.ValueFormulas": [],
+  "DecisionLink.store.AccountScenariosStore": [],
+  "DecisionLink.store.AssetsStore": [],
+  "DecisionLink.store.ClosestPeersStore": [],
+  "DecisionLink.store.CompRatiosStore": [],
+  "DecisionLink.store.CompanyScenariosStore": [],
+  "DecisionLink.store.CompetitorsStore": [],
+  "DecisionLink.store.CurrenciesStore": [],
+  "DecisionLink.store.DNBOverviewStore": [],
+  "DecisionLink.store.DetailStore": [],
+  "DecisionLink.store.DivisionsStore": [],
+  "DecisionLink.store.EmployeesStore": [],
+  "DecisionLink.store.KpisStore": [],
+  "DecisionLink.store.OpportunityCostsStore": [],
+  "DecisionLink.store.OpportunityOverviewStore": [],
+  "DecisionLink.store.RatiosStore": [],
+  "DecisionLink.store.SalesQuestionsStore": [],
+  "DecisionLink.store.SavedStore": [],
+  "DecisionLink.store.ScenarioAreasStore": [],
+  "DecisionLink.store.ScenarioBaselinesStore": [],
+  "DecisionLink.store.ScenarioCompetitorsStore": [],
+  "DecisionLink.store.ScenarioIndustriesStore": [],
+  "DecisionLink.store.ScenarioStore": [],
+  "DecisionLink.store.SearchStore": [],
+  "DecisionLink.store.SecondarySQQStore": [],
+  "DecisionLink.store.SuccessStore": [],
+  "DecisionLink.store.ValidateStore": [],
+  "DecisionLink.store.ValueFormulasStore": [],
+  "DecisionLink.view.AccountPanel": [
+    "widget.accountpanel"
+  ],
+  "DecisionLink.view.AccountScenariosPanel": [
+    "widget.accountscenariospanel"
+  ],
+  "DecisionLink.view.ChangeCurrencyPanel": [
+    "widget.changeCurrencyPanel"
+  ],
+  "DecisionLink.view.ChangePasswordPanel": [
+    "widget.changepasswordpanel"
+  ],
+  "DecisionLink.view.DNBCarousel": [
+    "widget.dnbcarousel"
+  ],
+  "DecisionLink.view.HomePanel": [
+    "widget.homepanel"
+  ],
+  "DecisionLink.view.MainView": [
+    "widget.mainview"
+  ],
+  "DecisionLink.view.NavMenu": [
+    "widget.navmenu"
+  ],
+  "DecisionLink.view.OpportunityCarousel": [
+    "widget.opportunitycarousel"
+  ],
+  "DecisionLink.view.OpportunityCostDetailPanel": [
+    "widget.opportunitycostdetailpanel"
+  ],
+  "DecisionLink.view.SearchPanel": [
+    "widget.searchpanel"
+  ],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],
   "Ext.AbstractPlugin": [],
@@ -1475,76 +1565,8 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Ios": [],
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": [],
-  "MyApp.controller.Navigation": [],
-  "MyApp.controller.Renames": [],
-  "MyApp.model.AccountScenarios": [],
-  "MyApp.model.Assets": [],
-  "MyApp.model.ClosestPeers": [],
-  "MyApp.model.CompRatios": [],
-  "MyApp.model.CompanyScenarios": [],
-  "MyApp.model.Competitors": [],
-  "MyApp.model.Currencies": [],
-  "MyApp.model.DNBOverview": [],
-  "MyApp.model.Detail": [],
-  "MyApp.model.Divisions": [],
-  "MyApp.model.Employees": [],
-  "MyApp.model.Kpis": [],
-  "MyApp.model.OpportunityCosts": [],
-  "MyApp.model.OpportunityOverview": [],
-  "MyApp.model.Ratios": [],
-  "MyApp.model.SalesQuestions": [],
-  "MyApp.model.Saved": [],
-  "MyApp.model.Scenario": [],
-  "MyApp.model.ScenarioAreas": [],
-  "MyApp.model.ScenarioBaselines": [],
-  "MyApp.model.ScenarioCompetitors": [],
-  "MyApp.model.ScenarioIndustries": [],
-  "MyApp.model.Search": [],
-  "MyApp.model.SecondarySQQ": [],
-  "MyApp.model.Success": [],
-  "MyApp.model.Validate": [],
-  "MyApp.model.ValueFormulas": [],
-  "MyApp.store.AccountScenariosStore": [],
-  "MyApp.store.AssetsStore": [],
-  "MyApp.store.ClosestPeersStore": [],
-  "MyApp.store.CompRatiosStore": [],
-  "MyApp.store.CompanyScenariosStore": [],
-  "MyApp.store.CompetitorsStore": [],
-  "MyApp.store.CurrenciesStore": [],
-  "MyApp.store.DNBOverviewStore": [],
-  "MyApp.store.DetailStore": [],
-  "MyApp.store.DivisionsStore": [],
-  "MyApp.store.EmployeesStore": [],
-  "MyApp.store.KpisStore": [],
-  "MyApp.store.OpportunityCostsStore": [],
-  "MyApp.store.OpportunityOverviewStore": [],
-  "MyApp.store.RatiosStore": [],
-  "MyApp.store.SalesQuestionsStore": [],
-  "MyApp.store.SavedStore": [],
-  "MyApp.store.ScenarioAreasStore": [],
-  "MyApp.store.ScenarioBaselinesStore": [],
-  "MyApp.store.ScenarioCompetitorsStore": [],
-  "MyApp.store.ScenarioIndustriesStore": [],
-  "MyApp.store.ScenarioStore": [],
-  "MyApp.store.SearchStore": [],
-  "MyApp.store.SecondarySQQStore": [],
-  "MyApp.store.SuccessStore": [],
-  "MyApp.store.ValidateStore": [],
-  "MyApp.store.ValueFormulasStore": [],
-  "MyApp.view.AccountPanel": [
-    "widget.accountpanel"
-  ],
-  "MyApp.view.AccountScenariosPanel": [
-    "widget.accountscenariospanel"
-  ],
   "MyApp.view.AssetDetailPanel": [
     "widget.assetdetailpanel"
-  ],
-  "MyApp.view.ChangeCurrencyPanel": [
-    "widget.changeCurrencyPanel"
-  ],
-  "MyApp.view.ChangePasswordPanel": [
-    "widget.changepasswordpanel"
   ],
   "MyApp.view.CompanyScenariosPanel": [
     "widget.companyscenariospanel"
@@ -1555,14 +1577,8 @@ Ext.ClassManager.addNameAliasMappings({
   "MyApp.view.CompetitiveCarousel": [
     "widget.competitivecarousel"
   ],
-  "MyApp.view.DNBCarousel": [
-    "widget.dnbcarousel"
-  ],
   "MyApp.view.DetailPanel": [
     "widget.detailpanel"
-  ],
-  "MyApp.view.HomePanel": [
-    "widget.homepanel"
   ],
   "MyApp.view.KpiDetailPanel": [
     "widget.kpidetailpanel"
@@ -1573,26 +1589,11 @@ Ext.ClassManager.addNameAliasMappings({
   "MyApp.view.Main": [
     "widget.main"
   ],
-  "MyApp.view.MainView": [
-    "widget.mainview"
-  ],
-  "MyApp.view.NavMenu": [
-    "widget.navmenu"
-  ],
-  "MyApp.view.OpportunityCarousel": [
-    "widget.opportunitycarousel"
-  ],
-  "MyApp.view.OpportunityCostDetailPanel": [
-    "widget.opportunitycostdetailpanel"
-  ],
   "MyApp.view.PeerPerformanceDetailPanel": [
     "widget.peerPerformanceDetailPanel"
   ],
   "MyApp.view.SalesQuestionDetailPanel": [
     "widget.salesquestiondetailpanel"
-  ],
-  "MyApp.view.SearchPanel": [
-    "widget.searchpanel"
   ],
   "MyApp.view.SecondarySQQDetailPanel": [
     "widget.secondarysqqdetailpanel"

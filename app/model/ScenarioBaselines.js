@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.model.ScenarioBaselines', {
+Ext.define('DecisionLink.model.ScenarioBaselines', {
     extend: 'Ext.data.Model',
 
     requires: [

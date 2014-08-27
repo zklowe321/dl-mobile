@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.SearchPanel', {
+Ext.define('DecisionLink.view.SearchPanel', {
     extend: 'Ext.Panel',
     alias: 'widget.searchpanel',
 

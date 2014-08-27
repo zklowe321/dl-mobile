@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.controller.Renames', {
+Ext.define('DecisionLink.controller.Renames', {
     extend: 'Ext.app.Controller',
 
     config: {

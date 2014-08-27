@@ -13,17 +13,17 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.store.KpisStore', {
+Ext.define('DecisionLink.store.KpisStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'MyApp.model.Kpis',
+        'DecisionLink.model.Kpis',
         'Ext.data.proxy.JsonP',
         'Ext.data.reader.Json'
     ],
 
     config: {
-        model: 'MyApp.model.Kpis',
+        model: 'DecisionLink.model.Kpis',
         storeId: 'KpisStore',
         proxy: {
             type: 'jsonp',

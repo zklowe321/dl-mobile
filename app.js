@@ -118,7 +118,7 @@ Ext.application({
         'Navigation',
         'Renames'
     ],
-    name: 'MyApp',
+    name: 'DecisionLink',
 
     getUserId: function() {
         return this.id;
@@ -218,7 +218,7 @@ Ext.application({
 
     launch: function() {
 
-        Ext.create('MyApp.view.MainView', {fullscreen: true});
+        Ext.create('DecisionLink.view.MainView', {fullscreen: true});
     }
 
 });

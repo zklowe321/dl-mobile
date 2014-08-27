@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.NavMenu', {
+Ext.define('DecisionLink.view.NavMenu', {
     extend: 'Ext.Panel',
     alias: 'widget.navmenu',
 

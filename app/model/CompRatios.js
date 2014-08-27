@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.model.CompRatios', {
+Ext.define('DecisionLink.model.CompRatios', {
     extend: 'Ext.data.Model',
 
     requires: [

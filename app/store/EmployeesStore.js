@@ -13,17 +13,17 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.store.EmployeesStore', {
+Ext.define('DecisionLink.store.EmployeesStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'MyApp.model.Employees',
+        'DecisionLink.model.Employees',
         'Ext.data.proxy.JsonP',
         'Ext.data.reader.Json'
     ],
 
     config: {
-        model: 'MyApp.model.Employees',
+        model: 'DecisionLink.model.Employees',
         storeId: 'EmployeesStore',
         proxy: {
             type: 'jsonp',

@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.model.Validate', {
+Ext.define('DecisionLink.model.Validate', {
     extend: 'Ext.data.Model',
 
     requires: [

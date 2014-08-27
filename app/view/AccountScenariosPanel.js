@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.AccountScenariosPanel', {
+Ext.define('DecisionLink.view.AccountScenariosPanel', {
     extend: 'Ext.Panel',
     alias: 'widget.accountscenariospanel',
 
