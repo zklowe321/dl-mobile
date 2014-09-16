@@ -1852,6 +1852,31 @@ Ext.define('DecisionLink.controller.Navigation', {
         });
     },
 
+    saveOpportunity: function(company_id, user_id, name, wacc, oppty_revenue, solutions) {
+        var store = Ext.data.StoreManager.lookup('SuccessStore'),
+            url = 'http://test.decisionlink.com/services/SaveOpportunity1.php' +
+            '?company_id=' + company_id +
+            '&user_id=' + user_id +
+            '&name=' + name +
+            '&wacc=' + wacc +
+            '&oppty_revenue=' + oppty_revenue +
+            '&solutions=' + solutions;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getSolutions: function(user_id, callback) {
+        var store = Ext.data.StoreManager.lookup('SolutionsStore'),
+            url = 'http://test.decisionlink.com/services/GetSolutions1.php' +
+            '?user_id=' + user_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
     toMD5: function(str) {
 
             var xl;

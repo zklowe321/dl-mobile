@@ -58,7 +58,8 @@ Ext.application({
         'ScenarioAreas',
         'ScenarioIndustries',
         'ScenarioBaselines',
-        'Currencies'
+        'Currencies',
+        'Solutions'
     ],
     stores: [
         'SearchStore',
@@ -87,7 +88,8 @@ Ext.application({
         'ScenarioAreasStore',
         'ScenarioIndustriesStore',
         'ScenarioBaselinesStore',
-        'CurrenciesStore'
+        'CurrenciesStore',
+        'SolutionsStore'
     ],
     views: [
         'MainView',

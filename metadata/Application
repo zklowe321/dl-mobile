@@ -45,7 +45,8 @@
             "ScenarioAreas",
             "ScenarioIndustries",
             "ScenarioBaselines",
-            "Currencies"
+            "Currencies",
+            "Solutions"
         ],
         "name": "DecisionLink",
         "pagesFromHome": "0",
@@ -76,7 +77,8 @@
             "ScenarioAreasStore",
             "ScenarioIndustriesStore",
             "ScenarioBaselinesStore",
-            "CurrenciesStore"
+            "CurrenciesStore",
+            "SolutionsStore"
         ],
         "success": false,
         "userName": " ",

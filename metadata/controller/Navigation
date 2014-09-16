@@ -3636,6 +3636,67 @@
             "codeClass": null,
             "userConfig": {
                 "designer|params": [
+                    "company_id",
+                    "user_id",
+                    "name",
+                    "wacc",
+                    "oppty_revenue",
+                    "solutions"
+                ],
+                "fn": "saveOpportunity",
+                "implHandler": [
+                    "var store = Ext.data.StoreManager.lookup('SuccessStore'),",
+                    "    url = 'http://test.decisionlink.com/services/SaveOpportunity1.php' +",
+                    "    '?company_id=' + company_id +",
+                    "    '&user_id=' + user_id +",
+                    "    '&name=' + name +",
+                    "    '&wacc=' + wacc +",
+                    "    '&oppty_revenue=' + oppty_revenue +",
+                    "    '&solutions=' + solutions;",
+                    "store.getProxy().setUrl(url);",
+                    "store.load(function() {",
+                    "    callback(store);",
+                    "});"
+                ]
+            },
+            "name": "saveOpportunity",
+            "designerId": "3da535b3-ac3a-4b6c-bf4f-923e428ce6e0"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "user_id",
+                    "callback"
+                ],
+                "fn": "getSolutions",
+                "implHandler": [
+                    "var store = Ext.data.StoreManager.lookup('SolutionsStore'),",
+                    "    url = 'http://test.decisionlink.com/services/GetSolutions1.php' +",
+                    "    '?user_id=' + user_id;",
+                    "store.getProxy().setUrl(url);",
+                    "store.load(function() {",
+                    "    callback(store);",
+                    "});"
+                ]
+            },
+            "name": "getSolutions",
+            "designerId": "3dd9d108-62ee-451b-83bb-af40aa00b45a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
                     "str"
                 ],
                 "fn": "toMD5",
