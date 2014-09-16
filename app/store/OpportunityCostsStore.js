@@ -13,17 +13,17 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.store.OpportunityCostsStore', {
+Ext.define('DecisionLink.store.OpportunityCostsStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'MyApp.model.OpportunityCosts',
+        'DecisionLink.model.OpportunityCosts',
         'Ext.data.proxy.JsonP',
         'Ext.data.reader.Json'
     ],
 
     config: {
-        model: 'MyApp.model.OpportunityCosts',
+        model: 'DecisionLink.model.OpportunityCosts',
         storeId: 'OpportunityCostsStore',
         proxy: {
             type: 'jsonp',
@@ -32,6 +32,28 @@ Ext.define('MyApp.store.OpportunityCostsStore', {
                 rootProperty: 'costs',
                 totalProperty: 'totalRecs'
             }
+        },
+        listeners: [
+            {
+                fn: 'onJsonpstoreLoad',
+                event: 'load'
+            }
+        ]
+    },
+
+    onJsonpstoreLoad: function(store, records, successful, operation, eOpts) {
+        var count = store.data.items.length,
+            i;
+
+        for(i = 0; i < count; i++) {
+            var temp = store.data.items[i].data.cost;
+            temp = DecisionLink.app.formatCurrency(temp);
+
+            store.data.items[i].data.cost = temp;
         }
+
+        costs = Ext.ComponentQuery.query('opportunitycarousel #opportunityQuotePanel #opportunityCostsList')[0];
+        costs.refresh();
     }
+
 });

@@ -13,23 +13,45 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.store.KpisStore', {
+Ext.define('DecisionLink.store.KpisStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'MyApp.model.Kpis',
+        'DecisionLink.model.Kpis',
         'Ext.data.proxy.JsonP',
         'Ext.data.reader.Json'
     ],
 
     config: {
-        model: 'MyApp.model.Kpis',
+        model: 'DecisionLink.model.Kpis',
         storeId: 'KpisStore',
         proxy: {
             type: 'jsonp',
             reader: {
                 type: 'json'
             }
+        },
+        listeners: [
+            {
+                fn: 'onJsonpstoreLoad',
+                event: 'load'
+            }
+        ]
+    },
+
+    onJsonpstoreLoad: function(store, records, successful, operation, eOpts) {
+        var count = store.data.items.length,
+            i;
+
+        for(i = 0; i < count; i++) {
+            var temp = store.data.items[i].data.sqq_value;
+            temp = DecisionLink.app.formatCurrency(temp);
+
+            store.data.items[i].data.sqq_value = temp;
         }
+
+        kpis = Ext.ComponentQuery.query('competitivecarousel #kpiListPanel #kpisList')[0];
+        kpis.refresh();
     }
+
 });

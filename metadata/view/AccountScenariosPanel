@@ -29,10 +29,18 @@
             "codeClass": null,
             "userConfig": {
                 "itemId": "accountScenariosList",
+                "navView": "accountscenariospanel",
                 "store": "AccountScenariosStore"
             },
             "name": "MyList6",
             "designerId": "7c0d7ef7-668c-4b71-bfdf-bd75d41541db",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "navView",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.XTemplate",
@@ -44,7 +52,7 @@
                     "userConfig": {
                         "designer|displayName": "itemTpl",
                         "implHandler": [
-                            "<div class=“info” width=“40” height=“40”/>{name}<br/><small>Revenue: ${oppty_revenue}</small>"
+                            "<div class=“info” width=“40” height=“40”/>{name}<br/><small>Revenue: ${oppty_revenue} M</small>"
                         ]
                     },
                     "name": "tpl6",

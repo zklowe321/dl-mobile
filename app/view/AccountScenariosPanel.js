@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.AccountScenariosPanel', {
+Ext.define('DecisionLink.view.AccountScenariosPanel', {
     extend: 'Ext.Panel',
     alias: 'widget.accountscenariospanel',
 
@@ -28,9 +28,10 @@ Ext.define('MyApp.view.AccountScenariosPanel', {
         items: [
             {
                 xtype: 'list',
+                navView: 'accountscenariospanel',
                 itemId: 'accountScenariosList',
                 itemTpl: [
-                    '<div class=“info” width=“40” height=“40”/>{name}<br/><small>Revenue: ${oppty_revenue}</small>'
+                    '<div class=“info” width=“40” height=“40”/>{name}<br/><small>Revenue: ${oppty_revenue} M</small>'
                 ],
                 store: 'AccountScenariosStore'
             }

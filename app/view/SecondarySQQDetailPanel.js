@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.SecondarySQQDetailPanel', {
+Ext.define('DecisionLink.view.SecondarySQQDetailPanel', {
     extend: 'Ext.Panel',
     alias: 'widget.secondarysqqdetailpanel',
 

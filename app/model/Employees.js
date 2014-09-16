@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.model.Employees', {
+Ext.define('DecisionLink.model.Employees', {
     extend: 'Ext.data.Model',
 
     requires: [

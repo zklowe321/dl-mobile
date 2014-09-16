@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.model.OpportunityCosts', {
+Ext.define('DecisionLink.model.OpportunityCosts', {
     extend: 'Ext.data.Model',
 
     requires: [

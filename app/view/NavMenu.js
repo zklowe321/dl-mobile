@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.NavMenu', {
+Ext.define('DecisionLink.view.NavMenu', {
     extend: 'Ext.Panel',
     alias: 'widget.navmenu',
 
@@ -36,14 +36,28 @@ Ext.define('MyApp.view.NavMenu', {
                 navView: 'homepanel',
                 margin: 5,
                 iconCls: 'home',
-                text: 'Home'
+                text: 'Search'
             },
             {
                 xtype: 'button',
                 navView: 'searchpanel',
                 margin: 5,
-                iconCls: 'search',
-                text: 'Accounts'
+                iconCls: 'favorites',
+                text: 'Saved Accounts'
+            },
+            {
+                xtype: 'button',
+                navView: 'accountscenariospanel',
+                margin: 5,
+                iconCls: 'organize',
+                text: 'Value Propositions'
+            },
+            {
+                xtype: 'button',
+                navView: 'accountpanel',
+                margin: 5,
+                iconCls: 'user',
+                text: 'My Account'
             }
         ]
     }

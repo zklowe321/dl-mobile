@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.model.Competitors', {
+Ext.define('DecisionLink.model.Competitors', {
     extend: 'Ext.data.Model',
 
     requires: [

@@ -13,14 +13,14 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.HomePanel', {
+Ext.define('DecisionLink.view.HomePanel', {
     extend: 'Ext.Panel',
     alias: 'widget.homepanel',
 
     requires: [
         'Ext.Img',
-        'Ext.Spacer',
-        'Ext.field.Text',
+        'Ext.field.Search',
+        'Ext.field.Select',
         'Ext.dataview.List',
         'Ext.XTemplate'
     ],
@@ -42,48 +42,28 @@ Ext.define('MyApp.view.HomePanel', {
                         src: 'http://test.decisionlink.com/images/Logo_Actual_Size_VSA.png'
                     },
                     {
-                        xtype: 'container',
-                        hidden: true,
-                        itemId: 'accountContainer',
-                        items: [
+                        xtype: 'searchfield',
+                        itemId: 'searchField',
+                        label: 'Search',
+                        placeHolder: 'Enter Company'
+                    },
+                    {
+                        xtype: 'selectfield',
+                        itemId: 'selectField',
+                        margin: 5,
+                        label: 'By:',
+                        options: [
                             {
-                                xtype: 'spacer',
-                                height: 10
+                                text: 'Company',
+                                value: 1
                             },
                             {
-                                xtype: 'textfield',
-                                itemId: 'accountNameField',
-                                label: 'Account',
-                                labelWidth: '40%',
-                                readOnly: true
+                                text: 'DUNS',
+                                value: 2
                             },
                             {
-                                xtype: 'textfield',
-                                itemId: 'userNameField',
-                                label: 'Name',
-                                labelWidth: '40%',
-                                readOnly: true
-                            },
-                            {
-                                xtype: 'textfield',
-                                itemId: 'emailField',
-                                label: 'Email',
-                                labelWidth: '40%',
-                                readOnly: true
-                            },
-                            {
-                                xtype: 'spacer',
-                                height: 10
-                            },
-                            {
-                                xtype: 'textfield',
-                                label: 'Value Propositions',
-                                labelWidth: '100%',
-                                readOnly: true
-                            },
-                            {
-                                xtype: 'spacer',
-                                height: 10
+                                text: 'Ticker',
+                                value: 3
                             }
                         ]
                     },
@@ -91,16 +71,16 @@ Ext.define('MyApp.view.HomePanel', {
                         xtype: 'container',
                         flex: 2,
                         hidden: false,
-                        itemId: 'VPListContainer',
+                        itemId: 'searchListContainer',
                         layout: 'fit',
                         items: [
                             {
                                 xtype: 'list',
-                                itemId: 'VPList',
+                                itemId: 'searchList',
                                 itemTpl: [
-                                    '<div class=“info” width=“40” height=“40”/>{name}<br/><small>Revenue: ${oppty_revenue}</small>'
+                                    '<div>{name}</div>'
                                 ],
-                                store: 'AccountScenariosStore'
+                                store: 'SearchStore'
                             }
                         ]
                     }

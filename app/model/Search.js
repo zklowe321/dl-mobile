@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.model.Search', {
+Ext.define('DecisionLink.model.Search', {
     extend: 'Ext.data.Model',
 
     requires: [

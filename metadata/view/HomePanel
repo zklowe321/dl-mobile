@@ -59,123 +59,50 @@
                     "designerId": "64614e8b-276e-434b-8636-804ad6dee90b"
                 },
                 {
-                    "type": "Ext.Container",
+                    "type": "Ext.field.Search",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "hidden": true,
-                        "itemId": "accountContainer",
-                        "layout|flex": null
+                        "hidden": null,
+                        "id": null,
+                        "itemId": "searchField",
+                        "label": "Search",
+                        "placeHolder": "Enter Company"
                     },
-                    "name": "MyContainer1",
-                    "designerId": "64063a88-5a86-477f-b1aa-f58b6e8a53c7",
-                    "cn": [
-                        {
-                            "type": "Ext.Spacer",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "height": 10
-                            },
-                            "name": "MySpacer",
-                            "designerId": "d96acfa6-f66b-44b1-809e-e127cc25aa4a"
-                        },
-                        {
-                            "type": "Ext.field.Text",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "itemId": "accountNameField",
-                                "label": "Account",
-                                "labelWidth": "40%",
-                                "readOnly": true
-                            },
-                            "name": "MyTextField",
-                            "designerId": "c67e0441-02c0-45ec-a559-a65a3e26581b"
-                        },
-                        {
-                            "type": "Ext.field.Text",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "itemId": "userNameField",
-                                "label": "Name",
-                                "labelWidth": "40%",
-                                "readOnly": true
-                            },
-                            "name": "MyTextField1",
-                            "designerId": "d5a94936-0a5f-4ccc-b0a3-7a1d4fd83e30"
-                        },
-                        {
-                            "type": "Ext.field.Text",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "itemId": "emailField",
-                                "label": "Email",
-                                "labelWidth": "40%",
-                                "readOnly": true
-                            },
-                            "name": "MyTextField2",
-                            "designerId": "0612329e-1e70-4dbb-a525-c4955e7712c8"
-                        },
-                        {
-                            "type": "Ext.Spacer",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "height": 10
-                            },
-                            "name": "MySpacer1",
-                            "designerId": "ef934925-02fd-4ee7-9bc8-2a6146b1b081"
-                        },
-                        {
-                            "type": "Ext.field.Text",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "label": "Value Propositions",
-                                "labelWidth": "100%",
-                                "readOnly": true
-                            },
-                            "name": "MyTextField3",
-                            "designerId": "8aa0006f-fa40-4617-b076-39bc2597b219"
-                        },
-                        {
-                            "type": "Ext.Spacer",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "height": 10
-                            },
-                            "name": "MySpacer2",
-                            "designerId": "aac83a91-8883-43d8-89b3-0b1676efa46a"
-                        }
-                    ]
+                    "name": "MySearchField",
+                    "designerId": "8e226273-2f08-4fb2-8fd5-80e4cf3e7877"
+                },
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": null,
+                        "id": null,
+                        "itemId": "selectField",
+                        "label": "By:",
+                        "margin": 5,
+                        "options": [
+                            "[{",
+                            "    text: 'Company',",
+                            "    value: 1",
+                            "}, {",
+                            "    text: 'DUNS',",
+                            "    value: 2",
+                            "}, {",
+                            "    text: 'Ticker',",
+                            "    value: 3",
+                            "}]"
+                        ]
+                    },
+                    "name": "MySelectField12",
+                    "designerId": "fa613e94-6ada-4492-90b3-c17fd8919482"
                 },
                 {
                     "type": "Ext.Container",
@@ -186,12 +113,12 @@
                     "codeClass": null,
                     "userConfig": {
                         "hidden": false,
-                        "itemId": "VPListContainer",
+                        "itemId": "searchListContainer",
                         "layout": "fit",
                         "layout|flex": 2
                     },
-                    "name": "MyContainer2",
-                    "designerId": "6697a24b-ab56-4620-8a3c-2a07aec6242f",
+                    "name": "MyContainer5",
+                    "designerId": "d4d73d0e-6015-4f3d-8af0-bbcf5c0a285c",
                     "cn": [
                         {
                             "type": "Ext.dataview.List",
@@ -201,11 +128,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "itemId": "VPList",
-                                "store": "AccountScenariosStore"
+                                "height": null,
+                                "id": null,
+                                "itemId": "searchList",
+                                "store": "SearchStore"
                             },
-                            "name": "MyList",
-                            "designerId": "6495d01d-16e9-4a1c-9d3d-dc4749e29ed5",
+                            "name": "MyList4",
+                            "designerId": "04134d0e-fa7a-422c-8f1d-eeec3c351eaf",
                             "cn": [
                                 {
                                     "type": "Ext.XTemplate",
@@ -217,11 +146,11 @@
                                     "userConfig": {
                                         "designer|displayName": "itemTpl",
                                         "implHandler": [
-                                            "<div class=“info” width=“40” height=“40”/>{name}<br/><small>Revenue: ${oppty_revenue}</small>"
+                                            "<div>{name}</div>"
                                         ]
                                     },
-                                    "name": "tpl",
-                                    "designerId": "8aee079d-f39b-4d0d-bc1e-b2bd65519bdd"
+                                    "name": "tpl4",
+                                    "designerId": "fbba91bb-73fa-48b5-8628-7e60e6b3a38d"
                                 }
                             ]
                         }

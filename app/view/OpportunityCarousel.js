@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.OpportunityCarousel', {
+Ext.define('DecisionLink.view.OpportunityCarousel', {
     extend: 'Ext.carousel.Carousel',
     alias: 'widget.opportunitycarousel',
 

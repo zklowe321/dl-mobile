@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.LoginPanel', {
+Ext.define('DecisionLink.view.LoginPanel', {
     extend: 'Ext.Panel',
     alias: 'widget.loginPanel',
 

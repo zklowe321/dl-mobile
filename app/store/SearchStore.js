@@ -13,17 +13,17 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.store.SearchStore', {
+Ext.define('DecisionLink.store.SearchStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'MyApp.model.Search',
+        'DecisionLink.model.Search',
         'Ext.data.proxy.JsonP',
         'Ext.data.reader.Json'
     ],
 
     config: {
-        model: 'MyApp.model.Search',
+        model: 'DecisionLink.model.Search',
         storeId: 'SearchStore',
         proxy: {
             type: 'jsonp',

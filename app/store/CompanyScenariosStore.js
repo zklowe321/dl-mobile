@@ -13,17 +13,17 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.store.CompanyScenariosStore', {
+Ext.define('DecisionLink.store.CompanyScenariosStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'MyApp.model.CompanyScenarios',
+        'DecisionLink.model.CompanyScenarios',
         'Ext.data.proxy.JsonP',
         'Ext.data.reader.Json'
     ],
 
     config: {
-        model: 'MyApp.model.CompanyScenarios',
+        model: 'DecisionLink.model.CompanyScenarios',
         storeId: 'CompanyScenariosStore',
         proxy: {
             type: 'jsonp',
@@ -31,6 +31,29 @@ Ext.define('MyApp.store.CompanyScenariosStore', {
                 type: 'json',
                 rootProperty: 'opptys'
             }
+        },
+        listeners: [
+            {
+                fn: 'onJsonpstoreLoad',
+                event: 'load'
+            }
+        ]
+    },
+
+    onJsonpstoreLoad: function(store, records, successful, operation, eOpts) {
+        var count = store.data.items.length,
+            i;
+
+        for(i = 0; i < count; i++) {
+            var temp = store.data.items[i].data.yr1_benefit_sum;
+
+            temp = DecisionLink.app.formatCurrency(temp);
+
+            store.data.items[i].data.yr1_benefit_sum = temp;
         }
+
+        company = Ext.ComponentQuery.query('companyscenariospanel #companyScenariosList')[0];
+        company.refresh();
     }
+
 });

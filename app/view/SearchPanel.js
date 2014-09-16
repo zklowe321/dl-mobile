@@ -13,32 +13,21 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.SearchPanel', {
-    extend: 'Ext.tab.Panel',
+Ext.define('DecisionLink.view.SearchPanel', {
+    extend: 'Ext.Panel',
     alias: 'widget.searchpanel',
 
     requires: [
-        'Ext.tab.Bar',
         'Ext.dataview.List',
-        'Ext.XTemplate',
-        'Ext.field.Search',
-        'Ext.form.FieldSet',
-        'Ext.field.Select'
+        'Ext.XTemplate'
     ],
 
     config: {
         navView: 'searchpanel',
-        tabBar: {
-            docked: 'top',
-            layout: {
-                type: 'hbox',
-                pack: 'center'
-            }
-        },
+        layout: 'fit',
         items: [
             {
                 xtype: 'container',
-                title: 'Saved',
                 itemId: 'savedPanel',
                 layout: 'fit',
                 items: [
@@ -49,62 +38,6 @@ Ext.define('MyApp.view.SearchPanel', {
                             '<div class=“info” width=“40” height=“40”/>Name: {name}<br/><small>Revenue: ${revenue} M</small>'
                         ],
                         store: 'SavedStore'
-                    }
-                ]
-            },
-            {
-                xtype: 'container',
-                title: 'Search',
-                itemId: 'searchPanel',
-                layout: 'vbox',
-                items: [
-                    {
-                        xtype: 'searchfield',
-                        itemId: 'searchField',
-                        label: 'Search',
-                        placeHolder: 'Enter Company'
-                    },
-                    {
-                        xtype: 'fieldset',
-                        itemId: 'myFieldSet',
-                        layout: 'vbox',
-                        title: '',
-                        items: [
-                            {
-                                xtype: 'selectfield',
-                                itemId: 'selectField',
-                                label: 'By:',
-                                options: [
-                                    {
-                                        text: 'Company',
-                                        value: 1
-                                    },
-                                    {
-                                        text: 'DUNS',
-                                        value: 2
-                                    },
-                                    {
-                                        text: 'Ticker',
-                                        value: 3
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        xtype: 'container',
-                        flex: 1,
-                        layout: 'fit',
-                        items: [
-                            {
-                                xtype: 'list',
-                                itemId: 'searchList',
-                                itemTpl: [
-                                    '<div>{name}</div>'
-                                ],
-                                store: 'SearchStore'
-                            }
-                        ]
                     }
                 ]
             }

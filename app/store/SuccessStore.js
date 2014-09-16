@@ -13,17 +13,17 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.store.SuccessStore', {
+Ext.define('DecisionLink.store.SuccessStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'MyApp.model.Success',
+        'DecisionLink.model.Success',
         'Ext.data.proxy.JsonP',
         'Ext.data.reader.Json'
     ],
 
     config: {
-        model: 'MyApp.model.Success',
+        model: 'DecisionLink.model.Success',
         storeId: 'SuccessStore',
         proxy: {
             type: 'jsonp',
@@ -45,9 +45,9 @@ Ext.define('MyApp.store.SuccessStore', {
         success = store.data.items[0].data.success;
 
         if (success) {
-            console.log("Successful");
+            window.alert("Successful");
         } else {
-            console.log("Unsuccessful");
+            window.alert("Unsuccessful");
         }
     }
 

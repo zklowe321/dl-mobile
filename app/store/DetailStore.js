@@ -13,23 +13,46 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.store.DetailStore', {
+Ext.define('DecisionLink.store.DetailStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'MyApp.model.Detail',
+        'DecisionLink.model.Detail',
         'Ext.data.proxy.JsonP',
         'Ext.data.reader.Json'
     ],
 
     config: {
-        model: 'MyApp.model.Detail',
+        model: 'DecisionLink.model.Detail',
         storeId: 'DetailStore',
         proxy: {
             type: 'jsonp',
             reader: {
                 type: 'json'
             }
+        },
+        listeners: [
+            {
+                fn: 'onJsonpstoreLoad',
+                event: 'load'
+            }
+        ]
+    },
+
+    onJsonpstoreLoad: function(store, records, successful, operation, eOpts) {
+        var count = store.data.items.length,
+            i;
+
+        for(i = 0; i < count; i++) {
+            var temp = store.data.items[i].data.revenue;
+
+            temp = DecisionLink.app.formatCurrency(temp);
+
+            store.data.items[i].data.revenue = temp;
         }
+
+        detail = Ext.ComponentQuery.query('detailpanel #detailList')[0];
+        detail.refresh();
     }
+
 });

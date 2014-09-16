@@ -33,6 +33,34 @@
                     "designerId": "22822ebf-6d53-42ac-a659-6d437270dca1"
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonpstoreLoad",
+                "implHandler": [
+                    "var count = store.data.items.length,",
+                    "    i;",
+                    "",
+                    "for(i = 0; i < count; i++) {",
+                    "    var temp = store.data.items[i].data.sqq_value;",
+                    "    temp = DecisionLink.app.formatCurrency(temp);",
+                    "",
+                    "    store.data.items[i].data.sqq_value = temp;",
+                    "}",
+                    "",
+                    "kpis = Ext.ComponentQuery.query('competitivecarousel #kpiListPanel #kpisList')[0];",
+                    "kpis.refresh();"
+                ],
+                "name": "load"
+            },
+            "name": "onJsonpstoreLoad",
+            "designerId": "449f9012-95d7-4c46-828d-ff0d3ad5f8c1"
         }
     ]
 }

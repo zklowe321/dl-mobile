@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.controller.Navigation', {
+Ext.define('DecisionLink.controller.Navigation', {
     extend: 'Ext.app.Controller',
 
     config: {
@@ -25,14 +25,13 @@ Ext.define('MyApp.controller.Navigation', {
             },
             savedList: 'searchpanel #savedList',
             detailPanel: 'detailpanel',
-            searchPanel: '#searchPanel',
             overviewList: '#overviewList',
             loginPanel: '#loginPanel',
             validateList: '#validateList',
             navBar: '#navBar',
-            searchList: 'searchpanel #searchList',
+            searchList: 'homepanel #searchListContainer #searchList',
             detailList: 'detailpanel #detailList',
-            accountScenariosList: 'homepanel #homeContainer #VPListContainer #VPList',
+            accountScenariosList: 'accountscenariospanel #accountScenariosList',
             companyScenariosList: 'companyscenariospanel #companyScenariosList',
             companyViewPanel: 'companyviewpanel',
             oppOverviewList: 'opportunitycarousel #oppOverviewList',
@@ -60,51 +59,52 @@ Ext.define('MyApp.controller.Navigation', {
             deleteCostActionSheet: 'opportunitycostdetailpanel #deleteCostActionSheet',
             scenarioField: 'opportunitycarousel #scenarioField',
             scenarioCompetitorsList: 'opportunitycarousel #competitorsList',
+            changePasswordPanel: 'changepasswordpanel',
             sellingIntoField: 'opportunitycarousel #sellingIntoField',
+            currencySelectField: 'changeCurrencyPanel #currencySelectField',
+            accountPanel: 'accountpanel',
             opportunitySituationPanel: 'opportunitycarousel #opportunitySituationPanel',
             vpList: 'homepanel #homeContainer #VPListContainer #VPList',
             homePanel: 'homepanel'
         },
 
         control: {
-            "mainview #menuButton": {
-                tap: 'showMenu'
-            },
             "navmenu button": {
                 tap: 'navigate'
             },
-            "searchpanel #savedList": {
-                itemtap: 'onSavedListItemTap'
-            },
-            "searchpanel #searchField": {
-                action: 'onSearchfieldAction'
-            },
-            "searchpanel #savedPanel": {
-                activate: 'onSavedListActivate'
-            },
-            "mainview #navBar #login": {
-                tap: 'onShowLogin'
-            },
-            "#loginButton": {
-                tap: 'onLoginButtonTap'
+            "mainview #menuButton": {
+                tap: 'showMenu'
             },
             "#cancelButton": {
                 tap: 'onCancelButtonTap'
             },
-            "searchpanel #searchList": {
+            "homepanel #searchListContainer #searchList": {
                 itemtap: 'onSearchListItemTap'
             },
             "accountscenariospanel #accountScenariosList": {
-                activate: 'onAccountScenariosListActivate'
-            },
-            "homepanel #homeContainer #VPListContainer #VPList": {
+                activate: 'onAccountScenariosListActivate',
                 itemtap: 'onAccountScenariosListItemTap'
+            },
+            "searchpanel #savedList": {
+                itemtap: 'onSavedListItemTap'
+            },
+            "searchpanel #savedPanel": {
+                activate: 'onSavedListActivate'
+            },
+            "homepanel #homeContainer #searchField": {
+                action: 'onSearchfieldAction'
+            },
+            "#loginButton": {
+                tap: 'onLoginButtonTap'
             },
             "navigationview": {
                 back: 'onMainViewBack'
             },
             "companyviewpanel #companyInfoCheckBox": {
                 check: 'onCompanyInfoCheck'
+            },
+            "mainview #navBar #login": {
+                tap: 'onShowLogin'
             },
             "companyviewpanel #valuePropCheckBox": {
                 check: 'onValuePropCheck'
@@ -190,28 +190,31 @@ Ext.define('MyApp.controller.Navigation', {
             "loginPanel": {
                 hide: 'onLoginPanelHide'
             },
+            "accountpanel #changeCurrencyButton": {
+                tap: 'onShowCurrencyButtonTap'
+            },
             "homepanel": {
                 activate: 'onHomePanelActivate'
             },
             "assetdetailpanel #downloadImage": {
                 tap: 'onDownloadImageTap'
+            },
+            "accountpanel #logoutButton": {
+                tap: 'onLogoutButtonTap'
+            },
+            "accountpanel": {
+                activate: 'onAccountPanelActivate'
+            },
+            "changecurrencypanel #changeCurrencyButton": {
+                tap: 'onSaveCurrencyButtonTap'
+            },
+            "accountpanel #changePasswordButton": {
+                tap: 'onShowChangePasswordButtonTap'
+            },
+            "changepasswordpanel #changePasswordButton": {
+                tap: 'onChangePasswordButtonTap'
             }
         }
-    },
-
-    showMenu: function(target) {
-
-        // Get or create navigation menu
-        var menu = this.getNavMenu();
-        if (!menu) {
-            menu = Ext.create('widget.navmenu');
-        }
-
-        var menuItems = menu.getItems().items,				// Menu buttons
-        	currentView = this.currentView || "homepanel";	// Current view alias, default to home
-
-        // Show menu by menu button
-        menu.showBy(target);
     },
 
     navigate: function(button, e, eOpts) {
@@ -247,19 +250,45 @@ Ext.define('MyApp.controller.Navigation', {
             rightButton.destroy();
         }
 
-        MyApp.app.setPagesFromHome(0);
+        DecisionLink.app.setPagesFromHome(0);
     },
 
-    onSavedListItemTap: function(dataview, index, target, record, e, eOpts) {
+    showMenu: function(target) {
+
+        // Get or create navigation menu
+        var menu = this.getNavMenu(),
+            validated = DecisionLink.app.isValidated();
+        if (!menu) {
+            menu = Ext.create('widget.navmenu');
+        }
+
+        var menuItems = menu.getItems().items,				// Menu buttons
+        	currentView = this.currentView || "homepanel";	// Current view alias, default to home
+
+        // Show menu by menu button
+        if (validated) {
+            menu.showBy(target);
+        } else {
+            window.alert("Please login");
+        }
+    },
+
+    onCancelButtonTap: function(button, e, eOpts) {
+        menu = this.getLoginPanel();
+
+        menu.hide();
+    },
+
+    onSearchListItemTap: function(dataview, index, target, record, e, eOpts) {
         var details,
             me = this;
 
         if (record) {
-            MyApp.app.setCurrentCompanyId(record.get('id'));
-            MyApp.app.setCurrentIndustryId(record.get('industry_id'));
-            MyApp.app.setCurrentRevenue(record.get('revenue'));
+            DecisionLink.app.setCurrentCompanyId(record.get('id'));
+            DecisionLink.app.setCurrentIndustryId(record.get('industry_id'));
+            DecisionLink.app.setCurrentRevenue(record.get('revenue'));
 
-            details = Ext.create('MyApp.view.CompanyViewPanel', {
+            details = Ext.create('DecisionLink.view.CompanyViewPanel', {
                 title: record.get('name')
             });
 
@@ -268,28 +297,104 @@ Ext.define('MyApp.controller.Navigation', {
             var navBar = this.getNavBar();
             navBar.leftBox.query('button')[1].hide();
 
-            MyApp.app.incrementPagesFromHome();
+            DecisionLink.app.incrementPagesFromHome();
         }
     },
 
-    onSearchfieldAction: function(textfield, e, eOpts) {
-        var overview,
-            searchPanel,
-            option,
+    onAccountScenariosListActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
+        var me = this,
+            account_id = DecisionLink.app.getAccountId();
+
+        me.getNavBar().setTitle("My Accounts");
+
+        Ext.Viewport.setMasked({message: 'Loading...'});
+
+        me.getAccountScenarios(account_id, function(store) {
+            me.getAccountScenariosList().setStore(store);
+
+            Ext.Viewport.setMasked(false);
+        });
+    },
+
+    onAccountScenariosListItemTap: function(dataview, index, target, record, e, eOpts) {
+        var carousel,
+            details,
+            yr1_cost_sum = record.get('yr1_cost_sum'),
+            yrx_cost_sum = record.get('yrx_cost_sum'),
+            yr1_benefit_sum = record.get('yr1_benefit_sum'),
+            yr2_benefit_sum = record.get('yr2_benefit_sum'),
+            yr3_benefit_sum = record.get('yr3_benefit_sum'),
+            wacc = record.get('wacc'),
+            term = record.get('term'),
+            bur = record.get('oppty_revenue'),
+            cost_light_image = record.get('cost_light_image'),
+            benefit_light_image = record.get('benefit_light_image'),
             me = this;
 
-        searchPanel = me.getSearchPanel();
-        option = searchPanel.child('#myFieldSet').child('#selectField').getValue();
-        searchTerm = textfield.getValue();
 
-        me.searchCompanies(searchTerm, option, function (store) {
-            me.getSearchList().setStore(store);
+        Ext.Viewport.setMasked({message: 'Loading...'});
+
+        carousel = Ext.create('DecisionLink.view.OpportunityCarousel', {
+            title: record.get('name')
         });
+
+        details = carousel.child('#opportunityOverviewPanel');
+
+        details.child('#yr1CostsField').setValue(yr1_cost_sum);
+        details.child('#ongoingCostsField').setValue(yrx_cost_sum);
+
+        details.child('#yr1BenefitsField').setValue(yr1_benefit_sum);
+        details.child('#yr2BenefitsField').setValue(yr2_benefit_sum);
+        details.child('#yr3BenefitsField').setValue(yr3_benefit_sum);
+
+        details.child('#waccField').setValue(wacc);
+        details.child('#termField').setValue(term);
+        details.child('#burField').setValue(bur);
+
+        details.child('#imageContainer').child('#costLightImage').setSrc(cost_light_image);
+        details.child('#imageContainer').child('#benefitLightImage').setSrc(benefit_light_image);
+
+        DecisionLink.app.setCurrentOpptyId(record.get('id'));
+
+        situation = carousel.child('#opportunitySituationPanel');
+        situation.child('#costOfCapitalField').setValue(wacc);
+        situation.child('#termField').setValue(term);
+
+        Ext.Viewport.setMasked(false);
+
+        this.getMainView().push(carousel);
+
+        var navBar = this.getNavBar();
+        navBar.leftBox.query('button')[1].hide();
+
+        DecisionLink.app.incrementPagesFromHome();
+    },
+
+    onSavedListItemTap: function(dataview, index, target, record, e, eOpts) {
+        var details,
+            me = this;
+
+        if (record) {
+            DecisionLink.app.setCurrentCompanyId(record.get('id'));
+            DecisionLink.app.setCurrentIndustryId(record.get('industry_id'));
+            DecisionLink.app.setCurrentRevenue(record.get('revenue'));
+
+            details = Ext.create('DecisionLink.view.CompanyViewPanel', {
+                title: record.get('name')
+            });
+
+            this.getMainView().push(details);
+
+            var navBar = this.getNavBar();
+            navBar.leftBox.query('button')[1].hide();
+
+            DecisionLink.app.incrementPagesFromHome();
+        }
     },
 
     onSavedListActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
         var me = this,
-            id = MyApp.app.getUserId();
+            id = DecisionLink.app.getUserId();
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
@@ -300,18 +405,23 @@ Ext.define('MyApp.controller.Navigation', {
         });
     },
 
-    onShowLogin: function(button, e, eOpts) {
-        var menu = this.getLoginPanel();
-        if (!menu) {
-            menu = Ext.create('widget.loginPanel');
-        }
+    onSearchfieldAction: function(textfield, e, eOpts) {
+        var overview,
+            searchPanel,
+            option,
+            validated = DecisionLink.app.isValidated(),
+            me = this;
 
-        menu.child('#passwordField').reset();
+        homePanel = me.getHomePanel();
+        option = homePanel.child('#homeContainer').child('#selectField').getValue();
+        searchTerm = textfield.getValue();
 
-        if (!MyApp.app.isValidated()) {
-            menu.showBy(button);
+        if (validated) {
+            me.searchCompanies(searchTerm, option, function (store) {
+                me.getSearchList().setStore(store);
+            });
         } else {
-            alert("You are already logged in.");
+            window.alert("Please log in");
         }
     },
 
@@ -342,111 +452,16 @@ Ext.define('MyApp.controller.Navigation', {
 
     },
 
-    onCancelButtonTap: function(button, e, eOpts) {
-        menu = this.getLoginPanel();
-
-        menu.hide();
-    },
-
-    onSearchListItemTap: function(dataview, index, target, record, e, eOpts) {
-        var details,
-            me = this;
-
-        if (record) {
-            MyApp.app.setCurrentCompanyId(record.get('id'));
-            MyApp.app.setCurrentIndustryId(record.get('industry_id'));
-            MyApp.app.setCurrentRevenue(record.get('revenue'));
-
-            details = Ext.create('MyApp.view.CompanyViewPanel', {
-                title: record.get('name')
-            });
-
-            this.getMainView().push(details);
-
-            var navBar = this.getNavBar();
-            navBar.leftBox.query('button')[1].hide();
-
-            MyApp.app.incrementPagesFromHome();
-        }
-    },
-
-    onAccountScenariosListActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
-        var me = this,
-            user_id = MyApp.app.getUserId();
-
-        Ext.Viewport.setMasked({message: 'Loading...'});
-
-        me.getAccountScenarios(user_id, function(store) {
-            me.getAccountScenariosList().setStore(store);
-
-            Ext.Viewport.setMasked(false);
-        });
-    },
-
-    onAccountScenariosListItemTap: function(dataview, index, target, record, e, eOpts) {
-        var carousel,
-            details,
-            yr1_cost_sum = record.get('yr1_cost_sum'),
-            yrx_cost_sum = record.get('yrx_cost_sum'),
-            yr1_benefit_sum = record.get('yr1_benefit_sum'),
-            yr2_benefit_sum = record.get('yr2_benefit_sum'),
-            yr3_benefit_sum = record.get('yr3_benefit_sum'),
-            wacc = record.get('wacc'),
-            term = record.get('term'),
-            bur = record.get('oppty_revenue'),
-            cost_light_image = record.get('cost_light_image'),
-            benefit_light_image = record.get('benefit_light_image'),
-            me = this;
-
-
-        Ext.Viewport.setMasked({message: 'Loading...'});
-
-        carousel = Ext.create('MyApp.view.OpportunityCarousel', {
-            title: record.get('name')
-        });
-
-        details = carousel.child('#opportunityOverviewPanel');
-
-        details.child('#yr1CostsField').setValue(yr1_cost_sum);
-        details.child('#ongoingCostsField').setValue(yrx_cost_sum);
-
-        details.child('#yr1BenefitsField').setValue(yr1_benefit_sum);
-        details.child('#yr2BenefitsField').setValue(yr2_benefit_sum);
-        details.child('#yr3BenefitsField').setValue(yr3_benefit_sum);
-
-        details.child('#waccField').setValue(wacc);
-        details.child('#termField').setValue(term);
-        details.child('#burField').setValue(bur);
-
-        details.child('#imageContainer').child('#costLightImage').setSrc(cost_light_image);
-        details.child('#imageContainer').child('#benefitLightImage').setSrc(benefit_light_image);
-
-        MyApp.app.setCurrentOpptyId(record.get('id'));
-
-        situation = carousel.child('#opportunitySituationPanel');
-        situation.child('#costOfCapitalField').setValue(wacc);
-        situation.child('#termField').setValue(term);
-
-        Ext.Viewport.setMasked(false);
-
-        this.getMainView().push(carousel);
-
-        var navBar = this.getNavBar();
-        navBar.leftBox.query('button')[1].hide();
-
-        MyApp.app.incrementPagesFromHome();
-    },
-
     onMainViewBack: function(navigationview, eOpts) {
         var navBar = this.getNavBar(),
-            pagesFromHome = MyApp.app.getPagesFromHome();
+            pagesFromHome = DecisionLink.app.getPagesFromHome();
 
         if (pagesFromHome == 1) {
             navBar.leftBox.query('button')[0].hide();
             navBar.leftBox.query('button')[1].show();
         }
 
-        MyApp.app.decrementPagesFromHome();
+        DecisionLink.app.decrementPagesFromHome();
 
     },
 
@@ -459,7 +474,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        id = MyApp.app.getCurrentCompanyId();
+        id = DecisionLink.app.getCurrentCompanyId();
 
         me.getCompanyOverview(id, function(store) {
             me.getDetailList().setStore(store);
@@ -467,14 +482,29 @@ Ext.define('MyApp.controller.Navigation', {
             Ext.Viewport.setMasked(false);
         });
 
-        details = Ext.create('MyApp.view.DetailPanel', {});
+        details = Ext.create('DecisionLink.view.DetailPanel', {});
 
         me.getMainView().push(details);
 
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
+    },
+
+    onShowLogin: function(button, e, eOpts) {
+        var menu = this.getLoginPanel();
+        if (!menu) {
+            menu = Ext.create('widget.loginPanel');
+        }
+
+        menu.child('#passwordField').reset();
+
+        if (!DecisionLink.app.isValidated()) {
+            menu.showBy(button);
+        } else {
+            alert("You are already logged in.");
+        }
     },
 
     onValuePropCheck: function(checkboxfield, e, eOpts) {
@@ -486,8 +516,8 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        user_id = MyApp.app.getUserId();
-        company_id = MyApp.app.getCurrentCompanyId();
+        user_id = DecisionLink.app.getUserId();
+        company_id = DecisionLink.app.getCurrentCompanyId();
 
         me.getCompanyScenarios(user_id, company_id, function(store) {
             me.getCompanyScenariosList().setStore(store);
@@ -495,7 +525,7 @@ Ext.define('MyApp.controller.Navigation', {
             Ext.Viewport.setMasked(false);
         });
 
-        details = Ext.create('MyApp.view.CompanyScenariosPanel', {
+        details = Ext.create('DecisionLink.view.CompanyScenariosPanel', {
             title: 'Value Propositions'
         });
 
@@ -504,7 +534,7 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onOpportunityTap: function(dataview, index, target, record, e, eOpts) {
@@ -520,25 +550,25 @@ Ext.define('MyApp.controller.Navigation', {
                 Ext.Viewport.setMasked(false);
             });
 
-            details = Ext.create('MyApp.view.OpportunityCarousel', {
+            details = Ext.create('DecisionLink.view.OpportunityCarousel', {
                 title: record.get('name')
             });
 
-            MyApp.app.setCurrentOppty(record.get('id'));
+            DecisionLink.app.setCurrentOppty(record.get('id'));
 
             this.getMainView().push(details);
 
             var navBar = this.getNavBar();
             navBar.leftBox.query('button')[1].hide();
 
-            MyApp.app.incrementPagesFromHome();
+            DecisionLink.app.incrementPagesFromHome();
         }
     },
 
     onOpptyCarouselActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
         var me = this,
-            id = MyApp.app.getCurrentOpptyId(),
-            user_id = MyApp.app.getUserId();
+            id = DecisionLink.app.getCurrentOpptyId(),
+            user_id = DecisionLink.app.getUserId();
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
@@ -598,7 +628,7 @@ Ext.define('MyApp.controller.Navigation', {
     onSQQListItemTap: function(dataview, index, target, record, e, eOpts) {
         var details,
             name = record.get('name'),
-            sqq_estimate = record.get('sqq_estimate'),
+            sqq_estimate = '$' + DecisionLink.app.formatCurrency( record.get('sqq_estimate') ),
             sqq_override = record.get('sqq_override'),
             source_name = record.get('source_name'),
             source_type_id = record.get('source_type_id'),
@@ -607,7 +637,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        details = Ext.create('MyApp.view.SalesQuestionDetailPanel', {
+        details = Ext.create('DecisionLink.view.SalesQuestionDetailPanel', {
             title: 'Sales Question Details'
         });
 
@@ -624,7 +654,7 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onVFListItemTap: function(dataview, index, target, record, e, eOpts) {
@@ -638,14 +668,14 @@ Ext.define('MyApp.controller.Navigation', {
             source_type_id = record.get('source_type_id'),
             sqq2 = record.get('sqq2'),
             sqq2_value = record.get('sqq2_value'),
-            total = record.get('y1_raw'),
+            total = '$' + DecisionLink.app.formatCurrency( record.get('y1_raw') ),
             alt_metric_id = record.get('alt_metric_id'),
             unit_type_id = record.get('unit_type_id'),
             me = this;
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        details = Ext.create('MyApp.view.ValueFormulaDetailPanel', {
+        details = Ext.create('DecisionLink.view.ValueFormulaDetailPanel', {
             title: 'Value Formula Details',
             alt_metric_id: alt_metric_id
         });
@@ -672,7 +702,7 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onCostListItemTap: function(dataview, index, target, record, e, eOpts) {
@@ -685,7 +715,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        details = Ext.create('MyApp.view.OpportunityCostDetailPanel', {
+        details = Ext.create('DecisionLink.view.OpportunityCostDetailPanel', {
             title: 'Cost Details'
         });
 
@@ -701,7 +731,7 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onAssetItemTap: function(dataview, index, target, record, e, eOpts) {
@@ -714,7 +744,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        details = Ext.create('MyApp.view.AssetDetailPanel', {
+        details = Ext.create('DecisionLink.view.AssetDetailPanel', {
             title: 'Asset Details',
             downloadUrl: url
         });
@@ -731,20 +761,20 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onCompanyScenariosListItemTap: function(dataview, index, target, record, e, eOpts) {
         var carousel,
             details,
-            yr1_cost_sum = record.get('yr1_cost_sum'),
-            yrx_cost_sum = record.get('yrx_cost_sum'),
-            yr1_benefit_sum = record.get('yr1_benefit_sum'),
-            yr2_benefit_sum = record.get('yr2_benefit_sum'),
-            yr3_benefit_sum = record.get('yr3_benefit_sum'),
+            yr1_cost_sum = '$' + DecisionLink.app.formatCurrency( record.get('yr1_cost_sum') ),
+            yrx_cost_sum = '$' + DecisionLink.app.formatCurrency( record.get('yrx_cost_sum') ),
+            yr1_benefit_sum = '$' + DecisionLink.app.formatCurrency( record.get('yr1_benefit_sum') ),
+            yr2_benefit_sum = '$' + DecisionLink.app.formatCurrency( record.get('yr2_benefit_sum') ),
+            yr3_benefit_sum = '$' + DecisionLink.app.formatCurrency( record.get('yr3_benefit_sum') ),
             wacc = record.get('wacc'),
             term = record.get('term'),
-            bur = record.get('oppty_revenue'),
+            bur = '$' + DecisionLink.app.formatCurrency( record.get('oppty_revenue') ),
             cost_light_image = record.get('cost_light_image'),
             benefit_light_image = record.get('benefit_light_image'),
             me = this;
@@ -752,7 +782,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        carousel = Ext.create('MyApp.view.OpportunityCarousel', {
+        carousel = Ext.create('DecisionLink.view.OpportunityCarousel', {
             title: record.get('name')
         });
 
@@ -772,7 +802,7 @@ Ext.define('MyApp.controller.Navigation', {
         details.child('#imageContainer').child('#costLightImage').setSrc(cost_light_image);
         details.child('#imageContainer').child('#benefitLightImage').setSrc(benefit_light_image);
 
-        MyApp.app.setCurrentOpptyId(record.get('id'));
+        DecisionLink.app.setCurrentOpptyId(record.get('id'));
 
         Ext.Viewport.setMasked(false);
 
@@ -781,13 +811,13 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onDNBCarouselActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
         var me = this,
-            company_id = MyApp.app.getCurrentCompanyId(),
-            user_id = MyApp.app.getUserId();
+            company_id = DecisionLink.app.getCurrentCompanyId(),
+            user_id = DecisionLink.app.getUserId();
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
@@ -823,7 +853,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        carousel = Ext.create('MyApp.view.DNBCarousel', {
+        carousel = Ext.create('DecisionLink.view.DNBCarousel', {
             title: 'Additional DnB Info'
         });
 
@@ -834,7 +864,7 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onDivisionsListItemTap: function(dataview, index, target, record, e, eOpts) {
@@ -842,9 +872,9 @@ Ext.define('MyApp.controller.Navigation', {
             me = this;
 
         if (record) {
-            MyApp.app.setCurrentCompanyId(record.get('id'));
+            DecisionLink.app.setCurrentCompanyId(record.get('id'));
 
-            details = Ext.create('MyApp.view.CompanyViewPanel', {
+            details = Ext.create('DecisionLink.view.CompanyViewPanel', {
                 title: record.get('name')
             });
 
@@ -862,11 +892,11 @@ Ext.define('MyApp.controller.Navigation', {
             me = this;
 
         if (record) {
-            MyApp.app.setCurrentCompanyId(record.get('id'));
-            MyApp.app.setCurrentIndustryId(record.get('industry_id'));
-            MyApp.app.setCurrentRevenue(record.get('revenue'));
+            DecisionLink.app.setCurrentCompanyId(record.get('id'));
+            DecisionLink.app.setCurrentIndustryId(record.get('industry_id'));
+            DecisionLink.app.setCurrentRevenue(record.get('revenue'));
 
-            details = Ext.create('MyApp.view.CompanyViewPanel', {
+            details = Ext.create('DecisionLink.view.CompanyViewPanel', {
                 title: record.get('name')
             });
 
@@ -886,7 +916,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        panel = Ext.create('MyApp.view.CompetitiveCarousel', {
+        panel = Ext.create('DecisionLink.view.CompetitiveCarousel', {
             title: 'Competitive Performance'
         });
 
@@ -897,20 +927,20 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onKpisListItemTap: function(dataview, index, target, record, e, eOpts) {
         var kpi_id = record.get('kpi_id'),
             sqq_value = record.get('sqq_value'),
             name = record.get('name'),
-            user_id = MyApp.app.getUserId(),
-            company_id = MyApp.app.getCurrentCompanyId(),
+            user_id = DecisionLink.app.getUserId(),
+            company_id = DecisionLink.app.getCurrentCompanyId(),
             me = this;
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        panel = Ext.create('MyApp.view.KpiDetailPanel', {
+        panel = Ext.create('DecisionLink.view.KpiDetailPanel', {
             title: 'KPI Details'
         });
 
@@ -928,15 +958,15 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onCompetitiveCarouselActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
         var me = this,
-            company_id = MyApp.app.getCurrentCompanyId(),
-            user_id = MyApp.app.getUserId(),
-            industry_id = MyApp.app.getCurrentIndustryId(),
-            revenue = MyApp.app.getCurrentRevenue();
+            company_id = DecisionLink.app.getCurrentCompanyId(),
+            user_id = DecisionLink.app.getUserId(),
+            industry_id = DecisionLink.app.getCurrentIndustryId(),
+            revenue = DecisionLink.app.getCurrentRevenue();
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
@@ -963,10 +993,10 @@ Ext.define('MyApp.controller.Navigation', {
             me = this;
 
         if (record) {
-            MyApp.app.setCurrentCompanyId(record.get('id'));
-            MyApp.app.setCurrentRevenue(record.get('revenue'));
+            DecisionLink.app.setCurrentCompanyId(record.get('id'));
+            DecisionLink.app.setCurrentRevenue(record.get('revenue'));
 
-            details = Ext.create('MyApp.view.CompanyViewPanel', {
+            details = Ext.create('DecisionLink.view.CompanyViewPanel', {
                 title: record.get('name')
             });
 
@@ -989,7 +1019,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        panel = Ext.create('MyApp.view.PeerPerformanceDetailPanel', {
+        panel = Ext.create('DecisionLink.view.PeerPerformanceDetailPanel', {
             title: 'Peer Performance Details'
         });
 
@@ -1007,12 +1037,12 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onSaveSQQButtonTap: function(button, e, eOpts) {
         var sqqPanel,
-            oppty_id = MyApp.app.getCurrentOpptyId(),
+            oppty_id = DecisionLink.app.getCurrentOpptyId(),
             sqq_id,
             sqq_override,
             source_type_id,
@@ -1030,7 +1060,7 @@ Ext.define('MyApp.controller.Navigation', {
 
     onSaveCostButtonTap: function(button, e, eOpts) {
         var costPanel,
-            oppty_id = MyApp.app.getCurrentOpptyId(),
+            oppty_id = DecisionLink.app.getCurrentOpptyId(),
             id,
             cost_type_id,
             accrual_type_id,
@@ -1058,7 +1088,7 @@ Ext.define('MyApp.controller.Navigation', {
 
     onSaveVFButtonTap: function(button, e, eOpts) {
         var VFPanel,
-            oppty_id = MyApp.app.getCurrentOpptyId(),
+            oppty_id = DecisionLink.app.getCurrentOpptyId(),
             metric_id,
             sqq_value,
             sqq2_value,
@@ -1090,7 +1120,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        details = Ext.create('MyApp.view.SecondarySQQDetailPanel', {
+        details = Ext.create('DecisionLink.view.SecondarySQQDetailPanel', {
             title: 'Sales Question Details'
         });
 
@@ -1106,20 +1136,20 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onSaveSecondarySQQButtonTap: function(button, e, eOpts) {
         var detailPanel,
-            oppty_id = MyApp.app.getCurrentOpptyId(),
-            user_id = MyApp.app.getUserId(),
+            oppty_id = DecisionLink.app.getCurrentOpptyId(),
+            user_id = DecisionLink.app.getUserId(),
             sqq2_id,
             sqq2_value,
             impact_per_unit_source_type_id,
             me = this;
 
         detailPanel = me.getSecondarySQQDetailPanel();
-        oppty_id = MyApp.app.getCurrentOpptyId();
+        oppty_id = DecisionLink.app.getCurrentOpptyId();
         sqq2_id = detailPanel.child('#sqq2IdField').getValue();
         sqq2_value = detailPanel.child('#sqqAnswerField').getValue();
         impact_per_unit_source_type_id = detailPanel.child('#sourceSelectField').getValue();
@@ -1139,7 +1169,7 @@ Ext.define('MyApp.controller.Navigation', {
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        details = Ext.create('MyApp.view.OpportunityCostDetailPanel', {
+        details = Ext.create('DecisionLink.view.OpportunityCostDetailPanel', {
             title: 'Cost Details'
         });
 
@@ -1155,12 +1185,12 @@ Ext.define('MyApp.controller.Navigation', {
         var navBar = this.getNavBar();
         navBar.leftBox.query('button')[1].hide();
 
-        MyApp.app.incrementPagesFromHome();
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     onDeleteCostButtonTap: function(button, e, eOpts) {
         var costPanel,
-            oppty_id = MyApp.app.getCurrentOpptyId(),
+            oppty_id = DecisionLink.app.getCurrentOpptyId(),
             id,
             actionsheet,
             me = this;
@@ -1177,7 +1207,7 @@ Ext.define('MyApp.controller.Navigation', {
     onDeleteCostActionButtonTap: function(button, e, eOpts) {
         var costPanel,
             actionsheet,
-            oppty_id = MyApp.app.getCurrentOpptyId(),
+            oppty_id = DecisionLink.app.getCurrentOpptyId(),
             id,
             actionsheet,
             me = this;
@@ -1207,8 +1237,8 @@ Ext.define('MyApp.controller.Navigation', {
 
     onSaveSituationButtonTap: function(button, e, eOpts) {
         var SituationPanel,
-            user_id = MyApp.app.getUserId(),
-            id = MyApp.app.getCurrentOpptyId(),
+            user_id = DecisionLink.app.getUserId(),
+            id = DecisionLink.app.getCurrentOpptyId(),
             scenario,
             competitors = '',
             areas,
@@ -1253,70 +1283,223 @@ Ext.define('MyApp.controller.Navigation', {
     },
 
     onLoginPanelHide: function(component, eOpts) {
-        var validated = MyApp.app.isValidated(),
-            account_name = MyApp.app.getAccountName(),
-            user_name = MyApp.app.getUserName(),
-            account_id = MyApp.app.getAccountId(),
-            user_id = MyApp.app.getUserId(),
-            email = MyApp.app.getEmail(),
+        var validated = DecisionLink.app.isValidated(),
             navBar = this.getNavBar(),
-            homePanel = this.getHomePanel(),
-            me = this;
+            homePanel = this.getHomePanel();
 
         if (validated) {
             rightButton = navBar.rightBox.query('button')[0];
             if (rightButton) {
                 rightButton.destroy();
             }
+            homePanel.child('#homeContainer').child('#searchField').show();
+            homePanel.child('#homeContainer').child('#selectField').show();
 
-            var container = homePanel.child('#homeContainer').child('#accountContainer');
-            container.setHidden(false);
-
-            container.child('#accountNameField').setValue(account_name);
-            container.child('#userNameField').setValue(user_name);
-            container.child('#emailField').setValue(email);
-
-            // Load in account scenarios
-            me.getAccountScenarios(account_id, function(store) {
-                me.getAccountScenariosList().setStore(store);
-            });
+        } else {
+            homePanel.child('#homeContainer').child('#searchField').hide();
+            homePanel.child('#homeContainer').child('#selectField').hide();
         }
     },
 
-    onHomePanelActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
-        var validated = MyApp.app.isValidated(),
-            account_name = MyApp.app.getAccountName(),
-            user_name = MyApp.app.getUserName(),
-            account_id = MyApp.app.getAccountId(),
-            user_id = MyApp.app.getUserId(),
-            email = MyApp.app.getEmail(),
-            navBar = this.getNavBar(),
-            homePanel = this.getHomePanel(),
-            me = this;
+    onShowCurrencyButtonTap: function(button, e, eOpts) {
+        var me = this;
 
+        Ext.Viewport.setMasked({message: 'Loading...'});
+
+        me.getCurrencies(function(store){
+            me.getCurrencySelectField().setStore(store);
+        });
+
+        var panel = Ext.create('DecisionLink.view.ChangeCurrencyPanel', {
+            title: 'Currency Preference'
+        });
+
+        this.getMainView().push(panel);
+
+        this.getNavBar().leftBox.query('button')[1].hide();
+
+        DecisionLink.app.incrementPagesFromHome();
+
+        Ext.Viewport.setMasked(false);
+    },
+
+    onHomePanelActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
+        var validated = DecisionLink.app.isValidated(),
+            navBar = this.getNavBar();
 
         if (validated) {
             rightButton = navBar.rightBox.query('button')[0];
             if (rightButton) {
                 rightButton.destroy();
             }
+            newActiveItem.child('#homeContainer').child('#searchField').show();
+            newActiveItem.child('#homeContainer').child('#selectField').show();
 
-            var accountContainer = newActiveItem.child('#homeContainer').child('#accountContainer');
-            accountContainer.setHidden(false);
-
-            accountContainer.child('#accountNameField').setValue(account_name);
-            accountContainer.child('#userNameField').setValue(user_name);
-            accountContainer.child('#emailField').setValue(email);
-
+        } else {
+            newActiveItem.child('#homeContainer').child('#searchField').hide();
+            newActiveItem.child('#homeContainer').child('#selectField').hide();
         }
     },
 
     onDownloadImageTap: function(image, e, eOpts) {
         var url = image.downloadUrl;
 
-        console.log('button tapped');
-
         window.open(url);
+    },
+
+    onLogoutButtonTap: function(button, e, eOpts) {
+        Ext.Viewport.setMasked({message: 'Loading...'});
+
+        var accountPanel = this.getAccountPanel();
+
+        DecisionLink.app.setValidated(false);
+        DecisionLink.app.setUserId(-1);
+        DecisionLink.app.setAccountId(-1);
+
+        DecisionLink.app.setCurrentCompanyId(-1);
+        DecisionLink.app.setCurrentOpptyId(-1);
+        DecisionLink.app.setCurrentIndustryId(-1);
+
+        DecisionLink.app.setCurrentRevenue(-1);
+        DecisionLink.app.setUserName(' ');
+        DecisionLink.app.setEmail(' ');
+        DecisionLink.app.setAccountName(' ');
+
+        var navBar = this.getNavBar();
+        button = navBar.rightBox.query('button')[0];
+        if (!button) {
+            navBar.add({
+                xtype:'button',
+                text: 'Login',
+                align: 'right',
+                itemId: 'login'
+            });
+        }
+        navBar.leftBox.query('button')[0].destroy();
+
+        panel = Ext.create('DecisionLink.view.HomePanel', {
+            title: 'DecisionLink',
+            userAlias: 'homepanel'
+        });
+
+        panel.child('#homeContainer').child('#searchField').setHidden(true);
+        panel.child('#homeContainer').child('#selectField').setHidden(true);
+
+        this.getMainView().push(panel);
+
+        Ext.Viewport.setMasked(false);
+    },
+
+    onAccountPanelActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
+        var account_name = DecisionLink.app.getAccountName(),
+            username = DecisionLink.app.getUserName(),
+            email = DecisionLink.app.getEmail(),
+            me = this,
+            accountPanel = me.getAccountPanel();
+
+        accountPanel.child('#accountNameField').setValue(account_name);
+        accountPanel.child('#usernameField').setValue(username);
+        accountPanel.child('#emailField').setValue(email);
+
+    },
+
+    onSaveCurrencyButtonTap: function(button, e, eOpts) {
+        var me = this,
+            user_id = DecisionLink.app.getUserId(),
+            currencyPanel = me.getChangeCurrencyPanel(),
+            currency_pref = currencyPanel.child('#currencySelectField').getValue(),
+            currency_pref_name = currencyPanel.child('#currencySelectField').getName();
+
+        me.updateCurrencyPreference(user_id, currency_pref, currency_pref_name, function(store) {
+            me.getHiddenList().setStore(store);
+        });
+    },
+
+    onShowChangePasswordButtonTap: function(button, e, eOpts) {
+        var panel = Ext.create('DecisionLink.view.ChangePasswordPanel', {
+            title: 'Change Password'
+        });
+
+        this.getMainView().push(panel);
+
+        this.getNavBar().leftBox.query('button')[1].hide();
+
+        DecisionLink.app.incrementPagesFromHome();
+    },
+
+    onChangePasswordButtonTap: function(button, e, eOpts) {
+        var me = this,
+            panel = me.getChangePasswordPanel(),
+            currentPassword = panel.child('#currentPasswordField').getValue(),
+            newPassword = panel.child('#newPasswordField').getValue(),
+            confirmPassword = panel.child('#confirmPasswordField').getValue(),
+            user_id = DecisionLink.app.getUserId();
+
+        if (newPassword === confirmPassword) {
+            new_p = me.toMD5(newPassword);
+            old_p = me.toMD5(currentPassword);
+            me.updatePassword(user_id, old_p, new_p, function(store){
+                me.getHiddenList().setStore(store);
+            });
+        } else {
+            window.alert("Passwords do not match.");
+        }
+
+    },
+
+    deleteOpportunityCost: function(oppty_id, id, callback) {
+        var store = Ext.data.StoreManager.lookup('SuccessStore'),
+            url = 'http://test.decisionlink.com/services/DeleteOpportunityCost1.php' +
+            '?oppty_id=' + oppty_id +
+            '&id=' + id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getSellingScenario: function(user_id, oppty_id, callback) {
+        var store = Ext.data.StoreManager.lookup('ScenarioStore'),
+            url = 'http://test.decisionlink.com/services/GetSellingScenario1.php' +
+            '?user_id=' + user_id +
+            '&oppty_id=' + oppty_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getKpis: function(user_id, company_id, industry_id, callback) {
+        var store = Ext.data.StoreManager.lookup('KpisStore'),
+            url = 'http://test.decisionlink.com/services/GetAlignedKpis1.php' +
+            '?user_id=' + user_id +
+            '&company_id=' + company_id +
+            '&industry_id=' + industry_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getSalesQuestions: function(oppty_id, callback) {
+        var store = Ext.data.StoreManager.lookup('SalesQuestionsStore'),
+            url = 'http://test.decisionlink.com/services/GetOpportunitySQQs1.php' +
+            '?oppty_id=' + oppty_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getCompanyScenarios: function(user_id, company_id, callback) {
+        var store = Ext.data.StoreManager.lookup('CompanyScenariosStore'),
+            url = 'http://test.decisionlink.com/services/GetOpportunities1.php' +
+            '?user_id=' + user_id +
+            '&company_id=' + company_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
     },
 
     getSavedAccounts: function(id, callback) {
@@ -1329,11 +1512,21 @@ Ext.define('MyApp.controller.Navigation', {
         });
     },
 
-    searchCompanies: function(searchTerm, option, callback) {
-        var store = Ext.data.StoreManager.lookup('SearchStore'),
-            url = 'http://test.decisionlink.com/services' +
-            '/SearchCompanies1.php?searchTerm=' + searchTerm +
-            '&searchOption=' + option;
+    getCompanyOverview: function(id, callback) {
+        var store = Ext.data.StoreManager.lookup('DetailStore'),
+            url = 'http://test.decisionlink.com/services/GetCompanyOverview1.php' +
+            '?company_id=' + id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getDivisions: function(user_id, company_id, callback) {
+        var store = Ext.data.StoreManager.lookup('DivisionsStore'),
+            url = 'http://test.decisionlink.com/services/GetFamilyTree1.php' +
+            '?user_id=' + user_id +
+            '&company_id=' + company_id;
         store.getProxy().setUrl(url);
         store.load(function() {
             callback(store);
@@ -1351,10 +1544,308 @@ Ext.define('MyApp.controller.Navigation', {
         });
     },
 
-    getCompanyOverview: function(id, callback) {
-        var store = Ext.data.StoreManager.lookup('DetailStore'),
-            url = 'http://test.decisionlink.com/services/GetCompanyOverview1.php' +
-            '?company_id=' + id;
+    getAccountScenarios: function(account_id, callback) {
+        var store = Ext.data.StoreManager.lookup('AccountScenariosStore'),
+            url = 'http://test.decisionlink.com/services/GetAccountScenarios1.php' +
+            '?account_id=' + account_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getOpportunityOverview: function(oppty_id, user_id, callback) {
+        var store = Ext.data.StoreManager.lookup('OpportunityOverviewStore'),
+            url = 'http://test.decisionlink.com/services/GetOpportunityOverview1.php' +
+            '?oppty_id=' + oppty_id +
+            '&user_id=' + user_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getValueFormulas: function(oppty_id, callback) {
+        var store = Ext.data.StoreManager.lookup('ValueFormulasStore'),
+            url = 'http://test.decisionlink.com/services/GetOpportunityMetrics1.php' +
+            '?oppty_id=' + oppty_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getOpportunityCosts: function(oppty_id, user_id, callback) {
+        var store = Ext.data.StoreManager.lookup('OpportunityCostsStore'),
+            url = 'http://test.decisionlink.com/services/GetOpportunityCosts1.php' +
+            '?oppty_id=' + oppty_id +
+            '&user_id=' + user_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getOpportunityAssets: function(user_id, oppty_id, callback) {
+        var store = Ext.data.StoreManager.lookup('AssetsStore'),
+            url = 'http://test.decisionlink.com/services/GetOpportunityTypeAssets1.php' +
+            '?oppty_id=' + oppty_id +
+            '&user_id=' + user_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getDNBOverview: function(company_id, callback) {
+        var store = Ext.data.StoreManager.lookup('DNBOverviewStore'),
+            url = 'http://test.decisionlink.com/services/GetDNBAdditional.php' +
+            '?company_id=' + company_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getCompetitors: function(user_id, company_id, callback) {
+        var store = Ext.data.StoreManager.lookup('CompetitorsStore'),
+            url = 'http://test.decisionlink.com/services/GetCompetitors1.php' +
+            '?user_id=' + user_id +
+            '&company_id=' + company_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getEmployees: function(company_id, callback) {
+        var store = Ext.data.StoreManager.lookup('EmployeesStore'),
+            url = 'http://test.decisionlink.com/services/GetExecutives1.php' +
+            '?company_id=' + company_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getClosestPeers: function(user_id, company_id, industry_id, revenue, callback) {
+        var store = Ext.data.StoreManager.lookup('ClosestPeersStore'),
+            url = 'http://test.decisionlink.com/services/GetEnginePeers1.php' +
+            '?user_id=' + user_id +
+            '&company_id=' + company_id +
+            '&industry_id=' + industry_id +
+            '&revenue=' + revenue;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getRatios: function(user_id, company_id, kpi_id, callback) {
+        var store = Ext.data.StoreManager.lookup('RatiosStore'),
+            url = 'http://test.decisionlink.com/services/GetAlignedKpiRatios1.php' +
+            '?user_id=' + user_id +
+            '&company_id=' + company_id +
+            '&kpi_id=' + kpi_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getScenarioIndustries: function(user_id, oppty_id, callback) {
+        var store = Ext.data.StoreManager.lookup('ScenarioIndustriesStore'),
+            url = 'http://test.decisionlink.com/services/GetSellingScenario1.php' +
+            '?user_id=' + user_id +
+            '&oppty_id=' + oppty_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getSecondarySQQs: function(oppty_id, callback) {
+        var store = Ext.data.StoreManager.lookup('SecondarySQQStore'),
+            url = 'http://test.decisionlink.com/services/GetOpportunitySecondarySQQs1.php' +
+            '?oppty_id=' + oppty_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getCompRatios: function(user_id, company_id, callback) {
+        var store = Ext.data.StoreManager.lookup('CompRatiosStore'),
+            url = 'http://test.decisionlink.com/services/GetRatios1.php' +
+            '?user_id=' + user_id +
+            '&company_id=' + company_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getScenarioAreas: function(user_id, oppty_id, callback) {
+        var store = Ext.data.StoreManager.lookup('ScenarioAreasStore'),
+            url = 'http://test.decisionlink.com/services/GetSellingScenario1.php' +
+            '?user_id=' + user_id +
+            '&oppty_id=' + oppty_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getScenarioBaselines: function(user_id, oppty_id, callback) {
+        var store = Ext.data.StoreManager.lookup('ScenarioBaselinesStore'),
+            url = 'http://test.decisionlink.com/services/GetSellingScenario1.php' +
+            '?user_id=' + user_id +
+            '&oppty_id=' + oppty_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getScenarioCompetitors: function(user_id, oppty_id, callback) {
+        var store = Ext.data.StoreManager.lookup('ScenarioCompetitorsStore'),
+            url = 'http://test.decisionlink.com/services/GetSellingScenario1.php' +
+            '?user_id=' + user_id +
+            '&oppty_id=' + oppty_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    saveSellingScenario: function(user_id, id, scenario, competitors, areas, industries, baselines, wacc, term, callback) {
+        var store = Ext.data.StoreManager.lookup('SuccessStore'),
+            url = 'http://test.decisionlink.com/services/SaveSellingScenario.php' +
+            '?user_id=' + user_id +
+            '&id=' + id +
+            '&scenario=' + scenario +
+            '&competitors=' + competitors +
+            '&areas=' + areas +
+            '&success_factors=' + success_factors +
+            '&business_factors=' + business_factors +
+            '&industries=' + industries +
+            '&baselines=' + baselines +
+            '&wacc=' + wacc +
+            '&term=' +term;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    saveOpportunityCost: function(oppty_id, cost_type_id, accrual_type_id, cost, callback) {
+        var store = Ext.data.StoreManager.lookup('SuccessStore'),
+            url = 'http://test.decisionlink.com/services/SaveOpportunityCost1.php' +
+            '?oppty_id=' + oppty_id +
+            '&cost_type_id=' + cost_type_id +
+            '&accrual_type_id=' + accrual_type_id +
+            '&cost=' + cost;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    saveValueFormulaMetrics: function(metric_id, sqq_value, sqq2_value, impact, oppty_id, unit_type_id, impact_source_type_id, callback) {
+        var store = Ext.data.StoreManager.lookup('SuccessStore'),
+            url = 'http://test.decisionlink.com/services/SaveValueFormulaMetrics1.php' +
+            '?metric_id=' + metric_id +
+            '&sqq_value=' + sqq_value +
+            '&sqq2_value=' + sqq2_value +
+            '&impact=' + impact +
+            '&oppty_id=' + oppty_id +
+            '&unit_type_id=' + unit_type_id +
+            '&impact_source_type_id=' + impact_source_type_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    searchCompanies: function(searchTerm, option, callback) {
+        var store = Ext.data.StoreManager.lookup('SearchStore'),
+            url = 'http://test.decisionlink.com/services' +
+            '/SearchCompanies1.php?searchTerm=' + searchTerm +
+            '&searchOption=' + option;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    updateOpportunityCosts: function(id, oppty_id, cost_type_id, accrual_type_id, cost, callback) {
+        var store = Ext.data.StoreManager.lookup('SuccessStore'),
+            url = 'http://test.decisionlink.com/services/UpdateOpportunityCosts1.php' +
+            '?id=' + id +
+            '&oppty_id=' + oppty_id +
+            '&cost_type_id=' + cost_type_id +
+            '&accrual_type_id=' + accrual_type_id +
+            '&cost=' + cost;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    updateOpportunitySQQ: function(sqq_id, sqq_override, source_type_id, oppty_id, callback) {
+        var store = Ext.data.StoreManager.lookup('SuccessStore'),
+            url = 'http://test.decisionlink.com/services/UpdateOpportunitySQQ1.php' +
+            '?sqq_id=' + sqq_id +
+            '&sqq_override=' + sqq_override +
+            '&source_type_id=' + source_type_id +
+            '&oppty_id=' + oppty_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    updateSecondarySQQ: function(oppty_id, user_id, sqq2_value, sqq2_id, impact_per_unit_source_type_id, callback) {
+        var store = Ext.data.StoreManager.lookup('SuccessStore'),
+            url = 'http://test.decisionlink.com/services/UpdateOpportunitySecondarySQQ1.php' +
+            '?oppty_id=' + oppty_id +
+            '&user_id=' + user_id +
+            '&sqq2_value=' + sqq2_value +
+            '&sqq2_id=' + sqq2_id +
+            '&impact_per_unit_source_type_id=' + impact_per_unit_source_type_id;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    updatePassword: function(user_id, oldPassword, newPassword, callback) {
+        var store = Ext.data.StoreManager.lookup('SuccessStore'),
+            url = 'http://test.decisionlink.com/services' +
+            '/ChangePassword1.php?user_id=' + user_id +
+            '&oldPassword=' + oldPassword +
+            '&newPassword=' + newPassword;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    updateCurrencyPreference: function(user_id, currency_pref, currency_pref_name, callback) {
+        var store = Ext.data.StoreManager.lookup('SuccessStore'),
+            url = 'http://test.decisionlink.com/services' +
+            '/ChangeCurrencyPreference1.php?user_id=' + user_id +
+            '&currency_pref=' + currency_pref +
+            '&currency_pref_name=' + currency_pref_name;
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
+    },
+
+    getCurrencies: function(callback) {
+        var store = Ext.data.StoreManager.lookup('CurrenciesStore'),
+            url = 'http://test.decisionlink.com/services/GetCurrencies1.php';
         store.getProxy().setUrl(url);
         store.load(function() {
             callback(store);
@@ -1562,336 +2053,6 @@ Ext.define('MyApp.controller.Navigation', {
             var temp = wordToHex(a) + wordToHex(b) + wordToHex(c) + wordToHex(d);
 
             return temp.toLowerCase();
-    },
-
-    getAccountScenarios: function(account_id, callback) {
-        var store = Ext.data.StoreManager.lookup('AccountScenariosStore'),
-            url = 'http://test.decisionlink.com/services/GetAccountScenarios1.php' +
-            '?account_id=' + account_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    getCompanyScenarios: function(user_id, company_id, callback) {
-        var store = Ext.data.StoreManager.lookup('CompanyScenariosStore'),
-            url = 'http://test.decisionlink.com/services/GetOpportunities1.php' +
-            '?user_id=' + user_id +
-            '&company_id=' + company_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    getOpportunityOverview: function(oppty_id, user_id, callback) {
-        var store = Ext.data.StoreManager.lookup('OpportunityOverviewStore'),
-            url = 'http://test.decisionlink.com/services/GetOpportunityOverview1.php' +
-            '?oppty_id=' + oppty_id +
-            '&user_id=' + user_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    getSalesQuestions: function(oppty_id, callback) {
-        var store = Ext.data.StoreManager.lookup('SalesQuestionsStore'),
-            url = 'http://test.decisionlink.com/services/GetOpportunitySQQs1.php' +
-            '?oppty_id=' + oppty_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    getValueFormulas: function(oppty_id, callback) {
-        var store = Ext.data.StoreManager.lookup('ValueFormulasStore'),
-            url = 'http://test.decisionlink.com/services/GetOpportunityMetrics1.php' +
-            '?oppty_id=' + oppty_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    getOpportunityCosts: function(oppty_id, user_id, callback) {
-        var store = Ext.data.StoreManager.lookup('OpportunityCostsStore'),
-            url = 'http://test.decisionlink.com/services/GetOpportunityCosts1.php' +
-            '?oppty_id=' + oppty_id +
-            '&user_id=' + user_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    getOpportunityAssets: function(user_id, oppty_id, callback) {
-        var store = Ext.data.StoreManager.lookup('AssetsStore'),
-            url = 'http://test.decisionlink.com/services/GetOpportunityTypeAssets1.php' +
-            '?oppty_id=' + oppty_id +
-            '&user_id=' + user_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    getDNBOverview: function(company_id, callback) {
-        var store = Ext.data.StoreManager.lookup('DNBOverviewStore'),
-            url = 'http://test.decisionlink.com/services/GetDNBAdditional.php' +
-            '?company_id=' + company_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    getDivisions: function(user_id, company_id, callback) {
-        var store = Ext.data.StoreManager.lookup('DivisionsStore'),
-            url = 'http://test.decisionlink.com/services/GetFamilyTree1.php' +
-            '?user_id=' + user_id +
-            '&company_id=' + company_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    getCompetitors: function(user_id, company_id, callback) {
-        var store = Ext.data.StoreManager.lookup('CompetitorsStore'),
-            url = 'http://test.decisionlink.com/services/GetCompetitors1.php' +
-            '?user_id=' + user_id +
-            '&company_id=' + company_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    getEmployees: function(company_id, callback) {
-        var store = Ext.data.StoreManager.lookup('EmployeesStore'),
-            url = 'http://test.decisionlink.com/services/GetExecutives1.php' +
-            '?company_id=' + company_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    getKpis: function(user_id, company_id, industry_id, callback) {
-        var store = Ext.data.StoreManager.lookup('KpisStore'),
-            url = 'http://test.decisionlink.com/services/GetAlignedKpis1.php' +
-            '?user_id=' + user_id +
-            '&company_id=' + company_id +
-            '&industry_id=' + industry_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    getRatios: function(user_id, company_id, kpi_id, callback) {
-        var store = Ext.data.StoreManager.lookup('RatiosStore'),
-            url = 'http://test.decisionlink.com/services/GetAlignedKpiRatios1.php' +
-            '?user_id=' + user_id +
-            '&company_id=' + company_id +
-            '&kpi_id=' + kpi_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    getClosestPeers: function(user_id, company_id, industry_id, revenue, callback) {
-        var store = Ext.data.StoreManager.lookup('ClosestPeersStore'),
-            url = 'http://test.decisionlink.com/services/GetEnginePeers1.php' +
-            '?user_id=' + user_id +
-            '&company_id=' + company_id +
-            '&industry_id=' + industry_id +
-            '&revenue=' + revenue;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    getCompRatios: function(user_id, company_id, callback) {
-        var store = Ext.data.StoreManager.lookup('CompRatiosStore'),
-            url = 'http://test.decisionlink.com/services/GetRatios1.php' +
-            '?user_id=' + user_id +
-            '&company_id=' + company_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    updateOpportunitySQQ: function(sqq_id, sqq_override, source_type_id, oppty_id, callback) {
-        var store = Ext.data.StoreManager.lookup('SuccessStore'),
-            url = 'http://test.decisionlink.com/services/UpdateOpportunitySQQ1.php' +
-            '?sqq_id=' + sqq_id +
-            '&sqq_override=' + sqq_override +
-            '&source_type_id=' + source_type_id +
-            '&oppty_id=' + oppty_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    updateOpportunityCosts: function(id, oppty_id, cost_type_id, accrual_type_id, cost, callback) {
-        var store = Ext.data.StoreManager.lookup('SuccessStore'),
-            url = 'http://test.decisionlink.com/services/UpdateOpportunityCosts1.php' +
-            '?id=' + id +
-            '&oppty_id=' + oppty_id +
-            '&cost_type_id=' + cost_type_id +
-            '&accrual_type_id=' + accrual_type_id +
-            '&cost=' + cost;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    saveValueFormulaMetrics: function(metric_id, sqq_value, sqq2_value, impact, oppty_id, unit_type_id, impact_source_type_id, callback) {
-        var store = Ext.data.StoreManager.lookup('SuccessStore'),
-            url = 'http://test.decisionlink.com/services/SaveValueFormulaMetrics1.php' +
-            '?metric_id=' + metric_id +
-            '&sqq_value=' + sqq_value +
-            '&sqq2_value=' + sqq2_value +
-            '&impact=' + impact +
-            '&oppty_id=' + oppty_id +
-            '&unit_type_id=' + unit_type_id +
-            '&impact_source_type_id=' + impact_source_type_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    getSecondarySQQs: function(oppty_id, callback) {
-        var store = Ext.data.StoreManager.lookup('SecondarySQQStore'),
-            url = 'http://test.decisionlink.com/services/GetOpportunitySecondarySQQs1.php' +
-            '?oppty_id=' + oppty_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    updateSecondarySQQ: function(oppty_id, user_id, sqq2_value, sqq2_id, impact_per_unit_source_type_id, callback) {
-        var store = Ext.data.StoreManager.lookup('SuccessStore'),
-            url = 'http://test.decisionlink.com/services/UpdateOpportunitySecondarySQQ1.php' +
-            '?oppty_id=' + oppty_id +
-            '&user_id=' + user_id +
-            '&sqq2_value=' + sqq2_value +
-            '&sqq2_id=' + sqq2_id +
-            '&impact_per_unit_source_type_id=' + impact_per_unit_source_type_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    saveOpportunityCost: function(oppty_id, cost_type_id, accrual_type_id, cost, callback) {
-        var store = Ext.data.StoreManager.lookup('SuccessStore'),
-            url = 'http://test.decisionlink.com/services/SaveOpportunityCost1.php' +
-            '?oppty_id=' + oppty_id +
-            '&cost_type_id=' + cost_type_id +
-            '&accrual_type_id=' + accrual_type_id +
-            '&cost=' + cost;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    deleteOpportunityCost: function(oppty_id, id, callback) {
-        var store = Ext.data.StoreManager.lookup('SuccessStore'),
-            url = 'http://test.decisionlink.com/services/DeleteOpportunityCost1.php' +
-            '?oppty_id=' + oppty_id +
-            '&id=' + id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    getSellingScenario: function(user_id, oppty_id, callback) {
-        var store = Ext.data.StoreManager.lookup('ScenarioStore'),
-            url = 'http://test.decisionlink.com/services/GetSellingScenario1.php' +
-            '?user_id=' + user_id +
-            '&oppty_id=' + oppty_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    getScenarioIndustries: function(user_id, oppty_id, callback) {
-        var store = Ext.data.StoreManager.lookup('ScenarioIndustriesStore'),
-            url = 'http://test.decisionlink.com/services/GetSellingScenario1.php' +
-            '?user_id=' + user_id +
-            '&oppty_id=' + oppty_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    getScenarioAreas: function(user_id, oppty_id, callback) {
-        var store = Ext.data.StoreManager.lookup('ScenarioAreasStore'),
-            url = 'http://test.decisionlink.com/services/GetSellingScenario1.php' +
-            '?user_id=' + user_id +
-            '&oppty_id=' + oppty_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    getScenarioBaselines: function(user_id, oppty_id, callback) {
-        var store = Ext.data.StoreManager.lookup('ScenarioBaselinesStore'),
-            url = 'http://test.decisionlink.com/services/GetSellingScenario1.php' +
-            '?user_id=' + user_id +
-            '&oppty_id=' + oppty_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    getScenarioCompetitors: function(user_id, oppty_id, callback) {
-        var store = Ext.data.StoreManager.lookup('ScenarioCompetitorsStore'),
-            url = 'http://test.decisionlink.com/services/GetSellingScenario1.php' +
-            '?user_id=' + user_id +
-            '&oppty_id=' + oppty_id;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
-    },
-
-    saveSellingScenario: function(user_id, id, scenario, competitors, areas, industries, baselines, wacc, term, callback) {
-        var store = Ext.data.StoreManager.lookup('SuccessStore'),
-            url = 'http://test.decisionlink.com/services/SaveSellingScenario.php' +
-            '?user_id=' + user_id +
-            '&id=' + id +
-            '&scenario=' + scenario +
-            '&competitors=' + competitors +
-            '&areas=' + areas +
-            '&success_factors=' + success_factors +
-            '&business_factors=' + business_factors +
-            '&industries=' + industries +
-            '&baselines=' + baselines +
-            '&wacc=' + wacc +
-            '&term=' +term;
-        store.getProxy().setUrl(url);
-        store.load(function() {
-            callback(store);
-        });
     }
 
 });

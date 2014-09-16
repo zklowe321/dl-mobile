@@ -13,17 +13,17 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.store.DNBOverviewStore', {
+Ext.define('DecisionLink.store.DNBOverviewStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'MyApp.model.DNBOverview',
+        'DecisionLink.model.DNBOverview',
         'Ext.data.proxy.JsonP',
         'Ext.data.reader.Json'
     ],
 
     config: {
-        model: 'MyApp.model.DNBOverview',
+        model: 'DecisionLink.model.DNBOverview',
         storeId: 'DNBOverviewStore',
         proxy: {
             type: 'jsonp',

@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.model.ValueFormulas', {
+Ext.define('DecisionLink.model.ValueFormulas', {
     extend: 'Ext.data.Model',
 
     requires: [

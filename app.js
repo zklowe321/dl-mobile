@@ -57,7 +57,8 @@ Ext.application({
         'ScenarioCompetitors',
         'ScenarioAreas',
         'ScenarioIndustries',
-        'ScenarioBaselines'
+        'ScenarioBaselines',
+        'Currencies'
     ],
     stores: [
         'SearchStore',
@@ -85,7 +86,8 @@ Ext.application({
         'ScenarioCompetitorsStore',
         'ScenarioAreasStore',
         'ScenarioIndustriesStore',
-        'ScenarioBaselinesStore'
+        'ScenarioBaselinesStore',
+        'CurrenciesStore'
     ],
     views: [
         'MainView',
@@ -107,13 +109,16 @@ Ext.application({
         'KpiDetailPanel',
         'PeerPerformanceDetailPanel',
         'SecondarySQQDetailPanel',
-        'SupportPanel'
+        'SupportPanel',
+        'AccountPanel',
+        'ChangePasswordPanel',
+        'ChangeCurrencyPanel'
     ],
     controllers: [
         'Navigation',
         'Renames'
     ],
-    name: 'MyApp',
+    name: 'DecisionLink',
 
     getUserId: function() {
         return this.id;
@@ -211,9 +216,26 @@ Ext.application({
         this.pagesFromHome--;
     },
 
+    formatCurrency: function(num) {
+        num = num.toString().replace(/\$|\,/g, '');
+        if (isNaN(num)) {
+            num = "0";
+        }
+        sign = (num == (num = Math.abs(num)));
+
+        num = Math.floor(num * 100 + 0.50000000001);
+        num = Math.floor(num / 100).toString();
+
+        for (var i = 0; i < Math.floor((num.length - (1 + i)) / 3); i++) {
+            num = num.substring(0, num.length - (4 * i + 3)) + ',' + num.substring(num.length - (4 * i + 3));
+        }
+
+        return ( ((sign) ? '' : '-') + num );
+    },
+
     launch: function() {
 
-        Ext.create('MyApp.view.MainView', {fullscreen: true});
+        Ext.create('DecisionLink.view.MainView', {fullscreen: true});
     }
 
 });

@@ -13,17 +13,17 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.store.ScenarioCompetitorsStore', {
+Ext.define('DecisionLink.store.ScenarioCompetitorsStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'MyApp.model.ScenarioCompetitors',
+        'DecisionLink.model.ScenarioCompetitors',
         'Ext.data.proxy.JsonP',
         'Ext.data.reader.Json'
     ],
 
     config: {
-        model: 'MyApp.model.ScenarioCompetitors',
+        model: 'DecisionLink.model.ScenarioCompetitors',
         storeId: 'ScenarioCompetitorsStore',
         proxy: {
             type: 'jsonp',

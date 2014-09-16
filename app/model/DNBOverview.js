@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.model.DNBOverview', {
+Ext.define('DecisionLink.model.DNBOverview', {
     extend: 'Ext.data.Model',
 
     requires: [

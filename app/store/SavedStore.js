@@ -13,17 +13,17 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.store.SavedStore', {
+Ext.define('DecisionLink.store.SavedStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'MyApp.model.Saved',
+        'DecisionLink.model.Saved',
         'Ext.data.proxy.JsonP',
         'Ext.data.reader.Json'
     ],
 
     config: {
-        model: 'MyApp.model.Saved',
+        model: 'DecisionLink.model.Saved',
         storeId: 'SavedStore',
         proxy: {
             type: 'jsonp',
@@ -31,6 +31,29 @@ Ext.define('MyApp.store.SavedStore', {
                 type: 'json',
                 rootProperty: 'companies'
             }
+        },
+        listeners: [
+            {
+                fn: 'onJsonpstoreLoad',
+                event: 'load'
+            }
+        ]
+    },
+
+    onJsonpstoreLoad: function(store, records, successful, operation, eOpts) {
+        var count = store.data.items.length,
+            i;
+
+        for(i = 0; i < count; i++) {
+            var temp = store.data.items[i].data.revenue;
+
+            temp = DecisionLink.app.formatCurrency(temp);
+
+            store.data.items[i].data.revenue = temp;
         }
+
+        saved = Ext.ComponentQuery.query('searchpanel #savedPanel #savedList')[0];
+        saved.refresh();
     }
+
 });

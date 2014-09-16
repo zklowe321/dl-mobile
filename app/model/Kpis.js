@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.model.Kpis', {
+Ext.define('DecisionLink.model.Kpis', {
     extend: 'Ext.data.Model',
 
     requires: [

@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.model.Saved', {
+Ext.define('DecisionLink.model.Saved', {
     extend: 'Ext.data.Model',
 
     requires: [

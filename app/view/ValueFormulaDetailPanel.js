@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.ValueFormulaDetailPanel', {
+Ext.define('DecisionLink.view.ValueFormulaDetailPanel', {
     extend: 'Ext.Panel',
     alias: 'widget.valueformuladetailpanel',
 

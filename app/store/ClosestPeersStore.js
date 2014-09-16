@@ -13,17 +13,17 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.store.ClosestPeersStore', {
+Ext.define('DecisionLink.store.ClosestPeersStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'MyApp.model.ClosestPeers',
+        'DecisionLink.model.ClosestPeers',
         'Ext.data.proxy.JsonP',
         'Ext.data.reader.Json'
     ],
 
     config: {
-        model: 'MyApp.model.ClosestPeers',
+        model: 'DecisionLink.model.ClosestPeers',
         storeId: 'ClosestPeersStore',
         proxy: {
             type: 'jsonp',
@@ -31,6 +31,26 @@ Ext.define('MyApp.store.ClosestPeersStore', {
                 type: 'json',
                 rootProperty: 'companies'
             }
+        },
+        listeners: [
+            {
+                fn: 'onJsonpstoreLoad',
+                event: 'load'
+            }
+        ]
+    },
+
+    onJsonpstoreLoad: function(store, records, successful, operation, eOpts) {
+        var count = store.data.items.length,
+            i;
+
+        for(i = 0; i < count; i++) {
+            var temp = store.data.items[i].data.revenue;
+
+            temp = DecisionLink.app.formatCurrency(temp);
+
+            store.data.items[i].data.revenue = temp;
         }
     }
+
 });

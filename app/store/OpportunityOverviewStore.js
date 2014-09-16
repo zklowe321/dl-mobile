@@ -13,17 +13,17 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.store.OpportunityOverviewStore', {
+Ext.define('DecisionLink.store.OpportunityOverviewStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'MyApp.model.OpportunityOverview',
+        'DecisionLink.model.OpportunityOverview',
         'Ext.data.proxy.JsonP',
         'Ext.data.reader.Json'
     ],
 
     config: {
-        model: 'MyApp.model.OpportunityOverview',
+        model: 'DecisionLink.model.OpportunityOverview',
         storeId: 'OpportunityOverviewStore',
         proxy: {
             type: 'jsonp',

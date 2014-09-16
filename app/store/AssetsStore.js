@@ -13,17 +13,17 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.store.AssetsStore', {
+Ext.define('DecisionLink.store.AssetsStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'MyApp.model.Assets',
+        'DecisionLink.model.Assets',
         'Ext.data.proxy.JsonP',
         'Ext.data.reader.Json'
     ],
 
     config: {
-        model: 'MyApp.model.Assets',
+        model: 'DecisionLink.model.Assets',
         storeId: 'AssetsStore',
         proxy: {
             type: 'jsonp',
