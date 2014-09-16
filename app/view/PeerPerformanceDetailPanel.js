@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.PeerPerformanceDetailPanel', {
+Ext.define('DecisionLink.view.PeerPerformanceDetailPanel', {
     extend: 'Ext.Panel',
     alias: 'widget.peerPerformanceDetailPanel',
 

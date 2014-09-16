@@ -36,6 +36,32 @@
                     "designerId": "b8f62d6c-4def-41fe-b6e2-444430dd0994"
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonpstoreLoad",
+                "implHandler": [
+                    "var count = store.data.items.length,",
+                    "    i;",
+                    "",
+                    "for(i = 0; i < count; i++) {",
+                    "    var temp = store.data.items[i].data.revenue;",
+                    "",
+                    "    temp = DecisionLink.app.formatCurrency(temp);",
+                    "    ",
+                    "    store.data.items[i].data.revenue = temp;",
+                    "}"
+                ],
+                "name": "load"
+            },
+            "name": "onJsonpstoreLoad",
+            "designerId": "51980649-1cd2-492e-921d-98fec49dd894"
         }
     ]
 }

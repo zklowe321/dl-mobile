@@ -31,6 +31,29 @@ Ext.define('DecisionLink.store.SavedStore', {
                 type: 'json',
                 rootProperty: 'companies'
             }
+        },
+        listeners: [
+            {
+                fn: 'onJsonpstoreLoad',
+                event: 'load'
+            }
+        ]
+    },
+
+    onJsonpstoreLoad: function(store, records, successful, operation, eOpts) {
+        var count = store.data.items.length,
+            i;
+
+        for(i = 0; i < count; i++) {
+            var temp = store.data.items[i].data.revenue;
+
+            temp = DecisionLink.app.formatCurrency(temp);
+
+            store.data.items[i].data.revenue = temp;
         }
+
+        saved = Ext.ComponentQuery.query('searchpanel #savedPanel #savedList')[0];
+        saved.refresh();
     }
+
 });

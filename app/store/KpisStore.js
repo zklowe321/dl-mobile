@@ -30,6 +30,28 @@ Ext.define('DecisionLink.store.KpisStore', {
             reader: {
                 type: 'json'
             }
+        },
+        listeners: [
+            {
+                fn: 'onJsonpstoreLoad',
+                event: 'load'
+            }
+        ]
+    },
+
+    onJsonpstoreLoad: function(store, records, successful, operation, eOpts) {
+        var count = store.data.items.length,
+            i;
+
+        for(i = 0; i < count; i++) {
+            var temp = store.data.items[i].data.sqq_value;
+            temp = DecisionLink.app.formatCurrency(temp);
+
+            store.data.items[i].data.sqq_value = temp;
         }
+
+        kpis = Ext.ComponentQuery.query('competitivecarousel #kpiListPanel #kpisList')[0];
+        kpis.refresh();
     }
+
 });

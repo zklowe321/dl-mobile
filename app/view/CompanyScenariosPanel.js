@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.CompanyScenariosPanel', {
+Ext.define('DecisionLink.view.CompanyScenariosPanel', {
     extend: 'Ext.Panel',
     alias: 'widget.companyscenariospanel',
 
@@ -29,7 +29,7 @@ Ext.define('MyApp.view.CompanyScenariosPanel', {
                 xtype: 'list',
                 itemId: 'companyScenariosList',
                 itemTpl: [
-                    '<div class=“info” width=“40” height=“40”/>Name: {name}<br/><small>First Year Benefits: ${yr1_benefit_sum} M</small>'
+                    '<div class=“info” width=“40” height=“40”/>Name: {name}<br/><small>First Year Benefits: ${yr1_benefit_sum}</small>'
                 ],
                 store: 'CompanyScenariosStore'
             }

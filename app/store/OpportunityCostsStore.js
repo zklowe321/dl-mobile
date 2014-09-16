@@ -32,6 +32,28 @@ Ext.define('DecisionLink.store.OpportunityCostsStore', {
                 rootProperty: 'costs',
                 totalProperty: 'totalRecs'
             }
+        },
+        listeners: [
+            {
+                fn: 'onJsonpstoreLoad',
+                event: 'load'
+            }
+        ]
+    },
+
+    onJsonpstoreLoad: function(store, records, successful, operation, eOpts) {
+        var count = store.data.items.length,
+            i;
+
+        for(i = 0; i < count; i++) {
+            var temp = store.data.items[i].data.cost;
+            temp = DecisionLink.app.formatCurrency(temp);
+
+            store.data.items[i].data.cost = temp;
         }
+
+        costs = Ext.ComponentQuery.query('opportunitycarousel #opportunityQuotePanel #opportunityCostsList')[0];
+        costs.refresh();
     }
+
 });

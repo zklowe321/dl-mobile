@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.CompetitiveCarousel', {
+Ext.define('DecisionLink.view.CompetitiveCarousel', {
     extend: 'Ext.carousel.Carousel',
     alias: 'widget.competitivecarousel',
 

@@ -37,6 +37,34 @@
                     "designerId": "d8676c58-39ec-436c-9cae-2c0044dac886"
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonpstoreLoad",
+                "implHandler": [
+                    "var count = store.data.items.length,",
+                    "    i;",
+                    "",
+                    "for(i = 0; i < count; i++) {",
+                    "    var temp = store.data.items[i].data.cost;",
+                    "    temp = DecisionLink.app.formatCurrency(temp);",
+                    "",
+                    "    store.data.items[i].data.cost = temp;",
+                    "}",
+                    "",
+                    "costs = Ext.ComponentQuery.query('opportunitycarousel #opportunityQuotePanel #opportunityCostsList')[0];",
+                    "costs.refresh();"
+                ],
+                "name": "load"
+            },
+            "name": "onJsonpstoreLoad",
+            "designerId": "f1062421-30f2-4369-a102-37aa72b10bbe"
         }
     ]
 }

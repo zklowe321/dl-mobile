@@ -31,6 +31,29 @@ Ext.define('DecisionLink.store.CompanyScenariosStore', {
                 type: 'json',
                 rootProperty: 'opptys'
             }
+        },
+        listeners: [
+            {
+                fn: 'onJsonpstoreLoad',
+                event: 'load'
+            }
+        ]
+    },
+
+    onJsonpstoreLoad: function(store, records, successful, operation, eOpts) {
+        var count = store.data.items.length,
+            i;
+
+        for(i = 0; i < count; i++) {
+            var temp = store.data.items[i].data.yr1_benefit_sum;
+
+            temp = DecisionLink.app.formatCurrency(temp);
+
+            store.data.items[i].data.yr1_benefit_sum = temp;
         }
+
+        company = Ext.ComponentQuery.query('companyscenariospanel #companyScenariosList')[0];
+        company.refresh();
     }
+
 });

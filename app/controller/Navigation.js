@@ -482,7 +482,7 @@ Ext.define('DecisionLink.controller.Navigation', {
             Ext.Viewport.setMasked(false);
         });
 
-        details = Ext.create('MyApp.view.DetailPanel', {});
+        details = Ext.create('DecisionLink.view.DetailPanel', {});
 
         me.getMainView().push(details);
 
@@ -628,7 +628,7 @@ Ext.define('DecisionLink.controller.Navigation', {
     onSQQListItemTap: function(dataview, index, target, record, e, eOpts) {
         var details,
             name = record.get('name'),
-            sqq_estimate = record.get('sqq_estimate'),
+            sqq_estimate = '$' + DecisionLink.app.formatCurrency( record.get('sqq_estimate') ),
             sqq_override = record.get('sqq_override'),
             source_name = record.get('source_name'),
             source_type_id = record.get('source_type_id'),
@@ -767,14 +767,14 @@ Ext.define('DecisionLink.controller.Navigation', {
     onCompanyScenariosListItemTap: function(dataview, index, target, record, e, eOpts) {
         var carousel,
             details,
-            yr1_cost_sum = record.get('yr1_cost_sum'),
-            yrx_cost_sum = record.get('yrx_cost_sum'),
-            yr1_benefit_sum = record.get('yr1_benefit_sum'),
-            yr2_benefit_sum = record.get('yr2_benefit_sum'),
-            yr3_benefit_sum = record.get('yr3_benefit_sum'),
+            yr1_cost_sum = '$' + DecisionLink.app.formatCurrency( record.get('yr1_cost_sum') ),
+            yrx_cost_sum = '$' + DecisionLink.app.formatCurrency( record.get('yrx_cost_sum') ),
+            yr1_benefit_sum = '$' + DecisionLink.app.formatCurrency( record.get('yr1_benefit_sum') ),
+            yr2_benefit_sum = '$' + DecisionLink.app.formatCurrency( record.get('yr2_benefit_sum') ),
+            yr3_benefit_sum = '$' + DecisionLink.app.formatCurrency( record.get('yr3_benefit_sum') ),
             wacc = record.get('wacc'),
             term = record.get('term'),
-            bur = record.get('oppty_revenue'),
+            bur = '$' + DecisionLink.app.formatCurrency( record.get('oppty_revenue') ),
             cost_light_image = record.get('cost_light_image'),
             benefit_light_image = record.get('benefit_light_image'),
             me = this;

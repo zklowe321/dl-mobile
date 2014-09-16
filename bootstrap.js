@@ -94,15 +94,27 @@ Ext.ClassManager.addNameAlternateMappings({
   "DecisionLink.store.ValueFormulasStore": [],
   "DecisionLink.view.AccountPanel": [],
   "DecisionLink.view.AccountScenariosPanel": [],
+  "DecisionLink.view.AssetDetailPanel": [],
   "DecisionLink.view.ChangeCurrencyPanel": [],
   "DecisionLink.view.ChangePasswordPanel": [],
+  "DecisionLink.view.CompanyScenariosPanel": [],
+  "DecisionLink.view.CompanyViewPanel": [],
+  "DecisionLink.view.CompetitiveCarousel": [],
   "DecisionLink.view.DNBCarousel": [],
+  "DecisionLink.view.DetailPanel": [],
   "DecisionLink.view.HomePanel": [],
+  "DecisionLink.view.KpiDetailPanel": [],
+  "DecisionLink.view.LoginPanel": [],
   "DecisionLink.view.MainView": [],
   "DecisionLink.view.NavMenu": [],
   "DecisionLink.view.OpportunityCarousel": [],
   "DecisionLink.view.OpportunityCostDetailPanel": [],
+  "DecisionLink.view.PeerPerformanceDetailPanel": [],
+  "DecisionLink.view.SalesQuestionDetailPanel": [],
   "DecisionLink.view.SearchPanel": [],
+  "DecisionLink.view.SecondarySQQDetailPanel": [],
+  "DecisionLink.view.SupportPanel": [],
+  "DecisionLink.view.ValueFormulaDetailPanel": [],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],
   "Ext.AbstractPlugin": [],
@@ -733,19 +745,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.viewport.WindowsPhone": [
     "Ext.viewport.WP"
   ],
-  "MyApp.view.AssetDetailPanel": [],
-  "MyApp.view.CompanyScenariosPanel": [],
-  "MyApp.view.CompanyViewPanel": [],
-  "MyApp.view.CompetitiveCarousel": [],
-  "MyApp.view.DetailPanel": [],
-  "MyApp.view.KpiDetailPanel": [],
-  "MyApp.view.LoginPanel": [],
-  "MyApp.view.Main": [],
-  "MyApp.view.PeerPerformanceDetailPanel": [],
-  "MyApp.view.SalesQuestionDetailPanel": [],
-  "MyApp.view.SecondarySQQDetailPanel": [],
-  "MyApp.view.SupportPanel": [],
-  "MyApp.view.ValueFormulaDetailPanel": []
+  "MyApp.view.Main": []
 });
 
 Ext.ClassManager.addNameAliasMappings({
@@ -811,17 +811,38 @@ Ext.ClassManager.addNameAliasMappings({
   "DecisionLink.view.AccountScenariosPanel": [
     "widget.accountscenariospanel"
   ],
+  "DecisionLink.view.AssetDetailPanel": [
+    "widget.assetdetailpanel"
+  ],
   "DecisionLink.view.ChangeCurrencyPanel": [
     "widget.changeCurrencyPanel"
   ],
   "DecisionLink.view.ChangePasswordPanel": [
     "widget.changepasswordpanel"
   ],
+  "DecisionLink.view.CompanyScenariosPanel": [
+    "widget.companyscenariospanel"
+  ],
+  "DecisionLink.view.CompanyViewPanel": [
+    "widget.companyviewpanel"
+  ],
+  "DecisionLink.view.CompetitiveCarousel": [
+    "widget.competitivecarousel"
+  ],
   "DecisionLink.view.DNBCarousel": [
     "widget.dnbcarousel"
   ],
+  "DecisionLink.view.DetailPanel": [
+    "widget.detailpanel"
+  ],
   "DecisionLink.view.HomePanel": [
     "widget.homepanel"
+  ],
+  "DecisionLink.view.KpiDetailPanel": [
+    "widget.kpidetailpanel"
+  ],
+  "DecisionLink.view.LoginPanel": [
+    "widget.loginPanel"
   ],
   "DecisionLink.view.MainView": [
     "widget.mainview"
@@ -835,8 +856,23 @@ Ext.ClassManager.addNameAliasMappings({
   "DecisionLink.view.OpportunityCostDetailPanel": [
     "widget.opportunitycostdetailpanel"
   ],
+  "DecisionLink.view.PeerPerformanceDetailPanel": [
+    "widget.peerPerformanceDetailPanel"
+  ],
+  "DecisionLink.view.SalesQuestionDetailPanel": [
+    "widget.salesquestiondetailpanel"
+  ],
   "DecisionLink.view.SearchPanel": [
     "widget.searchpanel"
+  ],
+  "DecisionLink.view.SecondarySQQDetailPanel": [
+    "widget.secondarysqqdetailpanel"
+  ],
+  "DecisionLink.view.SupportPanel": [
+    "widget.supportpanel"
+  ],
+  "DecisionLink.view.ValueFormulaDetailPanel": [
+    "widget.valueformuladetailpanel"
   ],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],
@@ -1565,44 +1601,8 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Ios": [],
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": [],
-  "MyApp.view.AssetDetailPanel": [
-    "widget.assetdetailpanel"
-  ],
-  "MyApp.view.CompanyScenariosPanel": [
-    "widget.companyscenariospanel"
-  ],
-  "MyApp.view.CompanyViewPanel": [
-    "widget.companyviewpanel"
-  ],
-  "MyApp.view.CompetitiveCarousel": [
-    "widget.competitivecarousel"
-  ],
-  "MyApp.view.DetailPanel": [
-    "widget.detailpanel"
-  ],
-  "MyApp.view.KpiDetailPanel": [
-    "widget.kpidetailpanel"
-  ],
-  "MyApp.view.LoginPanel": [
-    "widget.loginPanel"
-  ],
   "MyApp.view.Main": [
     "widget.main"
-  ],
-  "MyApp.view.PeerPerformanceDetailPanel": [
-    "widget.peerPerformanceDetailPanel"
-  ],
-  "MyApp.view.SalesQuestionDetailPanel": [
-    "widget.salesquestiondetailpanel"
-  ],
-  "MyApp.view.SecondarySQQDetailPanel": [
-    "widget.secondarysqqdetailpanel"
-  ],
-  "MyApp.view.SupportPanel": [
-    "widget.supportpanel"
-  ],
-  "MyApp.view.ValueFormulaDetailPanel": [
-    "widget.valueformuladetailpanel"
   ]
 });
 

@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.SalesQuestionDetailPanel', {
+Ext.define('DecisionLink.view.SalesQuestionDetailPanel', {
     extend: 'Ext.Panel',
     alias: 'widget.salesquestiondetailpanel',
 

@@ -36,6 +36,35 @@
                     "designerId": "05719fd9-c90c-457e-a35a-3297b416cf9c"
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonpstoreLoad",
+                "implHandler": [
+                    "var count = store.data.items.length,",
+                    "    i;",
+                    "",
+                    "for(i = 0; i < count; i++) {",
+                    "    var temp = store.data.items[i].data.yr1_benefit_sum;",
+                    "",
+                    "    temp = DecisionLink.app.formatCurrency(temp);",
+                    "",
+                    "    store.data.items[i].data.yr1_benefit_sum = temp;",
+                    "}",
+                    "",
+                    "company = Ext.ComponentQuery.query('companyscenariospanel #companyScenariosList')[0];",
+                    "company.refresh();"
+                ],
+                "name": "load"
+            },
+            "name": "onJsonpstoreLoad",
+            "designerId": "6c5a420c-a70e-4b0b-9df3-21fb089c41df"
         }
     ]
 }

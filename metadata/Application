@@ -588,6 +588,38 @@
             },
             "name": "decrementPagesFromHome",
             "designerId": "1d7ec0df-e8a9-444a-a91b-7fe3cd5aa6a8"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "num"
+                ],
+                "fn": "formatCurrency",
+                "implHandler": [
+                    "num = num.toString().replace(/\\$|\\,/g, '');",
+                    "if (isNaN(num)) {",
+                    "    num = \"0\";",
+                    "}",
+                    "sign = (num == (num = Math.abs(num)));",
+                    "",
+                    "num = Math.floor(num * 100 + 0.50000000001);",
+                    "num = Math.floor(num / 100).toString();",
+                    "",
+                    "for (var i = 0; i < Math.floor((num.length - (1 + i)) / 3); i++) {",
+                    "    num = num.substring(0, num.length - (4 * i + 3)) + ',' + num.substring(num.length - (4 * i + 3));",
+                    "}",
+                    "",
+                    "return ( ((sign) ? '' : '-') + num );"
+                ]
+            },
+            "name": "formatCurrency",
+            "designerId": "ab3bb3ae-59ec-48e7-b1e0-5a05f4e857fa"
         }
     ]
 }

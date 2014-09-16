@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.SupportPanel', {
+Ext.define('DecisionLink.view.SupportPanel', {
     extend: 'Ext.Panel',
     alias: 'widget.supportpanel',
 
