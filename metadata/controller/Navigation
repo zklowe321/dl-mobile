@@ -1361,7 +1361,7 @@
                     "    source_type_id = record.get('source_type_id'),",
                     "    sqq2 = record.get('sqq2'),",
                     "    sqq2_value = record.get('sqq2_value'),",
-                    "    total = record.get('y1_raw'),",
+                    "    total = '$' + DecisionLink.app.formatCurrency( record.get('y1_raw') ),",
                     "    alt_metric_id = record.get('alt_metric_id'),",
                     "    unit_type_id = record.get('unit_type_id'),",
                     "    me = this;",

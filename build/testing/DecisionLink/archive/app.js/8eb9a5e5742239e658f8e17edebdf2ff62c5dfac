@@ -1,4 +1,4 @@
-function _74623b60ad3d1fd1296f2b059e0e7c5cf6b7bd58(){};//@tag foundation,core
+function _8eb9a5e5742239e658f8e17edebdf2ff62c5dfac(){};//@tag foundation,core
 //@define Ext
 
 /**
@@ -76425,13 +76425,11 @@ Ext.define('DecisionLink.store.AccountScenariosStore', {
 
         for(i = 0; i < count; i++) {
             var temp = store.data.items[i].data.oppty_revenue;
+
             temp = DecisionLink.app.formatCurrency(temp);
 
             store.data.items[i].data.oppty_revenue = temp;
         }
-
-        scenarios = Ext.ComponentQuery.query('accountscenariospanel #accountScenariosList')[0];
-        scenarios.refresh();
     }
 
 });
@@ -77560,7 +77558,7 @@ Ext.define('DecisionLink.view.AccountScenariosPanel', {
                 navView: 'accountscenariospanel',
                 itemId: 'accountScenariosList',
                 itemTpl: [
-                    '<div class=“info” width=“40” height=“40”/>{name}<br/><small>Revenue: ${oppty_revenue} M</small>'
+                    '<div class=“info” width=“40” height=“40”/>{name}<br/><small>Revenue: ${oppty_revenue}</small>'
                 ],
                 store: 'AccountScenariosStore'
             }

@@ -46,11 +46,13 @@ Ext.define('DecisionLink.store.AccountScenariosStore', {
 
         for(i = 0; i < count; i++) {
             var temp = store.data.items[i].data.oppty_revenue;
-
             temp = DecisionLink.app.formatCurrency(temp);
 
             store.data.items[i].data.oppty_revenue = temp;
         }
+
+        scenarios = Ext.ComponentQuery.query('accountscenariospanel #accountScenariosList')[0];
+        scenarios.refresh();
     }
 
 });

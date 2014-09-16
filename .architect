@@ -2369,15 +2369,17 @@
         "openTabs": [
             "65de5dcd-eae0-4655-bfbb-2a71ca7b93ce",
             "0a87eaf7-5805-4116-b64a-18cd8e7a6eb8",
-            "b65f72c1-bee5-4e5a-9fed-ce939650a75c"
+            "b65f72c1-bee5-4e5a-9fed-ce939650a75c",
+            "f886b761-ae86-4937-a300-d400dd10a905",
+            "6f543e4c-1689-4500-a90e-f96d9e4e9e22"
         ]
     },
     "canvasState": {
         "topInstance": null
     },
     "inspectorState": {
-        "topInstance": "b65f72c1-bee5-4e5a-9fed-ce939650a75c",
-        "selectedInstance": "5e903f5a-6f6e-4430-93dd-ec64ff9ae54b"
+        "topInstance": "6f543e4c-1689-4500-a90e-f96d9e4e9e22",
+        "selectedInstance": "10cdfc09-3051-4fde-b78a-c332d2b0802e"
     },
     "editMode": "code",
     "userSettings": {
