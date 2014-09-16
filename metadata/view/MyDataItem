@@ -1,0 +1,50 @@
+{
+    "type": "Ext.dataview.component.DataItem",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyDataItem",
+        "layout": "hbox",
+        "padding": 10
+    },
+    "name": "MyDataItem",
+    "designerId": "04de1da7-5cf1-4360-975c-7bcd410e2f06",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "updateRecord",
+                "implHandler": [
+                    "// Provide an implementation to update this container's child items"
+                ]
+            },
+            "name": "updateRecord",
+            "designerId": "7fb29d96-0bb9-4ec6-b5c8-64587c838228"
+        },
+        {
+            "type": "Ext.Component",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "Sample component inside dataitem",
+                "layout|flex": 1
+            },
+            "name": "MyComponent",
+            "designerId": "29ac14df-b436-4f55-9b79-012066174992"
+        }
+    ]
+}

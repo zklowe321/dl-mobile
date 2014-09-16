@@ -68,6 +68,10 @@ Ext.define('DecisionLink.controller.Renames', {
             "opportunitycostdetailpanel": {
                 activate: 'onOpptyCostPanelActivate',
                 deactivate: 'onOpptyCostPanelDeactivate'
+            },
+            "companyscenariospanel": {
+                activate: 'onCompanyScenariosPanelActivate',
+                deactivate: 'onCompanyScenariosPanelDeactivate'
             }
         }
     },
@@ -178,6 +182,21 @@ Ext.define('DecisionLink.controller.Renames', {
                 align: 'right',
                 itemId: 'newCostButton'
         });
+    },
+
+    onCompanyScenariosPanelActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
+        var navBar = this.getNavBar();
+        navBar.add({
+            xtype: 'button',
+            text: 'New',
+            align: 'right',
+            itemId: 'newVPButton'
+        });
+    },
+
+    onCompanyScenariosPanelDeactivate: function(oldActiveItem, container, newActiveItem, eOpts) {
+        var navBar = this.getnavBar();
+        navBar.rightBox.query('button')[0].destroy();
     }
 
 });

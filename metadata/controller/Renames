@@ -386,6 +386,51 @@
             },
             "name": "onOpptyCostPanelDeactivate",
             "designerId": "5b643bed-db5a-40ac-80fd-2da64a8d0f8d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "companyscenariospanel",
+                "designer|targetType": "Ext.Panel",
+                "fn": "onCompanyScenariosPanelActivate",
+                "implHandler": [
+                    "var navBar = this.getNavBar();",
+                    "navBar.add({",
+                    "    xtype: 'button',",
+                    "    text: 'New',",
+                    "    align: 'right',",
+                    "    itemId: 'newVPButton'",
+                    "});"
+                ],
+                "name": "activate"
+            },
+            "name": "onCompanyScenariosPanelActivate",
+            "designerId": "65b43463-3d3e-4996-981c-e5f1635b821a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "companyscenariospanel",
+                "designer|targetType": "Ext.Panel",
+                "fn": "onCompanyScenariosPanelDeactivate",
+                "implHandler": [
+                    "var navBar = this.getnavBar();",
+                    "navBar.rightBox.query('button')[0].destroy();"
+                ],
+                "name": "deactivate"
+            },
+            "name": "onCompanyScenariosPanelDeactivate",
+            "designerId": "8c376c3e-b121-4d95-bef9-fc8c4d26e195"
         }
     ]
 }

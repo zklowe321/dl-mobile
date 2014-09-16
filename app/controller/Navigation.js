@@ -65,7 +65,8 @@ Ext.define('DecisionLink.controller.Navigation', {
             accountPanel: 'accountpanel',
             opportunitySituationPanel: 'opportunitycarousel #opportunitySituationPanel',
             vpList: 'homepanel #homeContainer #VPListContainer #VPList',
-            homePanel: 'homepanel'
+            homePanel: 'homepanel',
+            companyScenariosPanel: 'companyscenariospanel'
         },
 
         control: {
@@ -213,6 +214,9 @@ Ext.define('DecisionLink.controller.Navigation', {
             },
             "changepasswordpanel #changePasswordButton": {
                 tap: 'onChangePasswordButtonTap'
+            },
+            "mainview #navBar #newVPButton": {
+                tap: 'onNewVPButtonTap'
             }
         }
     },
@@ -1445,6 +1449,31 @@ Ext.define('DecisionLink.controller.Navigation', {
             window.alert("Passwords do not match.");
         }
 
+    },
+
+    onNewVPButtonTap: function(button, e, eOpts) {
+        var details,
+            me = this;
+
+        Ext.Viewport.setMasked({message: 'Loading...'});
+
+        details = Ext.create('DecisionLink.view.NewVPPanel', {
+            title: 'New Value Proposition'
+        });
+
+        //details.child('#costTypeSelectField').setValue(cost_type_id);
+        //details.child('#costValueField').setValue(cost);
+        //details.child('#accrualTypeSelectField').setValue(accrual_type_id);
+        //details.child('#costIdField').setValue(id);
+
+        Ext.Viewport.setMasked(false);
+
+        this.getMainView().push(details);
+
+        var navBar = this.getNavBar();
+        navBar.leftBox.query('button')[1].hide();
+
+        DecisionLink.app.incrementPagesFromHome();
     },
 
     deleteOpportunityCost: function(oppty_id, id, callback) {

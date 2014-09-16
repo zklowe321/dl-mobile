@@ -1,4 +1,4 @@
-function _1a70c6252b5bf36d309854b44b554ff4c448c64a(){};//@tag foundation,core
+function _64dbc5b5785934b48d90242b3a92cd5418ae6a43(){};//@tag foundation,core
 //@define Ext
 
 /**
@@ -76124,9 +76124,9 @@ Ext.define('DecisionLink.controller.Renames', {
                 activate: 'onOpptyCostPanelActivate',
                 deactivate: 'onOpptyCostPanelDeactivate'
             },
-            "companyscenariospanel": {
-                activate: 'onCompanyScenariosPanelActivate',
-                deactivate: 'onCompanyScenariosPanelDeactivate'
+            "panel": {
+                activate: 'onPanelActivate',
+                deactivate: 'onPanelDeactivate'
             }
         }
     },
@@ -76239,7 +76239,7 @@ Ext.define('DecisionLink.controller.Renames', {
         });
     },
 
-    onCompanyScenariosPanelActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
+    onPanelActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
         var navBar = this.getNavBar();
         navBar.add({
             xtype: 'button',
@@ -76249,7 +76249,7 @@ Ext.define('DecisionLink.controller.Renames', {
         });
     },
 
-    onCompanyScenariosPanelDeactivate: function(oldActiveItem, container, newActiveItem, eOpts) {
+    onPanelDeactivate: function(oldActiveItem, container, newActiveItem, eOpts) {
         var navBar = this.getnavBar();
         navBar.rightBox.query('button')[0].destroy();
     }

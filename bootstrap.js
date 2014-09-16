@@ -62,6 +62,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "DecisionLink.model.ScenarioIndustries": [],
   "DecisionLink.model.Search": [],
   "DecisionLink.model.SecondarySQQ": [],
+  "DecisionLink.model.Solutions": [],
   "DecisionLink.model.Success": [],
   "DecisionLink.model.Validate": [],
   "DecisionLink.model.ValueFormulas": [],
@@ -89,6 +90,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "DecisionLink.store.ScenarioStore": [],
   "DecisionLink.store.SearchStore": [],
   "DecisionLink.store.SecondarySQQStore": [],
+  "DecisionLink.store.SolutionsStore": [],
   "DecisionLink.store.SuccessStore": [],
   "DecisionLink.store.ValidateStore": [],
   "DecisionLink.store.ValueFormulasStore": [],
@@ -106,7 +108,9 @@ Ext.ClassManager.addNameAlternateMappings({
   "DecisionLink.view.KpiDetailPanel": [],
   "DecisionLink.view.LoginPanel": [],
   "DecisionLink.view.MainView": [],
+  "DecisionLink.view.MyDataItem": [],
   "DecisionLink.view.NavMenu": [],
+  "DecisionLink.view.NewVPPanel": [],
   "DecisionLink.view.OpportunityCarousel": [],
   "DecisionLink.view.OpportunityCostDetailPanel": [],
   "DecisionLink.view.PeerPerformanceDetailPanel": [],
@@ -775,6 +779,7 @@ Ext.ClassManager.addNameAliasMappings({
   "DecisionLink.model.ScenarioIndustries": [],
   "DecisionLink.model.Search": [],
   "DecisionLink.model.SecondarySQQ": [],
+  "DecisionLink.model.Solutions": [],
   "DecisionLink.model.Success": [],
   "DecisionLink.model.Validate": [],
   "DecisionLink.model.ValueFormulas": [],
@@ -802,6 +807,7 @@ Ext.ClassManager.addNameAliasMappings({
   "DecisionLink.store.ScenarioStore": [],
   "DecisionLink.store.SearchStore": [],
   "DecisionLink.store.SecondarySQQStore": [],
+  "DecisionLink.store.SolutionsStore": [],
   "DecisionLink.store.SuccessStore": [],
   "DecisionLink.store.ValidateStore": [],
   "DecisionLink.store.ValueFormulasStore": [],
@@ -847,8 +853,12 @@ Ext.ClassManager.addNameAliasMappings({
   "DecisionLink.view.MainView": [
     "widget.mainview"
   ],
+  "DecisionLink.view.MyDataItem": [],
   "DecisionLink.view.NavMenu": [
     "widget.navmenu"
+  ],
+  "DecisionLink.view.NewVPPanel": [
+    "widget.newvppanel"
   ],
   "DecisionLink.view.OpportunityCarousel": [
     "widget.opportunitycarousel"

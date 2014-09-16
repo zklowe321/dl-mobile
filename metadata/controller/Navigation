@@ -3905,6 +3905,60 @@
             },
             "name": "toMD5",
             "designerId": "697846ee-739d-4b8e-8162-7927fed001ef"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "companyScenariosPanel",
+                "selector": "companyscenariospanel"
+            },
+            "name": "companyScenariosPanel",
+            "designerId": "6f506bef-377a-49fa-bac0-df2e1c823b22"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "mainview #navBar #newVPButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onNewVPButtonTap",
+                "implHandler": [
+                    "var details,",
+                    "    me = this;",
+                    "",
+                    "Ext.Viewport.setMasked({message: 'Loading...'});",
+                    "",
+                    "details = Ext.create('DecisionLink.view.NewVPPanel', {",
+                    "    title: 'New Value Proposition'",
+                    "});",
+                    "",
+                    "//details.child('#costTypeSelectField').setValue(cost_type_id);",
+                    "//details.child('#costValueField').setValue(cost);",
+                    "//details.child('#accrualTypeSelectField').setValue(accrual_type_id);",
+                    "//details.child('#costIdField').setValue(id);",
+                    "",
+                    "Ext.Viewport.setMasked(false);",
+                    "",
+                    "this.getMainView().push(details);",
+                    "",
+                    "var navBar = this.getNavBar();",
+                    "navBar.leftBox.query('button')[1].hide();",
+                    "",
+                    "DecisionLink.app.incrementPagesFromHome();"
+                ],
+                "name": "tap"
+            },
+            "name": "onNewVPButtonTap",
+            "designerId": "98296560-68d3-4775-8040-d481e9d6e715"
         }
     ]
 }

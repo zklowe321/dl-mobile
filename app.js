@@ -114,7 +114,9 @@ Ext.application({
         'SupportPanel',
         'AccountPanel',
         'ChangePasswordPanel',
-        'ChangeCurrencyPanel'
+        'ChangeCurrencyPanel',
+        'NewVPPanel',
+        'MyDataItem'
     ],
     controllers: [
         'Navigation',
