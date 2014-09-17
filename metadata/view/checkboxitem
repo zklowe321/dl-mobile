@@ -30,7 +30,6 @@
                 "implHandler": [
                     "var checkbox = this.items.items[0];",
                     "",
-                    "checkbox.setLabelWidth('75%');",
                     "checkbox.setValue(record.data.id);",
                     "checkbox.setLabel(record.data.name);",
                     ""
@@ -49,6 +48,7 @@
             "userConfig": {
                 "itemId": "checkbox",
                 "label": null,
+                "labelWidth": "75%",
                 "labelWrap": true,
                 "layout|flex": 1
             },

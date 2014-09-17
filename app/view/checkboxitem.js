@@ -29,6 +29,7 @@ Ext.define('DecisionLink.view.checkboxitem', {
                 xtype: 'checkboxfield',
                 flex: 1,
                 itemId: 'checkbox',
+                labelWidth: '75%',
                 labelWrap: true
             }
         ]
@@ -37,7 +38,6 @@ Ext.define('DecisionLink.view.checkboxitem', {
     updateRecord: function(record) {
         var checkbox = this.items.items[0];
 
-        checkbox.setLabelWidth('75%');
         checkbox.setValue(record.data.id);
         checkbox.setLabel(record.data.name);
 

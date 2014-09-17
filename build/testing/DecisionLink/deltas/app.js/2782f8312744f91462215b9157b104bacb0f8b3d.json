@@ -1,1 +1,1 @@
-["function _c8c063eea00e940b664c63305250f79bba9b9442(){};",20989,36,91,1048485,1048576,1048576,2097152,400626,"var checkbox = this.items.items[0];\n\n        checkbox.setLabelWidth('75%');\n        checkbox.setValue(record.data.id);\n        checkbox.setLabel(record.data.name",2497844,5764]
+["function _56c0caf21f31cab2b693781062b4cbe3f3b886d1(){};",20989,36,91,1048485,1048576,1048576,2097152,400539,2493757,58,"\n        ]",1917760,58,"checkbox = this.items.items[0];\n\n        checkbox.setValue(record.data.id);\n        checkbox.setLabel(record.data.name",2497844,5764]
