@@ -424,7 +424,7 @@
                 "designer|targetType": "Ext.Panel",
                 "fn": "onCompanyScenariosPanelDeactivate",
                 "implHandler": [
-                    "var navBar = this.getnavBar();",
+                    "var navBar = this.getNavBar();",
                     "navBar.rightBox.query('button')[0].destroy();"
                 ],
                 "name": "deactivate"

@@ -108,7 +108,6 @@ Ext.ClassManager.addNameAlternateMappings({
   "DecisionLink.view.KpiDetailPanel": [],
   "DecisionLink.view.LoginPanel": [],
   "DecisionLink.view.MainView": [],
-  "DecisionLink.view.MyDataItem": [],
   "DecisionLink.view.NavMenu": [],
   "DecisionLink.view.NewVPPanel": [],
   "DecisionLink.view.OpportunityCarousel": [],
@@ -119,6 +118,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "DecisionLink.view.SecondarySQQDetailPanel": [],
   "DecisionLink.view.SupportPanel": [],
   "DecisionLink.view.ValueFormulaDetailPanel": [],
+  "DecisionLink.view.checkboxitem": [],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],
   "Ext.AbstractPlugin": [],
@@ -853,7 +853,6 @@ Ext.ClassManager.addNameAliasMappings({
   "DecisionLink.view.MainView": [
     "widget.mainview"
   ],
-  "DecisionLink.view.MyDataItem": [],
   "DecisionLink.view.NavMenu": [
     "widget.navmenu"
   ],
@@ -883,6 +882,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "DecisionLink.view.ValueFormulaDetailPanel": [
     "widget.valueformuladetailpanel"
+  ],
+  "DecisionLink.view.checkboxitem": [
+    "widget.checkboxitem"
   ],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],

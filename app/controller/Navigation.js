@@ -52,6 +52,7 @@ Ext.define('DecisionLink.controller.Navigation', {
             closestPeersList: 'competitivecarousel #closestPeersList',
             peerPerformanceList: 'competitivecarousel #peerPerformanceList',
             hiddenList: 'homepanel #hiddenList',
+            companyScenariosPanel: 'companyscenariospanel',
             industriesList: 'opportunitycarousel #industriesList',
             secondarySQQDetailPanel: 'secondarysqqdetailpanel',
             secondarySQQList: 'opportunitycarousel #secondarySQQList',
@@ -66,7 +67,7 @@ Ext.define('DecisionLink.controller.Navigation', {
             opportunitySituationPanel: 'opportunitycarousel #opportunitySituationPanel',
             vpList: 'homepanel #homeContainer #VPListContainer #VPList',
             homePanel: 'homepanel',
-            companyScenariosPanel: 'companyscenariospanel'
+            solutionsList: 'newvppanel #newInfoContainer #solutionsListContainer #solutionsList'
         },
 
         control: {
@@ -1459,6 +1460,10 @@ Ext.define('DecisionLink.controller.Navigation', {
 
         details = Ext.create('DecisionLink.view.NewVPPanel', {
             title: 'New Value Proposition'
+        });
+
+        me.getSolutions(user_id, function(store) {
+            me.getSolutionsList().setStore(store);
         });
 
         //details.child('#costTypeSelectField').setValue(cost_type_id);

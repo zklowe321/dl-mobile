@@ -106,8 +106,8 @@
             "AccountPanel",
             "ChangePasswordPanel",
             "ChangeCurrencyPanel",
-            "NewSolutionPanel",
-            "MyDataItem"
+            "NewVPPanel",
+            "checkboxitem"
         ]
     },
     "name": "Application",

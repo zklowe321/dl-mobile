@@ -21,11 +21,12 @@ Ext.define('DecisionLink.view.NewVPPanel', {
         'Ext.field.Checkbox',
         'Ext.Spacer',
         'Ext.field.Text',
-        'Ext.dataview.List',
+        'Ext.dataview.DataView',
         'Ext.XTemplate'
     ],
 
     config: {
+        scrollable: 'vertical',
         items: [
             {
                 xtype: 'checkboxfield',
@@ -83,6 +84,7 @@ Ext.define('DecisionLink.view.NewVPPanel', {
             {
                 xtype: 'container',
                 itemId: 'newInfoContainer',
+                layout: 'fit',
                 items: [
                     {
                         xtype: 'container',
@@ -93,19 +95,25 @@ Ext.define('DecisionLink.view.NewVPPanel', {
                                 itemId: 'nameField',
                                 label: 'Name',
                                 labelWidth: '40%'
+                            },
+                            {
+                                xtype: 'spacer',
+                                height: 10
                             }
                         ]
                     },
                     {
                         xtype: 'container',
                         itemId: 'solutionsListContainer',
+                        layout: 'fit',
                         items: [
                             {
-                                xtype: 'list',
-                                itemTpl: [
-                                    '<input type="checkbox"><span>{name}</span>'
-                                ],
-                                store: 'SolutionsStore'
+                                xtype: 'dataview',
+                                height: 160,
+                                itemId: 'solutionsList',
+                                defaultType: 'checkboxitem',
+                                store: 'SolutionsStore',
+                                useComponents: true
                             }
                         ]
                     }

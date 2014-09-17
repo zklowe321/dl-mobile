@@ -7,7 +7,8 @@
     "codeClass": null,
     "userConfig": {
         "designer|userAlias": "newvppanel",
-        "designer|userClassName": "NewVPPanel"
+        "designer|userClassName": "NewVPPanel",
+        "scrollable": "vertical"
     },
     "name": "MyPanel13",
     "designerId": "6c65a660-1ccb-49f4-a6fe-56fc0b7234e5",
@@ -154,7 +155,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "itemId": "newInfoContainer"
+                "itemId": "newInfoContainer",
+                "layout": "fit"
             },
             "name": "MyContainer2",
             "designerId": "bd428b29-e890-472a-bb03-67da65670f32",
@@ -186,6 +188,19 @@
                             },
                             "name": "MyTextField3",
                             "designerId": "91674cfa-5c2a-4e15-af97-36350cdf18c2"
+                        },
+                        {
+                            "type": "Ext.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 10
+                            },
+                            "name": "MySpacer46",
+                            "designerId": "0903cdff-52af-4159-80e1-588e2928ac92"
                         }
                     ]
                 },
@@ -197,22 +212,27 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "solutionsListContainer"
+                        "itemId": "solutionsListContainer",
+                        "layout": "fit"
                     },
                     "name": "MyContainer11",
                     "designerId": "73f307df-2afe-4beb-81c4-c1e8214bcf57",
                     "cn": [
                         {
-                            "type": "Ext.dataview.List",
+                            "type": "Ext.dataview.DataView",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "store": "SolutionsStore"
+                                "defaultType": "checkboxitem",
+                                "height": 160,
+                                "itemId": "solutionsList",
+                                "store": "SolutionsStore",
+                                "useComponents": true
                             },
-                            "name": "MyList",
+                            "name": "MyDataView1",
                             "designerId": "77dd587e-e8da-4f7b-b422-4a904735382f",
                             "cn": [
                                 {
@@ -225,7 +245,7 @@
                                     "userConfig": {
                                         "designer|displayName": "itemTpl",
                                         "implHandler": [
-                                            "<input type=\"checkbox\"><span>{name}</span>"
+                                            ""
                                         ]
                                     },
                                     "name": "itemTpl",

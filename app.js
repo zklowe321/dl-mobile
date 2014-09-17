@@ -116,7 +116,7 @@ Ext.application({
         'ChangePasswordPanel',
         'ChangeCurrencyPanel',
         'NewVPPanel',
-        'MyDataItem'
+        'checkboxitem'
     ],
     controllers: [
         'Navigation',

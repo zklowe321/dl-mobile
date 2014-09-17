@@ -195,7 +195,7 @@ Ext.define('DecisionLink.controller.Renames', {
     },
 
     onCompanyScenariosPanelDeactivate: function(oldActiveItem, container, newActiveItem, eOpts) {
-        var navBar = this.getnavBar();
+        var navBar = this.getNavBar();
         navBar.rightBox.query('button')[0].destroy();
     }
 

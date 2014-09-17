@@ -6,9 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "MyDataItem",
+        "designer|userAlias": "checkboxitem",
+        "designer|userClassName": "checkboxitem",
+        "itemCls": null,
         "layout": "hbox",
-        "padding": 10
+        "padding": 3
     },
     "name": "MyDataItem",
     "designerId": "04de1da7-5cf1-4360-975c-7bcd410e2f06",
@@ -26,25 +28,32 @@
                 ],
                 "fn": "updateRecord",
                 "implHandler": [
-                    "// Provide an implementation to update this container's child items"
+                    "var checkbox = this.items.items[0];",
+                    "",
+                    "checkbox.setLabelWidth('75%');",
+                    "checkbox.setValue(record.data.id);",
+                    "checkbox.setLabel(record.data.name);",
+                    ""
                 ]
             },
             "name": "updateRecord",
             "designerId": "7fb29d96-0bb9-4ec6-b5c8-64587c838228"
         },
         {
-            "type": "Ext.Component",
+            "type": "Ext.field.Checkbox",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "html": "Sample component inside dataitem",
+                "itemId": "checkbox",
+                "label": null,
+                "labelWrap": true,
                 "layout|flex": 1
             },
-            "name": "MyComponent",
-            "designerId": "29ac14df-b436-4f55-9b79-012066174992"
+            "name": "MyCheckbox5",
+            "designerId": "98844c89-054e-42cc-be52-c23e0b97abc6"
         }
     ]
 }

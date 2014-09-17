@@ -1,0 +1,1 @@
+["function _c8c063eea00e940b664c63305250f79bba9b9442(){};",20989,36,91,1048485,1048576,1048576,2097152,400626,"var checkbox = this.items.items[0];\n\n        checkbox.setLabelWidth('75%');\n        checkbox.setValue(record.data.id);\n        checkbox.setLabel(record.data.name);\n",2497873,5761]
