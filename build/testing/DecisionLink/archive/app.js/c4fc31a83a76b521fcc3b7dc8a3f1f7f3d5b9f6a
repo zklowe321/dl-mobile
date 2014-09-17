@@ -1,4 +1,4 @@
-function _91af3d6ea948aff2c429f280639912a2e54a2410(){};//@tag foundation,core
+function _c4fc31a83a76b521fcc3b7dc8a3f1f7f3d5b9f6a(){};//@tag foundation,core
 //@define Ext
 
 /**
@@ -74161,8 +74161,10 @@ Ext.define('DecisionLink.controller.Navigation', {
             "mainview #navBar #newVPButton": {
                 tap: 'onNewVPButtonTap'
             },
+            "newvppanel  #accountRevenueCheckbox": {
+                check: 'onChangeRevenueCheck'
+            },
             "newvppanel #accountRevenueCheckbox": {
-                check: 'onChangeRevenueCheck',
                 uncheck: 'onChangeRevenueUncheck'
             }
         }
@@ -79471,8 +79473,7 @@ Ext.define('DecisionLink.view.NewVPPanel', {
                      
                          
                                 
-                        
-                    
+                       
       
 
     config: {
@@ -79493,7 +79494,6 @@ Ext.define('DecisionLink.view.NewVPPanel', {
                 xtype: 'container',
                 hidden: true,
                 itemId: 'detailContainer',
-                margin: 10,
                 layout: 'fit',
                 items: [
                     {
@@ -79557,7 +79557,6 @@ Ext.define('DecisionLink.view.NewVPPanel', {
                     {
                         xtype: 'container',
                         itemId: 'solutionsListContainer',
-                        margin: 10,
                         layout: 'fit',
                         items: [
                             {
@@ -79567,22 +79566,6 @@ Ext.define('DecisionLink.view.NewVPPanel', {
                                 defaultType: 'checkboxitem',
                                 store: 'SolutionsStore',
                                 useComponents: true
-                            }
-                        ]
-                    },
-                    {
-                        xtype: 'container',
-                        itemId: 'saveVPButtonContainer',
-                        items: [
-                            {
-                                xtype: 'spacer',
-                                height: 15
-                            },
-                            {
-                                xtype: 'button',
-                                itemId: 'saveVPButton',
-                                margin: 10,
-                                text: 'Save Value Proposition'
                             }
                         ]
                     }

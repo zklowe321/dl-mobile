@@ -50,8 +50,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "hidden": false,
-                "itemId": "detailContainer"
+                "hidden": true,
+                "itemId": "detailContainer",
+                "layout": "fit",
+                "margin": 10
             },
             "name": "MyContainer1",
             "designerId": "8d771ab2-1c42-43e7-9de2-1ec001ab8ed7",
@@ -213,7 +215,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "solutionsListContainer",
-                        "layout": "fit"
+                        "layout": "fit",
+                        "margin": 10
                     },
                     "name": "MyContainer11",
                     "designerId": "73f307df-2afe-4beb-81c4-c1e8214bcf57",
@@ -252,6 +255,49 @@
                                     "designerId": "0aec6a35-9e40-4e3e-b73c-9ff81a30f420"
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "saveVPButtonContainer"
+                    },
+                    "name": "MyContainer12",
+                    "designerId": "d911ed16-b510-48f9-93dc-7457ab82df1d",
+                    "cn": [
+                        {
+                            "type": "Ext.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 15
+                            },
+                            "name": "MySpacer47",
+                            "designerId": "ae3111eb-269f-42f9-85a6-182a7041fbb5"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "saveVPButton",
+                                "margin": 10,
+                                "text": "Save Value Proposition"
+                            },
+                            "name": "MyButton21",
+                            "designerId": "5d9c5498-8b13-4ed3-a2e4-c1be5cbcc480"
                         }
                     ]
                 }

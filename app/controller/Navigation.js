@@ -66,8 +66,8 @@ Ext.define('DecisionLink.controller.Navigation', {
             accountPanel: 'accountpanel',
             opportunitySituationPanel: 'opportunitycarousel #opportunitySituationPanel',
             vpList: 'homepanel #homeContainer #VPListContainer #VPList',
-            homePanel: 'homepanel',
-            solutionsList: 'newvppanel #newInfoContainer #solutionsListContainer #solutionsList'
+            solutionsList: 'newvppanel #newInfoContainer #solutionsListContainer #solutionsList',
+            homePanel: 'homepanel'
         },
 
         control: {
@@ -218,6 +218,10 @@ Ext.define('DecisionLink.controller.Navigation', {
             },
             "mainview #navBar #newVPButton": {
                 tap: 'onNewVPButtonTap'
+            },
+            "newvppanel #accountRevenueCheckbox": {
+                check: 'onChangeRevenueCheck',
+                uncheck: 'onChangeRevenueUncheck'
             }
         }
     },
@@ -1479,6 +1483,16 @@ Ext.define('DecisionLink.controller.Navigation', {
         navBar.leftBox.query('button')[1].hide();
 
         DecisionLink.app.incrementPagesFromHome();
+    },
+
+    onChangeRevenueCheck: function(checkboxfield, e, eOpts) {
+        var detailContainer = Ext.ComponentQuery.query('newvppanel #detailContainer')[0];
+        detailContainer.setHidden(false);
+    },
+
+    onChangeRevenueUncheck: function(checkboxfield, e, eOpts) {
+        var detailContainer = Ext.ComponentQuery.query('newvppanel #detailContainer')[0];
+        detailContainer.setHidden(true);
     },
 
     deleteOpportunityCost: function(oppty_id, id, callback) {

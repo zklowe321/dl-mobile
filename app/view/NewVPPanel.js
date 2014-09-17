@@ -22,7 +22,8 @@ Ext.define('DecisionLink.view.NewVPPanel', {
         'Ext.Spacer',
         'Ext.field.Text',
         'Ext.dataview.DataView',
-        'Ext.XTemplate'
+        'Ext.XTemplate',
+        'Ext.Button'
     ],
 
     config: {
@@ -41,8 +42,10 @@ Ext.define('DecisionLink.view.NewVPPanel', {
             },
             {
                 xtype: 'container',
-                hidden: false,
+                hidden: true,
                 itemId: 'detailContainer',
+                margin: 10,
+                layout: 'fit',
                 items: [
                     {
                         xtype: 'textfield',
@@ -105,6 +108,7 @@ Ext.define('DecisionLink.view.NewVPPanel', {
                     {
                         xtype: 'container',
                         itemId: 'solutionsListContainer',
+                        margin: 10,
                         layout: 'fit',
                         items: [
                             {
@@ -114,6 +118,22 @@ Ext.define('DecisionLink.view.NewVPPanel', {
                                 defaultType: 'checkboxitem',
                                 store: 'SolutionsStore',
                                 useComponents: true
+                            }
+                        ]
+                    },
+                    {
+                        xtype: 'container',
+                        itemId: 'saveVPButtonContainer',
+                        items: [
+                            {
+                                xtype: 'spacer',
+                                height: 15
+                            },
+                            {
+                                xtype: 'button',
+                                itemId: 'saveVPButton',
+                                margin: 10,
+                                text: 'Save Value Proposition'
                             }
                         ]
                     }

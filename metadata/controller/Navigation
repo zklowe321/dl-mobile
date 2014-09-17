@@ -650,6 +650,20 @@
             },
             "codeClass": null,
             "userConfig": {
+                "ref": "solutionsList",
+                "selector": "newvppanel #newInfoContainer #solutionsListContainer #solutionsList"
+            },
+            "name": "solutionsList",
+            "designerId": "49429842-97a4-4e50-8f4f-51530ad07a92"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "ref": "homePanel",
                 "selector": "homepanel"
             },
@@ -2668,6 +2682,46 @@
             "designerId": "98296560-68d3-4775-8040-d481e9d6e715"
         },
         {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "newvppanel #accountRevenueCheckbox",
+                "designer|targetType": "Ext.field.Checkbox",
+                "fn": "onChangeRevenueCheck",
+                "implHandler": [
+                    "var detailContainer = Ext.ComponentQuery.query('newvppanel #detailContainer')[0];",
+                    "detailContainer.setHidden(false);"
+                ],
+                "name": "check"
+            },
+            "name": "onChangeRevenueCheck",
+            "designerId": "aabe7910-8b9b-44ba-bd0e-a63bb6dc326c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "newvppanel #accountRevenueCheckbox",
+                "designer|targetType": "Ext.field.Checkbox",
+                "fn": "onChangeRevenueUncheck",
+                "implHandler": [
+                    "var detailContainer = Ext.ComponentQuery.query('newvppanel #detailContainer')[0];",
+                    "detailContainer.setHidden(true);"
+                ],
+                "name": "uncheck"
+            },
+            "name": "onChangeRevenueUncheck",
+            "designerId": "ccb7803f-44ba-4ec4-99b9-0323ac66c15f"
+        },
+        {
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -3963,20 +4017,6 @@
             },
             "name": "toMD5",
             "designerId": "697846ee-739d-4b8e-8162-7927fed001ef"
-        },
-        {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "ref": "solutionsList",
-                "selector": "newvppanel #newInfoContainer #solutionsListContainer #solutionsList"
-            },
-            "name": "solutionsList",
-            "designerId": "49429842-97a4-4e50-8f4f-51530ad07a92"
         }
     ]
 }
