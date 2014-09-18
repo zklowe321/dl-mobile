@@ -30,9 +30,10 @@
                 "implHandler": [
                     "var checkbox = this.items.items[0];",
                     "",
-                    "checkbox.setValue(record.data.id);",
-                    "checkbox.setLabel(record.data.name);",
-                    ""
+                    "if (checkbox) {",
+                    "    checkbox.setValue(record.data.id);",
+                    "    checkbox.setLabel(record.data.name);",
+                    "}"
                 ]
             },
             "name": "updateRecord",

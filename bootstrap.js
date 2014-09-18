@@ -116,6 +116,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "DecisionLink.view.SalesQuestionDetailPanel": [],
   "DecisionLink.view.SearchPanel": [],
   "DecisionLink.view.SecondarySQQDetailPanel": [],
+  "DecisionLink.view.SendAssetPanel": [],
   "DecisionLink.view.SupportPanel": [],
   "DecisionLink.view.ValueFormulaDetailPanel": [],
   "DecisionLink.view.checkboxitem": [],
@@ -876,6 +877,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "DecisionLink.view.SecondarySQQDetailPanel": [
     "widget.secondarysqqdetailpanel"
+  ],
+  "DecisionLink.view.SendAssetPanel": [
+    "widget.sendassetpanel"
   ],
   "DecisionLink.view.SupportPanel": [
     "widget.supportpanel"

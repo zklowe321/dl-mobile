@@ -38,9 +38,10 @@ Ext.define('DecisionLink.view.checkboxitem', {
     updateRecord: function(record) {
         var checkbox = this.items.items[0];
 
-        checkbox.setValue(record.data.id);
-        checkbox.setLabel(record.data.name);
-
+        if (checkbox) {
+            checkbox.setValue(record.data.id);
+            checkbox.setLabel(record.data.name);
+        }
     }
 
 });

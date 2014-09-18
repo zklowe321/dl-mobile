@@ -664,6 +664,20 @@
             },
             "codeClass": null,
             "userConfig": {
+                "ref": "sendAssetPanel",
+                "selector": "sendassetpanel"
+            },
+            "name": "sendAssetPanel",
+            "designerId": "943b0b35-0413-492c-9aab-21c20b9492ba"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "ref": "homePanel",
                 "selector": "homepanel"
             },
@@ -768,7 +782,7 @@
             "userConfig": {
                 "designer|controlQuery": "#cancelButton",
                 "designer|targetType": "Ext.Button",
-                "fn": "onCancelButtonTap",
+                "fn": "onCancelLoginButtonTap",
                 "implHandler": [
                     "menu = this.getLoginPanel();",
                     "",
@@ -776,7 +790,7 @@
                 ],
                 "name": "tap"
             },
-            "name": "onCancelButtonTap",
+            "name": "onCancelLoginButtonTap",
             "designerId": "23940efb-a7ee-493d-a251-39e0683bb419"
         },
         {
@@ -2460,7 +2474,13 @@
                 "implHandler": [
                     "var url = image.downloadUrl;",
                     "",
-                    "window.open(url);"
+                    "var panel = Ext.create('DecisionLink.view.SendAssetPanel', {",
+                    "    title: 'Send Asset'",
+                    "});",
+                    "",
+                    "this.getMainView().push(panel);",
+                    "",
+                    "//window.open(url);"
                 ],
                 "name": "tap"
             },
@@ -2780,6 +2800,26 @@
             },
             "name": "onChangeRevenueUncheck",
             "designerId": "ccb7803f-44ba-4ec4-99b9-0323ac66c15f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "sendassetpanel #buttonContainer #cancelSendButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onCancelSendButtonTap",
+                "implHandler": [
+                    "var assetPanel = this.getSendAssetPanel();",
+                    "assetPanel.destroy();"
+                ],
+                "name": "tap"
+            },
+            "name": "onCancelSendButtonTap",
+            "designerId": "ab51ddea-5732-426b-b2f9-628dc4ef5273"
         },
         {
             "type": "basicfunction",

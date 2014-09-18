@@ -67,6 +67,7 @@ Ext.define('DecisionLink.controller.Navigation', {
             opportunitySituationPanel: 'opportunitycarousel #opportunitySituationPanel',
             vpList: 'homepanel #homeContainer #VPListContainer #VPList',
             solutionsList: 'newvppanel #newInfoContainer #solutionsListContainer #solutionsList',
+            sendAssetPanel: 'sendassetpanel',
             homePanel: 'homepanel'
         },
 
@@ -78,7 +79,7 @@ Ext.define('DecisionLink.controller.Navigation', {
                 tap: 'showMenu'
             },
             "#cancelButton": {
-                tap: 'onCancelButtonTap'
+                tap: 'onCancelLoginButtonTap'
             },
             "homepanel #searchListContainer #searchList": {
                 itemtap: 'onSearchListItemTap'
@@ -225,6 +226,9 @@ Ext.define('DecisionLink.controller.Navigation', {
             "newvppanel #accountRevenueCheckbox": {
                 check: 'onChangeRevenueCheck',
                 uncheck: 'onChangeRevenueUncheck'
+            },
+            "sendassetpanel #buttonContainer #cancelSendButton": {
+                tap: 'onCancelSendButtonTap'
             }
         }
     },
@@ -285,7 +289,7 @@ Ext.define('DecisionLink.controller.Navigation', {
         }
     },
 
-    onCancelButtonTap: function(button, e, eOpts) {
+    onCancelLoginButtonTap: function(button, e, eOpts) {
         menu = this.getLoginPanel();
 
         menu.hide();
@@ -1361,7 +1365,13 @@ Ext.define('DecisionLink.controller.Navigation', {
     onDownloadImageTap: function(image, e, eOpts) {
         var url = image.downloadUrl;
 
-        window.open(url);
+        var panel = Ext.create('DecisionLink.view.SendAssetPanel', {
+            title: 'Send Asset'
+        });
+
+        this.getMainView().push(panel);
+
+        //window.open(url);
     },
 
     onLogoutButtonTap: function(button, e, eOpts) {
@@ -1541,6 +1551,11 @@ Ext.define('DecisionLink.controller.Navigation', {
     onChangeRevenueUncheck: function(checkboxfield, e, eOpts) {
         var detailContainer = Ext.ComponentQuery.query('newvppanel #detailContainer')[0];
         detailContainer.setHidden(true);
+    },
+
+    onCancelSendButtonTap: function(button, e, eOpts) {
+        var assetPanel = this.getSendAssetPanel();
+        assetPanel.destroy();
     },
 
     deleteOpportunityCost: function(oppty_id, id, callback) {
