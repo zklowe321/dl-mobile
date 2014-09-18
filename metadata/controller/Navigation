@@ -2473,14 +2473,14 @@
                 "fn": "onDownloadImageTap",
                 "implHandler": [
                     "var url = image.downloadUrl;",
+                    "console.log(url);",
                     "",
                     "var panel = Ext.create('DecisionLink.view.SendAssetPanel', {",
-                    "    title: 'Send Asset'",
+                    "    title: 'Send Asset',",
+                    "    url: url",
                     "});",
                     "",
-                    "this.getMainView().push(panel);",
-                    "",
-                    "//window.open(url);"
+                    "this.getMainView().push(panel);"
                 ],
                 "name": "tap"
             },
@@ -2820,6 +2820,66 @@
             },
             "name": "onCancelSendButtonTap",
             "designerId": "ab51ddea-5732-426b-b2f9-628dc4ef5273"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "sendassetpanel #buttonContainer #sendAssetButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onSendAssetButtonTap",
+                "implHandler": [
+                    "var panel = Ext.ComponentQuery.query('sendassetpanel')[0],",
+                    "    url = panel.config.url,",
+                    "    method = panel.child('#deliverySelectField').getValue(),",
+                    "    email = panel.child('#emailField').getValue(),",
+                    "    me = this;",
+                    "",
+                    "me.downloadAsset(url, method, email, function(store) {",
+                    "    me.getHiddenList().setStore(store);",
+                    "});",
+                    "",
+                    "panel.hide();"
+                ],
+                "name": "tap"
+            },
+            "name": "onSendAssetButtonTap",
+            "designerId": "4625d29b-a1f9-4d96-900a-e7e6ad34e9c4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "sendassetpanel #deliverySelectField",
+                "designer|targetType": "Ext.field.Select",
+                "fn": "onDeliverySelectfieldChange",
+                "implHandler": [
+                    "var panel = Ext.ComponentQuery.query('sendassetpanel')[0],",
+                    "    emailTip = panel.child('#emailTip'),",
+                    "    emailField = panel.child('#emailField');",
+                    "",
+                    "if (newValue == 3) {",
+                    "    emailTip.show();",
+                    "    emailField.show();",
+                    "}",
+                    "",
+                    "if (oldValue == 3) {",
+                    "    emailTip.hide();",
+                    "    emailField.hide();",
+                    "}"
+                ],
+                "name": "change"
+            },
+            "name": "onDeliverySelectfieldChange",
+            "designerId": "895e2370-fdc9-40c7-8a7c-46cca5e84dfc"
         },
         {
             "type": "basicfunction",
@@ -3874,6 +3934,45 @@
             },
             "name": "saveOpportunity",
             "designerId": "3da535b3-ac3a-4b6c-bf4f-923e428ce6e0"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "url",
+                    "method",
+                    "email"
+                ],
+                "fn": "downloadAsset",
+                "implHandler": [
+                    "var newUrl;",
+                    "",
+                    "if (method == 3) {",
+                    "\t// Download",
+                    "    newUrl = url + '&method=' + method + '&email=' + email;",
+                    "} else if(method == 4) {",
+                    "\t// Send to another email",
+                    "    newUrl = 'https://test.decisionlink.com/post_to_drive.php?href=' + url;",
+                    "}else {",
+                    "    // Download or email to me",
+                    "    newUrl = url + '&method=' + method;",
+                    "}",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: newUrl,",
+                    "    method: 'POST',",
+                    "    dataType: 'jsonp'",
+                    "",
+                    "});"
+                ]
+            },
+            "name": "downloadAsset",
+            "designerId": "76dba2ed-4a18-45a3-a893-798d70b8674e"
         },
         {
             "type": "basicfunction",

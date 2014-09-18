@@ -15,6 +15,13 @@
     },
     "name": "MyPanel13",
     "designerId": "33c9e231-2a93-42a0-85e1-e000689c2b06",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "url",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.field.Select",
@@ -32,10 +39,16 @@
                 "margin": 10,
                 "options": [
                     "[{",
-                    "    'name': 'Email',",
+                    "    'name': 'Download',",
+                    "    'value': 1",
+                    "},{",
+                    "    'name': 'Email to me',",
+                    "    'value': 2",
+                    "},{",
+                    "    'name': 'Send to another email',",
                     "    'value': 3",
                     "},{",
-                    "    'name': 'Upload to Drive',",
+                    "    'name': 'Post to Google Drive',",
                     "    'value': 4",
                     "}]"
                 ],
@@ -43,6 +56,40 @@
             },
             "name": "MySelectField13",
             "designerId": "fc6bb1cf-4363-45f1-a8ed-d2d384dc2c8c"
+        },
+        {
+            "type": "Ext.Label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": false,
+                "hidden": true,
+                "html": "Add emails, comma separated",
+                "itemId": "emailTip",
+                "margin": 10
+            },
+            "name": "MyLabel3",
+            "designerId": "ef2c87b4-a0cd-4af9-b6d0-1864876bc5cd"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "itemId": "emailField",
+                "label": "Email(s)",
+                "labelWidth": "40%",
+                "labelWrap": true
+            },
+            "name": "MyTextField43",
+            "designerId": "8f477fa3-cc4a-4b13-bbaa-dfbbb08c42c9"
         },
         {
             "type": "Ext.Container",

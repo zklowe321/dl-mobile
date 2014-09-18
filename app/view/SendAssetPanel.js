@@ -19,6 +19,7 @@ Ext.define('DecisionLink.view.SendAssetPanel', {
 
     requires: [
         'Ext.field.Select',
+        'Ext.Label',
         'Ext.Container',
         'Ext.Button',
         'Ext.Spacer'
@@ -41,14 +42,38 @@ Ext.define('DecisionLink.view.SendAssetPanel', {
                 displayField: 'name',
                 options: [
                     {
-                        name: 'Email',
+                        name: 'Download',
+                        value: 1
+                    },
+                    {
+                        name: 'Email to me',
+                        value: 2
+                    },
+                    {
+                        name: 'Send to another email',
                         value: 3
                     },
                     {
-                        name: 'Upload to Drive',
+                        name: 'Post to Google Drive',
                         value: 4
                     }
                 ]
+            },
+            {
+                xtype: 'label',
+                centered: false,
+                hidden: true,
+                html: 'Add emails, comma separated',
+                itemId: 'emailTip',
+                margin: 10
+            },
+            {
+                xtype: 'textfield',
+                hidden: true,
+                itemId: 'emailField',
+                label: 'Email(s)',
+                labelWidth: '40%',
+                labelWrap: true
             },
             {
                 xtype: 'container',

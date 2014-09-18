@@ -229,6 +229,12 @@ Ext.define('DecisionLink.controller.Navigation', {
             },
             "sendassetpanel #buttonContainer #cancelSendButton": {
                 tap: 'onCancelSendButtonTap'
+            },
+            "sendassetpanel #buttonContainer #sendAssetButton": {
+                tap: 'onSendAssetButtonTap'
+            },
+            "sendassetpanel #deliverySelectField": {
+                change: 'onDeliverySelectfieldChange'
             }
         }
     },
@@ -1364,14 +1370,14 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     onDownloadImageTap: function(image, e, eOpts) {
         var url = image.downloadUrl;
+        console.log(url);
 
         var panel = Ext.create('DecisionLink.view.SendAssetPanel', {
-            title: 'Send Asset'
+            title: 'Send Asset',
+            url: url
         });
 
         this.getMainView().push(panel);
-
-        //window.open(url);
     },
 
     onLogoutButtonTap: function(button, e, eOpts) {
@@ -1556,6 +1562,36 @@ Ext.define('DecisionLink.controller.Navigation', {
     onCancelSendButtonTap: function(button, e, eOpts) {
         var assetPanel = this.getSendAssetPanel();
         assetPanel.destroy();
+    },
+
+    onSendAssetButtonTap: function(button, e, eOpts) {
+        var panel = Ext.ComponentQuery.query('sendassetpanel')[0],
+            url = panel.config.url,
+            method = panel.child('#deliverySelectField').getValue(),
+            email = panel.child('#emailField').getValue(),
+            me = this;
+
+        me.downloadAsset(url, method, email, function(store) {
+            me.getHiddenList().setStore(store);
+        });
+
+        panel.hide();
+    },
+
+    onDeliverySelectfieldChange: function(selectfield, newValue, oldValue, eOpts) {
+        var panel = Ext.ComponentQuery.query('sendassetpanel')[0],
+            emailTip = panel.child('#emailTip'),
+            emailField = panel.child('#emailField');
+
+        if (newValue == 3) {
+            emailTip.show();
+            emailField.show();
+        }
+
+        if (oldValue == 3) {
+            emailTip.hide();
+            emailField.hide();
+        }
     },
 
     deleteOpportunityCost: function(oppty_id, id, callback) {
@@ -1975,6 +2011,28 @@ Ext.define('DecisionLink.controller.Navigation', {
         store.getProxy().setUrl(url);
         store.load(function() {
             callback(store);
+        });
+    },
+
+    downloadAsset: function(url, method, email) {
+        var newUrl;
+
+        if (method == 3) {
+        	// Download
+            newUrl = url + '&method=' + method + '&email=' + email;
+        } else if(method == 4) {
+        	// Send to another email
+            newUrl = 'https://test.decisionlink.com/post_to_drive.php?href=' + url;
+        }else {
+            // Download or email to me
+            newUrl = url + '&method=' + method;
+        }
+
+        Ext.Ajax.request({
+            url: newUrl,
+            method: 'POST',
+            dataType: 'jsonp'
+
         });
     },
 
