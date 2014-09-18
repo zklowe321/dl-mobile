@@ -31,6 +31,7 @@ Ext.application({
     userName: ' ',
     email: ' ',
     pagesFromHome: '0',
+    currentCompany: ' ',
     models: [
         'Search',
         'Detail',
@@ -235,6 +236,14 @@ Ext.application({
         }
 
         return ( ((sign) ? '' : '-') + num );
+    },
+
+    getCurrentCompany: function() {
+        return this.currentCompany;
+    },
+
+    setCurrentCompany: function(company) {
+        this.currentCompany = company;
     },
 
     launch: function() {

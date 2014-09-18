@@ -219,6 +219,9 @@ Ext.define('DecisionLink.controller.Navigation', {
             "mainview #navBar #newVPButton": {
                 tap: 'onNewVPButtonTap'
             },
+            "newvppanel #saveVPButtonContainer #saveVPButton": {
+                tap: 'onSaveVPButtonTap'
+            },
             "newvppanel #accountRevenueCheckbox": {
                 check: 'onChangeRevenueCheck',
                 uncheck: 'onChangeRevenueUncheck'
@@ -294,6 +297,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
         if (record) {
             DecisionLink.app.setCurrentCompanyId(record.get('id'));
+            DecisionLink.app.setCurrentCompany(record.get('name'));
             DecisionLink.app.setCurrentIndustryId(record.get('industry_id'));
             DecisionLink.app.setCurrentRevenue(record.get('revenue'));
 
@@ -385,6 +389,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
         if (record) {
             DecisionLink.app.setCurrentCompanyId(record.get('id'));
+            DecisionLink.app.setCurrentCompany(record.get('name'));
             DecisionLink.app.setCurrentIndustryId(record.get('industry_id'));
             DecisionLink.app.setCurrentRevenue(record.get('revenue'));
 
@@ -882,6 +887,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
         if (record) {
             DecisionLink.app.setCurrentCompanyId(record.get('id'));
+            DecisionLink.app.setCurrentCompany(record.get('name'));
 
             details = Ext.create('DecisionLink.view.CompanyViewPanel', {
                 title: record.get('name')
@@ -902,6 +908,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
         if (record) {
             DecisionLink.app.setCurrentCompanyId(record.get('id'));
+            DecisionLink.app.setCurrentCompany(record.get('name'));
             DecisionLink.app.setCurrentIndustryId(record.get('industry_id'));
             DecisionLink.app.setCurrentRevenue(record.get('revenue'));
 
@@ -1003,6 +1010,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
         if (record) {
             DecisionLink.app.setCurrentCompanyId(record.get('id'));
+            DecisionLink.app.setCurrentCompany(record.get('name'));
             DecisionLink.app.setCurrentRevenue(record.get('revenue'));
 
             details = Ext.create('DecisionLink.view.CompanyViewPanel', {
@@ -1458,7 +1466,11 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     onNewVPButtonTap: function(button, e, eOpts) {
         var details,
+            name = DecisionLink.app.getCurrentCompany(),
+            revenue = DecisionLink.app.getCurrentRevenue(),
             me = this;
+
+        revenue = '$' + DecisionLink.app.formatCurrency(revenue) + ' M';
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
@@ -1470,10 +1482,8 @@ Ext.define('DecisionLink.controller.Navigation', {
             me.getSolutionsList().setStore(store);
         });
 
-        //details.child('#costTypeSelectField').setValue(cost_type_id);
-        //details.child('#costValueField').setValue(cost);
-        //details.child('#accrualTypeSelectField').setValue(accrual_type_id);
-        //details.child('#costIdField').setValue(id);
+        details.child('#detailContainer').child('#companyNameField').setValue(name);
+        details.child('#detailContainer').child('#totalRevenueField').setValue(revenue);
 
         Ext.Viewport.setMasked(false);
 
@@ -1483,6 +1493,40 @@ Ext.define('DecisionLink.controller.Navigation', {
         navBar.leftBox.query('button')[1].hide();
 
         DecisionLink.app.incrementPagesFromHome();
+    },
+
+    onSaveVPButtonTap: function(button, e, eOpts) {
+        var revenueCheck = Ext.ComponentQuery.query('newvppanel #accountRevenueCheckbox')[0],
+            nameContainer = Ext.ComponentQuery.query('newvppanel #newInfoContainer #nameContainer')[0],
+            solutionsList = this.getSolutionsList().getViewItems(),
+            length = solutionsList.length,
+            solutions = '',
+            i,
+            company_id = DecisionLink.app.getCurrentCompanyId(),
+            user_id = DecisionLink.app.getUserId(),
+            wacc = 0,
+            oppty_revenue,
+            name = nameContainer.child('#nameField').getValue(),
+            me = this;
+
+        for (i = 0; i < length; i++) {
+            curr = solutionsList[i].getItems().items[0];
+            if ( curr.isChecked() ) {
+                solutions = solutions + curr.getValue() + ',';
+            }
+        }
+        solutions = solutions.substring(0, solutions.length - 1);
+
+        if (revenueCheck.isChecked()) {
+            oppty_revenue = Ext.ComponentQuery.query('newvppanel #detailContainer #companyRevenueField')[0].getValue();
+        } else {
+            oppty_revenue = '';
+        }
+
+        me.saveOpportunity(company_id, user_id, name, wacc, oppty_revenue, solutions, function(store) {
+            me.getHiddenList().setStore(store);
+        });
+
     },
 
     onChangeRevenueCheck: function(checkboxfield, e, eOpts) {
@@ -1900,7 +1944,7 @@ Ext.define('DecisionLink.controller.Navigation', {
         });
     },
 
-    saveOpportunity: function(company_id, user_id, name, wacc, oppty_revenue, solutions) {
+    saveOpportunity: function(company_id, user_id, name, wacc, oppty_revenue, solutions, callback) {
         var store = Ext.data.StoreManager.lookup('SuccessStore'),
             url = 'http://test.decisionlink.com/services/SaveOpportunity1.php' +
             '?company_id=' + company_id +

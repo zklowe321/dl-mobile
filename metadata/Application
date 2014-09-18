@@ -12,6 +12,7 @@
             "Navigation",
             "Renames"
         ],
+        "currentCompany": " ",
         "currentCompanyId": "-1",
         "currentOpptyId": "-1",
         "currentRevenue": "-1",
@@ -172,6 +173,11 @@
         {
             "group": "(Custom Properties)",
             "name": "pagesFromHome",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "currentCompany",
             "type": "string"
         }
     ],
@@ -624,6 +630,41 @@
             },
             "name": "formatCurrency",
             "designerId": "ab3bb3ae-59ec-48e7-b1e0-5a05f4e857fa"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getCurrentCompany",
+                "implHandler": [
+                    "return this.currentCompany;"
+                ]
+            },
+            "name": "getCurrentCompany",
+            "designerId": "46981968-1ee7-468c-b70b-f430be99be6d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "company"
+                ],
+                "fn": "setCurrentCompany",
+                "implHandler": [
+                    "this.currentCompany = company;"
+                ]
+            },
+            "name": "setCurrentCompany",
+            "designerId": "0508e855-a2b9-44f9-9245-ce7ada9ae749"
         }
     ]
 }
