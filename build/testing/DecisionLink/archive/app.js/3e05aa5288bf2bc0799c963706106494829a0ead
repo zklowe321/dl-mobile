@@ -1,4 +1,4 @@
-function _12a9bf77ebfdb96998c46ecbc59a9779c25c9d76(){};//@tag foundation,core
+function _3e05aa5288bf2bc0799c963706106494829a0ead(){};//@tag foundation,core
 //@define Ext
 
 /**
@@ -75467,12 +75467,8 @@ Ext.define('DecisionLink.controller.Navigation', {
 
         me.saveOpportunity(company_id, user_id, name, wacc, oppty_revenue, solutions, function(store) {
             me.getHiddenList().setStore(store);
-
-            me.getCompanyScenarios(user_id, company_id, function(store) {
-                me.getCompanyScenariosList().setStore(store);
-
-            });
         });
+
     },
 
     onChangeRevenueCheck: function(checkboxfield, e, eOpts) {
@@ -76316,6 +76312,21 @@ Ext.define('DecisionLink.controller.Renames', {
             text: 'New',
             align: 'right',
             itemId: 'newVPButton'
+        });
+
+        var details,
+            id,
+            me = this;
+
+        Ext.Viewport.setMasked({message: 'Loading...'});
+
+        user_id = DecisionLink.app.getUserId();
+        company_id = DecisionLink.app.getCurrentCompanyId();
+
+        me.getCompanyScenarios(user_id, company_id, function(store) {
+            me.getCompanyScenariosList().setStore(store);
+
+            Ext.Viewport.setMasked(false);
         });
     },
 

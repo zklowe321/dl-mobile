@@ -1,4 +1,4 @@
-function _12a9bf77ebfdb96998c46ecbc59a9779c25c9d76(){};//@tag foundation,core
+function _ffe8499641ce99c09f74d2549ec469935c591280(){};//@tag foundation,core
 //@define Ext
 
 /**
@@ -75467,12 +75467,8 @@ Ext.define('DecisionLink.controller.Navigation', {
 
         me.saveOpportunity(company_id, user_id, name, wacc, oppty_revenue, solutions, function(store) {
             me.getHiddenList().setStore(store);
-
-            me.getCompanyScenarios(user_id, company_id, function(store) {
-                me.getCompanyScenariosList().setStore(store);
-
-            });
         });
+
     },
 
     onChangeRevenueCheck: function(checkboxfield, e, eOpts) {
@@ -76194,9 +76190,6 @@ Ext.define('DecisionLink.controller.Renames', {
             "companyscenariospanel": {
                 activate: 'onCompanyScenariosPanelActivate',
                 deactivate: 'onCompanyScenariosPanelDeactivate'
-            },
-            "panel": {
-                activate: 'onVPPanelActivate'
             }
         }
     },
@@ -76322,10 +76315,6 @@ Ext.define('DecisionLink.controller.Renames', {
     onCompanyScenariosPanelDeactivate: function(oldActiveItem, container, newActiveItem, eOpts) {
         var navBar = this.getNavBar();
         navBar.rightBox.query('button')[0].destroy();
-    },
-
-    onVPPanelActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
-
     }
 
 });
@@ -77268,6 +77257,8 @@ Ext.define('DecisionLink.store.SuccessStore', {
 
     onJsonpstoreLoad: function(store, records, successful, operation, eOpts) {
         var success;
+
+        console.log(store.data.items[0]);
 
         success = store.data.items[0].data.success;
 

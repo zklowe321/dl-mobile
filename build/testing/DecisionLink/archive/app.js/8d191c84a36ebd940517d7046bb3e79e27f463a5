@@ -1,4 +1,4 @@
-function _12a9bf77ebfdb96998c46ecbc59a9779c25c9d76(){};//@tag foundation,core
+function _8d191c84a36ebd940517d7046bb3e79e27f463a5(){};//@tag foundation,core
 //@define Ext
 
 /**
@@ -75467,11 +75467,16 @@ Ext.define('DecisionLink.controller.Navigation', {
 
         me.saveOpportunity(company_id, user_id, name, wacc, oppty_revenue, solutions, function(store) {
             me.getHiddenList().setStore(store);
+        });
 
-            me.getCompanyScenarios(user_id, company_id, function(store) {
-                me.getCompanyScenariosList().setStore(store);
+        var details,
+            id;
 
-            });
+        user_id = DecisionLink.app.getUserId();
+        company_id = DecisionLink.app.getCurrentCompanyId();
+
+        me.getCompanyScenarios(user_id, company_id, function(store) {
+            me.getCompanyScenariosList().setStore(store);
         });
     },
 

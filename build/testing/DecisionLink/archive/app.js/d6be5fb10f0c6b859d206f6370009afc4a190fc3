@@ -1,4 +1,4 @@
-function _12a9bf77ebfdb96998c46ecbc59a9779c25c9d76(){};//@tag foundation,core
+function _d6be5fb10f0c6b859d206f6370009afc4a190fc3(){};//@tag foundation,core
 //@define Ext
 
 /**
@@ -75467,12 +75467,8 @@ Ext.define('DecisionLink.controller.Navigation', {
 
         me.saveOpportunity(company_id, user_id, name, wacc, oppty_revenue, solutions, function(store) {
             me.getHiddenList().setStore(store);
-
-            me.getCompanyScenarios(user_id, company_id, function(store) {
-                me.getCompanyScenariosList().setStore(store);
-
-            });
         });
+
     },
 
     onChangeRevenueCheck: function(checkboxfield, e, eOpts) {
@@ -76317,6 +76313,10 @@ Ext.define('DecisionLink.controller.Renames', {
             align: 'right',
             itemId: 'newVPButton'
         });
+
+        var store = Ext.data.StoreManager.lookup('CompanyScenariosStore');
+
+        store.reload();
     },
 
     onCompanyScenariosPanelDeactivate: function(oldActiveItem, container, newActiveItem, eOpts) {

@@ -1525,8 +1525,12 @@ Ext.define('DecisionLink.controller.Navigation', {
 
         me.saveOpportunity(company_id, user_id, name, wacc, oppty_revenue, solutions, function(store) {
             me.getHiddenList().setStore(store);
-        });
 
+            me.getCompanyScenarios(user_id, company_id, function(store) {
+                me.getCompanyScenariosList().setStore(store);
+
+            });
+        });
     },
 
     onChangeRevenueCheck: function(checkboxfield, e, eOpts) {
