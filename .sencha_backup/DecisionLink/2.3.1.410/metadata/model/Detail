@@ -1,0 +1,79 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Detail"
+    },
+    "designerId": "499bbb68-50fa-4f29-a6cb-bb27af41d5ab",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "name": "field39",
+            "designerId": "a19bdee3-445c-421b-8e2d-adec5fdb65ca"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ticker"
+            },
+            "name": "field40",
+            "designerId": "f5557dda-26e6-4d62-99ea-1ff96297e2c0"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "revenue"
+            },
+            "name": "field41",
+            "designerId": "f3564a96-d99f-43cb-85e5-95a8272aec0d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "url"
+            },
+            "name": "field42",
+            "designerId": "9b19ae8b-1597-47c3-b08a-08a96383e3ee"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "duns"
+            },
+            "name": "field43",
+            "designerId": "25fa1fe3-e41f-47b0-bfd0-c84f266a4e6e"
+        }
+    ]
+}

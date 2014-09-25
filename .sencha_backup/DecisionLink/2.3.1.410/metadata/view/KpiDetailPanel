@@ -1,0 +1,95 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "kpidetailpanel",
+        "designer|userClassName": "KpiDetailPanel",
+        "layout": "vbox"
+    },
+    "designerId": "8a05f939-796b-487c-bffd-6b2191cff32c",
+    "cn": [
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "kpiNameField",
+                "label": "KPI",
+                "labelWidth": "40%"
+            },
+            "name": "MyTextField27",
+            "designerId": "d05a5f87-c052-4c4a-8e8e-9b729d199c0e"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "kpiTotalField",
+                "label": "KPI Total",
+                "labelWidth": "40%"
+            },
+            "name": "MyTextField28",
+            "designerId": "4dacebca-2259-46a2-aa6c-86cdc8445744"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": null,
+                "itemId": "kpiDetailListContainer",
+                "layout": "fit",
+                "layout|flex": 1
+            },
+            "name": "MyContainer10",
+            "designerId": "a815583e-4472-4c27-9b05-5dfeb78701e7",
+            "cn": [
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "kpiDetailList"
+                    },
+                    "name": "MyList22",
+                    "designerId": "b0510145-f617-421c-b692-62470def7d5c",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=“info” width=“40” height=“40”/>{name}"
+                                ]
+                            },
+                            "name": "tpl23",
+                            "designerId": "2405b861-cb38-44c5-817b-d3737cbb3236"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

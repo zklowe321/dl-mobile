@@ -1,0 +1,53 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ClosestPeers"
+    },
+    "designerId": "17b2ceb4-7437-4a54-9574-6d7d9f654e27",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "field143",
+            "designerId": "a2b720a6-7747-46de-83f8-a3faa10d808c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "name": "field144",
+            "designerId": "59f49963-6102-4ff7-a565-6d2144710ea1"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "revenue"
+            },
+            "name": "field145",
+            "designerId": "70be515b-2dc0-4347-b385-1985d1af69d4"
+        }
+    ]
+}

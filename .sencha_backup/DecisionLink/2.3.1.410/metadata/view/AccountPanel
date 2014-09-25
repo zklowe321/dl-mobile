@@ -1,0 +1,178 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "accountpanel",
+        "designer|userClassName": "AccountPanel"
+    },
+    "name": "MyPanel13",
+    "designerId": "86a84eac-5dba-4c15-85ad-a3b3ce0e6e02",
+    "cn": [
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": null,
+                "itemId": "accountNameField",
+                "label": "Account",
+                "labelWidth": "40%",
+                "readOnly": true
+            },
+            "name": "MyTextField40",
+            "designerId": "5dc1c7da-1233-4095-a804-b6ef85fc00eb"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "name": "MySpacer36",
+            "designerId": "c7e4f714-bda6-4aba-85b5-30f325959c1a"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": null,
+                "itemId": "usernameField",
+                "label": "Username",
+                "labelWidth": "40%",
+                "readOnly": true
+            },
+            "name": "MyTextField41",
+            "designerId": "de7f4d07-114e-42bd-bc98-55f6e616ebb0"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "name": "MySpacer37",
+            "designerId": "9f1166f9-14e1-4bd3-b90b-c008f696c703"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "emailField",
+                "label": "Email",
+                "labelWidth": "40%",
+                "readOnly": true
+            },
+            "name": "MyTextField42",
+            "designerId": "c3f53445-dc9b-4cae-b7a8-f3386132b250"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 15
+            },
+            "name": "MySpacer38",
+            "designerId": "dbb3f8ca-e7c2-4bc7-ae14-4277d25f7bf2"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "changePasswordButton",
+                "margin": 10,
+                "text": "Change Password"
+            },
+            "name": "MyButton14",
+            "designerId": "c8f28cb3-dbc3-4b31-a0ce-c5dd4a8b07fa"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 15
+            },
+            "name": "MySpacer39",
+            "designerId": "a7c11360-101a-411b-b7a8-3a319749e882"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "changeCurrencyButton",
+                "margin": 10,
+                "padding": null,
+                "text": "Change Currency Preference"
+            },
+            "name": "MyButton15",
+            "designerId": "9d71bb19-5e29-4378-8d29-9e069dce029d"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 15
+            },
+            "name": "MySpacer40",
+            "designerId": "cf9f133a-015f-4104-83ee-636743403cab"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "itemId": "logoutButton",
+                "margin": 10,
+                "text": "Logout"
+            },
+            "name": "MyButton16",
+            "designerId": "ef1268fc-e09f-449a-89f6-dcdc09c9b8aa"
+        }
+    ]
+}

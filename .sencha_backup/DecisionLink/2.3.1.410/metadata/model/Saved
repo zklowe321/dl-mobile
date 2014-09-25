@@ -1,0 +1,105 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Saved"
+    },
+    "designerId": "6b905d62-bf5c-4793-be66-c9c0f3eceb45",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "name": "field26",
+            "designerId": "589edd3b-e702-4c3f-9b79-8ad00f8a414f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ticker"
+            },
+            "name": "field27",
+            "designerId": "ffdd96db-904a-4042-badb-17c07f3ac72d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "revenue"
+            },
+            "name": "field28",
+            "designerId": "c7024583-dfa8-4f40-a8ff-e23e6f5b2f4c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "field29",
+            "designerId": "a9c36034-40b2-48a5-890c-1858acd55c9d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "opportunity"
+            },
+            "name": "field30",
+            "designerId": "20f73788-6227-4041-b69b-5f778fdd5240"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "percent_complete"
+            },
+            "name": "field31",
+            "designerId": "fa5de20f-0141-4c20-850f-92ed51320fd9"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "industry_id"
+            },
+            "name": "field32",
+            "designerId": "0056a2b6-9e5f-4b33-a435-797ec6dc0645"
+        }
+    ]
+}

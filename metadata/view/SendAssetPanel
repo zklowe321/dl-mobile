@@ -39,9 +39,6 @@
                 "margin": 10,
                 "options": [
                     "[{",
-                    "    'name': 'Download',",
-                    "    'value': 1",
-                    "},{",
                     "    'name': 'Email to me',",
                     "    'value': 2",
                     "},{",
@@ -149,6 +146,39 @@
                     },
                     "name": "MyButton22",
                     "designerId": "6ef14e62-8a2c-47f4-bbcc-dc90ea6c2245"
+                }
+            ]
+        },
+        {
+            "type": "Ext.dataview.List",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "itemId": "emailList",
+                "store": null
+            },
+            "name": "MyList",
+            "designerId": "e53499f1-128e-4a90-8045-4f59abf6e295",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div>List Item {string}</div>"
+                        ]
+                    },
+                    "name": "itemTpl",
+                    "designerId": "cffc3732-eac0-4d7b-9827-3d56ebc66778"
                 }
             ]
         }

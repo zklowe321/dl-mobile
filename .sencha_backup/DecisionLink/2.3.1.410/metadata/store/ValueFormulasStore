@@ -1,0 +1,42 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ValueFormulasStore",
+        "model": "ValueFormulas",
+        "storeId": "ValueFormulasStore"
+    },
+    "designerId": "affacf24-eab9-43e8-a118-833ad08597f9",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyJsonPProxy12",
+            "designerId": "eb9d0991-7a45-405c-b9ea-839bf4103bef",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "metrics",
+                        "totalProperty": "totalRecs"
+                    },
+                    "name": "MyJsonReader12",
+                    "designerId": "f6a2bc10-3298-46ca-9aa4-cf7875690cf3"
+                }
+            ]
+        }
+    ]
+}

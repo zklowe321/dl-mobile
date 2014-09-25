@@ -1,0 +1,48 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "companyscenariospanel",
+        "designer|userClassName": "CompanyScenariosPanel",
+        "layout": "fit"
+    },
+    "designerId": "ded50905-61d2-4f9e-ac49-daeb990e91b1",
+    "cn": [
+        {
+            "type": "Ext.dataview.List",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "companyScenariosList",
+                "store": "CompanyScenariosStore"
+            },
+            "name": "MyList7",
+            "designerId": "a8dac054-f345-44b2-8aa0-69860ef738fc",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div class=“info” width=“40” height=“40”/>Name: {name}<br/><small>First Year Benefits: ${yr1_benefit_sum}</small>"
+                        ]
+                    },
+                    "name": "tpl7",
+                    "designerId": "d998326c-2d08-4860-9e87-15301e795962"
+                }
+            ]
+        }
+    ]
+}

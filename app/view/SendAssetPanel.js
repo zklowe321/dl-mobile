@@ -20,9 +20,10 @@ Ext.define('DecisionLink.view.SendAssetPanel', {
     requires: [
         'Ext.field.Select',
         'Ext.Label',
-        'Ext.Container',
         'Ext.Button',
-        'Ext.Spacer'
+        'Ext.Spacer',
+        'Ext.dataview.List',
+        'Ext.XTemplate'
     ],
 
     config: {
@@ -41,10 +42,6 @@ Ext.define('DecisionLink.view.SendAssetPanel', {
                 readOnly: false,
                 displayField: 'name',
                 options: [
-                    {
-                        name: 'Download',
-                        value: 1
-                    },
                     {
                         name: 'Email to me',
                         value: 2
@@ -98,6 +95,14 @@ Ext.define('DecisionLink.view.SendAssetPanel', {
                         margin: 5,
                         text: 'Cancel'
                     }
+                ]
+            },
+            {
+                xtype: 'list',
+                hidden: true,
+                itemId: 'emailList',
+                itemTpl: [
+                    '<div>List Item {string}</div>'
                 ]
             }
         ]

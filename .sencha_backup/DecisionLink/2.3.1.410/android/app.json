@@ -1,0 +1,1 @@
+{"id":"8aeb9a85-6642-4fc0-8bdd-40c079703c77","js":[{"path":"cordova.js","remote":true},{"path":"app.js","update":"delta","version":"7660aa1664a332ad60fd25c01df62d927f56b7e7"}],"css":[{"path":"resources/css/sencha-touch.css","update":"delta","theme":"Default","version":"4201924e2f822b3a1157cda4d02b7ca3dc01b23b","platform":["phone","tablet","desktop"]}]}

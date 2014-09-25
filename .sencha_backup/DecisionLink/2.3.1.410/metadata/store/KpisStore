@@ -1,0 +1,66 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "KpisStore",
+        "model": "Kpis",
+        "storeId": "KpisStore"
+    },
+    "designerId": "0a87eaf7-5805-4116-b64a-18cd8e7a6eb8",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyJsonPProxy21",
+            "designerId": "8432319b-12e8-4b2f-90d1-f2d20cfb2543",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader21",
+                    "designerId": "22822ebf-6d53-42ac-a659-6d437270dca1"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonpstoreLoad",
+                "implHandler": [
+                    "var count = store.data.items.length,",
+                    "    i;",
+                    "",
+                    "for(i = 0; i < count; i++) {",
+                    "    var temp = store.data.items[i].data.sqq_value;",
+                    "    temp = DecisionLink.app.formatCurrency(temp);",
+                    "",
+                    "    store.data.items[i].data.sqq_value = temp;",
+                    "}",
+                    "",
+                    "kpis = Ext.ComponentQuery.query('competitivecarousel #kpiListPanel #kpisList')[0];",
+                    "kpis.refresh();"
+                ],
+                "name": "load"
+            },
+            "name": "onJsonpstoreLoad",
+            "designerId": "449f9012-95d7-4c46-828d-ff0d3ad5f8c1"
+        }
+    ]
+}

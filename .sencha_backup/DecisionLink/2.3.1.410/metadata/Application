@@ -1,0 +1,670 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "accountName": " ",
+        "account_id": "-1",
+        "controllers": [
+            "Navigation",
+            "Renames"
+        ],
+        "currentCompany": " ",
+        "currentCompanyId": "-1",
+        "currentOpptyId": "-1",
+        "currentRevenue": "-1",
+        "email": " ",
+        "id": "-1",
+        "industry_id": "-1",
+        "models": [
+            "Search",
+            "Detail",
+            "Validate",
+            "AccountScenarios",
+            "CompanyScenarios",
+            "OpportunityOverview",
+            "SalesQuestions",
+            "Saved",
+            "ValueFormulas",
+            "OpportunityCosts",
+            "Assets",
+            "DNBOverview",
+            "Divisions",
+            "Competitors",
+            "Employees",
+            "Kpis",
+            "Ratios",
+            "ClosestPeers",
+            "CompRatios",
+            "Success",
+            "SecondarySQQ",
+            "Scenario",
+            "ScenarioCompetitors",
+            "ScenarioAreas",
+            "ScenarioIndustries",
+            "ScenarioBaselines",
+            "Currencies",
+            "Solutions"
+        ],
+        "name": "DecisionLink",
+        "pagesFromHome": "0",
+        "stores": [
+            "SearchStore",
+            "DetailStore",
+            "ValidateStore",
+            "SavedStore",
+            "AccountScenariosStore",
+            "CompanyScenariosStore",
+            "OpportunityOverviewStore",
+            "SalesQuestionsStore",
+            "ValueFormulasStore",
+            "OpportunityCostsStore",
+            "AssetsStore",
+            "DNBOverviewStore",
+            "DivisionsStore",
+            "CompetitorsStore",
+            "EmployeesStore",
+            "KpisStore",
+            "RatiosStore",
+            "ClosestPeersStore",
+            "CompRatiosStore",
+            "SuccessStore",
+            "SecondarySQQStore",
+            "ScenarioStore",
+            "ScenarioCompetitorsStore",
+            "ScenarioAreasStore",
+            "ScenarioIndustriesStore",
+            "ScenarioBaselinesStore",
+            "CurrenciesStore",
+            "SolutionsStore"
+        ],
+        "success": false,
+        "userName": " ",
+        "views": [
+            "MainView",
+            "HomePanel",
+            "NavMenu",
+            "SearchPanel",
+            "DetailPanel",
+            "LoginPanel",
+            "AccountScenariosPanel",
+            "CompanyScenariosPanel",
+            "CompanyViewPanel",
+            "OpportunityCarousel",
+            "SalesQuestionDetailPanel",
+            "ValueFormulaDetailPanel",
+            "OpportunityCostDetailPanel",
+            "AssetDetailPanel",
+            "DNBCarousel",
+            "CompetitiveCarousel",
+            "KpiDetailPanel",
+            "PeerPerformanceDetailPanel",
+            "SecondarySQQDetailPanel",
+            "SupportPanel",
+            "AccountPanel",
+            "ChangePasswordPanel",
+            "ChangeCurrencyPanel",
+            "NewVPPanel",
+            "checkboxitem"
+        ]
+    },
+    "name": "Application",
+    "configAlternates": {
+        "validated": "boolean",
+        "user_id": "number",
+        "success": "boolean",
+        "isDouble": "boolean"
+    },
+    "designerId": "application",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "success",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "id",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "account_id",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "currentCompanyId",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "currentOpptyId",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "industry_id",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "currentRevenue",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "accountName",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "userName",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "email",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "pagesFromHome",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "currentCompany",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getUserId",
+                "implHandler": [
+                    "return this.id;"
+                ]
+            },
+            "name": "getUserId",
+            "designerId": "476b15a7-3cf1-43c0-98af-80f94aacb0e7"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "id"
+                ],
+                "fn": "setUserId",
+                "implHandler": [
+                    "this.id = id;"
+                ]
+            },
+            "name": "setUserId",
+            "designerId": "6bd5afc6-ba7e-4fb6-9fff-5ce2315e6321"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "isValidated",
+                "implHandler": [
+                    "return this.success;"
+                ]
+            },
+            "name": "isValidated",
+            "designerId": "375dc14d-14eb-41dc-a77a-519b5dc19699"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "success"
+                ],
+                "fn": "setValidated",
+                "implHandler": [
+                    "this.success = success;"
+                ]
+            },
+            "name": "setValidated",
+            "designerId": "91350c92-add1-4c70-95f8-f63ee27e16b7"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getAccountId",
+                "implHandler": [
+                    "return this.account_id;"
+                ]
+            },
+            "name": "getAccountId",
+            "designerId": "e23e01b0-f8a8-419d-828b-db6aa14485bf"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "account_id"
+                ],
+                "fn": "setAccountId",
+                "implHandler": [
+                    "this.account_id = account_id;"
+                ]
+            },
+            "name": "setAccountId",
+            "designerId": "007a2113-a7f0-4f8f-adee-0e82e2b37a14"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getCurrentCompanyId",
+                "implHandler": [
+                    "return this.currentCompanyId;"
+                ]
+            },
+            "name": "getCurrentCompanyId",
+            "designerId": "4275882e-2ee3-4b3c-9e5c-800a30bbd246"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "id"
+                ],
+                "fn": "setCurrentCompanyId",
+                "implHandler": [
+                    "this.currentCompanyId = id;"
+                ]
+            },
+            "name": "setCurrentCompanyId",
+            "designerId": "9efe09cf-995a-4b26-89c4-ec37707be5a4"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getCurrentOpptyId",
+                "implHandler": [
+                    "return this.currentOpptyId;"
+                ]
+            },
+            "name": "getCurrentOpptyId",
+            "designerId": "f5c283c6-ba49-4b89-8171-dc76d8f758a3"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "oppty_id"
+                ],
+                "fn": "setCurrentOpptyId",
+                "implHandler": [
+                    "this.currentOpptyId = oppty_id;"
+                ]
+            },
+            "name": "setCurrentOpptyId",
+            "designerId": "d6ac010e-384b-4699-87ba-66fa30db5d05"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getCurrentIndustryId",
+                "implHandler": [
+                    "return this.currentIndustryId;"
+                ]
+            },
+            "name": "getCurrentIndustryId",
+            "designerId": "099dbb0a-8e8f-4543-956c-edf9ffcbec2a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "industry_id"
+                ],
+                "fn": "setCurrentIndustryId",
+                "implHandler": [
+                    "this.currentIndustryId = industry_id;"
+                ]
+            },
+            "name": "setCurrentIndustryId",
+            "designerId": "74a8ba2c-3529-48e3-90bf-bb4f0d7ab089"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getCurrentRevenue",
+                "implHandler": [
+                    "return this.currentRevenue;"
+                ]
+            },
+            "name": "getCurrentRevenue",
+            "designerId": "c4cd62e8-1e43-4287-8318-2da6bfba48c3"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "revenue"
+                ],
+                "fn": "setCurrentRevenue",
+                "implHandler": [
+                    "this.currentRevenue = revenue;"
+                ]
+            },
+            "name": "setCurrentRevenue",
+            "designerId": "17767637-c5f0-4684-8412-36032700351b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getUserName",
+                "implHandler": [
+                    "return this.userName;"
+                ]
+            },
+            "name": "getUserName",
+            "designerId": "c6902743-b610-423d-9427-b46b24d05c23"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "userName"
+                ],
+                "fn": "setUserName",
+                "implHandler": [
+                    "this.userName = userName;"
+                ]
+            },
+            "name": "setUserName",
+            "designerId": "7ae2796b-366e-446c-8450-b9a654f61607"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getAccountName",
+                "implHandler": [
+                    "return this.accountName;"
+                ]
+            },
+            "name": "getAccountName",
+            "designerId": "b6f0174f-fff6-4ba7-a2ea-5889a792f262"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "accountName"
+                ],
+                "fn": "setAccountName",
+                "implHandler": [
+                    "this.accountName = accountName;"
+                ]
+            },
+            "name": "setAccountName",
+            "designerId": "1a1bca7e-bc34-4ecf-9436-a81f0edf06e3"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getEmail",
+                "implHandler": [
+                    "return this.email;"
+                ]
+            },
+            "name": "getEmail",
+            "designerId": "caddc32e-5c08-4c20-9524-22cfc16e5bb8"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "email"
+                ],
+                "fn": "setEmail",
+                "implHandler": [
+                    "this.email = email;"
+                ]
+            },
+            "name": "setEmail",
+            "designerId": "aa8fe966-e302-4046-b694-fddc9fda0da7"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getPagesFromHome",
+                "implHandler": [
+                    "return this.pagesFromHome;"
+                ]
+            },
+            "name": "getPagesFromHome",
+            "designerId": "caa3f627-bfb6-4476-b6d5-960cfc3c7dd3"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "pagesFromHome"
+                ],
+                "fn": "setPagesFromHome",
+                "implHandler": [
+                    "this.pagesFromHome = pagesFromHome;"
+                ]
+            },
+            "name": "setPagesFromHome",
+            "designerId": "a036b1f3-baba-4871-a970-d50d65054f93"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "incrementPagesFromHome",
+                "implHandler": [
+                    "this.pagesFromHome++;"
+                ]
+            },
+            "name": "incrementPagesFromHome",
+            "designerId": "09abe187-7742-438b-be7a-76a173b05ece"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "decrementPagesFromHome",
+                "implHandler": [
+                    "this.pagesFromHome--;"
+                ]
+            },
+            "name": "decrementPagesFromHome",
+            "designerId": "1d7ec0df-e8a9-444a-a91b-7fe3cd5aa6a8"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "num"
+                ],
+                "fn": "formatCurrency",
+                "implHandler": [
+                    "num = num.toString().replace(/\\$|\\,/g, '');",
+                    "if (isNaN(num)) {",
+                    "    num = \"0\";",
+                    "}",
+                    "sign = (num == (num = Math.abs(num)));",
+                    "",
+                    "num = Math.floor(num * 100 + 0.50000000001);",
+                    "num = Math.floor(num / 100).toString();",
+                    "",
+                    "for (var i = 0; i < Math.floor((num.length - (1 + i)) / 3); i++) {",
+                    "    num = num.substring(0, num.length - (4 * i + 3)) + ',' + num.substring(num.length - (4 * i + 3));",
+                    "}",
+                    "",
+                    "return ( ((sign) ? '' : '-') + num );"
+                ]
+            },
+            "name": "formatCurrency",
+            "designerId": "ab3bb3ae-59ec-48e7-b1e0-5a05f4e857fa"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getCurrentCompany",
+                "implHandler": [
+                    "return this.currentCompany;"
+                ]
+            },
+            "name": "getCurrentCompany",
+            "designerId": "46981968-1ee7-468c-b70b-f430be99be6d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "company"
+                ],
+                "fn": "setCurrentCompany",
+                "implHandler": [
+                    "this.currentCompany = company;"
+                ]
+            },
+            "name": "setCurrentCompany",
+            "designerId": "0508e855-a2b9-44f9-9245-ce7ada9ae749"
+        }
+    ]
+}

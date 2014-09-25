@@ -1,0 +1,307 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "newvppanel",
+        "designer|userClassName": "NewVPPanel",
+        "scrollable": "vertical"
+    },
+    "name": "MyPanel13",
+    "designerId": "6c65a660-1ccb-49f4-a6fe-56fc0b7234e5",
+    "cn": [
+        {
+            "type": "Ext.field.Checkbox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "accountRevenueCheckbox",
+                "label": "Change the Account Revenue",
+                "labelWidth": "75%",
+                "labelWrap": true
+            },
+            "name": "MyCheckbox4",
+            "designerId": "de7f5cdd-2e8f-42db-b67c-227d556cc0f2"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 15
+            },
+            "name": "MySpacer42",
+            "designerId": "ddd62b00-2a0e-4382-94ed-abbbf94f6371"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "itemId": "detailContainer",
+                "layout": "fit",
+                "margin": 10
+            },
+            "name": "MyContainer1",
+            "designerId": "8d771ab2-1c42-43e7-9de2-1ec001ab8ed7",
+            "cn": [
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "companyNameField",
+                        "label": "Company Name",
+                        "labelWidth": "40%",
+                        "labelWrap": true,
+                        "readOnly": true
+                    },
+                    "name": "MyTextField",
+                    "designerId": "a5c8dcd7-ac3f-4d69-aa06-571f04c3df19"
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 10
+                    },
+                    "name": "MySpacer43",
+                    "designerId": "fc19e690-1d42-4023-a24b-96895c2fba6b"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "totalRevenueField",
+                        "label": "Total Company Revenue",
+                        "labelWidth": "40%",
+                        "labelWrap": true,
+                        "readOnly": true
+                    },
+                    "name": "MyTextField1",
+                    "designerId": "e48b1a0a-3104-422a-979b-192c6e4dbe6f"
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 10
+                    },
+                    "name": "MySpacer44",
+                    "designerId": "33ee9446-446d-43cf-b614-fe91cb5db7d4"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "companyRevenueField",
+                        "label": "Company Revenue (M)",
+                        "labelWidth": "40%",
+                        "labelWrap": true
+                    },
+                    "name": "MyTextField2",
+                    "designerId": "b0d01d11-3abc-4c09-b3d2-244fd08de59d"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 15
+            },
+            "name": "MySpacer45",
+            "designerId": "e5430c48-3ec7-45cd-aebd-4be164ad7aa7"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "newInfoContainer",
+                "layout": "fit"
+            },
+            "name": "MyContainer2",
+            "designerId": "bd428b29-e890-472a-bb03-67da65670f32",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "nameContainer"
+                    },
+                    "name": "MyContainer4",
+                    "designerId": "65e96f8d-bbfd-45a5-b80c-1f089480802a",
+                    "cn": [
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "nameField",
+                                "label": "Name",
+                                "labelWidth": "40%"
+                            },
+                            "name": "MyTextField3",
+                            "designerId": "91674cfa-5c2a-4e15-af97-36350cdf18c2"
+                        },
+                        {
+                            "type": "Ext.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 10
+                            },
+                            "name": "MySpacer46",
+                            "designerId": "0903cdff-52af-4159-80e1-588e2928ac92"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "solutionsListContainer",
+                        "layout": "fit",
+                        "margin": 10
+                    },
+                    "name": "MyContainer11",
+                    "designerId": "73f307df-2afe-4beb-81c4-c1e8214bcf57",
+                    "cn": [
+                        {
+                            "type": "Ext.dataview.DataView",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "defaultType": "checkboxitem",
+                                "height": 160,
+                                "itemId": "solutionsList",
+                                "store": "SolutionsStore",
+                                "useComponents": true
+                            },
+                            "name": "MyDataView1",
+                            "designerId": "77dd587e-e8da-4f7b-b422-4a904735382f",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            ""
+                                        ]
+                                    },
+                                    "name": "itemTpl",
+                                    "designerId": "0aec6a35-9e40-4e3e-b73c-9ff81a30f420"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "saveVPButtonContainer"
+                    },
+                    "name": "MyContainer12",
+                    "designerId": "d911ed16-b510-48f9-93dc-7457ab82df1d",
+                    "cn": [
+                        {
+                            "type": "Ext.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 15
+                            },
+                            "name": "MySpacer47",
+                            "designerId": "ae3111eb-269f-42f9-85a6-182a7041fbb5"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "saveVPButton",
+                                "margin": 10,
+                                "text": "Save Value Proposition"
+                            },
+                            "name": "MyButton21",
+                            "designerId": "5d9c5498-8b13-4ed3-a2e4-c1be5cbcc480"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

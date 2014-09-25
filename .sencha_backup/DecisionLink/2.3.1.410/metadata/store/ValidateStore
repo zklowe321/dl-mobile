@@ -1,0 +1,82 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ValidateStore",
+        "model": "Validate",
+        "storeId": "ValidateStore"
+    },
+    "designerId": "968374ad-4cc3-43bb-b604-9d6523b60676",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyJsonPProxy",
+            "designerId": "277a0b69-ccc8-4385-b3dd-62a6118a4dc9",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "idProperty": null,
+                        "rootProperty": "results"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "d3835393-a0a0-4f50-a18e-25edbcc2d674"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonpstoreLoad",
+                "implHandler": [
+                    "var success,",
+                    "    id,",
+                    "    account_id,",
+                    "    user_name,",
+                    "    account_name;",
+                    "",
+                    "success = store.data.items[0].data.success;",
+                    "id = store.data.items[0].data.id;",
+                    "account_id = store.data.items[0].data.account_id;",
+                    "user_name = store.data.items[0].data.user_name;",
+                    "account_name = store.data.items[0].data.account_name;",
+                    "email = store.data.items[0].data.email;",
+                    "",
+                    "",
+                    "DecisionLink.app.setUserId(id);",
+                    "DecisionLink.app.setValidated(success);",
+                    "DecisionLink.app.setAccountId(account_id);",
+                    "DecisionLink.app.setUserName(user_name);",
+                    "DecisionLink.app.setAccountName(account_name);",
+                    "DecisionLink.app.setEmail(email);",
+                    "",
+                    "if (!success) {",
+                    "    alert(\"Login unsuccessful\");",
+                    "}"
+                ],
+                "name": "load"
+            },
+            "name": "onJsonpstoreLoad",
+            "designerId": "9f7e8f83-a9f3-49d4-af41-ae0f022cfa22"
+        }
+    ]
+}

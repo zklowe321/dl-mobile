@@ -1,0 +1,211 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "opportunitycostdetailpanel",
+        "designer|userClassName": "OpportunityCostDetailPanel"
+    },
+    "designerId": "9ae7e615-5359-4d7a-bd8a-3717add9d30a",
+    "cn": [
+        {
+            "type": "Ext.field.Select",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "costTypeSelectField",
+                "label": "Type",
+                "labelWidth": "40%",
+                "options": [
+                    "[{",
+                    "    text: 'Choose Type',",
+                    "    value: 0",
+                    "}, {",
+                    "    text: 'License',",
+                    "    value: 1",
+                    "}, {",
+                    "    text: 'Infrastructure',",
+                    "    value: 2",
+                    "}, {",
+                    "    text: 'Maintenance',",
+                    "    value: 3",
+                    "}, {",
+                    "    text: 'Labor',",
+                    "    value: 4",
+                    "}, {",
+                    "    text: 'Customer Labor',",
+                    "    value: 5",
+                    "}, {",
+                    "    text: 'Subscription',",
+                    "    value: 6",
+                    "}]"
+                ]
+            },
+            "name": "MySelectField7",
+            "designerId": "66283f0c-d84b-439d-8cc3-789fdadb2a9c"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "name": "MySpacer18",
+            "designerId": "34c7d297-1108-4257-b1e0-bcf5e73a24d9"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "costValueField",
+                "label": "Cost",
+                "labelWidth": "40%"
+            },
+            "name": "MyTextField25",
+            "designerId": "2fd613f5-9f2b-46e2-b072-989e0553e4ed"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "name": "MySpacer19",
+            "designerId": "c92397b1-118c-40e9-a124-bd6d4e565b0f"
+        },
+        {
+            "type": "Ext.field.Select",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "accrualTypeSelectField",
+                "label": "Accrual Type",
+                "labelWidth": "40%",
+                "options": [
+                    "[{",
+                    "    text: 'Choose Type',",
+                    "    value: 0",
+                    "}, {",
+                    "    text: 'One Time',",
+                    "    value: 1",
+                    "}, {",
+                    "    text: 'Annual',",
+                    "    value: 2",
+                    "}]"
+                ]
+            },
+            "name": "MySelectField8",
+            "designerId": "97e27e41-18a0-4665-bd92-90e5ceae9d63"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "saveCostButton",
+                "margin": 10,
+                "text": "Save Cost"
+            },
+            "name": "MyButton9",
+            "designerId": "c9980a05-2655-44c8-94c0-31c33a30ace2"
+        },
+        {
+            "type": "Ext.field.Hidden",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "costIdField",
+                "readOnly": false
+            },
+            "name": "MyHiddenField3",
+            "designerId": "fd304b98-8560-4de0-a49c-a51d53b41bfc"
+        },
+        {
+            "type": "Ext.ActionSheet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": null,
+                "hidden": true,
+                "itemId": "deleteCostActionSheet"
+            },
+            "name": "MyActionSheet",
+            "designerId": "d2787ca6-32ae-4815-b3ab-e073b0e7a3aa",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "decline",
+                        "itemId": "deleteCostButton",
+                        "text": "Delete Cost",
+                        "ui": "decline"
+                    },
+                    "name": "MyButton10",
+                    "designerId": "75c7a105-4c1a-46c3-9e60-148e33cfb291"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "cancelDeleteButton",
+                        "text": "Cancel"
+                    },
+                    "name": "MyButton11",
+                    "designerId": "760f0963-add1-4287-ba5a-2df13b69d814"
+                },
+                {
+                    "type": "Ext.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "costIdField"
+                    },
+                    "name": "MyHiddenField4",
+                    "designerId": "00940cd1-a691-4b2f-8473-0ea47f44f887"
+                }
+            ]
+        }
+    ]
+}

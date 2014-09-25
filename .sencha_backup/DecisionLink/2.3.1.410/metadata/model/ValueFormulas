@@ -1,0 +1,170 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ValueFormulas"
+    },
+    "designerId": "405420bf-3a86-43f3-85da-197f253b57c3",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "metric"
+            },
+            "name": "field75",
+            "designerId": "dc24660c-35df-4902-854b-35fa6dadcea3"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "sqq"
+            },
+            "name": "field76",
+            "designerId": "ca809dc9-8e7b-4b73-b35a-a0778f730624"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "sqq_value"
+            },
+            "name": "field77",
+            "designerId": "4da34b8e-6972-40e6-92af-9f9a4a9105d2"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "impact"
+            },
+            "name": "field78",
+            "designerId": "57422de3-b01f-43b3-a940-aa0955f8d6db"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "abbr"
+            },
+            "name": "field79",
+            "designerId": "458824e9-a05f-404a-b24a-13430133caed"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "source_type_id"
+            },
+            "name": "field80",
+            "designerId": "e5e9b61e-6029-4e75-bf6d-c4b570cda0c8"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "sqq2"
+            },
+            "name": "field81",
+            "designerId": "0c7f4c3a-5cf5-448b-9391-7b1f66d619ab"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "sqq2_value"
+            },
+            "name": "field82",
+            "designerId": "fd086640-a722-4883-8a4e-55c761db96d0"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "y1_raw"
+            },
+            "name": "field83",
+            "designerId": "6edf88ba-807e-4d80-9ba2-b77c28834494"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "alt_metric_id"
+            },
+            "name": "field84",
+            "designerId": "19130a8a-a5a9-4e30-b802-87b955f24009"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "metric_id"
+            },
+            "name": "field85",
+            "designerId": "433f98e6-5988-472b-83b5-46d41357eaaa"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "unit_type_id"
+            },
+            "name": "field86",
+            "designerId": "c1c09d3a-cb66-4f6b-82a0-2f72fbdf1768"
+        }
+    ]
+}

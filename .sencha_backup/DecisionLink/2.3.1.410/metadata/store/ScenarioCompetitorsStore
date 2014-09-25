@@ -1,0 +1,41 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ScenarioCompetitorsStore",
+        "model": "ScenarioCompetitors",
+        "storeId": "ScenarioCompetitorsStore"
+    },
+    "designerId": "8cc2cfba-f49b-49c1-b791-df33f8b22dc6",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyJsonPProxy7",
+            "designerId": "000bfd3b-9381-4d22-85f2-0368e094aed5",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "competitors"
+                    },
+                    "name": "MyJsonReader7",
+                    "designerId": "f2fd34f6-6031-4fab-b9cb-b76ad9d4f48c"
+                }
+            ]
+        }
+    ]
+}

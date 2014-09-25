@@ -1,0 +1,89 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "companyviewpanel",
+        "designer|userClassName": "CompanyViewPanel",
+        "layout": null
+    },
+    "designerId": "88ae18b9-401f-438b-b3f2-b70307e0f3ab",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "industry_id",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.field.Checkbox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "border": null,
+                "clearIcon": false,
+                "hidden": false,
+                "itemId": "companyInfoCheckBox",
+                "label": "Company Info",
+                "labelWidth": "100%",
+                "padding": null
+            },
+            "name": "MyCheckbox",
+            "designerId": "92468092-b629-4ac8-a684-f28357111bc3"
+        },
+        {
+            "type": "Ext.field.Checkbox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "valuePropCheckBox",
+                "label": "Value Propositions",
+                "labelWidth": "100%"
+            },
+            "name": "MyCheckbox1",
+            "designerId": "5475d559-dc7a-4bec-909f-f209f21a22a1"
+        },
+        {
+            "type": "Ext.field.Checkbox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "competitiveCheckBox",
+                "label": "Competitive Performance",
+                "labelWidth": "100%",
+                "labelWrap": true
+            },
+            "name": "MyCheckbox2",
+            "designerId": "31cf9aa9-4193-44cd-8f0e-62e29a49afc2"
+        },
+        {
+            "type": "Ext.field.Checkbox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "dnbInfoCheckBox",
+                "label": "D&B Additional Info",
+                "labelWidth": "100%",
+                "labelWrap": true
+            },
+            "name": "MyCheckbox3",
+            "designerId": "18731785-0b9b-4be2-8c8b-8b354a3efcf4"
+        }
+    ]
+}

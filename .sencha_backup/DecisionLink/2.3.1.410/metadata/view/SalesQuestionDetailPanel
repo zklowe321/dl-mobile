@@ -1,0 +1,178 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "salesquestiondetailpanel",
+        "designer|userClassName": "SalesQuestionDetailPanel",
+        "scrollable": "vertical"
+    },
+    "designerId": "5764e6d7-d1fa-4909-a1fe-752cd1f612e1",
+    "cn": [
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "salesQuestionField",
+                "label": "Sales Question",
+                "labelWidth": "40%",
+                "labelWrap": true,
+                "readOnly": true
+            },
+            "name": "MyTextField16",
+            "designerId": "3710fe22-5ce5-45af-98f6-6c942d66ffc1"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "name": "MySpacer11",
+            "designerId": "f699fae4-68e0-4df6-9500-7484948815d9"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "engineEstimateField",
+                "label": "Engine Estimate",
+                "labelWidth": "40%",
+                "labelWrap": true,
+                "readOnly": true
+            },
+            "name": "MyTextField17",
+            "designerId": "a1593e6a-dd7d-43be-b607-77fdadeebc77"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "name": "MySpacer12",
+            "designerId": "65091a53-9e33-4a69-80cc-cef18c6b004b"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "revisedAnswerField",
+                "label": "Revised Answer",
+                "labelWidth": "40%",
+                "labelWrap": true,
+                "readOnly": false
+            },
+            "name": "MyTextField18",
+            "designerId": "33b8c2a3-0ad5-491e-8dd5-a232793d3df6"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "name": "MySpacer13",
+            "designerId": "4ff71e85-5e19-43e5-bd19-9b04c7abe792"
+        },
+        {
+            "type": "Ext.field.Select",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "sourceSelectField",
+                "label": "Source",
+                "labelWidth": "40%",
+                "options": [
+                    "[{",
+                    "    text: 'Choose Source',",
+                    "    value: 0",
+                    "}, {",
+                    "    text: 'Customer',",
+                    "    value: 1",
+                    "}, {",
+                    "    text: 'Estimate',",
+                    "    value: 2",
+                    "}, {",
+                    "    text: 'Research',",
+                    "    value: 3",
+                    "}]"
+                ]
+            },
+            "name": "MySelectField5",
+            "designerId": "d5923637-a35b-41a7-9dc3-a3c68d809abf"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "name": "MySpacer14",
+            "designerId": "bf100062-4309-4f81-a413-00c021145803"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "saveSQQButton",
+                "margin": 10,
+                "text": "Save Sales Question"
+            },
+            "name": "MyButton7",
+            "designerId": "26fe82c0-b4d5-468d-bbb4-4d9186934a47"
+        },
+        {
+            "type": "Ext.field.Hidden",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "sqqIdField",
+                "readOnly": true
+            },
+            "name": "MyHiddenField",
+            "designerId": "e3e5685c-162c-4084-a1c3-c3d8c4430e99"
+        }
+    ]
+}

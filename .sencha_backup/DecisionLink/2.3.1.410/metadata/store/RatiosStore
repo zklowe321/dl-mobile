@@ -1,0 +1,38 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "RatiosStore",
+        "model": "Ratios",
+        "storeId": "RatiosStore"
+    },
+    "designerId": "ed744464-a6d0-4408-9ca3-5c24088c0546",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyJsonPProxy25",
+            "designerId": "1830dda2-9268-45d0-9a1b-491a149894f1",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader25",
+                    "designerId": "7ad85c14-ada1-45ec-8add-25a61343123c"
+                }
+            ]
+        }
+    ]
+}

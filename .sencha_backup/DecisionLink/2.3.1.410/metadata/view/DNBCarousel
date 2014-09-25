@@ -1,0 +1,213 @@
+{
+    "type": "Ext.carousel.Carousel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "dnbcarousel",
+        "designer|userClassName": "DNBCarousel"
+    },
+    "designerId": "1d352e6f-cad3-4bf7-a545-4e8bc89f4913",
+    "cn": [
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "overviewPanel",
+                "layout": "fit"
+            },
+            "name": "MyPanel6",
+            "designerId": "d387e515-e062-4030-a0a4-97065472a7d6",
+            "cn": [
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "dnbOverviewList",
+                        "store": "DNBOverviewStore"
+                    },
+                    "name": "MyList15",
+                    "designerId": "32142592-7f22-4aee-b334-8919a0394e46",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<ul>",
+                                    "    <li>Name: {name}</li>",
+                                    "    <br/>",
+                                    "    <li>Qualitative Overview (Real-Time from DnB):</li>",
+                                    "    <br/>",
+                                    "    <li>{synopsis}</li>",
+                                    "</ul>"
+                                ]
+                            },
+                            "name": "tpl16",
+                            "designerId": "5f0c68be-de81-4a1a-bad5-a5b2895415d6"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "divisionsPanel",
+                "layout": "fit"
+            },
+            "name": "MyPanel7",
+            "designerId": "6413c4a1-ea0d-4010-abfe-b10138ce7d89",
+            "cn": [
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "divisionsList",
+                        "store": "DivisionsStore"
+                    },
+                    "name": "MyList16",
+                    "designerId": "090bf08f-cb8b-47a3-a4c0-860705bbd10f",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=“info” width=“40” height=“40”/>Company: {name}<br/><small>{city}, {state}, {country}</small>"
+                                ]
+                            },
+                            "name": "tpl17",
+                            "designerId": "f8a2101f-52bb-4065-8304-1c15fea7601a"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "competitorsPanel",
+                "layout": "fit"
+            },
+            "name": "MyPanel8",
+            "designerId": "7dbb3d39-474c-4e6b-bcf1-ff50d6111805",
+            "cn": [
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "competitorsList",
+                        "store": "CompetitorsStore"
+                    },
+                    "name": "MyList17",
+                    "designerId": "766d7a41-1757-4950-a9bc-18cbbb818bf2",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=“info” width=“40” height=“40”/>Company: {name}<br/><small>{city}, {state}, {country}</small>"
+                                ]
+                            },
+                            "name": "tpl18",
+                            "designerId": "4b3f2e5a-f72a-406c-9d56-43154f692f3b"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "employeesPanel",
+                "layout": "fit"
+            },
+            "name": "MyPanel9",
+            "designerId": "13c0e131-7d1f-48bf-b368-e0627e1885cf",
+            "cn": [
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "employeesList",
+                        "store": "EmployeesStore"
+                    },
+                    "name": "MyList18",
+                    "designerId": "6bc79ca7-3d58-4f7c-9f12-995e44c4e7e6",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=“info” width=“40” height=“40”/>{fullName}<br/><small>{title}</small>"
+                                ]
+                            },
+                            "name": "tpl19",
+                            "designerId": "6e8ba7bc-5213-41e7-9ff3-617669361dd4"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

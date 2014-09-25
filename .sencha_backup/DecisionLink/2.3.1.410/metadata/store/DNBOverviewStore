@@ -1,0 +1,38 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DNBOverviewStore",
+        "model": "DNBOverview",
+        "storeId": "DNBOverviewStore"
+    },
+    "designerId": "351ee50b-39c0-4710-bfef-13684d971fc7",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyJsonPProxy17",
+            "designerId": "b2723071-a448-43dc-b61c-4e0c7b098823",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader17",
+                    "designerId": "36ddff39-dba9-44aa-85be-eabf64980b4b"
+                }
+            ]
+        }
+    ]
+}

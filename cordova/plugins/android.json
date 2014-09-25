@@ -9,7 +9,7 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" onload=\"true\" value=\"org.apache.cordova.statusbar.StatusBar\" /></feature>",
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.inappbrowser\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -18,8 +18,8 @@
         }
     },
     "installed_plugins": {
-        "org.apache.cordova.statusbar": {
-            "PACKAGE_NAME": "com.zachlowe.myapp"
+        "org.apache.cordova.inappbrowser": {
+            "PACKAGE_NAME": "com.domain.DecisionLink"
         }
     },
     "dependent_plugins": {}

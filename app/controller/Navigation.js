@@ -49,6 +49,7 @@ Ext.define('DecisionLink.controller.Navigation', {
             employeesList: 'dnbcarousel #employeesList',
             kpisList: 'competitivecarousel #kpisList',
             kpiDetailList: 'kpidetailpanel #kpiDetailListContainer #kpiDetailList',
+            emailList: 'sendassetpanel #emailList',
             closestPeersList: 'competitivecarousel #closestPeersList',
             peerPerformanceList: 'competitivecarousel #peerPerformanceList',
             hiddenList: 'homepanel #hiddenList',
@@ -233,6 +234,9 @@ Ext.define('DecisionLink.controller.Navigation', {
             "sendassetpanel #buttonContainer #sendAssetButton": {
                 tap: 'onSendAssetButtonTap'
             },
+            "sendassetpanel": {
+                hide: 'onSendAssetPanelHide'
+            },
             "sendassetpanel #deliverySelectField": {
                 change: 'onDeliverySelectfieldChange'
             }
@@ -353,7 +357,6 @@ Ext.define('DecisionLink.controller.Navigation', {
             cost_light_image = record.get('cost_light_image'),
             benefit_light_image = record.get('benefit_light_image'),
             me = this;
-
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
@@ -652,8 +655,8 @@ Ext.define('DecisionLink.controller.Navigation', {
     onSQQListItemTap: function(dataview, index, target, record, e, eOpts) {
         var details,
             name = record.get('name'),
-            sqq_estimate = '$' + DecisionLink.app.formatCurrency( record.get('sqq_estimate') ),
-            sqq_override = record.get('sqq_override'),
+            sqq_estimate = DecisionLink.app.formatCurrency( record.get('sqq_estimate') ),
+            sqq_override = DecisionLink.app.formatCurrency( record.get('sqq_override') ),
             source_name = record.get('source_name'),
             source_type_id = record.get('source_type_id'),
             sqq_id = record.get('sqq_id'),
@@ -686,12 +689,12 @@ Ext.define('DecisionLink.controller.Navigation', {
             metric = record.get('metric'),
             metric_id = record.get('metric_id'),
             sqq = record.get('sqq'),
-            sqq_value = record.get('sqq_value'),
+            sqq_value = DecisionLink.app.formatCurrency( record.get('sqq_value') ),
             impact = record.get('impact'),
             abbr = record.get('abbr'),
             source_type_id = record.get('source_type_id'),
             sqq2 = record.get('sqq2'),
-            sqq2_value = record.get('sqq2_value'),
+            sqq2_value = DecisionLink.app.formatCurrency( record.get('sqq2_value') ),
             total = '$' + DecisionLink.app.formatCurrency( record.get('y1_raw') ),
             alt_metric_id = record.get('alt_metric_id'),
             unit_type_id = record.get('unit_type_id'),
@@ -802,7 +805,6 @@ Ext.define('DecisionLink.controller.Navigation', {
             cost_light_image = record.get('cost_light_image'),
             benefit_light_image = record.get('benefit_light_image'),
             me = this;
-
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
@@ -1037,11 +1039,11 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     onPerformanceListItemTap: function(dataview, index, target, record, e, eOpts) {
         var name = record.get('name'),
-            value = record.get('value'),
-            industry = record.get('industry'),
-            opportunity = record.get('opportunity'),
-            onepercent = record.get('onepercent'),
-            peerbest = record.get('peerbest'),
+            value = DecisionLink.app.roundNumber( record.get('value') ),
+            industry = DecisionLink.app.roundNumber( record.get('industry') ),
+            opportunity = '$' + DecisionLink.app.roundNumber( record.get('opportunity') ) + ' M',
+            onepercent = '$' + DecisionLink.app.roundNumber( record.get('onepercent') ) + ' M',
+            peerbest = '$' + DecisionLink.app.roundNumber( record.get('peerbest') ) + ' M',
             me = this;
 
         Ext.Viewport.setMasked({message: 'Loading...'});
@@ -1141,7 +1143,7 @@ Ext.define('DecisionLink.controller.Navigation', {
         var details,
             name = record.get('name'),
             sqq2_id = record.get('sqq2_id'),
-            sqq2_value = record.get('sqq2_value'),
+            sqq2_value = DecisionLink.app.formatCurrency( record.get('sqq2_value') ),
             source_type_id = record.get('impact_per_unit_source_type_id'),
             me = this;
 
@@ -1370,7 +1372,6 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     onDownloadImageTap: function(image, e, eOpts) {
         var url = image.downloadUrl;
-        console.log(url);
 
         var panel = Ext.create('DecisionLink.view.SendAssetPanel', {
             title: 'Send Asset',
@@ -1575,7 +1576,11 @@ Ext.define('DecisionLink.controller.Navigation', {
             me.getHiddenList().setStore(store);
         });
 
-        panel.hide();
+        panel.destroy();
+    },
+
+    onSendAssetPanelHide: function(component, eOpts) {
+        this.getSendAssetPanel().destroy();
     },
 
     onDeliverySelectfieldChange: function(selectfield, newValue, oldValue, eOpts) {
@@ -2018,22 +2023,16 @@ Ext.define('DecisionLink.controller.Navigation', {
         var newUrl;
 
         if (method == 3) {
-        	// Download
+            // Send to another email
             newUrl = url + '&method=' + method + '&email=' + email;
         } else if(method == 4) {
-        	// Send to another email
-            newUrl = 'https://test.decisionlink.com/post_to_drive.php?href=' + url;
-        }else {
+            // Post to drive
+            newUrl = 'https://test.decisionlink.com/post_to_drive.php?href=' + url + '&mobile=1';
+        } else {
             // Download or email to me
             newUrl = url + '&method=' + method;
         }
-
-        Ext.Ajax.request({
-            url: newUrl,
-            method: 'POST',
-            dataType: 'jsonp'
-
-        });
+        var href = window.open(newUrl, '_system', 'location=yes');
     },
 
     getSolutions: function(user_id, callback) {

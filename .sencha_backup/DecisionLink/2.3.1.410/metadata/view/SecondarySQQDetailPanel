@@ -1,0 +1,144 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "secondarysqqdetailpanel",
+        "designer|userClassName": "SecondarySQQDetailPanel",
+        "layout": null
+    },
+    "designerId": "945cfe96-5aea-4e2f-99b8-52f2bd9dac24",
+    "cn": [
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "salesQuestionField",
+                "label": "Sales Question",
+                "labelAlign": "top",
+                "readOnly": true
+            },
+            "name": "MyTextField35",
+            "designerId": "4d2aca92-56f2-48a4-8590-2f4f2ac2dd5e"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "name": "MySpacer27",
+            "designerId": "be8e8b45-6fd7-4199-aeec-8a69f9048519"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "sqqAnswerField",
+                "label": "Answer",
+                "labelWidth": "40%"
+            },
+            "name": "MyTextField36",
+            "designerId": "addb520b-c076-4dc2-ad03-cf2c18eaf6dd"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "name": "MySpacer28",
+            "designerId": "39f4c843-ae6c-47ee-90d5-c20a91692e06"
+        },
+        {
+            "type": "Ext.field.Select",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "sourceSelectField",
+                "label": "Source",
+                "labelWidth": "40%",
+                "options": [
+                    "[{",
+                    "    text: 'Choose Source',",
+                    "    value: 0",
+                    "}, {",
+                    "    text: 'Customer',",
+                    "    value: 1",
+                    "}, {",
+                    "    text: 'Estimate',",
+                    "    value: 2",
+                    "}, {",
+                    "    text: 'Research',",
+                    "    value: 3",
+                    "}]"
+                ]
+            },
+            "name": "MySelectField9",
+            "designerId": "d0336798-647e-4ca3-872b-06c84f27363b"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "name": "MySpacer29",
+            "designerId": "d569b16b-f53e-477c-9e69-e5b3d5b1c3c5"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "saveSecondarySQQButton",
+                "margin": 10,
+                "text": "Save Sales Question"
+            },
+            "name": "MyButton12",
+            "designerId": "6b8f43b2-14d0-4c33-890f-82ccd844e189"
+        },
+        {
+            "type": "Ext.field.Hidden",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "sqq2IdField"
+            },
+            "name": "MyHiddenField5",
+            "designerId": "87699aa2-6534-4f39-a23f-cd7b1879844a"
+        }
+    ]
+}

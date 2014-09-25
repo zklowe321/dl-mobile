@@ -1,0 +1,229 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "homepanel",
+        "designer|userClassName": "HomePanel",
+        "itemId": "homePanel",
+        "layout": "fit",
+        "scrollable": null
+    },
+    "designerId": "12fcc33d-36a7-475b-8792-6b6c96745316",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "config",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": null,
+                "itemId": "homeContainer",
+                "layout": "vbox"
+            },
+            "name": "MyContainer",
+            "designerId": "a7a7628a-ec07-4f6c-b85b-d5ddddfaa50e",
+            "cn": [
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": null,
+                        "centered": false,
+                        "height": 10,
+                        "imageCls": null,
+                        "layout|flex": 1,
+                        "margin": null,
+                        "padding": null,
+                        "src": "http://test.decisionlink.com/images/Logo_Actual_Size_VSA.png",
+                        "width": null,
+                        "zIndex": null
+                    },
+                    "name": "MyImg",
+                    "designerId": "64614e8b-276e-434b-8636-804ad6dee90b"
+                },
+                {
+                    "type": "Ext.field.Search",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": null,
+                        "id": null,
+                        "itemId": "searchField",
+                        "label": "Search",
+                        "placeHolder": "Enter Company"
+                    },
+                    "name": "MySearchField",
+                    "designerId": "8e226273-2f08-4fb2-8fd5-80e4cf3e7877"
+                },
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": null,
+                        "id": null,
+                        "itemId": "selectField",
+                        "label": "By:",
+                        "margin": 5,
+                        "options": [
+                            "[{",
+                            "    text: 'Company',",
+                            "    value: 1",
+                            "}, {",
+                            "    text: 'DUNS',",
+                            "    value: 2",
+                            "}, {",
+                            "    text: 'Ticker',",
+                            "    value: 3",
+                            "}]"
+                        ]
+                    },
+                    "name": "MySelectField12",
+                    "designerId": "fa613e94-6ada-4492-90b3-c17fd8919482"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": false,
+                        "itemId": "searchListContainer",
+                        "layout": "fit",
+                        "layout|flex": 2
+                    },
+                    "name": "MyContainer5",
+                    "designerId": "d4d73d0e-6015-4f3d-8af0-bbcf5c0a285c",
+                    "cn": [
+                        {
+                            "type": "Ext.dataview.List",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "id": null,
+                                "itemId": "searchList",
+                                "store": "SearchStore"
+                            },
+                            "name": "MyList4",
+                            "designerId": "04134d0e-fa7a-422c-8f1d-eeec3c351eaf",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "<div>{name}</div>"
+                                        ]
+                                    },
+                                    "name": "tpl4",
+                                    "designerId": "fbba91bb-73fa-48b5-8628-7e60e6b3a38d"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.dataview.List",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "id": null,
+                "itemId": "validateList",
+                "store": "ValidateStore"
+            },
+            "name": "MyList1",
+            "designerId": "dcf9ff15-cba3-4e62-b1ed-2af07220fb17",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div>List Item {string}</div>"
+                        ]
+                    },
+                    "name": "tpl1",
+                    "designerId": "a8e7a753-dd88-4adf-8bae-2bcc821a4069"
+                }
+            ]
+        },
+        {
+            "type": "Ext.dataview.List",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "itemId": "hiddenList",
+                "store": "SuccessStore"
+            },
+            "name": "MyList2",
+            "designerId": "7d2e9059-51ed-461a-88ab-ee3c92679f36",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div>List Item {string}</div>"
+                        ]
+                    },
+                    "name": "tpl2",
+                    "designerId": "0900faf2-3688-4c45-8185-e65221464d82"
+                }
+            ]
+        }
+    ]
+}

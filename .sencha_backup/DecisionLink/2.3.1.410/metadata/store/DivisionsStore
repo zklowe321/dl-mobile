@@ -1,0 +1,42 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DivisionsStore",
+        "model": "Divisions",
+        "storeId": "DivisionsStore"
+    },
+    "designerId": "eb9648f1-7904-48f2-8150-b05d11283ef5",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyJsonPProxy18",
+            "designerId": "58121ff8-6beb-4e6a-ae13-2bd6727b8cad",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "locations",
+                        "totalProperty": "totalRecs"
+                    },
+                    "name": "MyJsonReader18",
+                    "designerId": "64a9be35-fb35-4556-8b4f-30092d36d37b"
+                }
+            ]
+        }
+    ]
+}

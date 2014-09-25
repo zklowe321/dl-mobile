@@ -78,6 +78,12 @@ Ext.define('DecisionLink.model.AccountScenarios', {
             },
             {
                 name: 'user_name'
+            },
+            {
+                name: 'cost_light_image'
+            },
+            {
+                name: 'benefit_light_image'
             }
         ]
     }

@@ -1,0 +1,42 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "SecondarySQQStore",
+        "model": "SecondarySQQ",
+        "storeId": "SecondarySQQStore"
+    },
+    "designerId": "5e0359da-71cc-4fa4-846b-5c12d372e4a8",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyJsonPProxy16",
+            "designerId": "95d703a2-08f3-4aef-af94-cd802e99dfc7",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "sqqs",
+                        "totalProperty": "totalRecs"
+                    },
+                    "name": "MyJsonReader16",
+                    "designerId": "350981ad-1a7d-44bd-a0d3-371dfc778209"
+                }
+            ]
+        }
+    ]
+}

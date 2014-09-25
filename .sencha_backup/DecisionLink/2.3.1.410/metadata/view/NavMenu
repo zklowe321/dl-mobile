@@ -1,0 +1,118 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "navmenu",
+        "designer|userClassName": "NavMenu",
+        "fullscreen": false,
+        "hidden": true,
+        "hideOnMaskTap": true,
+        "itemId": "navMenu",
+        "layout": "vbox",
+        "left": 0,
+        "margin": null,
+        "mixins": null,
+        "modal": true,
+        "padding": 10
+    },
+    "designerId": "8ae7c193-80e3-4bbe-8ded-2399a0b1a276",
+    "cn": [
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "home",
+                "margin": 5,
+                "navView": "homepanel",
+                "text": "Search"
+            },
+            "name": "MyButton2",
+            "designerId": "93074142-33b3-4eaa-8067-cf065629f53c",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "navView",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "favorites",
+                "margin": 5,
+                "navView": "searchpanel",
+                "padding": null,
+                "text": "Saved Accounts"
+            },
+            "name": "MyButton3",
+            "designerId": "41d7fe24-3283-4095-aa3e-aee894380e5a",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "navView",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "organize",
+                "margin": 5,
+                "navView": "accountscenariospanel",
+                "text": "Value Propositions"
+            },
+            "name": "MyButton18",
+            "designerId": "032660cc-0abe-47d9-84e7-a4ada5c2e3de",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "navView",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "user",
+                "margin": 5,
+                "navView": "accountpanel",
+                "text": "My Account"
+            },
+            "name": "MyButton17",
+            "designerId": "a1805281-6f54-4234-9564-67ada23f8eb0",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "navView",
+                    "type": "string"
+                }
+            ]
+        }
+    ]
+}

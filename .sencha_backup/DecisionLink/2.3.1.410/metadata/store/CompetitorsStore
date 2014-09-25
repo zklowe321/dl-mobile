@@ -1,0 +1,42 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CompetitorsStore",
+        "model": "Competitors",
+        "storeId": "CompetitorsStore"
+    },
+    "designerId": "abb7aaf2-4f9a-4db6-a225-def605a3eb41",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyJsonPProxy19",
+            "designerId": "31097bfd-af67-4367-b9c2-d3e92d275a9a",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "companies",
+                        "totalProperty": "totalRecs"
+                    },
+                    "name": "MyJsonReader19",
+                    "designerId": "d0cbeb86-0bc2-4f70-89b3-e1136e545885"
+                }
+            ]
+        }
+    ]
+}

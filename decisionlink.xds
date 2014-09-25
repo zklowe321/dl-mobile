@@ -3,7 +3,7 @@
     "settings": {
         "cmd": {
             "license": "commercial",
-            "cmdVersion": "5.0.2.250",
+            "cmdVersion": "5.0.3.276",
             "frameworkVersion": "2.3.1.410"
         },
         "canvasControls": {
@@ -31,7 +31,7 @@
         "projectHasEnabledWebServer": true
     },
     "xdsVersion": "3.1.0",
-    "xdsBuild": 1851,
+    "xdsBuild": 1903,
     "schemaVersion": 1,
     "upgradeVersion": 300000000007,
     "framework": "touch23",

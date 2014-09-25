@@ -1,0 +1,189 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "centered": true,
+        "designer|userAlias": "sendassetpanel",
+        "designer|userClassName": "SendAssetPanel",
+        "fullscreen": false,
+        "hideOnMaskTap": true,
+        "modal": true
+    },
+    "name": "MyPanel13",
+    "designerId": "33c9e231-2a93-42a0-85e1-e000689c2b06",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "url",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.field.Select",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "displayField": "name",
+                "itemId": "deliverySelectField",
+                "label": "Delivery Method",
+                "labelWidth": "40%",
+                "labelWrap": true,
+                "margin": 10,
+                "options": [
+                    "[{",
+                    "    'name': 'Download',",
+                    "    'value': 1",
+                    "},{",
+                    "    'name': 'Email to me',",
+                    "    'value': 2",
+                    "},{",
+                    "    'name': 'Send to another email',",
+                    "    'value': 3",
+                    "},{",
+                    "    'name': 'Post to Google Drive',",
+                    "    'value': 4",
+                    "}]"
+                ],
+                "readOnly": false
+            },
+            "name": "MySelectField13",
+            "designerId": "fc6bb1cf-4363-45f1-a8ed-d2d384dc2c8c"
+        },
+        {
+            "type": "Ext.Label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": false,
+                "hidden": true,
+                "html": "Add emails, comma separated",
+                "itemId": "emailTip",
+                "margin": 10
+            },
+            "name": "MyLabel3",
+            "designerId": "ef2c87b4-a0cd-4af9-b6d0-1864876bc5cd"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "itemId": "emailField",
+                "label": "Email(s)",
+                "labelWidth": "40%",
+                "labelWrap": true
+            },
+            "name": "MyTextField43",
+            "designerId": "8f477fa3-cc4a-4b13-bbaa-dfbbb08c42c9"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "buttonContainer",
+                "layout": "hbox"
+            },
+            "name": "MyContainer13",
+            "designerId": "12f3044f-8086-4750-8700-ca736e672a52",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "sendAssetButton",
+                        "layout|flex": 1,
+                        "margin": 5,
+                        "text": "Send"
+                    },
+                    "name": "MyButton23",
+                    "designerId": "381ab3e9-0778-4acd-b396-c275ecb055fb"
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 15
+                    },
+                    "name": "MySpacer48",
+                    "designerId": "c3cfa895-9f12-4cb2-9243-1fcef3516763"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "cancelSendButton",
+                        "layout|flex": 1,
+                        "margin": 5,
+                        "text": "Cancel"
+                    },
+                    "name": "MyButton22",
+                    "designerId": "6ef14e62-8a2c-47f4-bbcc-dc90ea6c2245"
+                }
+            ]
+        },
+        {
+            "type": "Ext.dataview.List",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "itemId": "emailList",
+                "store": null
+            },
+            "name": "MyList",
+            "designerId": "e53499f1-128e-4a90-8045-4f59abf6e295",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div>List Item {string}</div>"
+                        ]
+                    },
+                    "name": "itemTpl",
+                    "designerId": "cffc3732-eac0-4d7b-9827-3d56ebc66778"
+                }
+            ]
+        }
+    ]
+}

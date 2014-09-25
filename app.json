@@ -1,4 +1,7 @@
 {
+   "name": "DecisionLink",
+   "indexHtmlPath": "index.html",
+   "url": null,
    "builds": {
       "web": {
          "default": true
@@ -6,13 +9,12 @@
       "native": {
          "packager": "cordova",
          "cordova": {
-            "config": {}
+            "config": {
+               "platforms": "ios android"
+            }
          }
       }
    },
-   "name": "DecisionLink",
-   "indexHtmlPath": "index.html",
-   "url": null,
    "js": [
       {
          "path": "touch/sencha-touch.js",

@@ -246,6 +246,11 @@ Ext.application({
         this.currentCompany = company;
     },
 
+    roundNumber: function(rnum) {
+        var newnumber = Math.round(rnum * Math.pow(10, 2)) / Math.pow(10, 2);
+                return newnumber;
+    },
+
     launch: function() {
 
         Ext.create('DecisionLink.view.MainView', {fullscreen: true});

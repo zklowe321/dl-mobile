@@ -256,6 +256,32 @@
             },
             "name": "field25",
             "designerId": "7dd1cdf6-ead0-4580-ab4b-3817d2ecbeeb"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cost_light_image"
+            },
+            "name": "field166",
+            "designerId": "8c9a5a41-438b-4e06-9418-9d15619eb0bd"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "benefit_light_image"
+            },
+            "name": "field167",
+            "designerId": "a7c4d97d-3708-471c-8ade-ce8de0ffbcf2"
         }
     ]
 }

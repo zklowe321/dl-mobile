@@ -1,0 +1,77 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "searchpanel",
+        "designer|userClassName": "SearchPanel",
+        "id": null,
+        "layout": "fit",
+        "navView": "searchpanel"
+    },
+    "designerId": "6e3dddb5-c215-444e-a31a-f792f1c5e990",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "navView",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": null,
+                "itemId": "savedPanel",
+                "layout": "fit"
+            },
+            "name": "MyContainer3",
+            "designerId": "19417599-5ed5-481c-b9c2-d61491a1b403",
+            "cn": [
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|createAlias": null,
+                        "height": null,
+                        "id": null,
+                        "itemId": "savedList",
+                        "store": "SavedStore"
+                    },
+                    "name": "MyList3",
+                    "designerId": "4dd2e1ea-c895-41d5-93f2-90fbffe367c2",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=“info” width=“40” height=“40”/>Name: {name}<br/><small>Revenue: ${revenue} M</small>"
+                                ]
+                            },
+                            "name": "tpl3",
+                            "designerId": "179840e7-f878-44b7-bc7d-2587ddfd9a6a"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

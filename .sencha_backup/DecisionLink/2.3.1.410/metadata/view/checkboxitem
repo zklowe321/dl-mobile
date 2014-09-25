@@ -1,0 +1,60 @@
+{
+    "type": "Ext.dataview.component.DataItem",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "checkboxitem",
+        "designer|userClassName": "checkboxitem",
+        "itemCls": null,
+        "layout": "hbox",
+        "padding": 3
+    },
+    "name": "MyDataItem",
+    "designerId": "04de1da7-5cf1-4360-975c-7bcd410e2f06",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "updateRecord",
+                "implHandler": [
+                    "var checkbox = this.items.items[0];",
+                    "",
+                    "if (checkbox) {",
+                    "    checkbox.setValue(record.data.id);",
+                    "    checkbox.setLabel(record.data.name);",
+                    "}"
+                ]
+            },
+            "name": "updateRecord",
+            "designerId": "7fb29d96-0bb9-4ec6-b5c8-64587c838228"
+        },
+        {
+            "type": "Ext.field.Checkbox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "checkbox",
+                "label": null,
+                "labelWidth": "75%",
+                "labelWrap": true,
+                "layout|flex": 1
+            },
+            "name": "MyCheckbox5",
+            "designerId": "98844c89-054e-42cc-be52-c23e0b97abc6"
+        }
+    ]
+}

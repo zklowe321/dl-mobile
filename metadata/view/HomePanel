@@ -44,19 +44,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "baseCls": null,
-                        "centered": false,
-                        "height": 10,
-                        "imageCls": null,
-                        "layout|flex": 1,
-                        "margin": null,
-                        "padding": null,
-                        "src": "http://test.decisionlink.com/images/Logo_Actual_Size_VSA.png",
-                        "width": null,
-                        "zIndex": null
+                        "height": "15%",
+                        "src": "http://test.decisionlink.com/images/Logo_Proposed.png"
                     },
                     "name": "MyImg",
-                    "designerId": "64614e8b-276e-434b-8636-804ad6dee90b"
+                    "designerId": "3486fc7e-e8dc-4b20-99d0-4b2226661594"
                 },
                 {
                     "type": "Ext.field.Search",

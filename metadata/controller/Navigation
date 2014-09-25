@@ -412,6 +412,20 @@
             },
             "codeClass": null,
             "userConfig": {
+                "ref": "emailList",
+                "selector": "sendassetpanel #emailList"
+            },
+            "name": "emailList",
+            "designerId": "dc0e53a1-277e-439a-acd9-660915057380"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "ref": "closestPeersList",
                 "selector": "competitivecarousel #closestPeersList"
             },
@@ -887,7 +901,6 @@
                     "    benefit_light_image = record.get('benefit_light_image'),",
                     "    me = this;",
                     "",
-                    "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
                     "carousel = Ext.create('DecisionLink.view.OpportunityCarousel', {",
@@ -1350,8 +1363,8 @@
                 "implHandler": [
                     "var details,",
                     "    name = record.get('name'),",
-                    "    sqq_estimate = '$' + DecisionLink.app.formatCurrency( record.get('sqq_estimate') ),",
-                    "    sqq_override = record.get('sqq_override'),",
+                    "    sqq_estimate = DecisionLink.app.formatCurrency( record.get('sqq_estimate') ),",
+                    "    sqq_override = DecisionLink.app.formatCurrency( record.get('sqq_override') ),",
                     "    source_name = record.get('source_name'),",
                     "    source_type_id = record.get('source_type_id'),",
                     "    sqq_id = record.get('sqq_id'),",
@@ -1399,12 +1412,12 @@
                     "    metric = record.get('metric'),",
                     "    metric_id = record.get('metric_id'),",
                     "    sqq = record.get('sqq'),",
-                    "    sqq_value = record.get('sqq_value'),",
+                    "    sqq_value = DecisionLink.app.formatCurrency( record.get('sqq_value') ),",
                     "    impact = record.get('impact'),",
                     "    abbr = record.get('abbr'),",
                     "    source_type_id = record.get('source_type_id'),",
                     "    sqq2 = record.get('sqq2'),",
-                    "    sqq2_value = record.get('sqq2_value'),",
+                    "    sqq2_value = DecisionLink.app.formatCurrency( record.get('sqq2_value') ),",
                     "    total = '$' + DecisionLink.app.formatCurrency( record.get('y1_raw') ),",
                     "    alt_metric_id = record.get('alt_metric_id'),",
                     "    unit_type_id = record.get('unit_type_id'),",
@@ -1560,7 +1573,6 @@
                     "    cost_light_image = record.get('cost_light_image'),",
                     "    benefit_light_image = record.get('benefit_light_image'),",
                     "    me = this;",
-                    "",
                     "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
@@ -1930,11 +1942,11 @@
                 "fn": "onPerformanceListItemTap",
                 "implHandler": [
                     "var name = record.get('name'),",
-                    "    value = record.get('value'),",
-                    "    industry = record.get('industry'),",
-                    "    opportunity = record.get('opportunity'),",
-                    "    onepercent = record.get('onepercent'),",
-                    "    peerbest = record.get('peerbest'),",
+                    "    value = DecisionLink.app.roundNumber( record.get('value') ),",
+                    "    industry = DecisionLink.app.roundNumber( record.get('industry') ),",
+                    "    opportunity = '$' + DecisionLink.app.roundNumber( record.get('opportunity') ) + ' M',",
+                    "    onepercent = '$' + DecisionLink.app.roundNumber( record.get('onepercent') ) + ' M',",
+                    "    peerbest = '$' + DecisionLink.app.roundNumber( record.get('peerbest') ) + ' M',",
                     "    me = this;",
                     "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
@@ -2094,7 +2106,7 @@
                     "var details,",
                     "    name = record.get('name'),",
                     "    sqq2_id = record.get('sqq2_id'),",
-                    "    sqq2_value = record.get('sqq2_value'),",
+                    "    sqq2_value = DecisionLink.app.formatCurrency( record.get('sqq2_value') ),",
                     "    source_type_id = record.get('impact_per_unit_source_type_id'),",
                     "    me = this;",
                     "",
@@ -2473,7 +2485,6 @@
                 "fn": "onDownloadImageTap",
                 "implHandler": [
                     "var url = image.downloadUrl;",
-                    "console.log(url);",
                     "",
                     "var panel = Ext.create('DecisionLink.view.SendAssetPanel', {",
                     "    title: 'Send Asset',",
@@ -2843,12 +2854,31 @@
                     "    me.getHiddenList().setStore(store);",
                     "});",
                     "",
-                    "panel.hide();"
+                    "panel.destroy();"
                 ],
                 "name": "tap"
             },
             "name": "onSendAssetButtonTap",
             "designerId": "4625d29b-a1f9-4d96-900a-e7e6ad34e9c4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "sendassetpanel",
+                "designer|targetType": "Ext.Panel",
+                "fn": "onSendAssetPanelHide",
+                "implHandler": [
+                    "this.getSendAssetPanel().destroy();"
+                ],
+                "name": "hide"
+            },
+            "name": "onSendAssetPanelHide",
+            "designerId": "a08fa92d-f2d7-4838-82b0-8d69fc61e497"
         },
         {
             "type": "controlleraction",
@@ -3953,22 +3983,16 @@
                     "var newUrl;",
                     "",
                     "if (method == 3) {",
-                    "\t// Download",
+                    "    // Send to another email",
                     "    newUrl = url + '&method=' + method + '&email=' + email;",
                     "} else if(method == 4) {",
-                    "\t// Send to another email",
-                    "    newUrl = 'https://test.decisionlink.com/post_to_drive.php?href=' + url;",
-                    "}else {",
+                    "    // Post to drive",
+                    "    newUrl = 'https://test.decisionlink.com/post_to_drive.php?href=' + url + '&mobile=1';",
+                    "} else {",
                     "    // Download or email to me",
                     "    newUrl = url + '&method=' + method;",
                     "}",
-                    "",
-                    "Ext.Ajax.request({",
-                    "    url: newUrl,",
-                    "    method: 'POST',",
-                    "    dataType: 'jsonp'",
-                    "",
-                    "});"
+                    "var href = window.open(newUrl, '_system', 'location=yes');"
                 ]
             },
             "name": "downloadAsset",
