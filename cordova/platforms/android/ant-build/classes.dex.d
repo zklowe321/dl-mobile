@@ -20,4 +20,8 @@
 /Users/pedrosurfz/Desktop/Sencha/decisionlink/cordova/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser.class \
 /Users/pedrosurfz/Desktop/Sencha/decisionlink/cordova/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowserDialog.class \
 /Users/pedrosurfz/Desktop/Sencha/decisionlink/cordova/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppChromeClient.class \
+/Users/pedrosurfz/Desktop/Sencha/decisionlink/cordova/platforms/android/ant-build/classes/org/apache/cordova/statusbar/StatusBar$1.class \
+/Users/pedrosurfz/Desktop/Sencha/decisionlink/cordova/platforms/android/ant-build/classes/org/apache/cordova/statusbar/StatusBar$2.class \
+/Users/pedrosurfz/Desktop/Sencha/decisionlink/cordova/platforms/android/ant-build/classes/org/apache/cordova/statusbar/StatusBar$3.class \
+/Users/pedrosurfz/Desktop/Sencha/decisionlink/cordova/platforms/android/ant-build/classes/org/apache/cordova/statusbar/StatusBar.class \
 /Users/pedrosurfz/Desktop/Sencha/decisionlink/cordova/platforms/android/ant-build/dexedLibs/classes-784cadfdd866e46bca917435afd89bad.jar \
