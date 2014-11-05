@@ -43,10 +43,6 @@ Ext.define('DecisionLink.view.SendAssetPanel', {
                 displayField: 'name',
                 options: [
                     {
-                        name: 'Download',
-                        value: 1
-                    },
-                    {
                         name: 'Email to me',
                         value: 2
                     },

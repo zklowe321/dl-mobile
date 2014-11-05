@@ -32,6 +32,7 @@ Ext.application({
     email: ' ',
     pagesFromHome: '0',
     currentCompany: ' ',
+    serviceurl: 'http://test.decisionlink.com/services',
     models: [
         'Search',
         'Detail',
@@ -249,6 +250,10 @@ Ext.application({
     roundNumber: function(rnum) {
         var newnumber = Math.round(rnum * Math.pow(10, 2)) / Math.pow(10, 2);
                 return newnumber;
+    },
+
+    getServiceUrl: function() {
+        return this.serviceurl;
     },
 
     launch: function() {

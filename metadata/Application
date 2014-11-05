@@ -51,6 +51,7 @@
         ],
         "name": "DecisionLink",
         "pagesFromHome": "0",
+        "serviceurl": "http://test.decisionlink.com/services",
         "stores": [
             "SearchStore",
             "DetailStore",
@@ -178,6 +179,11 @@
         {
             "group": "(Custom Properties)",
             "name": "currentCompany",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "serviceurl",
             "type": "string"
         }
     ],
@@ -685,6 +691,22 @@
             },
             "name": "roundNumber",
             "designerId": "9a64cae6-a71a-489a-add2-7d5c46d6b4ea"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getServiceUrl",
+                "implHandler": [
+                    "return this.serviceurl;"
+                ]
+            },
+            "name": "getServiceUrl",
+            "designerId": "29158701-b32c-45ba-b1bc-ee14379c0ee2"
         }
     ]
 }

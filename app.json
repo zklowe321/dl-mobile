@@ -1,7 +1,4 @@
 {
-   "name": "DecisionLink",
-   "indexHtmlPath": "index.html",
-   "url": null,
    "builds": {
       "web": {
          "default": true
@@ -10,11 +7,16 @@
          "packager": "cordova",
          "cordova": {
             "config": {
-               "platforms": "ios"
+               "platforms": "ios",
+               "id": "decisionlink",
+               "name": "DecisionLink"
             }
          }
       }
    },
+   "name": "DecisionLink",
+   "indexHtmlPath": "index.html",
+   "url": null,
    "js": [
       {
          "path": "touch/sencha-touch.js",
@@ -23,10 +25,6 @@
       {
          "path": "bootstrap.js",
          "x-bootstrap": true
-      },
-      {
-         "path": "cordova.js",
-         "remote": true
       },
       {
          "path": "app.js",
@@ -65,5 +63,5 @@
    ],
    "archivePath": "archive",
    "requires": [],
-   "id": "8aeb9a85-6642-4fc0-8bdd-40c079703c77"
+   "id": "0af7dde4-fcf5-4194-ba16-6a1722d83cf5"
 }

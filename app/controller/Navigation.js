@@ -330,13 +330,13 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     onAccountScenariosListActivate: function(newActiveItem, container, oldActiveItem, eOpts) {
         var me = this,
-            account_id = DecisionLink.app.getAccountId();
+            user_id = DecisionLink.app.getUserId();
 
-        me.getNavBar().setTitle("My Accounts");
+        me.getNavBar().setTitle("Value Propositions");
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
-        me.getAccountScenarios(account_id, function(store) {
+        me.getAccountScenarios(user_id, function(store) {
             me.getAccountScenariosList().setStore(store);
 
             Ext.Viewport.setMasked(false);
@@ -1601,7 +1601,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     deleteOpportunityCost: function(oppty_id, id, callback) {
         var store = Ext.data.StoreManager.lookup('SuccessStore'),
-            url = 'http://test.decisionlink.com/services/DeleteOpportunityCost1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/DeleteOpportunityCost1.php' +
             '?oppty_id=' + oppty_id +
             '&id=' + id;
         store.getProxy().setUrl(url);
@@ -1612,7 +1612,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getSellingScenario: function(user_id, oppty_id, callback) {
         var store = Ext.data.StoreManager.lookup('ScenarioStore'),
-            url = 'http://test.decisionlink.com/services/GetSellingScenario1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetSellingScenario1.php' +
             '?user_id=' + user_id +
             '&oppty_id=' + oppty_id;
         store.getProxy().setUrl(url);
@@ -1623,7 +1623,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getKpis: function(user_id, company_id, industry_id, callback) {
         var store = Ext.data.StoreManager.lookup('KpisStore'),
-            url = 'http://test.decisionlink.com/services/GetAlignedKpis1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetAlignedKpis1.php' +
             '?user_id=' + user_id +
             '&company_id=' + company_id +
             '&industry_id=' + industry_id;
@@ -1635,7 +1635,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getSalesQuestions: function(oppty_id, callback) {
         var store = Ext.data.StoreManager.lookup('SalesQuestionsStore'),
-            url = 'http://test.decisionlink.com/services/GetOpportunitySQQs1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetOpportunitySQQs1.php' +
             '?oppty_id=' + oppty_id;
         store.getProxy().setUrl(url);
         store.load(function() {
@@ -1645,7 +1645,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getCompanyScenarios: function(user_id, company_id, callback) {
         var store = Ext.data.StoreManager.lookup('CompanyScenariosStore'),
-            url = 'http://test.decisionlink.com/services/GetOpportunities1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetOpportunities1.php' +
             '?user_id=' + user_id +
             '&company_id=' + company_id;
         store.getProxy().setUrl(url);
@@ -1656,7 +1656,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getSavedAccounts: function(id, callback) {
         var store = Ext.data.StoreManager.lookup('SavedStore'),
-            url = 'http://test.decisionlink.com/services/GetSavedAccounts1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetSavedAccounts1.php' +
             '?user_id=' + id;
         store.getProxy().setUrl(url);
         store.load(function() {
@@ -1666,7 +1666,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getCompanyOverview: function(id, callback) {
         var store = Ext.data.StoreManager.lookup('DetailStore'),
-            url = 'http://test.decisionlink.com/services/GetCompanyOverview1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetCompanyOverview1.php' +
             '?company_id=' + id;
         store.getProxy().setUrl(url);
         store.load(function() {
@@ -1676,7 +1676,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getDivisions: function(user_id, company_id, callback) {
         var store = Ext.data.StoreManager.lookup('DivisionsStore'),
-            url = 'http://test.decisionlink.com/services/GetFamilyTree1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetFamilyTree1.php' +
             '?user_id=' + user_id +
             '&company_id=' + company_id;
         store.getProxy().setUrl(url);
@@ -1687,7 +1687,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getValidation: function(username, password, callback) {
         var store = Ext.data.StoreManager.lookup('ValidateStore'),
-            url = 'http://test.decisionlink.com/services' +
+            url = DecisionLink.app.getServiceUrl() +
             '/ValidateUser1.php?loginUsername=' + username +
             '&loginPassword=' + password;
         store.getProxy().setUrl(url);
@@ -1696,10 +1696,10 @@ Ext.define('DecisionLink.controller.Navigation', {
         });
     },
 
-    getAccountScenarios: function(account_id, callback) {
+    getAccountScenarios: function(user_id, callback) {
         var store = Ext.data.StoreManager.lookup('AccountScenariosStore'),
-            url = 'http://test.decisionlink.com/services/GetAccountScenarios1.php' +
-            '?account_id=' + account_id;
+            url = DecisionLink.app.getServiceUrl() + '/GetUserOpportunities1.php' +
+            '?user_id=' + user_id;
         store.getProxy().setUrl(url);
         store.load(function() {
             callback(store);
@@ -1708,7 +1708,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getOpportunityOverview: function(oppty_id, user_id, callback) {
         var store = Ext.data.StoreManager.lookup('OpportunityOverviewStore'),
-            url = 'http://test.decisionlink.com/services/GetOpportunityOverview1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetOpportunityOverview1.php' +
             '?oppty_id=' + oppty_id +
             '&user_id=' + user_id;
         store.getProxy().setUrl(url);
@@ -1719,7 +1719,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getValueFormulas: function(oppty_id, callback) {
         var store = Ext.data.StoreManager.lookup('ValueFormulasStore'),
-            url = 'http://test.decisionlink.com/services/GetOpportunityMetrics1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetOpportunityMetrics1.php' +
             '?oppty_id=' + oppty_id;
         store.getProxy().setUrl(url);
         store.load(function() {
@@ -1729,7 +1729,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getOpportunityCosts: function(oppty_id, user_id, callback) {
         var store = Ext.data.StoreManager.lookup('OpportunityCostsStore'),
-            url = 'http://test.decisionlink.com/services/GetOpportunityCosts1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetOpportunityCosts1.php' +
             '?oppty_id=' + oppty_id +
             '&user_id=' + user_id;
         store.getProxy().setUrl(url);
@@ -1740,7 +1740,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getOpportunityAssets: function(user_id, oppty_id, callback) {
         var store = Ext.data.StoreManager.lookup('AssetsStore'),
-            url = 'http://test.decisionlink.com/services/GetOpportunityTypeAssets1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetOpportunityTypeAssets1.php' +
             '?oppty_id=' + oppty_id +
             '&user_id=' + user_id;
         store.getProxy().setUrl(url);
@@ -1751,7 +1751,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getDNBOverview: function(company_id, callback) {
         var store = Ext.data.StoreManager.lookup('DNBOverviewStore'),
-            url = 'http://test.decisionlink.com/services/GetDNBAdditional.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetDNBAdditional.php' +
             '?company_id=' + company_id;
         store.getProxy().setUrl(url);
         store.load(function() {
@@ -1761,7 +1761,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getCompetitors: function(user_id, company_id, callback) {
         var store = Ext.data.StoreManager.lookup('CompetitorsStore'),
-            url = 'http://test.decisionlink.com/services/GetCompetitors1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetCompetitors1.php' +
             '?user_id=' + user_id +
             '&company_id=' + company_id;
         store.getProxy().setUrl(url);
@@ -1772,7 +1772,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getEmployees: function(company_id, callback) {
         var store = Ext.data.StoreManager.lookup('EmployeesStore'),
-            url = 'http://test.decisionlink.com/services/GetExecutives1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetExecutives1.php' +
             '?company_id=' + company_id;
         store.getProxy().setUrl(url);
         store.load(function() {
@@ -1782,7 +1782,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getClosestPeers: function(user_id, company_id, industry_id, revenue, callback) {
         var store = Ext.data.StoreManager.lookup('ClosestPeersStore'),
-            url = 'http://test.decisionlink.com/services/GetEnginePeers1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetEnginePeers1.php' +
             '?user_id=' + user_id +
             '&company_id=' + company_id +
             '&industry_id=' + industry_id +
@@ -1795,7 +1795,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getRatios: function(user_id, company_id, kpi_id, callback) {
         var store = Ext.data.StoreManager.lookup('RatiosStore'),
-            url = 'http://test.decisionlink.com/services/GetAlignedKpiRatios1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetAlignedKpiRatios1.php' +
             '?user_id=' + user_id +
             '&company_id=' + company_id +
             '&kpi_id=' + kpi_id;
@@ -1807,7 +1807,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getScenarioIndustries: function(user_id, oppty_id, callback) {
         var store = Ext.data.StoreManager.lookup('ScenarioIndustriesStore'),
-            url = 'http://test.decisionlink.com/services/GetSellingScenario1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetSellingScenario1.php' +
             '?user_id=' + user_id +
             '&oppty_id=' + oppty_id;
         store.getProxy().setUrl(url);
@@ -1818,7 +1818,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getSecondarySQQs: function(oppty_id, callback) {
         var store = Ext.data.StoreManager.lookup('SecondarySQQStore'),
-            url = 'http://test.decisionlink.com/services/GetOpportunitySecondarySQQs1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetOpportunitySecondarySQQs1.php' +
             '?oppty_id=' + oppty_id;
         store.getProxy().setUrl(url);
         store.load(function() {
@@ -1828,7 +1828,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getCompRatios: function(user_id, company_id, callback) {
         var store = Ext.data.StoreManager.lookup('CompRatiosStore'),
-            url = 'http://test.decisionlink.com/services/GetRatios1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetRatios1.php' +
             '?user_id=' + user_id +
             '&company_id=' + company_id;
         store.getProxy().setUrl(url);
@@ -1839,7 +1839,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getScenarioAreas: function(user_id, oppty_id, callback) {
         var store = Ext.data.StoreManager.lookup('ScenarioAreasStore'),
-            url = 'http://test.decisionlink.com/services/GetSellingScenario1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetSellingScenario1.php' +
             '?user_id=' + user_id +
             '&oppty_id=' + oppty_id;
         store.getProxy().setUrl(url);
@@ -1850,7 +1850,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getScenarioBaselines: function(user_id, oppty_id, callback) {
         var store = Ext.data.StoreManager.lookup('ScenarioBaselinesStore'),
-            url = 'http://test.decisionlink.com/services/GetSellingScenario1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetSellingScenario1.php' +
             '?user_id=' + user_id +
             '&oppty_id=' + oppty_id;
         store.getProxy().setUrl(url);
@@ -1861,7 +1861,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getScenarioCompetitors: function(user_id, oppty_id, callback) {
         var store = Ext.data.StoreManager.lookup('ScenarioCompetitorsStore'),
-            url = 'http://test.decisionlink.com/services/GetSellingScenario1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetSellingScenario1.php' +
             '?user_id=' + user_id +
             '&oppty_id=' + oppty_id;
         store.getProxy().setUrl(url);
@@ -1872,7 +1872,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     saveSellingScenario: function(user_id, id, scenario, competitors, areas, industries, baselines, wacc, term, callback) {
         var store = Ext.data.StoreManager.lookup('SuccessStore'),
-            url = 'http://test.decisionlink.com/services/SaveSellingScenario.php' +
+            url = DecisionLink.app.getServiceUrl() + '/SaveSellingScenario.php' +
             '?user_id=' + user_id +
             '&id=' + id +
             '&scenario=' + scenario +
@@ -1892,7 +1892,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     saveOpportunityCost: function(oppty_id, cost_type_id, accrual_type_id, cost, callback) {
         var store = Ext.data.StoreManager.lookup('SuccessStore'),
-            url = 'http://test.decisionlink.com/services/SaveOpportunityCost1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/SaveOpportunityCost1.php' +
             '?oppty_id=' + oppty_id +
             '&cost_type_id=' + cost_type_id +
             '&accrual_type_id=' + accrual_type_id +
@@ -1905,7 +1905,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     saveValueFormulaMetrics: function(metric_id, sqq_value, sqq2_value, impact, oppty_id, unit_type_id, impact_source_type_id, callback) {
         var store = Ext.data.StoreManager.lookup('SuccessStore'),
-            url = 'http://test.decisionlink.com/services/SaveValueFormulaMetrics1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/SaveValueFormulaMetrics1.php' +
             '?metric_id=' + metric_id +
             '&sqq_value=' + sqq_value +
             '&sqq2_value=' + sqq2_value +
@@ -1921,7 +1921,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     searchCompanies: function(searchTerm, option, callback) {
         var store = Ext.data.StoreManager.lookup('SearchStore'),
-            url = 'http://test.decisionlink.com/services' +
+            url = DecisionLink.app.getServiceUrl() +
             '/SearchCompanies1.php?searchTerm=' + searchTerm +
             '&searchOption=' + option;
         store.getProxy().setUrl(url);
@@ -1932,7 +1932,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     updateOpportunityCosts: function(id, oppty_id, cost_type_id, accrual_type_id, cost, callback) {
         var store = Ext.data.StoreManager.lookup('SuccessStore'),
-            url = 'http://test.decisionlink.com/services/UpdateOpportunityCosts1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/UpdateOpportunityCosts1.php' +
             '?id=' + id +
             '&oppty_id=' + oppty_id +
             '&cost_type_id=' + cost_type_id +
@@ -1946,7 +1946,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     updateOpportunitySQQ: function(sqq_id, sqq_override, source_type_id, oppty_id, callback) {
         var store = Ext.data.StoreManager.lookup('SuccessStore'),
-            url = 'http://test.decisionlink.com/services/UpdateOpportunitySQQ1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/UpdateOpportunitySQQ1.php' +
             '?sqq_id=' + sqq_id +
             '&sqq_override=' + sqq_override +
             '&source_type_id=' + source_type_id +
@@ -1959,7 +1959,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     updateSecondarySQQ: function(oppty_id, user_id, sqq2_value, sqq2_id, impact_per_unit_source_type_id, callback) {
         var store = Ext.data.StoreManager.lookup('SuccessStore'),
-            url = 'http://test.decisionlink.com/services/UpdateOpportunitySecondarySQQ1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/UpdateOpportunitySecondarySQQ1.php' +
             '?oppty_id=' + oppty_id +
             '&user_id=' + user_id +
             '&sqq2_value=' + sqq2_value +
@@ -1973,7 +1973,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     updatePassword: function(user_id, oldPassword, newPassword, callback) {
         var store = Ext.data.StoreManager.lookup('SuccessStore'),
-            url = 'http://test.decisionlink.com/services' +
+            url = DecisionLink.app.getServiceUrl() +
             '/ChangePassword1.php?user_id=' + user_id +
             '&oldPassword=' + oldPassword +
             '&newPassword=' + newPassword;
@@ -1985,7 +1985,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     updateCurrencyPreference: function(user_id, currency_pref, currency_pref_name, callback) {
         var store = Ext.data.StoreManager.lookup('SuccessStore'),
-            url = 'http://test.decisionlink.com/services' +
+            url = DecisionLink.app.getServiceUrl() +
             '/ChangeCurrencyPreference1.php?user_id=' + user_id +
             '&currency_pref=' + currency_pref +
             '&currency_pref_name=' + currency_pref_name;
@@ -1997,7 +1997,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getCurrencies: function(callback) {
         var store = Ext.data.StoreManager.lookup('CurrenciesStore'),
-            url = 'http://test.decisionlink.com/services/GetCurrencies1.php';
+            url = DecisionLink.app.getServiceUrl() + '/GetCurrencies1.php';
         store.getProxy().setUrl(url);
         store.load(function() {
             callback(store);
@@ -2006,7 +2006,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     saveOpportunity: function(company_id, user_id, name, wacc, oppty_revenue, solutions, callback) {
         var store = Ext.data.StoreManager.lookup('SuccessStore'),
-            url = 'http://test.decisionlink.com/services/SaveOpportunity1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/SaveOpportunity1.php' +
             '?company_id=' + company_id +
             '&user_id=' + user_id +
             '&name=' + name +
@@ -2037,7 +2037,7 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     getSolutions: function(user_id, callback) {
         var store = Ext.data.StoreManager.lookup('SolutionsStore'),
-            url = 'http://test.decisionlink.com/services/GetSolutions1.php' +
+            url = DecisionLink.app.getServiceUrl() + '/GetSolutions1.php' +
             '?user_id=' + user_id;
         store.getProxy().setUrl(url);
         store.load(function() {

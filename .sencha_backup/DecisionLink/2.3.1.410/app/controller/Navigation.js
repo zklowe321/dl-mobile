@@ -235,7 +235,7 @@ Ext.define('DecisionLink.controller.Navigation', {
                 tap: 'onSendAssetButtonTap'
             },
             "sendassetpanel": {
-                hide: 'onPanelHide'
+                hide: 'onSendAssetPanelHide'
             },
             "sendassetpanel #deliverySelectField": {
                 change: 'onDeliverySelectfieldChange'
@@ -357,7 +357,6 @@ Ext.define('DecisionLink.controller.Navigation', {
             cost_light_image = record.get('cost_light_image'),
             benefit_light_image = record.get('benefit_light_image'),
             me = this;
-
 
         Ext.Viewport.setMasked({message: 'Loading...'});
 
@@ -807,7 +806,6 @@ Ext.define('DecisionLink.controller.Navigation', {
             benefit_light_image = record.get('benefit_light_image'),
             me = this;
 
-
         Ext.Viewport.setMasked({message: 'Loading...'});
 
         carousel = Ext.create('DecisionLink.view.OpportunityCarousel', {
@@ -1041,11 +1039,11 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     onPerformanceListItemTap: function(dataview, index, target, record, e, eOpts) {
         var name = record.get('name'),
-            value = record.get('value'),
-            industry = record.get('industry'),
-            opportunity = record.get('opportunity'),
-            onepercent = record.get('onepercent'),
-            peerbest = record.get('peerbest'),
+            value = DecisionLink.app.roundNumber( record.get('value') ),
+            industry = DecisionLink.app.roundNumber( record.get('industry') ),
+            opportunity = '$' + DecisionLink.app.roundNumber( record.get('opportunity') ) + ' M',
+            onepercent = '$' + DecisionLink.app.roundNumber( record.get('onepercent') ) + ' M',
+            peerbest = '$' + DecisionLink.app.roundNumber( record.get('peerbest') ) + ' M',
             me = this;
 
         Ext.Viewport.setMasked({message: 'Loading...'});
@@ -1374,7 +1372,6 @@ Ext.define('DecisionLink.controller.Navigation', {
 
     onDownloadImageTap: function(image, e, eOpts) {
         var url = image.downloadUrl;
-        console.log(url);
 
         var panel = Ext.create('DecisionLink.view.SendAssetPanel', {
             title: 'Send Asset',
@@ -1582,7 +1579,7 @@ Ext.define('DecisionLink.controller.Navigation', {
         panel.destroy();
     },
 
-    onPanelHide: function(component, eOpts) {
+    onSendAssetPanelHide: function(component, eOpts) {
         this.getSendAssetPanel().destroy();
     },
 
@@ -2035,7 +2032,7 @@ Ext.define('DecisionLink.controller.Navigation', {
             // Download or email to me
             newUrl = url + '&method=' + method;
         }
-        var href = window.open(newUrl, '_system');
+        var href = window.open(newUrl, '_system', 'location=yes');
     },
 
     getSolutions: function(user_id, callback) {

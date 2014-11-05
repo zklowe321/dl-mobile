@@ -901,7 +901,6 @@
                     "    benefit_light_image = record.get('benefit_light_image'),",
                     "    me = this;",
                     "",
-                    "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
                     "carousel = Ext.create('DecisionLink.view.OpportunityCarousel', {",
@@ -1575,7 +1574,6 @@
                     "    benefit_light_image = record.get('benefit_light_image'),",
                     "    me = this;",
                     "",
-                    "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
                     "carousel = Ext.create('DecisionLink.view.OpportunityCarousel', {",
@@ -1944,11 +1942,11 @@
                 "fn": "onPerformanceListItemTap",
                 "implHandler": [
                     "var name = record.get('name'),",
-                    "    value = record.get('value'),",
-                    "    industry = record.get('industry'),",
-                    "    opportunity = record.get('opportunity'),",
-                    "    onepercent = record.get('onepercent'),",
-                    "    peerbest = record.get('peerbest'),",
+                    "    value = DecisionLink.app.roundNumber( record.get('value') ),",
+                    "    industry = DecisionLink.app.roundNumber( record.get('industry') ),",
+                    "    opportunity = '$' + DecisionLink.app.roundNumber( record.get('opportunity') ) + ' M',",
+                    "    onepercent = '$' + DecisionLink.app.roundNumber( record.get('onepercent') ) + ' M',",
+                    "    peerbest = '$' + DecisionLink.app.roundNumber( record.get('peerbest') ) + ' M',",
                     "    me = this;",
                     "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
@@ -2487,7 +2485,6 @@
                 "fn": "onDownloadImageTap",
                 "implHandler": [
                     "var url = image.downloadUrl;",
-                    "console.log(url);",
                     "",
                     "var panel = Ext.create('DecisionLink.view.SendAssetPanel', {",
                     "    title: 'Send Asset',",
@@ -2874,13 +2871,13 @@
             "userConfig": {
                 "designer|controlQuery": "sendassetpanel",
                 "designer|targetType": "Ext.Panel",
-                "fn": "onPanelHide",
+                "fn": "onSendAssetPanelHide",
                 "implHandler": [
                     "this.getSendAssetPanel().destroy();"
                 ],
                 "name": "hide"
             },
-            "name": "onPanelHide",
+            "name": "onSendAssetPanelHide",
             "designerId": "a08fa92d-f2d7-4838-82b0-8d69fc61e497"
         },
         {
@@ -3995,7 +3992,7 @@
                     "    // Download or email to me",
                     "    newUrl = url + '&method=' + method;",
                     "}",
-                    "var href = window.open(newUrl, '_system');"
+                    "var href = window.open(newUrl, '_system', 'location=yes');"
                 ]
             },
             "name": "downloadAsset",

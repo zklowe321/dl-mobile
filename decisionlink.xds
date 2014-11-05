@@ -3,7 +3,7 @@
     "settings": {
         "cmd": {
             "license": "commercial",
-            "cmdVersion": "5.0.3.276",
+            "cmdVersion": "5.0.3.324",
             "frameworkVersion": "2.3.1.410"
         },
         "canvasControls": {
@@ -25,13 +25,13 @@
         "buildShouldOverwriteIndex": true,
         "generateArchitectVersion": true,
         "lastBuildSelection": {
-            "value": "webBuild",
-            "display": "Build web app"
+            "value": "nativeBuild",
+            "display": "Native Build"
         },
         "projectHasEnabledWebServer": true
     },
     "xdsVersion": "3.1.0",
-    "xdsBuild": 1903,
+    "xdsBuild": 1934,
     "schemaVersion": 1,
     "upgradeVersion": 300000000007,
     "framework": "touch23",

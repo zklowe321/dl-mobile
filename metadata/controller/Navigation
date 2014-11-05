@@ -858,13 +858,13 @@
                 "fn": "onAccountScenariosListActivate",
                 "implHandler": [
                     "var me = this,",
-                    "    account_id = DecisionLink.app.getAccountId();",
+                    "    user_id = DecisionLink.app.getUserId();",
                     "",
-                    "me.getNavBar().setTitle(\"My Accounts\");",
+                    "me.getNavBar().setTitle(\"Value Propositions\");",
                     "",
                     "Ext.Viewport.setMasked({message: 'Loading...'});",
                     "",
-                    "me.getAccountScenarios(account_id, function(store) {",
+                    "me.getAccountScenarios(user_id, function(store) {",
                     "    me.getAccountScenariosList().setStore(store);",
                     "",
                     "    Ext.Viewport.setMasked(false);",
@@ -2927,7 +2927,7 @@
                 "fn": "deleteOpportunityCost",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('SuccessStore'),",
-                    "    url = 'http://test.decisionlink.com/services/DeleteOpportunityCost1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/DeleteOpportunityCost1.php' +",
                     "    '?oppty_id=' + oppty_id +",
                     "    '&id=' + id;",
                     "store.getProxy().setUrl(url);",
@@ -2955,7 +2955,7 @@
                 "fn": "getSellingScenario",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('ScenarioStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetSellingScenario1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetSellingScenario1.php' +",
                     "    '?user_id=' + user_id +",
                     "    '&oppty_id=' + oppty_id;",
                     "store.getProxy().setUrl(url);",
@@ -2984,7 +2984,7 @@
                 "fn": "getKpis",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('KpisStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetAlignedKpis1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetAlignedKpis1.php' +",
                     "    '?user_id=' + user_id +",
                     "    '&company_id=' + company_id +",
                     "    '&industry_id=' + industry_id;",
@@ -3012,7 +3012,7 @@
                 "fn": "getSalesQuestions",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('SalesQuestionsStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetOpportunitySQQs1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetOpportunitySQQs1.php' +",
                     "    '?oppty_id=' + oppty_id;",
                     "store.getProxy().setUrl(url);",
                     "store.load(function() {",
@@ -3039,7 +3039,7 @@
                 "fn": "getCompanyScenarios",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('CompanyScenariosStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetOpportunities1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetOpportunities1.php' +",
                     "    '?user_id=' + user_id +",
                     "    '&company_id=' + company_id;",
                     "store.getProxy().setUrl(url);",
@@ -3066,7 +3066,7 @@
                 "fn": "getSavedAccounts",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('SavedStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetSavedAccounts1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetSavedAccounts1.php' +",
                     "    '?user_id=' + id;",
                     "store.getProxy().setUrl(url);",
                     "store.load(function() {",
@@ -3092,7 +3092,7 @@
                 "fn": "getCompanyOverview",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('DetailStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetCompanyOverview1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetCompanyOverview1.php' +",
                     "    '?company_id=' + id;",
                     "store.getProxy().setUrl(url);",
                     "store.load(function() {",
@@ -3119,7 +3119,7 @@
                 "fn": "getDivisions",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('DivisionsStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetFamilyTree1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetFamilyTree1.php' +",
                     "    '?user_id=' + user_id +",
                     "    '&company_id=' + company_id;",
                     "store.getProxy().setUrl(url);",
@@ -3147,7 +3147,7 @@
                 "fn": "getValidation",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('ValidateStore'),",
-                    "    url = 'http://test.decisionlink.com/services' +",
+                    "    url = DecisionLink.app.getServiceUrl() +",
                     "    '/ValidateUser1.php?loginUsername=' + username +",
                     "    '&loginPassword=' + password;",
                     "store.getProxy().setUrl(url);",
@@ -3168,14 +3168,14 @@
             "codeClass": null,
             "userConfig": {
                 "designer|params": [
-                    "account_id",
+                    "user_id",
                     "callback"
                 ],
                 "fn": "getAccountScenarios",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('AccountScenariosStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetAccountScenarios1.php' +",
-                    "    '?account_id=' + account_id;",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetUserOpportunities1.php' +",
+                    "    '?user_id=' + user_id;",
                     "store.getProxy().setUrl(url);",
                     "store.load(function() {",
                     "    callback(store);",
@@ -3201,7 +3201,7 @@
                 "fn": "getOpportunityOverview",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('OpportunityOverviewStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetOpportunityOverview1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetOpportunityOverview1.php' +",
                     "    '?oppty_id=' + oppty_id +",
                     "    '&user_id=' + user_id;",
                     "store.getProxy().setUrl(url);",
@@ -3228,7 +3228,7 @@
                 "fn": "getValueFormulas",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('ValueFormulasStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetOpportunityMetrics1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetOpportunityMetrics1.php' +",
                     "    '?oppty_id=' + oppty_id;",
                     "store.getProxy().setUrl(url);",
                     "store.load(function() {",
@@ -3255,7 +3255,7 @@
                 "fn": "getOpportunityCosts",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('OpportunityCostsStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetOpportunityCosts1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetOpportunityCosts1.php' +",
                     "    '?oppty_id=' + oppty_id +",
                     "    '&user_id=' + user_id;",
                     "store.getProxy().setUrl(url);",
@@ -3283,7 +3283,7 @@
                 "fn": "getOpportunityAssets",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('AssetsStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetOpportunityTypeAssets1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetOpportunityTypeAssets1.php' +",
                     "    '?oppty_id=' + oppty_id +",
                     "    '&user_id=' + user_id;",
                     "store.getProxy().setUrl(url);",
@@ -3310,7 +3310,7 @@
                 "fn": "getDNBOverview",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('DNBOverviewStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetDNBAdditional.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetDNBAdditional.php' +",
                     "    '?company_id=' + company_id;",
                     "store.getProxy().setUrl(url);",
                     "store.load(function() {",
@@ -3337,7 +3337,7 @@
                 "fn": "getCompetitors",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('CompetitorsStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetCompetitors1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetCompetitors1.php' +",
                     "    '?user_id=' + user_id +",
                     "    '&company_id=' + company_id;",
                     "store.getProxy().setUrl(url);",
@@ -3364,7 +3364,7 @@
                 "fn": "getEmployees",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('EmployeesStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetExecutives1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetExecutives1.php' +",
                     "    '?company_id=' + company_id;",
                     "store.getProxy().setUrl(url);",
                     "store.load(function() {",
@@ -3393,7 +3393,7 @@
                 "fn": "getClosestPeers",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('ClosestPeersStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetEnginePeers1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetEnginePeers1.php' +",
                     "    '?user_id=' + user_id +",
                     "    '&company_id=' + company_id +",
                     "    '&industry_id=' + industry_id +",
@@ -3424,7 +3424,7 @@
                 "fn": "getRatios",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('RatiosStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetAlignedKpiRatios1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetAlignedKpiRatios1.php' +",
                     "    '?user_id=' + user_id +",
                     "    '&company_id=' + company_id +",
                     "    '&kpi_id=' + kpi_id;",
@@ -3453,7 +3453,7 @@
                 "fn": "getScenarioIndustries",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('ScenarioIndustriesStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetSellingScenario1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetSellingScenario1.php' +",
                     "    '?user_id=' + user_id +",
                     "    '&oppty_id=' + oppty_id;",
                     "store.getProxy().setUrl(url);",
@@ -3480,7 +3480,7 @@
                 "fn": "getSecondarySQQs",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('SecondarySQQStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetOpportunitySecondarySQQs1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetOpportunitySecondarySQQs1.php' +",
                     "    '?oppty_id=' + oppty_id;",
                     "store.getProxy().setUrl(url);",
                     "store.load(function() {",
@@ -3507,7 +3507,7 @@
                 "fn": "getCompRatios",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('CompRatiosStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetRatios1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetRatios1.php' +",
                     "    '?user_id=' + user_id +",
                     "    '&company_id=' + company_id;",
                     "store.getProxy().setUrl(url);",
@@ -3535,7 +3535,7 @@
                 "fn": "getScenarioAreas",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('ScenarioAreasStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetSellingScenario1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetSellingScenario1.php' +",
                     "    '?user_id=' + user_id +",
                     "    '&oppty_id=' + oppty_id;",
                     "store.getProxy().setUrl(url);",
@@ -3563,7 +3563,7 @@
                 "fn": "getScenarioBaselines",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('ScenarioBaselinesStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetSellingScenario1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetSellingScenario1.php' +",
                     "    '?user_id=' + user_id +",
                     "    '&oppty_id=' + oppty_id;",
                     "store.getProxy().setUrl(url);",
@@ -3591,7 +3591,7 @@
                 "fn": "getScenarioCompetitors",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('ScenarioCompetitorsStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetSellingScenario1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetSellingScenario1.php' +",
                     "    '?user_id=' + user_id +",
                     "    '&oppty_id=' + oppty_id;",
                     "store.getProxy().setUrl(url);",
@@ -3626,7 +3626,7 @@
                 "fn": "saveSellingScenario",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('SuccessStore'),",
-                    "    url = 'http://test.decisionlink.com/services/SaveSellingScenario.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/SaveSellingScenario.php' +",
                     "    '?user_id=' + user_id +",
                     "    '&id=' + id +",
                     "    '&scenario=' + scenario +",
@@ -3665,7 +3665,7 @@
                 "fn": "saveOpportunityCost",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('SuccessStore'),",
-                    "    url = 'http://test.decisionlink.com/services/SaveOpportunityCost1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/SaveOpportunityCost1.php' +",
                     "    '?oppty_id=' + oppty_id +",
                     "    '&cost_type_id=' + cost_type_id +",
                     "    '&accrual_type_id=' + accrual_type_id +",
@@ -3700,7 +3700,7 @@
                 "fn": "saveValueFormulaMetrics",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('SuccessStore'),",
-                    "    url = 'http://test.decisionlink.com/services/SaveValueFormulaMetrics1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/SaveValueFormulaMetrics1.php' +",
                     "    '?metric_id=' + metric_id +",
                     "    '&sqq_value=' + sqq_value +",
                     "    '&sqq2_value=' + sqq2_value +",
@@ -3733,7 +3733,7 @@
                 "fn": "searchCompanies",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('SearchStore'),",
-                    "    url = 'http://test.decisionlink.com/services' +",
+                    "    url = DecisionLink.app.getServiceUrl() + ",
                     "    '/SearchCompanies1.php?searchTerm=' + searchTerm +",
                     "    '&searchOption=' + option;",
                     "store.getProxy().setUrl(url);",
@@ -3764,7 +3764,7 @@
                 "fn": "updateOpportunityCosts",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('SuccessStore'),",
-                    "    url = 'http://test.decisionlink.com/services/UpdateOpportunityCosts1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/UpdateOpportunityCosts1.php' +",
                     "    '?id=' + id +",
                     "    '&oppty_id=' + oppty_id +",
                     "    '&cost_type_id=' + cost_type_id +",
@@ -3797,7 +3797,7 @@
                 "fn": "updateOpportunitySQQ",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('SuccessStore'),",
-                    "    url = 'http://test.decisionlink.com/services/UpdateOpportunitySQQ1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/UpdateOpportunitySQQ1.php' +",
                     "    '?sqq_id=' + sqq_id +",
                     "    '&sqq_override=' + sqq_override +",
                     "    '&source_type_id=' + source_type_id +",
@@ -3830,7 +3830,7 @@
                 "fn": "updateSecondarySQQ",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('SuccessStore'),",
-                    "    url = 'http://test.decisionlink.com/services/UpdateOpportunitySecondarySQQ1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/UpdateOpportunitySecondarySQQ1.php' +",
                     "    '?oppty_id=' + oppty_id +",
                     "    '&user_id=' + user_id +",
                     "    '&sqq2_value=' + sqq2_value +",
@@ -3862,7 +3862,7 @@
                 "fn": "updatePassword",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('SuccessStore'),",
-                    "    url = 'http://test.decisionlink.com/services' +",
+                    "    url = DecisionLink.app.getServiceUrl() + ",
                     "    '/ChangePassword1.php?user_id=' + user_id +",
                     "    '&oldPassword=' + oldPassword +",
                     "    '&newPassword=' + newPassword;",
@@ -3892,7 +3892,7 @@
                 "fn": "updateCurrencyPreference",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('SuccessStore'),",
-                    "    url = 'http://test.decisionlink.com/services' +",
+                    "    url = DecisionLink.app.getServiceUrl() + ",
                     "    '/ChangeCurrencyPreference1.php?user_id=' + user_id +",
                     "    '&currency_pref=' + currency_pref +",
                     "    '&currency_pref_name=' + currency_pref_name;",
@@ -3919,7 +3919,7 @@
                 "fn": "getCurrencies",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('CurrenciesStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetCurrencies1.php';",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetCurrencies1.php';",
                     "store.getProxy().setUrl(url);",
                     "store.load(function() {",
                     "    callback(store);",
@@ -3949,7 +3949,7 @@
                 "fn": "saveOpportunity",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('SuccessStore'),",
-                    "    url = 'http://test.decisionlink.com/services/SaveOpportunity1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/SaveOpportunity1.php' +",
                     "    '?company_id=' + company_id +",
                     "    '&user_id=' + user_id +",
                     "    '&name=' + name +",
@@ -4013,7 +4013,7 @@
                 "fn": "getSolutions",
                 "implHandler": [
                     "var store = Ext.data.StoreManager.lookup('SolutionsStore'),",
-                    "    url = 'http://test.decisionlink.com/services/GetSolutions1.php' +",
+                    "    url = DecisionLink.app.getServiceUrl() + '/GetSolutions1.php' +",
                     "    '?user_id=' + user_id;",
                     "store.getProxy().setUrl(url);",
                     "store.load(function() {",

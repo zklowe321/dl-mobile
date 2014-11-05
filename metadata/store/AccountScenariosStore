@@ -30,7 +30,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "rootProperty": "bjs",
+                        "rootProperty": "opptys",
                         "totalProperty": null
                     },
                     "name": "MyJsonReader2",

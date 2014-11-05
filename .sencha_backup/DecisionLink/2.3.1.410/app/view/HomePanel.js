@@ -36,10 +36,8 @@ Ext.define('DecisionLink.view.HomePanel', {
                 items: [
                     {
                         xtype: 'image',
-                        flex: 1,
-                        centered: false,
-                        height: 10,
-                        src: 'http://test.decisionlink.com/images/Logo_Actual_Size_VSA.png'
+                        height: '15%',
+                        src: 'http://test.decisionlink.com/images/Logo_Proposed.png'
                     },
                     {
                         xtype: 'searchfield',

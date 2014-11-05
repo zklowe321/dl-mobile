@@ -665,6 +665,26 @@
             },
             "name": "setCurrentCompany",
             "designerId": "0508e855-a2b9-44f9-9245-ce7ada9ae749"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "rnum"
+                ],
+                "fn": "roundNumber",
+                "implHandler": [
+                    "var newnumber = Math.round(rnum * Math.pow(10, 2)) / Math.pow(10, 2);",
+                    "        return newnumber;"
+                ]
+            },
+            "name": "roundNumber",
+            "designerId": "9a64cae6-a71a-489a-add2-7d5c46d6b4ea"
         }
     ]
 }

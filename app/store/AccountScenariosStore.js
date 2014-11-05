@@ -29,7 +29,7 @@ Ext.define('DecisionLink.store.AccountScenariosStore', {
             type: 'jsonp',
             reader: {
                 type: 'json',
-                rootProperty: 'bjs'
+                rootProperty: 'opptys'
             }
         },
         listeners: [

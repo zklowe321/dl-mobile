@@ -39,9 +39,6 @@
                 "margin": 10,
                 "options": [
                     "[{",
-                    "    'name': 'Download',",
-                    "    'value': 1",
-                    "},{",
                     "    'name': 'Email to me',",
                     "    'value': 2",
                     "},{",
