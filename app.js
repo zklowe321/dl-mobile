@@ -61,7 +61,8 @@ Ext.application({
         'ScenarioIndustries',
         'ScenarioBaselines',
         'Currencies',
-        'Solutions'
+        'Solutions',
+        'ScenarioBizModels'
     ],
     stores: [
         'SearchStore',
@@ -91,7 +92,8 @@ Ext.application({
         'ScenarioIndustriesStore',
         'ScenarioBaselinesStore',
         'CurrenciesStore',
-        'SolutionsStore'
+        'SolutionsStore',
+        'ScenarioBizModelsStore'
     ],
     views: [
         'MainView',
@@ -254,6 +256,22 @@ Ext.application({
 
     getServiceUrl: function() {
         return this.serviceurl;
+    },
+
+    removeCommas: function(str) {
+        if (typeof str == 'string') {
+            return(str.replace(/,/g,''));
+        } else {
+            return str;
+        }
+    },
+
+    getCurrentTerm: function() {
+        return this.term;
+    },
+
+    setCurrentTerm: function(term) {
+        this.term = term;
     },
 
     launch: function() {

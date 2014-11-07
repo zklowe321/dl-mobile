@@ -167,6 +167,32 @@ Ext.define('DecisionLink.view.OpportunityCarousel', {
                     },
                     {
                         xtype: 'textfield',
+                        itemId: 'bizModelsTitle',
+                        label: 'Business Models',
+                        labelWidth: '100%',
+                        readOnly: true
+                    },
+                    {
+                        xtype: 'list',
+                        height: 100,
+                        itemId: 'bizModelsList',
+                        margin: 7,
+                        mode: 'SIMPLE',
+                        itemTpl: [
+                            '<div class=“info” width=“40” height=“40”/>{name}<br/>'
+                        ],
+                        store: 'ScenarioBizModelsStore',
+                        items: [
+                            {
+                                xtype: 'spacer',
+                                docked: 'top',
+                                height: 10
+                            }
+                        ]
+                    },
+                    {
+                        xtype: 'textfield',
+                        itemId: 'competitorsTitle',
                         label: 'Competing Against',
                         labelWidth: '100%',
                         readOnly: true
@@ -175,6 +201,8 @@ Ext.define('DecisionLink.view.OpportunityCarousel', {
                         xtype: 'list',
                         height: 100,
                         itemId: 'competitorsList',
+                        margin: 7,
+                        mode: 'SIMPLE',
                         itemTpl: [
                             '<div class=“info” width=“40” height=“40”/>{name}<br/>'
                         ],
@@ -186,6 +214,7 @@ Ext.define('DecisionLink.view.OpportunityCarousel', {
                     },
                     {
                         xtype: 'textfield',
+                        itemId: 'industriesTitle',
                         label: 'Industries',
                         labelWidth: '100%',
                         readOnly: true
@@ -194,6 +223,8 @@ Ext.define('DecisionLink.view.OpportunityCarousel', {
                         xtype: 'list',
                         height: 100,
                         itemId: 'industriesList',
+                        margin: 7,
+                        mode: 'SIMPLE',
                         itemTpl: [
                             '<div class=“info” width=“40” height=“40”/>{name}<br/>'
                         ],

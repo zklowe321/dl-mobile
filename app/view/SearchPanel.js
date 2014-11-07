@@ -35,7 +35,7 @@ Ext.define('DecisionLink.view.SearchPanel', {
                         xtype: 'list',
                         itemId: 'savedList',
                         itemTpl: [
-                            '<div class=“info” width=“40” height=“40”/>Name: {name}<br/><small>Revenue: ${revenue} M</small>'
+                            '<div style="float:right">{ticker}</div><div class=“info” width=“40” height=“40”/>Name: {name}<br/><small>Revenue: ${revenue} M</small>'
                         ],
                         store: 'SavedStore'
                     }

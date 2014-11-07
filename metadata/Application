@@ -47,7 +47,8 @@
             "ScenarioIndustries",
             "ScenarioBaselines",
             "Currencies",
-            "Solutions"
+            "Solutions",
+            "ScenarioBizModels"
         ],
         "name": "DecisionLink",
         "pagesFromHome": "0",
@@ -80,7 +81,8 @@
             "ScenarioIndustriesStore",
             "ScenarioBaselinesStore",
             "CurrenciesStore",
-            "SolutionsStore"
+            "SolutionsStore",
+            "ScenarioBizModelsStore"
         ],
         "success": false,
         "userName": " ",
@@ -117,7 +119,8 @@
         "validated": "boolean",
         "user_id": "number",
         "success": "boolean",
-        "isDouble": "boolean"
+        "isDouble": "boolean",
+        "term": "number"
     },
     "designerId": "application",
     "customConfigs": [
@@ -184,6 +187,11 @@
         {
             "group": "(Custom Properties)",
             "name": "serviceurl",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "term",
             "type": "string"
         }
     ],
@@ -707,6 +715,64 @@
             },
             "name": "getServiceUrl",
             "designerId": "29158701-b32c-45ba-b1bc-ee14379c0ee2"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "str"
+                ],
+                "fn": "removeCommas",
+                "implHandler": [
+                    "if (typeof str == 'string') {",
+                    "    return(str.replace(/,/g,''));",
+                    "} else {",
+                    "    return str;",
+                    "}"
+                ]
+            },
+            "name": "removeCommas",
+            "designerId": "2a7dc58e-e3d1-4b91-aea1-52fe2a9fcbec"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getCurrentTerm",
+                "implHandler": [
+                    "return this.term;"
+                ]
+            },
+            "name": "getCurrentTerm",
+            "designerId": "de0d229a-bab9-4fcb-9660-ac35356834f9"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "term"
+                ],
+                "fn": "setCurrentTerm",
+                "implHandler": [
+                    "this.term = term;"
+                ]
+            },
+            "name": "setCurrentTerm",
+            "designerId": "59510c7d-8140-4718-8242-49212ec69fed"
         }
     ]
 }

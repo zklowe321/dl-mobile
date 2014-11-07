@@ -20,6 +20,9 @@ Ext.define('DecisionLink.view.SalesQuestionDetailPanel', {
     requires: [
         'Ext.Spacer',
         'Ext.field.Select',
+        'Ext.Container',
+        'Ext.field.Slider',
+        'Ext.Label',
         'Ext.Button',
         'Ext.field.Hidden'
     ],
@@ -68,6 +71,7 @@ Ext.define('DecisionLink.view.SalesQuestionDetailPanel', {
                 itemId: 'sourceSelectField',
                 label: 'Source',
                 labelWidth: '40%',
+                labelWrap: true,
                 options: [
                     {
                         text: 'Choose Source',
@@ -92,6 +96,102 @@ Ext.define('DecisionLink.view.SalesQuestionDetailPanel', {
                 height: 10
             },
             {
+                xtype: 'container',
+                itemId: 'year2container',
+                layout: 'hbox',
+                items: [
+                    {
+                        xtype: 'sliderfield',
+                        flex: 6,
+                        itemId: 'year2growth',
+                        label: 'Year 2 Growth',
+                        labelWidth: '40%',
+                        labelWrap: true,
+                        increment: 10,
+                        minValue: -100
+                    },
+                    {
+                        xtype: 'label',
+                        flex: 1,
+                        itemId: 'year2label',
+                        margin: 3
+                    }
+                ]
+            },
+            {
+                xtype: 'container',
+                itemId: 'year3container',
+                layout: 'hbox',
+                items: [
+                    {
+                        xtype: 'sliderfield',
+                        flex: 6,
+                        itemId: 'year3growth',
+                        label: 'Year 3 Growth',
+                        labelWidth: '40%',
+                        labelWrap: true,
+                        increment: 10,
+                        minValue: -100
+                    },
+                    {
+                        xtype: 'label',
+                        flex: 1,
+                        itemId: 'year3label',
+                        margin: 3
+                    }
+                ]
+            },
+            {
+                xtype: 'container',
+                itemId: 'year4container',
+                layout: 'hbox',
+                items: [
+                    {
+                        xtype: 'sliderfield',
+                        flex: 6,
+                        itemId: 'year4growth',
+                        label: 'Year 4 Growth',
+                        labelWidth: '40%',
+                        labelWrap: true,
+                        increment: 10,
+                        minValue: -100
+                    },
+                    {
+                        xtype: 'label',
+                        flex: 1,
+                        itemId: 'year4label',
+                        margin: 3
+                    }
+                ]
+            },
+            {
+                xtype: 'container',
+                itemId: 'year5container',
+                layout: 'hbox',
+                items: [
+                    {
+                        xtype: 'sliderfield',
+                        flex: 6,
+                        itemId: 'year5growth',
+                        label: 'Year 5 Growth',
+                        labelWidth: '40%',
+                        labelWrap: true,
+                        increment: 10,
+                        minValue: -100
+                    },
+                    {
+                        xtype: 'label',
+                        flex: 1,
+                        itemId: 'year5label',
+                        margin: 3
+                    }
+                ]
+            },
+            {
+                xtype: 'spacer',
+                height: 10
+            },
+            {
                 xtype: 'button',
                 itemId: 'saveSQQButton',
                 margin: 10,
@@ -101,8 +201,50 @@ Ext.define('DecisionLink.view.SalesQuestionDetailPanel', {
                 xtype: 'hiddenfield',
                 itemId: 'sqqIdField',
                 readOnly: true
+            },
+            {
+                xtype: 'hiddenfield',
+                itemId: 'metricIdField'
+            }
+        ],
+        listeners: [
+            {
+                fn: 'onYear2growthChange',
+                event: 'change',
+                delegate: '#year2growth'
+            },
+            {
+                fn: 'onYear3growthChange',
+                event: 'change',
+                delegate: '#year3growth'
+            },
+            {
+                fn: 'onYear4growthChange',
+                event: 'change',
+                delegate: '#year4growth'
+            },
+            {
+                fn: 'onYear5growthChange',
+                event: 'change',
+                delegate: '#year5growth'
             }
         ]
+    },
+
+    onYear2growthChange: function(me, sl, thumb, newValue, oldValue, eOpts) {
+        Ext.ComponentQuery.query('salesquestiondetailpanel #year2container #year2label')[0].setHtml('<p>' + newValue + '</p>');
+    },
+
+    onYear3growthChange: function(me, sl, thumb, newValue, oldValue, eOpts) {
+        Ext.ComponentQuery.query('salesquestiondetailpanel #year3container #year3label')[0].setHtml('<p>' + newValue + '</p>');
+    },
+
+    onYear4growthChange: function(me, sl, thumb, newValue, oldValue, eOpts) {
+        Ext.ComponentQuery.query('salesquestiondetailpanel #year4container #year4label')[0].setHtml('<p>' + newValue + '</p>');
+    },
+
+    onYear5growthChange: function(me, sl, thumb, newValue, oldValue, eOpts) {
+        Ext.ComponentQuery.query('salesquestiondetailpanel #year5container #year5label')[0].setHtml('<p>' + newValue + '</p>');
     }
 
 });

@@ -19,7 +19,8 @@ Ext.define('DecisionLink.store.SearchStore', {
     requires: [
         'DecisionLink.model.Search',
         'Ext.data.proxy.JsonP',
-        'Ext.data.reader.Json'
+        'Ext.data.reader.Json',
+        'Ext.util.Sorter'
     ],
 
     config: {
@@ -32,6 +33,33 @@ Ext.define('DecisionLink.store.SearchStore', {
                 rootProperty: 'companies',
                 totalProperty: 'totalRecs'
             }
+        },
+        listeners: [
+            {
+                fn: 'onJsonpstoreLoad',
+                event: 'load'
+            }
+        ],
+        sorters: {
+            direction: 'DESC',
+            property: 'revenue'
         }
+    },
+
+    onJsonpstoreLoad: function(store, records, successful, operation, eOpts) {
+        var count = store.data.items.length,
+            i;
+
+        for(i = 0; i < count; i++) {
+            var temp = store.data.items[i].data.revenue;
+
+            temp = DecisionLink.app.formatCurrency(temp);
+
+            store.data.items[i].data.revenue = temp;
+        }
+
+        search = Ext.ComponentQuery.query('homepanel #homeContainer #searchListContainer #searchList')[0];
+        search.refresh();
     }
+
 });

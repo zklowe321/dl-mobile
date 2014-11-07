@@ -57,6 +57,21 @@ Ext.define('DecisionLink.model.ValueFormulas', {
             },
             {
                 name: 'unit_type_id'
+            },
+            {
+                name: 'sqq_y1'
+            },
+            {
+                name: 'sqq_y2'
+            },
+            {
+                name: 'sqq_y3'
+            },
+            {
+                name: 'sqq_y4'
+            },
+            {
+                name: 'sqq_y5'
             }
         ]
     }

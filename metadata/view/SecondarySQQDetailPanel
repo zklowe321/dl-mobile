@@ -23,6 +23,7 @@
                 "itemId": "salesQuestionField",
                 "label": "Sales Question",
                 "labelAlign": "top",
+                "labelWrap": true,
                 "readOnly": true
             },
             "name": "MyTextField35",
@@ -51,9 +52,10 @@
             "userConfig": {
                 "itemId": "sqqAnswerField",
                 "label": "Answer",
-                "labelWidth": "40%"
+                "labelWidth": "40%",
+                "labelWrap": true
             },
-            "name": "MyTextField36",
+            "name": "MyTextField25",
             "designerId": "addb520b-c076-4dc2-ad03-cf2c18eaf6dd"
         },
         {
@@ -80,6 +82,7 @@
                 "itemId": "sourceSelectField",
                 "label": "Source",
                 "labelWidth": "40%",
+                "labelWrap": true,
                 "options": [
                     "[{",
                     "    text: 'Choose Source',",

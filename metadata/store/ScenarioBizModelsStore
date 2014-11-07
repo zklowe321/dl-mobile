@@ -1,0 +1,74 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ScenarioBizModelsStore",
+        "model": "ScenarioBizModels",
+        "storeId": "ScenarioBizModelsStore"
+    },
+    "name": "MyJsonPStore",
+    "designerId": "fe699f7c-a75c-46a6-910d-c8dd80b99a8a",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyJsonPProxy28",
+            "designerId": "76c7fa37-503f-4d1d-b695-29a6a11051d4",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "business_models"
+                    },
+                    "name": "MyJsonReader28",
+                    "designerId": "8a4db00e-ed05-4216-a13f-cfa0e8dae007"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonpstoreLoad",
+                "implHandler": [
+                    "length = store.data.items.length;",
+                    "if (length === 0) {",
+                    "    Ext.ComponentQuery.query('opportunitycarousel #opportunitySituationPanel #bizModelsList')[0].setHidden(true);",
+                    "    Ext.ComponentQuery.query('opportunitycarousel #opportunitySituationPanel #bizModelsTitle')[0].setHidden(true);",
+                    "} else {",
+                    "    records = [];",
+                    "    for(i = 0; i < length; i++) {",
+                    "        if (store.data.items[i].data.selected) {",
+                    "            records[records.length] = store.data.items[i];",
+                    "        }",
+                    "    }",
+                    "    Ext.ComponentQuery.query('opportunitycarousel #opportunitySituationPanel #bizModelsList')[0].select(records);",
+                    "",
+                    "    Ext.ComponentQuery.query('opportunitycarousel #opportunitySituationPanel #bizModelsList')[0].setHidden(false);",
+                    "    Ext.ComponentQuery.query('opportunitycarousel #opportunitySituationPanel #bizModelsTitle')[0].setHidden(false);",
+                    "}"
+                ],
+                "name": "load"
+            },
+            "name": "onJsonpstoreLoad",
+            "designerId": "8d9d1fe6-9f07-4201-bdf3-9c017da2e646"
+        }
+    ]
+}

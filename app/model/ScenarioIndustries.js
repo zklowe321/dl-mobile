@@ -27,6 +27,9 @@ Ext.define('DecisionLink.model.ScenarioIndustries', {
             },
             {
                 name: 'name'
+            },
+            {
+                name: 'selected'
             }
         ]
     }

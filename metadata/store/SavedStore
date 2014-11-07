@@ -65,6 +65,20 @@
             },
             "name": "onJsonpstoreLoad",
             "designerId": "97c5dd1c-d18f-48d2-b711-5338bda0df8b"
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "direction": "DESC",
+                "property": "revenue"
+            },
+            "name": "MySorter2",
+            "designerId": "dc6261a5-de42-4596-b2ff-dea41171c2c3"
         }
     ]
 }

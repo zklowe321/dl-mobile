@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9B60ACAB-773A-4D5B-90DD-EB30C4408017</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DecisionLink</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7995C232E6F1AA4CD937F8CC64ED1BBB34C3EB43</key>
+		<string>https://github.com/zklowe321/dl-mobile.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>cordova/platforms/ios/DecisionLink.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7995C232E6F1AA4CD937F8CC64ED1BBB34C3EB43</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/zklowe321/dl-mobile.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7995C232E6F1AA4CD937F8CC64ED1BBB34C3EB43</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7995C232E6F1AA4CD937F8CC64ED1BBB34C3EB43</string>
+			<key>IDESourceControlWCCName</key>
+			<string>decisionlink</string>
+		</dict>
+	</array>
+</dict>
+</plist>

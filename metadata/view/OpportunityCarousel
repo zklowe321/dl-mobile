@@ -306,6 +306,72 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "itemId": "bizModelsTitle",
+                        "label": "Business Models",
+                        "labelWidth": "100%",
+                        "readOnly": true
+                    },
+                    "name": "MyTextField44",
+                    "designerId": "41ef7437-1ede-4945-bd9d-843fd5442dd8"
+                },
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 100,
+                        "itemId": "bizModelsList",
+                        "margin": 7,
+                        "mode": "SIMPLE",
+                        "store": "ScenarioBizModelsStore"
+                    },
+                    "name": "MyList23",
+                    "designerId": "443d4a3f-bf8e-4f1a-92eb-d039c3475c35",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=“info” width=“40” height=“40”/>{name}<br/>"
+                                ]
+                            },
+                            "name": "tpl8",
+                            "designerId": "09451bed-beca-4a53-abfb-eb48ca366092"
+                        },
+                        {
+                            "type": "Ext.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "docked": "top",
+                                "height": 10
+                            },
+                            "name": "MySpacer49",
+                            "designerId": "a8931d0d-5fe7-4e40-b8f4-2e9fa0288baa"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "competitorsTitle",
                         "label": "Competing Against",
                         "labelWidth": "100%",
                         "readOnly": true
@@ -323,6 +389,8 @@
                     "userConfig": {
                         "height": 100,
                         "itemId": "competitorsList",
+                        "margin": 7,
+                        "mode": "SIMPLE",
                         "store": "ScenarioCompetitorsStore"
                     },
                     "name": "MyList8",
@@ -367,6 +435,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "itemId": "industriesTitle",
                         "label": "Industries",
                         "labelWidth": "100%",
                         "readOnly": true
@@ -384,6 +453,8 @@
                     "userConfig": {
                         "height": 100,
                         "itemId": "industriesList",
+                        "margin": 7,
+                        "mode": "SIMPLE",
                         "store": "ScenarioIndustriesStore"
                     },
                     "name": "MyList9",
@@ -497,7 +568,7 @@
                         "labelWidth": "40%",
                         "labelWrap": true
                     },
-                    "name": "MyTextField15",
+                    "name": "MyTextField18",
                     "designerId": "bde9ae51-db39-48ae-a67a-19944cd132fc"
                 },
                 {

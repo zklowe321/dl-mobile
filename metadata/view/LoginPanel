@@ -24,10 +24,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "autoCapitalize": false,
+                "border": 3,
+                "bottom": null,
                 "id": "usernameField",
                 "itemId": null,
                 "label": "Username",
-                "labelWidth": "45%"
+                "labelWidth": "45%",
+                "labelWrap": true,
+                "style": "border-color: black; border-style: solid;"
             },
             "name": "MyTextField4",
             "designerId": "e2fb7ccf-977d-4082-9227-3ac082e5c7ef"
@@ -40,10 +45,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "border": 3,
                 "id": "passwordField",
                 "itemId": null,
                 "label": "Password",
-                "labelWidth": "45%"
+                "labelWidth": "45%",
+                "labelWrap": true,
+                "style": "border-color: black; border-style: solid;"
             },
             "name": "MyPasswordField",
             "designerId": "9bf96370-281a-4c00-9d2c-9872504cb072"
@@ -56,11 +64,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "border": 3,
                 "container|pack": "center",
                 "id": "buttonContainer",
                 "itemId": null,
                 "layout": "hbox",
-                "padding": 10
+                "padding": 10,
+                "style": "border-color: black; border-style: solid;"
             },
             "name": "MyContainer6",
             "designerId": "e0b951c3-2593-400a-926c-0e046b514676",
@@ -75,6 +85,7 @@
                     "userConfig": {
                         "id": "loginButton",
                         "itemId": null,
+                        "padding": 3,
                         "text": "Login",
                         "width": "30%"
                     },
@@ -104,6 +115,7 @@
                     "userConfig": {
                         "id": "cancelButton",
                         "itemId": null,
+                        "padding": 3,
                         "text": "Cancel",
                         "width": "30%"
                     },

@@ -20,6 +20,7 @@ Ext.define('DecisionLink.view.SendAssetPanel', {
     requires: [
         'Ext.field.Select',
         'Ext.Label',
+        'Ext.field.Email',
         'Ext.Button',
         'Ext.Spacer',
         'Ext.dataview.List',
@@ -65,12 +66,13 @@ Ext.define('DecisionLink.view.SendAssetPanel', {
                 margin: 10
             },
             {
-                xtype: 'textfield',
+                xtype: 'emailfield',
                 hidden: true,
                 itemId: 'emailField',
                 label: 'Email(s)',
                 labelWidth: '40%',
-                labelWrap: true
+                labelWrap: true,
+                placeHolder: 'email@example.com'
             },
             {
                 xtype: 'container',

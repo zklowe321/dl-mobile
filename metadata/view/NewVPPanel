@@ -131,7 +131,7 @@
                         "labelWidth": "40%",
                         "labelWrap": true
                     },
-                    "name": "MyTextField2",
+                    "name": "MyTextField15",
                     "designerId": "b0d01d11-3abc-4c09-b3d2-244fd08de59d"
                 }
             ]
@@ -186,7 +186,8 @@
                             "userConfig": {
                                 "itemId": "nameField",
                                 "label": "Name",
-                                "labelWidth": "40%"
+                                "labelWidth": "40%",
+                                "labelWrap": true
                             },
                             "name": "MyTextField3",
                             "designerId": "91674cfa-5c2a-4e15-af97-36350cdf18c2"
@@ -294,6 +295,7 @@
                             "userConfig": {
                                 "itemId": "saveVPButton",
                                 "margin": 10,
+                                "padding": 3,
                                 "text": "Save Value Proposition"
                             },
                             "name": "MyButton21",

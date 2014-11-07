@@ -82,7 +82,7 @@
                 "margin": 10,
                 "padding": null
             },
-            "name": "MyTextField21",
+            "name": "MyTextField36",
             "designerId": "f26d3d99-c283-4ed4-9ed2-39e4d3b7a0a5"
         },
         {
@@ -93,10 +93,12 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|uiInterfaceName": "string",
                 "itemId": "improveFactorSpinner",
                 "label": "Improve Factor",
                 "labelWidth": "40%",
-                "labelWrap": true
+                "labelWrap": true,
+                "ui": "string"
             },
             "name": "MySpinnerField",
             "designerId": "3ebee1a1-3f8f-4e9a-89ce-1b5320a4f85c"
@@ -130,6 +132,7 @@
                 "itemId": "sourceSelectField",
                 "label": "Source",
                 "labelWidth": "40%",
+                "labelWrap": true,
                 "options": [
                     "[{",
                     "    text: 'Choose Source',",
@@ -187,16 +190,363 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|uiInterfaceName": "string",
                 "itemId": "financialFactorValueSpinner",
                 "label": "Value",
                 "labelWidth": "40%",
                 "labelWrap": true,
                 "left": null,
                 "margin": 10,
-                "stepValue": 1
+                "stepValue": 1,
+                "ui": "string"
             },
             "name": "MySpinnerField1",
             "designerId": "af4a369f-20f4-42b9-8fe9-5bff2d1117c3"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "year1container",
+                "layout": "hbox",
+                "margin": 2
+            },
+            "name": "MyContainer1",
+            "designerId": "610dfab9-98b2-4f82-bc4f-18ff86afff24",
+            "cn": [
+                {
+                    "type": "Ext.field.Slider",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "increment": 10,
+                        "itemId": "year1growth",
+                        "label": "Year 1 Growth",
+                        "labelWidth": "40%",
+                        "labelWrap": true,
+                        "layout|flex": 6
+                    },
+                    "name": "MySliderField1",
+                    "designerId": "d55df0d2-1343-4892-b004-ff7a6d112d5f",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onYear1growthChange",
+                                "implHandler": [
+                                    "Ext.ComponentQuery.query('valueformuladetailpanel #year1container #year1label')[0].setHtml('<p>' + newValue + '</p>');"
+                                ],
+                                "name": "change"
+                            },
+                            "name": "onYear1growthChange",
+                            "designerId": "14434005-5823-4f35-8030-e29f6c2c1245"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "year1label",
+                        "layout|flex": 1,
+                        "margin": 3
+                    },
+                    "name": "MyLabel2",
+                    "designerId": "21c267bf-2433-4495-b74e-80553883f1f8"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "year2container",
+                "layout": "hbox",
+                "margin": 2
+            },
+            "name": "MyContainer2",
+            "designerId": "3271fc6f-21c8-4d18-bdb4-d114943c9f8f",
+            "cn": [
+                {
+                    "type": "Ext.field.Slider",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "increment": 10,
+                        "itemId": "year2growth",
+                        "label": "Year 2 Growth",
+                        "labelWidth": "40%",
+                        "labelWrap": true,
+                        "layout|flex": 6
+                    },
+                    "name": "MySliderField1",
+                    "designerId": "293215e3-6ca6-468f-98c6-3a520a6cc8d5",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onYear2growthChange",
+                                "implHandler": [
+                                    "Ext.ComponentQuery.query('valueformuladetailpanel #year2container #year2label')[0].setHtml('<p>' + newValue + '</p>');"
+                                ],
+                                "name": "change"
+                            },
+                            "name": "onYear2growthChange",
+                            "designerId": "47562b05-f9a5-4c26-9896-76bf44d4ca4e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "year2label",
+                        "layout|flex": 1,
+                        "margin": 3
+                    },
+                    "name": "MyLabel2",
+                    "designerId": "5943ab38-7ba2-4118-9bc6-c37266d33cfa"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "year3container",
+                "layout": "hbox"
+            },
+            "name": "MyContainer3",
+            "designerId": "5a76c045-9b98-4ce0-9221-17e933d08276",
+            "cn": [
+                {
+                    "type": "Ext.field.Slider",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "increment": 10,
+                        "itemId": "year3growth",
+                        "label": "Year 3 Growth",
+                        "labelWidth": "40%",
+                        "labelWrap": true,
+                        "layout|flex": 6,
+                        "margin": 2
+                    },
+                    "name": "MySliderField1",
+                    "designerId": "27839605-4168-42e0-8fc6-cc833843be73",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onYear3growthChange",
+                                "implHandler": [
+                                    "Ext.ComponentQuery.query('valueformuladetailpanel #year3container #year3label')[0].setHtml('<p>' + newValue + '</p>');"
+                                ],
+                                "name": "change"
+                            },
+                            "name": "onYear3growthChange",
+                            "designerId": "b5b3574c-38a2-4758-acf9-dad06a0473a4"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "year3label",
+                        "layout|flex": 1,
+                        "margin": 3
+                    },
+                    "name": "MyLabel2",
+                    "designerId": "559f46c3-c328-4a1c-a0aa-19779bb84d76"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "year4container",
+                "layout": "hbox"
+            },
+            "name": "MyContainer4",
+            "designerId": "656e6bf5-23c0-45eb-87c3-3cbcd76abae6",
+            "cn": [
+                {
+                    "type": "Ext.field.Slider",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "increment": 10,
+                        "itemId": "year4growth",
+                        "label": "Year 4 Growth",
+                        "labelWidth": "40%",
+                        "labelWrap": true,
+                        "layout|flex": 6,
+                        "margin": 2
+                    },
+                    "name": "MySliderField1",
+                    "designerId": "d40c3890-6e0c-490b-8d46-73f55b1b0b25",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onYear4growthChange",
+                                "implHandler": [
+                                    "Ext.ComponentQuery.query('valueformuladetailpanel #year4container #year4label')[0].setHtml('<p>' + newValue + '</p>');"
+                                ],
+                                "name": "change"
+                            },
+                            "name": "onYear4growthChange",
+                            "designerId": "bcde9a70-4409-439d-9cfa-2429dbcd2f77"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "year4label",
+                        "layout|flex": 1,
+                        "margin": 3
+                    },
+                    "name": "MyLabel2",
+                    "designerId": "2a1c57d4-e37d-4773-bdcf-191a0a9304d0"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "year5container",
+                "layout": "hbox"
+            },
+            "name": "MyContainer10",
+            "designerId": "71c6bde1-2fa5-4e9f-806d-a9754db516bd",
+            "cn": [
+                {
+                    "type": "Ext.field.Slider",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "increment": 10,
+                        "itemId": "year5growth",
+                        "label": "Year 5 Growth",
+                        "labelWidth": "40%",
+                        "labelWrap": true,
+                        "layout|flex": 6,
+                        "margin": 2
+                    },
+                    "name": "MySliderField1",
+                    "designerId": "087ec3e1-63b7-491d-8f3c-70c83bfe885e",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onYear5growthChange",
+                                "implHandler": [
+                                    "Ext.ComponentQuery.query('valueformuladetailpanel #year5container #year5label')[0].setHtml('<p>' + newValue + '</p>');"
+                                ],
+                                "name": "change"
+                            },
+                            "name": "onYear5growthChange",
+                            "designerId": "580cdc1f-0afb-481f-8718-53abd0c04320"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "year5label",
+                        "layout|flex": 1,
+                        "margin": 3
+                    },
+                    "name": "MyLabel2",
+                    "designerId": "0e967d2d-e0cc-47fb-81b4-8b418fd1fda6"
+                }
+            ]
         },
         {
             "type": "Ext.Spacer",
@@ -208,8 +558,37 @@
             "userConfig": {
                 "height": 10
             },
-            "name": "MySpacer17",
-            "designerId": "a3163793-7e9d-4786-bced-3591ee1971d6"
+            "name": "MySpacer1",
+            "designerId": "7214b37e-04d0-4769-b47b-2492dd9ddd5e"
+        },
+        {
+            "type": "Ext.field.Checkbox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "applyAll",
+                "label": "Apply to all metrics",
+                "labelWidth": "70%",
+                "labelWrap": true
+            },
+            "name": "MyCheckbox6",
+            "designerId": "813b59cc-9d32-4e92-9e35-b3e6b1fde1df"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "name": "MySpacer51",
+            "designerId": "5bded385-0775-4397-91ff-db60633da9b9"
         },
         {
             "type": "Ext.field.Text",
@@ -222,6 +601,7 @@
                 "itemId": "valueFormulaTotalField",
                 "label": "Total",
                 "labelWidth": "40%",
+                "labelWrap": true,
                 "readOnly": true
             },
             "name": "MyTextField24",

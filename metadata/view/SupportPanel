@@ -31,6 +31,7 @@
                 "itemId": "prioritySelectField",
                 "label": "Priority",
                 "labelWidth": "40%",
+                "labelWrap": true,
                 "options": [
                     "[{",
                     "    text: '-None-',",
@@ -74,6 +75,7 @@
                 "itemId": "typeSelectField",
                 "label": "Type",
                 "labelWidth": "40%",
+                "labelWrap": true,
                 "options": [
                     "[{",
                     "    text: '-None-',",
@@ -116,7 +118,8 @@
             "userConfig": {
                 "itemId": "subjectField",
                 "label": "Subject",
-                "labelWidth": "40%"
+                "labelWidth": "40%",
+                "labelWrap": true
             },
             "name": "MyTextField37",
             "designerId": "a572c2be-c357-45c4-a4c6-ac5f379b6a43"
@@ -144,7 +147,8 @@
             "userConfig": {
                 "itemId": "reportedByField",
                 "label": "Reported  By",
-                "labelAlign": "top"
+                "labelAlign": "top",
+                "labelWrap": true
             },
             "name": "MyTextField38",
             "designerId": "427a7485-145b-4cef-a695-fc67c5e28977"
@@ -163,7 +167,7 @@
             "designerId": "8660afa8-115a-469c-b76c-8c030e0e7f2d"
         },
         {
-            "type": "Ext.field.Text",
+            "type": "Ext.field.Email",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -172,9 +176,11 @@
             "userConfig": {
                 "itemId": "emailField",
                 "label": "Email",
-                "labelWidth": "40%"
+                "labelWidth": "40%",
+                "labelWrap": true,
+                "placeHolder": "email@example.com"
             },
-            "name": "MyTextField39",
+            "name": "MyEmailField2",
             "designerId": "d913d683-c443-4b6a-a552-c0c0331e4e46"
         },
         {
@@ -199,7 +205,8 @@
             "codeClass": null,
             "userConfig": {
                 "label": "Description",
-                "labelAlign": "top"
+                "labelAlign": "top",
+                "labelWrap": true
             },
             "name": "MyTextArea1",
             "designerId": "407692d1-a438-4514-8644-ad5b00bf0f72"

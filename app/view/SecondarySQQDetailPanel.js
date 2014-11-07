@@ -31,6 +31,7 @@ Ext.define('DecisionLink.view.SecondarySQQDetailPanel', {
                 itemId: 'salesQuestionField',
                 label: 'Sales Question',
                 labelAlign: 'top',
+                labelWrap: true,
                 readOnly: true
             },
             {
@@ -41,7 +42,8 @@ Ext.define('DecisionLink.view.SecondarySQQDetailPanel', {
                 xtype: 'textfield',
                 itemId: 'sqqAnswerField',
                 label: 'Answer',
-                labelWidth: '40%'
+                labelWidth: '40%',
+                labelWrap: true
             },
             {
                 xtype: 'spacer',
@@ -52,6 +54,7 @@ Ext.define('DecisionLink.view.SecondarySQQDetailPanel', {
                 itemId: 'sourceSelectField',
                 label: 'Source',
                 labelWidth: '40%',
+                labelWrap: true,
                 options: [
                     {
                         text: 'Choose Source',

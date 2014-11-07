@@ -23,6 +23,7 @@
                 "itemId": "ratioNameField",
                 "label": "Ratio",
                 "labelWidth": "40%",
+                "labelWrap": true,
                 "readOnly": true
             },
             "name": "MyTextField29",
@@ -53,6 +54,7 @@
                 "label": "Company",
                 "labelAlign": null,
                 "labelWidth": "40%",
+                "labelWrap": true,
                 "readOnly": true
             },
             "name": "MyTextField30",
@@ -83,6 +85,7 @@
                 "label": "Peers",
                 "labelAlign": null,
                 "labelWidth": "40%",
+                "labelWrap": true,
                 "readOnly": true
             },
             "name": "MyTextField31",
@@ -112,6 +115,7 @@
                 "itemId": "onePercentField",
                 "label": "1%",
                 "labelWidth": "40%",
+                "labelWrap": true,
                 "readOnly": true
             },
             "name": "MyTextField32",

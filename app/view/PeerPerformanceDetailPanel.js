@@ -30,6 +30,7 @@ Ext.define('DecisionLink.view.PeerPerformanceDetailPanel', {
                 itemId: 'ratioNameField',
                 label: 'Ratio',
                 labelWidth: '40%',
+                labelWrap: true,
                 readOnly: true
             },
             {
@@ -41,6 +42,7 @@ Ext.define('DecisionLink.view.PeerPerformanceDetailPanel', {
                 itemId: 'companyField',
                 label: 'Company',
                 labelWidth: '40%',
+                labelWrap: true,
                 readOnly: true
             },
             {
@@ -52,6 +54,7 @@ Ext.define('DecisionLink.view.PeerPerformanceDetailPanel', {
                 itemId: 'peersField',
                 label: 'Peers',
                 labelWidth: '40%',
+                labelWrap: true,
                 readOnly: true
             },
             {
@@ -63,6 +66,7 @@ Ext.define('DecisionLink.view.PeerPerformanceDetailPanel', {
                 itemId: 'onePercentField',
                 label: '1%',
                 labelWidth: '40%',
+                labelWrap: true,
                 readOnly: true
             },
             {

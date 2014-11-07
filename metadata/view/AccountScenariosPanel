@@ -28,9 +28,11 @@
             },
             "codeClass": null,
             "userConfig": {
+                "grouped": true,
                 "itemId": "accountScenariosList",
                 "navView": "accountscenariospanel",
-                "store": "AccountScenariosStore"
+                "store": "AccountScenariosStore",
+                "style": ".x-list-header: black;"
             },
             "name": "MyList6",
             "designerId": "7c0d7ef7-668c-4b71-bfdf-bd75d41541db",

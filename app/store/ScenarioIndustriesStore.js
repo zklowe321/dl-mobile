@@ -31,6 +31,32 @@ Ext.define('DecisionLink.store.ScenarioIndustriesStore', {
                 type: 'json',
                 rootProperty: 'industries'
             }
+        },
+        listeners: [
+            {
+                fn: 'onJsonpstoreLoad',
+                event: 'load'
+            }
+        ]
+    },
+
+    onJsonpstoreLoad: function(store, records, successful, operation, eOpts) {
+        length = store.data.items.length;
+        if (length === 0) {
+            Ext.ComponentQuery.query('opportunitycarousel #opportunitySituationPanel #industriesList')[0].setHidden(true);
+            Ext.ComponentQuery.query('opportunitycarousel #opportunitySituationPanel #industriesTitle')[0].setHidden(true);
+        } else {
+            records = [];
+            for(i = 0; i < length; i++) {
+                if (store.data.items[i].data.selected) {
+                    records[records.length] = store.data.items[i];
+                }
+            }
+            Ext.ComponentQuery.query('opportunitycarousel #opportunitySituationPanel #industriesList')[0].select(records);
+
+            Ext.ComponentQuery.query('opportunitycarousel #opportunitySituationPanel #industriesList')[0].setHidden(false);
+            Ext.ComponentQuery.query('opportunitycarousel #opportunitySituationPanel #industriesTitle')[0].setHidden(false);
         }
     }
+
 });

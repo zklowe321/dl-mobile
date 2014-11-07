@@ -431,22 +431,6 @@
             },
             "name": "onCompanyScenariosPanelDeactivate",
             "designerId": "8c376c3e-b121-4d95-bef9-fc8c4d26e195"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|controlQuery": "panel",
-                "designer|targetType": "Ext.Panel",
-                "fn": "onVPPanelActivate",
-                "name": "activate"
-            },
-            "name": "onVPPanelActivate",
-            "designerId": "1f3f3901-975b-44b1-b99f-cadaa3227ca9"
         }
     ]
 }

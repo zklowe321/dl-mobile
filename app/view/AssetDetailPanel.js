@@ -31,6 +31,7 @@ Ext.define('DecisionLink.view.AssetDetailPanel', {
                 itemId: 'assetNameField',
                 label: 'Name',
                 labelWidth: '40%',
+                labelWrap: true,
                 readOnly: true
             },
             {
@@ -42,6 +43,7 @@ Ext.define('DecisionLink.view.AssetDetailPanel', {
                 itemId: 'assetDescriptionField',
                 label: 'Description',
                 labelWidth: '40%',
+                labelWrap: true,
                 readOnly: true
             },
             {

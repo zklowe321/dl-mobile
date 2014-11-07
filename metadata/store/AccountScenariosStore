@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "designer|userClassName": "AccountScenariosStore",
+        "groupField": "company",
         "model": "AccountScenarios",
         "storeId": "AccountScenariosStore"
     },
@@ -65,6 +66,19 @@
             },
             "name": "onJsonpstoreLoad",
             "designerId": "10cdfc09-3051-4fde-b78a-c332d2b0802e"
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "company"
+            },
+            "name": "MySorter1",
+            "designerId": "6d642e39-c2ce-42aa-b597-74d6e82818bb"
         }
     ]
 }

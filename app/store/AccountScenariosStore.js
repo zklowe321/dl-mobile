@@ -19,10 +19,12 @@ Ext.define('DecisionLink.store.AccountScenariosStore', {
     requires: [
         'DecisionLink.model.AccountScenarios',
         'Ext.data.proxy.JsonP',
-        'Ext.data.reader.Json'
+        'Ext.data.reader.Json',
+        'Ext.util.Sorter'
     ],
 
     config: {
+        groupField: 'company',
         model: 'DecisionLink.model.AccountScenarios',
         storeId: 'AccountScenariosStore',
         proxy: {
@@ -37,7 +39,10 @@ Ext.define('DecisionLink.store.AccountScenariosStore', {
                 fn: 'onJsonpstoreLoad',
                 event: 'load'
             }
-        ]
+        ],
+        sorters: {
+            property: 'company'
+        }
     },
 
     onJsonpstoreLoad: function(store, records, successful, operation, eOpts) {

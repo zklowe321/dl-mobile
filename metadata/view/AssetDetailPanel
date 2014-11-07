@@ -22,6 +22,7 @@
                 "itemId": "assetNameField",
                 "label": "Name",
                 "labelWidth": "40%",
+                "labelWrap": true,
                 "readOnly": true
             },
             "name": "MyTextField26",
@@ -51,6 +52,7 @@
                 "itemId": "assetDescriptionField",
                 "label": "Description",
                 "labelWidth": "40%",
+                "labelWrap": true,
                 "readOnly": true
             },
             "name": "MyTextArea",

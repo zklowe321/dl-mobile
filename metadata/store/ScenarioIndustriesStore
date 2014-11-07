@@ -36,6 +36,38 @@
                     "designerId": "08aab5db-73f1-48a4-a500-97c209706cc7"
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonpstoreLoad",
+                "implHandler": [
+                    "length = store.data.items.length;",
+                    "if (length === 0) {",
+                    "    Ext.ComponentQuery.query('opportunitycarousel #opportunitySituationPanel #industriesList')[0].setHidden(true);",
+                    "    Ext.ComponentQuery.query('opportunitycarousel #opportunitySituationPanel #industriesTitle')[0].setHidden(true);",
+                    "} else {",
+                    "    records = [];",
+                    "    for(i = 0; i < length; i++) {",
+                    "        if (store.data.items[i].data.selected) {",
+                    "            records[records.length] = store.data.items[i];",
+                    "        }",
+                    "    }",
+                    "    Ext.ComponentQuery.query('opportunitycarousel #opportunitySituationPanel #industriesList')[0].select(records);",
+                    "",
+                    "    Ext.ComponentQuery.query('opportunitycarousel #opportunitySituationPanel #industriesList')[0].setHidden(false);",
+                    "    Ext.ComponentQuery.query('opportunitycarousel #opportunitySituationPanel #industriesTitle')[0].setHidden(false);",
+                    "}"
+                ],
+                "name": "load"
+            },
+            "name": "onJsonpstoreLoad",
+            "designerId": "842af4d2-cf7f-4301-9e6e-2537a0dffb94"
         }
     ]
 }

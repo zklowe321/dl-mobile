@@ -43,6 +43,7 @@ Ext.define('DecisionLink.view.HomePanel', {
                         xtype: 'searchfield',
                         itemId: 'searchField',
                         label: 'Search',
+                        labelWrap: true,
                         placeHolder: 'Enter Company'
                     },
                     {
@@ -76,7 +77,7 @@ Ext.define('DecisionLink.view.HomePanel', {
                                 xtype: 'list',
                                 itemId: 'searchList',
                                 itemTpl: [
-                                    '<div>{name}</div>'
+                                    '<div style="float:right">{ticker}</div><div class=“info” width=“40” height=“40”/>Name: {name}<br/><small>Revenue: ${revenue} M</small>'
                                 ],
                                 store: 'SearchStore'
                             }

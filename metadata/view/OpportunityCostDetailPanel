@@ -7,7 +7,8 @@
     "codeClass": null,
     "userConfig": {
         "designer|userAlias": "opportunitycostdetailpanel",
-        "designer|userClassName": "OpportunityCostDetailPanel"
+        "designer|userClassName": "OpportunityCostDetailPanel",
+        "scrollable": "vertical"
     },
     "designerId": "9ae7e615-5359-4d7a-bd8a-3717add9d30a",
     "cn": [
@@ -22,6 +23,7 @@
                 "itemId": "costTypeSelectField",
                 "label": "Type",
                 "labelWidth": "40%",
+                "labelWrap": true,
                 "options": [
                     "[{",
                     "    text: 'Choose Type',",
@@ -73,9 +75,10 @@
             "userConfig": {
                 "itemId": "costValueField",
                 "label": "Cost",
-                "labelWidth": "40%"
+                "labelWidth": "40%",
+                "labelWrap": true
             },
-            "name": "MyTextField25",
+            "name": "MyTextField21",
             "designerId": "2fd613f5-9f2b-46e2-b072-989e0553e4ed"
         },
         {
@@ -102,6 +105,7 @@
                 "itemId": "accrualTypeSelectField",
                 "label": "Accrual Type",
                 "labelWidth": "40%",
+                "labelWrap": true,
                 "options": [
                     "[{",
                     "    text: 'Choose Type',",
@@ -117,6 +121,19 @@
             },
             "name": "MySelectField8",
             "designerId": "97e27e41-18a0-4665-bd92-90e5ceae9d63"
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "name": "MySpacer50",
+            "designerId": "b76f62bf-b72f-419a-9e83-97679b2d17a2"
         },
         {
             "type": "Ext.Button",

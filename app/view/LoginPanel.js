@@ -32,20 +32,29 @@ Ext.define('DecisionLink.view.LoginPanel', {
         items: [
             {
                 xtype: 'textfield',
+                border: 3,
                 id: 'usernameField',
+                style: 'border-color: black; border-style: solid;',
                 label: 'Username',
-                labelWidth: '45%'
+                labelWidth: '45%',
+                labelWrap: true,
+                autoCapitalize: false
             },
             {
                 xtype: 'passwordfield',
+                border: 3,
                 id: 'passwordField',
+                style: 'border-color: black; border-style: solid;',
                 label: 'Password',
-                labelWidth: '45%'
+                labelWidth: '45%',
+                labelWrap: true
             },
             {
                 xtype: 'container',
+                border: 3,
                 id: 'buttonContainer',
                 padding: 10,
+                style: 'border-color: black; border-style: solid;',
                 layout: {
                     type: 'hbox',
                     pack: 'center'
@@ -54,6 +63,7 @@ Ext.define('DecisionLink.view.LoginPanel', {
                     {
                         xtype: 'button',
                         id: 'loginButton',
+                        padding: 3,
                         width: '30%',
                         text: 'Login'
                     },
@@ -64,6 +74,7 @@ Ext.define('DecisionLink.view.LoginPanel', {
                     {
                         xtype: 'button',
                         id: 'cancelButton',
+                        padding: 3,
                         width: '30%',
                         text: 'Cancel'
                     }

@@ -27,6 +27,9 @@ Ext.define('DecisionLink.model.ScenarioCompetitors', {
             },
             {
                 name: 'name'
+            },
+            {
+                name: 'selected'
             }
         ]
     }

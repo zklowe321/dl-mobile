@@ -30,13 +30,17 @@ Ext.define('DecisionLink.view.KpiDetailPanel', {
                 xtype: 'textfield',
                 itemId: 'kpiNameField',
                 label: 'KPI',
-                labelWidth: '40%'
+                labelWidth: '40%',
+                labelWrap: true,
+                readOnly: true
             },
             {
                 xtype: 'textfield',
                 itemId: 'kpiTotalField',
                 label: 'KPI Total',
-                labelWidth: '40%'
+                labelWidth: '40%',
+                labelWrap: true,
+                readOnly: true
             },
             {
                 xtype: 'container',

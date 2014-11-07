@@ -38,6 +38,49 @@
                     "designerId": "55d69984-72ed-42c2-af97-19c772a345dc"
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonpstoreLoad",
+                "implHandler": [
+                    "var count = store.data.items.length,",
+                    "    i;",
+                    "",
+                    "for(i = 0; i < count; i++) {",
+                    "    var temp = store.data.items[i].data.revenue;",
+                    "",
+                    "    temp = DecisionLink.app.formatCurrency(temp);",
+                    "",
+                    "    store.data.items[i].data.revenue = temp;",
+                    "}",
+                    "",
+                    "search = Ext.ComponentQuery.query('homepanel #homeContainer #searchListContainer #searchList')[0];",
+                    "search.refresh();"
+                ],
+                "name": "load"
+            },
+            "name": "onJsonpstoreLoad",
+            "designerId": "b56dc939-7265-4743-ade4-42f4cb273921"
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "direction": "DESC",
+                "property": "revenue"
+            },
+            "name": "MySorter",
+            "designerId": "b0de4db7-1edd-407c-b8ee-61ba3b9e181d"
         }
     ]
 }

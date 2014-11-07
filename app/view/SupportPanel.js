@@ -20,6 +20,7 @@ Ext.define('DecisionLink.view.SupportPanel', {
     requires: [
         'Ext.field.Select',
         'Ext.Spacer',
+        'Ext.field.Email',
         'Ext.field.TextArea',
         'Ext.Button'
     ],
@@ -33,6 +34,7 @@ Ext.define('DecisionLink.view.SupportPanel', {
                 itemId: 'prioritySelectField',
                 label: 'Priority',
                 labelWidth: '40%',
+                labelWrap: true,
                 options: [
                     {
                         text: '-None-',
@@ -61,6 +63,7 @@ Ext.define('DecisionLink.view.SupportPanel', {
                 itemId: 'typeSelectField',
                 label: 'Type',
                 labelWidth: '40%',
+                labelWrap: true,
                 options: [
                     {
                         text: '-None-',
@@ -88,7 +91,8 @@ Ext.define('DecisionLink.view.SupportPanel', {
                 xtype: 'textfield',
                 itemId: 'subjectField',
                 label: 'Subject',
-                labelWidth: '40%'
+                labelWidth: '40%',
+                labelWrap: true
             },
             {
                 xtype: 'spacer',
@@ -98,17 +102,20 @@ Ext.define('DecisionLink.view.SupportPanel', {
                 xtype: 'textfield',
                 itemId: 'reportedByField',
                 label: 'Reported  By',
-                labelAlign: 'top'
+                labelAlign: 'top',
+                labelWrap: true
             },
             {
                 xtype: 'spacer',
                 height: 10
             },
             {
-                xtype: 'textfield',
+                xtype: 'emailfield',
                 itemId: 'emailField',
                 label: 'Email',
-                labelWidth: '40%'
+                labelWidth: '40%',
+                labelWrap: true,
+                placeHolder: 'email@example.com'
             },
             {
                 xtype: 'spacer',
@@ -117,7 +124,8 @@ Ext.define('DecisionLink.view.SupportPanel', {
             {
                 xtype: 'textareafield',
                 label: 'Description',
-                labelAlign: 'top'
+                labelAlign: 'top',
+                labelWrap: true
             },
             {
                 xtype: 'spacer',

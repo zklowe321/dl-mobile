@@ -29,13 +29,15 @@ Ext.define('DecisionLink.view.CompanyViewPanel', {
                 itemId: 'companyInfoCheckBox',
                 clearIcon: false,
                 label: 'Company Info',
-                labelWidth: '100%'
+                labelWidth: '100%',
+                labelWrap: true
             },
             {
                 xtype: 'checkboxfield',
                 itemId: 'valuePropCheckBox',
                 label: 'Value Propositions',
-                labelWidth: '100%'
+                labelWidth: '100%',
+                labelWrap: true
             },
             {
                 xtype: 'checkboxfield',

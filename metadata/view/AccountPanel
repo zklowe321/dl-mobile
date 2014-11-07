@@ -24,6 +24,7 @@
                 "itemId": "accountNameField",
                 "label": "Account",
                 "labelWidth": "40%",
+                "labelWrap": true,
                 "readOnly": true
             },
             "name": "MyTextField40",
@@ -54,6 +55,7 @@
                 "itemId": "usernameField",
                 "label": "Username",
                 "labelWidth": "40%",
+                "labelWrap": true,
                 "readOnly": true
             },
             "name": "MyTextField41",
@@ -73,7 +75,7 @@
             "designerId": "9f1166f9-14e1-4bd3-b90b-c008f696c703"
         },
         {
-            "type": "Ext.field.Text",
+            "type": "Ext.field.Email",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -83,9 +85,11 @@
                 "itemId": "emailField",
                 "label": "Email",
                 "labelWidth": "40%",
+                "labelWrap": true,
+                "placeHolder": null,
                 "readOnly": true
             },
-            "name": "MyTextField42",
+            "name": "MyEmailField",
             "designerId": "c3f53445-dc9b-4cae-b7a8-f3386132b250"
         },
         {

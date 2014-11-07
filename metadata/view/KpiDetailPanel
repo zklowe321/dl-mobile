@@ -22,7 +22,9 @@
             "userConfig": {
                 "itemId": "kpiNameField",
                 "label": "KPI",
-                "labelWidth": "40%"
+                "labelWidth": "40%",
+                "labelWrap": true,
+                "readOnly": true
             },
             "name": "MyTextField27",
             "designerId": "d05a5f87-c052-4c4a-8e8e-9b729d199c0e"
@@ -37,7 +39,9 @@
             "userConfig": {
                 "itemId": "kpiTotalField",
                 "label": "KPI Total",
-                "labelWidth": "40%"
+                "labelWidth": "40%",
+                "labelWrap": true,
+                "readOnly": true
             },
             "name": "MyTextField28",
             "designerId": "4dacebca-2259-46a2-aa6c-86cdc8445744"

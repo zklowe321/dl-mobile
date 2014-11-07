@@ -29,7 +29,7 @@ Ext.define('DecisionLink.model.SalesQuestions', {
                 name: 'name'
             },
             {
-                name: 'metric'
+                name: 'metric_id'
             },
             {
                 name: 'source_type_id'
@@ -42,6 +42,21 @@ Ext.define('DecisionLink.model.SalesQuestions', {
             },
             {
                 name: 'sqq_override'
+            },
+            {
+                name: 'sqq_y1'
+            },
+            {
+                name: 'sqq_y2'
+            },
+            {
+                name: 'sqq_y3'
+            },
+            {
+                name: 'sqq_y4'
+            },
+            {
+                name: 'sqq_y5'
             }
         ]
     }

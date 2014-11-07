@@ -97,7 +97,8 @@ Ext.define('DecisionLink.view.NewVPPanel', {
                                 xtype: 'textfield',
                                 itemId: 'nameField',
                                 label: 'Name',
-                                labelWidth: '40%'
+                                labelWidth: '40%',
+                                labelWrap: true
                             },
                             {
                                 xtype: 'spacer',
@@ -133,6 +134,7 @@ Ext.define('DecisionLink.view.NewVPPanel', {
                                 xtype: 'button',
                                 itemId: 'saveVPButton',
                                 margin: 10,
+                                padding: 3,
                                 text: 'Save Value Proposition'
                             }
                         ]

@@ -21,6 +21,10 @@ Ext.define('DecisionLink.view.ValueFormulaDetailPanel', {
         'Ext.Spacer',
         'Ext.field.Spinner',
         'Ext.field.Select',
+        'Ext.Container',
+        'Ext.field.Slider',
+        'Ext.Label',
+        'Ext.field.Checkbox',
         'Ext.Button',
         'Ext.field.Hidden'
     ],
@@ -62,7 +66,8 @@ Ext.define('DecisionLink.view.ValueFormulaDetailPanel', {
                 itemId: 'improveFactorSpinner',
                 label: 'Improve Factor',
                 labelWidth: '40%',
-                labelWrap: true
+                labelWrap: true,
+                ui: 'string'
             },
             {
                 xtype: 'textfield',
@@ -78,6 +83,7 @@ Ext.define('DecisionLink.view.ValueFormulaDetailPanel', {
                 itemId: 'sourceSelectField',
                 label: 'Source',
                 labelWidth: '40%',
+                labelWrap: true,
                 options: [
                     {
                         text: 'Choose Source',
@@ -116,7 +122,134 @@ Ext.define('DecisionLink.view.ValueFormulaDetailPanel', {
                 label: 'Value',
                 labelWidth: '40%',
                 labelWrap: true,
+                ui: 'string',
                 stepValue: 1
+            },
+            {
+                xtype: 'container',
+                itemId: 'year1container',
+                margin: 2,
+                layout: 'hbox',
+                items: [
+                    {
+                        xtype: 'sliderfield',
+                        flex: 6,
+                        itemId: 'year1growth',
+                        label: 'Year 1 Growth',
+                        labelWidth: '40%',
+                        labelWrap: true,
+                        increment: 10
+                    },
+                    {
+                        xtype: 'label',
+                        flex: 1,
+                        itemId: 'year1label',
+                        margin: 3
+                    }
+                ]
+            },
+            {
+                xtype: 'container',
+                itemId: 'year2container',
+                margin: 2,
+                layout: 'hbox',
+                items: [
+                    {
+                        xtype: 'sliderfield',
+                        flex: 6,
+                        itemId: 'year2growth',
+                        label: 'Year 2 Growth',
+                        labelWidth: '40%',
+                        labelWrap: true,
+                        increment: 10
+                    },
+                    {
+                        xtype: 'label',
+                        flex: 1,
+                        itemId: 'year2label',
+                        margin: 3
+                    }
+                ]
+            },
+            {
+                xtype: 'container',
+                itemId: 'year3container',
+                layout: 'hbox',
+                items: [
+                    {
+                        xtype: 'sliderfield',
+                        flex: 6,
+                        itemId: 'year3growth',
+                        margin: 2,
+                        label: 'Year 3 Growth',
+                        labelWidth: '40%',
+                        labelWrap: true,
+                        increment: 10
+                    },
+                    {
+                        xtype: 'label',
+                        flex: 1,
+                        itemId: 'year3label',
+                        margin: 3
+                    }
+                ]
+            },
+            {
+                xtype: 'container',
+                itemId: 'year4container',
+                layout: 'hbox',
+                items: [
+                    {
+                        xtype: 'sliderfield',
+                        flex: 6,
+                        itemId: 'year4growth',
+                        margin: 2,
+                        label: 'Year 4 Growth',
+                        labelWidth: '40%',
+                        labelWrap: true,
+                        increment: 10
+                    },
+                    {
+                        xtype: 'label',
+                        flex: 1,
+                        itemId: 'year4label',
+                        margin: 3
+                    }
+                ]
+            },
+            {
+                xtype: 'container',
+                itemId: 'year5container',
+                layout: 'hbox',
+                items: [
+                    {
+                        xtype: 'sliderfield',
+                        flex: 6,
+                        itemId: 'year5growth',
+                        margin: 2,
+                        label: 'Year 5 Growth',
+                        labelWidth: '40%',
+                        labelWrap: true,
+                        increment: 10
+                    },
+                    {
+                        xtype: 'label',
+                        flex: 1,
+                        itemId: 'year5label',
+                        margin: 3
+                    }
+                ]
+            },
+            {
+                xtype: 'spacer',
+                height: 10
+            },
+            {
+                xtype: 'checkboxfield',
+                itemId: 'applyAll',
+                label: 'Apply to all metrics',
+                labelWidth: '70%',
+                labelWrap: true
             },
             {
                 xtype: 'spacer',
@@ -127,6 +260,7 @@ Ext.define('DecisionLink.view.ValueFormulaDetailPanel', {
                 itemId: 'valueFormulaTotalField',
                 label: 'Total',
                 labelWidth: '40%',
+                labelWrap: true,
                 readOnly: true
             },
             {
@@ -143,7 +277,54 @@ Ext.define('DecisionLink.view.ValueFormulaDetailPanel', {
                 xtype: 'hiddenfield',
                 itemId: 'unitTypeIdField'
             }
+        ],
+        listeners: [
+            {
+                fn: 'onYear1growthChange',
+                event: 'change',
+                delegate: '#year1growth'
+            },
+            {
+                fn: 'onYear2growthChange',
+                event: 'change',
+                delegate: '#year2growth'
+            },
+            {
+                fn: 'onYear3growthChange',
+                event: 'change',
+                delegate: '#year3growth'
+            },
+            {
+                fn: 'onYear4growthChange',
+                event: 'change',
+                delegate: '#year4growth'
+            },
+            {
+                fn: 'onYear5growthChange',
+                event: 'change',
+                delegate: '#year5growth'
+            }
         ]
+    },
+
+    onYear1growthChange: function(me, sl, thumb, newValue, oldValue, eOpts) {
+        Ext.ComponentQuery.query('valueformuladetailpanel #year1container #year1label')[0].setHtml('<p>' + newValue + '</p>');
+    },
+
+    onYear2growthChange: function(me, sl, thumb, newValue, oldValue, eOpts) {
+        Ext.ComponentQuery.query('valueformuladetailpanel #year2container #year2label')[0].setHtml('<p>' + newValue + '</p>');
+    },
+
+    onYear3growthChange: function(me, sl, thumb, newValue, oldValue, eOpts) {
+        Ext.ComponentQuery.query('valueformuladetailpanel #year3container #year3label')[0].setHtml('<p>' + newValue + '</p>');
+    },
+
+    onYear4growthChange: function(me, sl, thumb, newValue, oldValue, eOpts) {
+        Ext.ComponentQuery.query('valueformuladetailpanel #year4container #year4label')[0].setHtml('<p>' + newValue + '</p>');
+    },
+
+    onYear5growthChange: function(me, sl, thumb, newValue, oldValue, eOpts) {
+        Ext.ComponentQuery.query('valueformuladetailpanel #year5container #year5label')[0].setHtml('<p>' + newValue + '</p>');
     }
 
 });

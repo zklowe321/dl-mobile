@@ -26,12 +26,14 @@ Ext.define('DecisionLink.view.OpportunityCostDetailPanel', {
     ],
 
     config: {
+        scrollable: 'vertical',
         items: [
             {
                 xtype: 'selectfield',
                 itemId: 'costTypeSelectField',
                 label: 'Type',
                 labelWidth: '40%',
+                labelWrap: true,
                 options: [
                     {
                         text: 'Choose Type',
@@ -71,7 +73,8 @@ Ext.define('DecisionLink.view.OpportunityCostDetailPanel', {
                 xtype: 'textfield',
                 itemId: 'costValueField',
                 label: 'Cost',
-                labelWidth: '40%'
+                labelWidth: '40%',
+                labelWrap: true
             },
             {
                 xtype: 'spacer',
@@ -82,6 +85,7 @@ Ext.define('DecisionLink.view.OpportunityCostDetailPanel', {
                 itemId: 'accrualTypeSelectField',
                 label: 'Accrual Type',
                 labelWidth: '40%',
+                labelWrap: true,
                 options: [
                     {
                         text: 'Choose Type',
@@ -96,6 +100,10 @@ Ext.define('DecisionLink.view.OpportunityCostDetailPanel', {
                         value: 2
                     }
                 ]
+            },
+            {
+                xtype: 'spacer',
+                height: 10
             },
             {
                 xtype: 'button',

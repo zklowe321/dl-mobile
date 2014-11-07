@@ -19,7 +19,8 @@ Ext.define('DecisionLink.store.SavedStore', {
     requires: [
         'DecisionLink.model.Saved',
         'Ext.data.proxy.JsonP',
-        'Ext.data.reader.Json'
+        'Ext.data.reader.Json',
+        'Ext.util.Sorter'
     ],
 
     config: {
@@ -37,7 +38,11 @@ Ext.define('DecisionLink.store.SavedStore', {
                 fn: 'onJsonpstoreLoad',
                 event: 'load'
             }
-        ]
+        ],
+        sorters: {
+            direction: 'DESC',
+            property: 'revenue'
+        }
     },
 
     onJsonpstoreLoad: function(store, records, successful, operation, eOpts) {

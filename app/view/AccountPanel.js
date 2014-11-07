@@ -18,8 +18,8 @@ Ext.define('DecisionLink.view.AccountPanel', {
     alias: 'widget.accountpanel',
 
     requires: [
-        'Ext.field.Text',
         'Ext.Spacer',
+        'Ext.field.Email',
         'Ext.Button'
     ],
 
@@ -30,6 +30,7 @@ Ext.define('DecisionLink.view.AccountPanel', {
                 itemId: 'accountNameField',
                 label: 'Account',
                 labelWidth: '40%',
+                labelWrap: true,
                 readOnly: true
             },
             {
@@ -41,6 +42,7 @@ Ext.define('DecisionLink.view.AccountPanel', {
                 itemId: 'usernameField',
                 label: 'Username',
                 labelWidth: '40%',
+                labelWrap: true,
                 readOnly: true
             },
             {
@@ -48,10 +50,11 @@ Ext.define('DecisionLink.view.AccountPanel', {
                 height: 10
             },
             {
-                xtype: 'textfield',
+                xtype: 'emailfield',
                 itemId: 'emailField',
                 label: 'Email',
                 labelWidth: '40%',
+                labelWrap: true,
                 readOnly: true
             },
             {

@@ -44,7 +44,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "metric"
+                "name": "metric_id"
             },
             "name": "field105",
             "designerId": "5a1e0306-502a-4907-a711-b55c2bdf8b15"
@@ -100,6 +100,71 @@
             },
             "name": "field109",
             "designerId": "37dd09c5-cd5b-4bd0-8f51-68a78090122c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "sqq_y1"
+            },
+            "name": "field26",
+            "designerId": "03597c32-def3-44c2-b291-214154e2f49a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "sqq_y2"
+            },
+            "name": "field27",
+            "designerId": "e2ba2dc9-74b4-4a5f-8d33-3586264d312d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "sqq_y3"
+            },
+            "name": "field28",
+            "designerId": "903f4fdb-3702-456e-9468-2f211600a44d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "sqq_y4"
+            },
+            "name": "field29",
+            "designerId": "52aabc0c-fff8-4541-8acf-e5d019e71dc8"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "sqq_y5"
+            },
+            "name": "field30",
+            "designerId": "a69d45d5-9d5b-440e-b778-90ac7177323f"
         }
     ]
 }

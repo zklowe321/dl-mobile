@@ -165,6 +165,71 @@
             },
             "name": "field86",
             "designerId": "c1c09d3a-cb66-4f6b-82a0-2f72fbdf1768"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "sqq_y1"
+            },
+            "name": "field31",
+            "designerId": "a16039a0-0500-4d94-b685-0438c615f595"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "sqq_y2"
+            },
+            "name": "field32",
+            "designerId": "d784391f-4320-451e-b9af-d29e2ae1d7f1"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "sqq_y3"
+            },
+            "name": "field39",
+            "designerId": "810e604c-bb4c-418e-a786-efc54e804592"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "sqq_y4"
+            },
+            "name": "field40",
+            "designerId": "56f4d22e-9817-4f74-92fa-56424b2955f9"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "sqq_y5"
+            },
+            "name": "field41",
+            "designerId": "8c7e62c6-889b-42b5-9103-4b9664b52dd6"
         }
     ]
 }

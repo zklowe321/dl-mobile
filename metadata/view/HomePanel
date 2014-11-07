@@ -62,6 +62,7 @@
                         "id": null,
                         "itemId": "searchField",
                         "label": "Search",
+                        "labelWrap": true,
                         "placeHolder": "Enter Company"
                     },
                     "name": "MySearchField",
@@ -138,7 +139,7 @@
                                     "userConfig": {
                                         "designer|displayName": "itemTpl",
                                         "implHandler": [
-                                            "<div>{name}</div>"
+                                            "<div style=\"float:right\">{ticker}</div><div class=“info” width=“40” height=“40”/>Name: {name}<br/><small>Revenue: ${revenue} M</small>"
                                         ]
                                     },
                                     "name": "tpl4",

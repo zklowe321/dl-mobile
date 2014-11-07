@@ -30,10 +30,12 @@ Ext.define('DecisionLink.view.AccountScenariosPanel', {
                 xtype: 'list',
                 navView: 'accountscenariospanel',
                 itemId: 'accountScenariosList',
+                style: '.x-list-header: black;',
                 itemTpl: [
                     '<div class=“info” width=“40” height=“40”/>{name}<br/><small>Revenue: ${oppty_revenue} M</small>'
                 ],
-                store: 'AccountScenariosStore'
+                store: 'AccountScenariosStore',
+                grouped: true
             }
         ]
     }

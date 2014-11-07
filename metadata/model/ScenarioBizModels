@@ -1,0 +1,54 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ScenarioBizModels"
+    },
+    "name": "MyModel",
+    "designerId": "f4abf196-6066-4b5d-98a0-2497e88b6127",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "field168",
+            "designerId": "e93d914c-ed2c-4f8f-9cf5-94ef4d2d8a8c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "name": "field169",
+            "designerId": "8b4b6099-8d44-4c16-a627-f4945f812b0c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "selected"
+            },
+            "name": "field170",
+            "designerId": "8db75f22-4a8f-43d6-9889-905d928f85b2"
+        }
+    ]
+}
