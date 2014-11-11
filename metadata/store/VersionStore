@@ -1,0 +1,61 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "VersionStore",
+        "model": "Version",
+        "storeId": "VersionStore"
+    },
+    "name": "MyJsonPStore",
+    "designerId": "21a4ead7-e53e-441e-bc7a-78da25c24271",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyJsonPProxy3",
+            "designerId": "1bcad697-50a6-4380-897d-517175a3e3a6",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": null
+                    },
+                    "name": "MyJsonReader3",
+                    "designerId": "9add7975-fd21-48e7-b7d0-67c48bcfd7ce"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonpstoreLoad",
+                "implHandler": [
+                    "version = store.data.items[0].data.version;",
+                    "",
+                    "Ext.ComponentQuery.query('accountpanel #currVersionLabel')[0].setHtml(version);"
+                ],
+                "name": "load"
+            },
+            "name": "onJsonpstoreLoad",
+            "designerId": "e1529571-80ee-4590-bee4-5c8c73473bd7"
+        }
+    ]
+}

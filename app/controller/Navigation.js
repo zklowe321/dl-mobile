@@ -34,7 +34,7 @@ Ext.define('DecisionLink.controller.Navigation', {
             accountScenariosList: 'accountscenariospanel #accountScenariosList',
             companyScenariosList: 'companyscenariospanel #companyScenariosList',
             companyViewPanel: 'companyviewpanel',
-            oppOverviewList: 'opportunitycarousel #oppOverviewList',
+            opportunityOverviewList: 'opportunitycarousel #opportunityOverviewPanel #opportunityOverviewList',
             salesQuestionsList: 'opportunitycarousel #opportunitySalesQPanel #salesQuestionsList',
             salesQuestionDetailPanel: 'salesquestiondetailpanel',
             valueFormulasList: 'opportunitycarousel #valueFormulasList',
@@ -69,6 +69,7 @@ Ext.define('DecisionLink.controller.Navigation', {
             opportunitySituationPanel: 'opportunitycarousel #opportunitySituationPanel',
             vpList: 'homepanel #homeContainer #VPListContainer #VPList',
             solutionsList: 'newvppanel #newInfoContainer #solutionsListContainer #solutionsList',
+            versionHiddenList: 'accountpanel #versionHiddenList',
             sendAssetPanel: 'sendassetpanel',
             homePanel: 'homepanel'
         },
@@ -1149,6 +1150,7 @@ Ext.define('DecisionLink.controller.Navigation', {
     onSaveSQQButtonTap: function(button, e, eOpts) {
         var sqqPanel,
             oppty_id = DecisionLink.app.getCurrentOpptyId(),
+            user_id = DecisionLink.app.getUserId(),
             sqq_id,
             sqq_override,
             source_type_id,
@@ -1171,12 +1173,17 @@ Ext.define('DecisionLink.controller.Navigation', {
 
         me.updateOpportunitySQQ(sqq_id, sqq_override, source_type_id, oppty_id, metric_id, sqq_y2, sqq_y3, sqq_y4, sqq_y5, function (store) {
             me.getHiddenList().setStore(store);
+
+            me.getOpportunityOverview(oppty_id, user_id, function(store) {
+                me.getOpportunityOverviewList().setStore(store);
+            });
         });
     },
 
     onSaveCostButtonTap: function(button, e, eOpts) {
         var costPanel,
             oppty_id = DecisionLink.app.getCurrentOpptyId(),
+            user_id = DecisionLink.app.getUserId(),
             id,
             cost_type_id,
             accrual_type_id,
@@ -1193,11 +1200,19 @@ Ext.define('DecisionLink.controller.Navigation', {
             // Update existing cost
             me.updateOpportunityCosts(id, oppty_id, cost_type_id, accrual_type_id, cost, function (store) {
                 me.getHiddenList().setStore(store);
+
+                me.getOpportunityOverview(oppty_id, user_id, function(store) {
+                    me.getOpportunityOverviewList().setStore(store);
+                });
             });
         } else {
             // Create new cost
             me.saveOpportunityCost(oppty_id, cost_type_id, accrual_type_id, cost, function (store) {
                 me.getHiddenList().setStore(store);
+
+                me.getOpportunityOverview(oppty_id, user_id, function(store) {
+                    me.getOpportunityOverviewList().setStore(store);
+                });
             });
         }
     },
@@ -1205,6 +1220,7 @@ Ext.define('DecisionLink.controller.Navigation', {
     onSaveVFButtonTap: function(button, e, eOpts) {
         var VFPanel,
             oppty_id = DecisionLink.app.getCurrentOpptyId(),
+            user_id = DecisionLink.app.getUserId(),
             metric_id,
             sqq_value,
             sqq2_value,
@@ -1236,6 +1252,10 @@ Ext.define('DecisionLink.controller.Navigation', {
 
         me.saveValueFormulaMetrics(metric_id, sqq_value, sqq2_value, impact, oppty_id, unit_type_id, impact_source_type_id, sqq_y1, sqq_y2, sqq_y3, sqq_y4, sqq_y5, apply_all, function (store) {
             me.getHiddenList().setStore(store);
+
+            me.getOpportunityOverview(oppty_id, user_id, function(store) {
+                me.getOpportunityOverviewList().setStore(store);
+            });
         });
     },
 
@@ -1285,6 +1305,10 @@ Ext.define('DecisionLink.controller.Navigation', {
 
         me.updateSecondarySQQ(oppty_id, user_id, sqq2_value, sqq2_id, impact_per_unit_source_type_id, function (store) {
             me.getHiddenList().setStore(store);
+
+            me.getOpportunityOverview(oppty_id, user_id, function(store) {
+                me.getOpportunityOverviewList().setStore(store);
+            });
         });
     },
 
@@ -1337,6 +1361,7 @@ Ext.define('DecisionLink.controller.Navigation', {
         var costPanel,
             actionsheet,
             oppty_id = DecisionLink.app.getCurrentOpptyId(),
+            user_id = DecisionLink.app.getUserId(),
             id,
             actionsheet,
             me = this;
@@ -1351,6 +1376,14 @@ Ext.define('DecisionLink.controller.Navigation', {
         });
 
         actionsheet.hide();
+
+        me.getOpportunityOverview(oppty_id, user_id, function(store) {
+            me.getOpportunityOverviewList().setStore(store);
+
+            me.getOpportunityOverview(oppty_id, user_id, function(store) {
+                me.getOpportunityOverviewList().setStore(store);
+            });
+        });
     },
 
     onCancelCostActionButtonTap: function(button, e, eOpts) {
@@ -1407,6 +1440,10 @@ Ext.define('DecisionLink.controller.Navigation', {
 
         me.saveSellingScenario(user_id, id, scenario, competitors, areas, industries, baselines, wacc, term, bizModels, function (store) {
             me.getHiddenList().setStore(store);
+
+            me.getOpportunityOverview(id, user_id, function(store) {
+                me.getOpportunityOverviewList().setStore(store);
+            });
         });
     },
 
@@ -1534,6 +1571,10 @@ Ext.define('DecisionLink.controller.Navigation', {
         accountPanel.child('#usernameField').setValue(username);
         accountPanel.child('#emailField').setValue(email);
 
+        me.getCurrentVersion(function(store) {
+            me.getVersionHiddenList().setStore(store);
+        });
+
     },
 
     onSaveCurrencyButtonTap: function(button, e, eOpts) {
@@ -1620,7 +1661,7 @@ Ext.define('DecisionLink.controller.Navigation', {
             i,
             company_id = DecisionLink.app.getCurrentCompanyId(),
             user_id = DecisionLink.app.getUserId(),
-            wacc = 0,
+            wacc = 9,
             oppty_revenue,
             name = nameContainer.child('#nameField').getValue(),
             me = this;
@@ -2161,6 +2202,15 @@ Ext.define('DecisionLink.controller.Navigation', {
             newUrl = url + '&method=' + method;
         }
         var href = window.open(newUrl, '_system', 'location=yes');
+    },
+
+    getCurrentVersion: function(callback) {
+        var store = Ext.data.StoreManager.lookup('VersionStore'),
+            url = DecisionLink.app.getServiceUrl() + '/GetCurrentVersion1.php';
+        store.getProxy().setUrl(url);
+        store.load(function() {
+            callback(store);
+        });
     },
 
     getSolutions: function(user_id, callback) {

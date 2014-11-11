@@ -48,7 +48,8 @@
             "ScenarioBaselines",
             "Currencies",
             "Solutions",
-            "ScenarioBizModels"
+            "ScenarioBizModels",
+            "Version"
         ],
         "name": "DecisionLink",
         "pagesFromHome": "0",
@@ -82,7 +83,8 @@
             "ScenarioBaselinesStore",
             "CurrenciesStore",
             "SolutionsStore",
-            "ScenarioBizModelsStore"
+            "ScenarioBizModelsStore",
+            "VersionStore"
         ],
         "success": false,
         "userName": " ",

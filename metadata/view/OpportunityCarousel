@@ -236,6 +236,39 @@
                             "designerId": "138fd2ef-e3e1-4e8f-a77e-7b0e1c80271b"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "opportunityOverviewList",
+                        "store": "OpportunityOverviewStore"
+                    },
+                    "name": "MyList",
+                    "designerId": "650573c1-aca5-4ab7-87d5-14ae54a4cea3",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div>List Item {string}</div>"
+                                ]
+                            },
+                            "name": "itemTpl",
+                            "designerId": "2c75b0ca-d780-40ea-916d-cf7de9878361"
+                        }
+                    ]
                 }
             ]
         },
@@ -537,6 +570,10 @@
                         "labelWidth": "40%",
                         "options": null,
                         "store": "ScenarioBaselinesStore",
+                        "value": [
+                            "2",
+                            ""
+                        ],
                         "valueField": "id"
                     },
                     "name": "MySelectField3",
@@ -566,7 +603,10 @@
                         "itemId": "costOfCapitalField",
                         "label": "Cost of Capital %",
                         "labelWidth": "40%",
-                        "labelWrap": true
+                        "labelWrap": true,
+                        "value": [
+                            "9"
+                        ]
                     },
                     "name": "MyTextField18",
                     "designerId": "bde9ae51-db39-48ae-a67a-19944cd132fc"
@@ -606,6 +646,9 @@
                             "    text: '5 Years',",
                             "    value: 5",
                             "}]"
+                        ],
+                        "value": [
+                            "3"
                         ]
                     },
                     "name": "MySelectField4",

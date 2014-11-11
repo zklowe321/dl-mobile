@@ -20,7 +20,10 @@ Ext.define('DecisionLink.view.AccountPanel', {
     requires: [
         'Ext.Spacer',
         'Ext.field.Email',
-        'Ext.Button'
+        'Ext.Button',
+        'Ext.Label',
+        'Ext.dataview.List',
+        'Ext.XTemplate'
     ],
 
     config: {
@@ -87,6 +90,26 @@ Ext.define('DecisionLink.view.AccountPanel', {
                 itemId: 'logoutButton',
                 margin: 10,
                 text: 'Logout'
+            },
+            {
+                xtype: 'label',
+                html: '<p>App Version 0.0.4 Build 0.0.5</p>',
+                itemId: 'appVersionLabel',
+                margin: 3
+            },
+            {
+                xtype: 'label',
+                itemId: 'currVersionLabel',
+                margin: 3
+            },
+            {
+                xtype: 'list',
+                hidden: true,
+                itemId: 'versionHiddenList',
+                margin: 3,
+                itemTpl: [
+                    '<div>List Item {string}</div>'
+                ]
             }
         ]
     }

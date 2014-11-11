@@ -328,7 +328,10 @@
                     "var navBar = this.getNavBar();",
                     "navBar.titleComponent.setTitle('Cost Details');",
                     "",
-                    "navBar.rightBox.query('button')[0].destroy();",
+                    "button = navBar.rightBox.query('button')[0];",
+                    "if (button) {",
+                    "    button.destroy();",
+                    "}",
                     "navBar.add({",
                     "        xtype:'button',",
                     "        text: 'Delete',",
@@ -354,7 +357,10 @@
                 "fn": "onQuotePanelDeactivate",
                 "implHandler": [
                     "var navBar = this.getNavBar();",
-                    "navBar.rightBox.query('button')[0].destroy();"
+                    "button = navBar.rightBox.query('button')[0];",
+                    "if (button) {",
+                    "    button.destroy();",
+                    "}"
                 ],
                 "name": "deactivate"
             },
@@ -374,7 +380,11 @@
                 "fn": "onOpptyCostPanelDeactivate",
                 "implHandler": [
                     "var navBar = this.getNavBar();",
-                    "navBar.rightBox.query('button')[0].destroy();",
+                    "button = navBar.rightBox.query('button')[0];",
+                    "if (button) {",
+                    "    button.destroy();",
+                    "}",
+                    "",
                     "navBar.add({",
                     "        xtype:'button',",
                     "        text: 'New',",
@@ -425,7 +435,10 @@
                 "fn": "onCompanyScenariosPanelDeactivate",
                 "implHandler": [
                     "var navBar = this.getNavBar();",
-                    "navBar.rightBox.query('button')[0].destroy();"
+                    "button = navBar.rightBox.query('button')[0];",
+                    "if (button) {",
+                    "    button.destroy();",
+                    "}"
                 ],
                 "name": "deactivate"
             },

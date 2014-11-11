@@ -159,7 +159,10 @@ Ext.define('DecisionLink.controller.Renames', {
         var navBar = this.getNavBar();
         navBar.titleComponent.setTitle('Cost Details');
 
-        navBar.rightBox.query('button')[0].destroy();
+        button = navBar.rightBox.query('button')[0];
+        if (button) {
+            button.destroy();
+        }
         navBar.add({
                 xtype:'button',
                 text: 'Delete',
@@ -170,12 +173,19 @@ Ext.define('DecisionLink.controller.Renames', {
 
     onQuotePanelDeactivate: function(oldActiveItem, container, newActiveItem, eOpts) {
         var navBar = this.getNavBar();
-        navBar.rightBox.query('button')[0].destroy();
+        button = navBar.rightBox.query('button')[0];
+        if (button) {
+            button.destroy();
+        }
     },
 
     onOpptyCostPanelDeactivate: function(oldActiveItem, container, newActiveItem, eOpts) {
         var navBar = this.getNavBar();
-        navBar.rightBox.query('button')[0].destroy();
+        button = navBar.rightBox.query('button')[0];
+        if (button) {
+            button.destroy();
+        }
+
         navBar.add({
                 xtype:'button',
                 text: 'New',
@@ -196,7 +206,10 @@ Ext.define('DecisionLink.controller.Renames', {
 
     onCompanyScenariosPanelDeactivate: function(oldActiveItem, container, newActiveItem, eOpts) {
         var navBar = this.getNavBar();
-        navBar.rightBox.query('button')[0].destroy();
+        button = navBar.rightBox.query('button')[0];
+        if (button) {
+            button.destroy();
+        }
     }
 
 });

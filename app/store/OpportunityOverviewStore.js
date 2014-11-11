@@ -31,6 +31,49 @@ Ext.define('DecisionLink.store.OpportunityOverviewStore', {
                 type: 'json',
                 rootProperty: 'opportunity'
             }
-        }
+        },
+        listeners: [
+            {
+                fn: 'onJsonpstoreLoad',
+                event: 'load'
+            }
+        ]
+    },
+
+    onJsonpstoreLoad: function(store, records, successful, operation, eOpts) {
+        record = store.data.items[0].data;
+        details = Ext.ComponentQuery.query('opportunitycarousel #opportunityOverviewPanel')[0];
+        situation = Ext.ComponentQuery.query('opportunitycarousel #opportunitySituationPanel')[0];
+
+        yr1_cost_sum = '$' + DecisionLink.app.formatCurrency( record.yr1_cost_sum );
+        yrx_cost_sum = '$' + DecisionLink.app.formatCurrency( record.yrx_cost_sum );
+        yr1_benefit_sum = '$' + DecisionLink.app.formatCurrency( record.yr1_benefit_sum );
+        yr2_benefit_sum = '$' + DecisionLink.app.formatCurrency( record.yr2_benefit_sum );
+        yr3_benefit_sum = '$' + DecisionLink.app.formatCurrency( record.yr3_benefit_sum );
+
+        wacc = record.wacc;
+        term = record.term;
+        bur = '$' + DecisionLink.app.formatCurrency( record.oppty_revenue );
+        cost_light_image = 'http://test.decisionlink.com/' + record.cost_light_image;
+        benefit_light_image = 'http://test.decisionlink.com/' + record.benefit_light_image;
+
+        details.child('#yr1CostsField').setValue(yr1_cost_sum);
+        details.child('#ongoingCostsField').setValue(yrx_cost_sum);
+
+        details.child('#yr1BenefitsField').setValue(yr1_benefit_sum);
+        details.child('#yr2BenefitsField').setValue(yr2_benefit_sum);
+        details.child('#yr3BenefitsField').setValue(yr3_benefit_sum);
+
+        details.child('#waccField').setValue(wacc);
+        details.child('#termField').setValue(term);
+        details.child('#burField').setValue(bur);
+
+        details.child('#imageContainer').child('#costLightImage').setSrc(cost_light_image);
+        details.child('#imageContainer').child('#benefitLightImage').setSrc(benefit_light_image);
+
+
+        situation.child('#costOfCapitalField').setValue(wacc);
+        situation.child('#termField').setValue(term);
     }
+
 });

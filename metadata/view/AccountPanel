@@ -177,6 +177,69 @@
             },
             "name": "MyButton16",
             "designerId": "ef1268fc-e09f-449a-89f6-dcdc09c9b8aa"
+        },
+        {
+            "type": "Ext.Label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "<p>App Version 0.0.4 Build 0.0.5</p>",
+                "itemId": "appVersionLabel",
+                "left": null,
+                "margin": 3
+            },
+            "name": "MyLabel2",
+            "designerId": "80d6d00f-a7cd-48c1-be71-1834ad545e8d"
+        },
+        {
+            "type": "Ext.Label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "currVersionLabel",
+                "margin": 3
+            },
+            "name": "MyLabel3",
+            "designerId": "5c7f2a2c-75f9-4241-a6c9-53159937c985"
+        },
+        {
+            "type": "Ext.dataview.List",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "itemId": "versionHiddenList",
+                "margin": 3
+            },
+            "name": "MyList3",
+            "designerId": "6a4e0e73-2c86-4dbf-b143-23949aacee63",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div>List Item {string}</div>"
+                        ]
+                    },
+                    "name": "itemTpl",
+                    "designerId": "dbdc2aeb-9e81-499a-b909-8a45f15fc82d"
+                }
+            ]
         }
     ]
 }

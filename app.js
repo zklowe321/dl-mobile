@@ -62,7 +62,8 @@ Ext.application({
         'ScenarioBaselines',
         'Currencies',
         'Solutions',
-        'ScenarioBizModels'
+        'ScenarioBizModels',
+        'Version'
     ],
     stores: [
         'SearchStore',
@@ -93,7 +94,8 @@ Ext.application({
         'ScenarioBaselinesStore',
         'CurrenciesStore',
         'SolutionsStore',
-        'ScenarioBizModelsStore'
+        'ScenarioBizModelsStore',
+        'VersionStore'
     ],
     views: [
         'MainView',

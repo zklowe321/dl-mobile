@@ -21,10 +21,10 @@ Ext.define('DecisionLink.view.OpportunityCarousel', {
         'Ext.Panel',
         'Ext.Label',
         'Ext.Img',
-        'Ext.field.Select',
-        'Ext.Spacer',
         'Ext.dataview.List',
         'Ext.XTemplate',
+        'Ext.field.Select',
+        'Ext.Spacer',
         'Ext.Button'
     ],
 
@@ -128,6 +128,15 @@ Ext.define('DecisionLink.view.OpportunityCarousel', {
                                 src: 'http://beta.decisionlink.com/images/logo.png'
                             }
                         ]
+                    },
+                    {
+                        xtype: 'list',
+                        hidden: true,
+                        itemId: 'opportunityOverviewList',
+                        itemTpl: [
+                            '<div>List Item {string}</div>'
+                        ],
+                        store: 'OpportunityOverviewStore'
                     }
                 ]
             },
@@ -253,6 +262,7 @@ Ext.define('DecisionLink.view.OpportunityCarousel', {
                         itemId: 'baselinesField',
                         label: 'Baselines',
                         labelWidth: '40%',
+                        value: 2,
                         displayField: 'name',
                         store: 'ScenarioBaselinesStore',
                         valueField: 'id'
@@ -266,7 +276,8 @@ Ext.define('DecisionLink.view.OpportunityCarousel', {
                         itemId: 'costOfCapitalField',
                         label: 'Cost of Capital %',
                         labelWidth: '40%',
-                        labelWrap: true
+                        labelWrap: true,
+                        value: 9
                     },
                     {
                         xtype: 'spacer',
@@ -277,6 +288,7 @@ Ext.define('DecisionLink.view.OpportunityCarousel', {
                         itemId: 'termField',
                         label: 'Term',
                         labelWidth: '40%',
+                        value: 3,
                         options: [
                             {
                                 text: '1 Year',
